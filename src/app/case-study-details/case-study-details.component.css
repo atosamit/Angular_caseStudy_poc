@@ -99,7 +99,7 @@
 
 .background_img {
     height: 112%;
-    width: 105%;
+    width: 106%;
     margin-left: -2%;
 }
 
@@ -1595,10 +1595,14 @@ body {
 /*  */
 @media screen and (min-width: 375px) and (max-width: 600px) {
 
-
+    .background_img {
+        height: 112%;
+        width: 109%;
+        margin-left: -2%;
+    }
     .case-study-left-part {
         background-repeat: no-repeat;
-        background-color: rgb(205, 211, 211);
+        background-color: rgb(255, 255, 255);
         float: left;
         object-fit: contain;
         margin-top: -8%;
@@ -1795,7 +1799,7 @@ body {
 /*  */
 @media screen and (min-width: 820px) and (max-width:1023px) {
     .background_img {
-
+        max-width: 108%;
         background-color: #FFF;
     }
 
@@ -2074,7 +2078,7 @@ body {
 /* .........540......................................... */
 @media screen and (min-width: 540px) and (max-width:720px) {
     .background_img {
-
+        max-width: 108%;
         background-color: #FFF;
     }
 
@@ -2310,6 +2314,7 @@ body {
 
 @media screen and (min-width: 1024px) and (max-width:600px) {
     .background_img {
+        /* max-width: 108%; */
         background-color: #FFF;
     }
 
@@ -2414,4 +2419,14 @@ body {
     }
    
 }
-
+@media screen and (min-width: 1440px)and (max-width:2459px){
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+    .nestle-img {
+        height: 115px;
+        margin-top: -141%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+}
