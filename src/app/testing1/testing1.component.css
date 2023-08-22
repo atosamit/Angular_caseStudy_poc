@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+
+.column {
+  width: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+
+.column-list {
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media screen and (min-width: 576px) {
+  .column .row {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .column {
+    width: 33.33%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .column-list {
+    flex-wrap: wrap;
+  }
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.list-image {
+  height: 260px;
+  width: 440px;
+  padding: 10px;
+  margin-top: -15px;
+}
+
+.list-text {
+  font-size: 17px;
+  margin-left: 19px;
+  font-family: Montserrat;
+  font-weight: 900;
+}
+
+.list-text1 {
+  font-size: 12.5px;
+  margin-left: 19px;
+  color: #000;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 598;
+  line-height: 20px;
+  text-transform: lowercase;
+}
+
+.grid-text {
+  font-size: 16px;
+  margin-left: 19px;
+  font-family: Montserrat;
+  font-weight: 800;
+}
+
+.grid-image {
+  height: 250px;
+  width: 430px;
+}
+
+.grid-text1 {
+
+  margin-left: 19px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+  text-transform: capitalize;
+}
+
+
+
+.mat-mdc-tab-group {
+  --mdc-tab-indicator-active-indicator-color: #ff6d43;
+  --mat-tab-header-disabled-ripple-color: #ff6d43;
+  --mat-tab-header-pagination-icon-color: #ff6d43;
+  --mat-tab-header-inactive-label-text-color: black;
+  --mat-tab-header-active-label-text-color: #ff6d43;
+  --mat-tab-header-active-ripple-color: #ff6d43;
+  --mat-tab-header-inactive-ripple-color: #ff6d43;
+  --mat-tab-header-inactive-focus-label-text-color: #ff6d43;
+  --mat-tab-header-inactive-hover-label-text-color: #ff6d43;
+  --mat-tab-header-active-focus-label-text-color: #ff6d43;
+  --mat-tab-header-active-hover-label-text-color: #ff6d43;
+  --mat-tab-header-active-focus-indicator-color: #ff6d43;
+  --mat-tab-header-active-hover-indicator-color: #ff6d43;
+}
+
+/*   
+  .custom-tab-group .mat-tab-label {
+    margin: 36px;
+    padding: 10px;
+  }
+   */
+.custom-tab-group {
+  margin-bottom: 10px;
+  ;
+  /* Adjust the margin between the tab group and other elements */
+  max-width: 85%;
+  top: 20px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+
+}
+
+.custom-tab-group mat-tab {
+  color: #000;
+  /* Set the icon color to black (#000) */
+}
+
+.custom-tab-labels {
+  gap: 0px;
+  /* Adjust the spacing between the tab labels */
+}
+
+.sortby {
+  width: 144px;
+  height: 42px;
+  border-radius: 4px;
+  margin-left: 87%;
+  margin-top: -20%;
+  border: 1px solid #ECECED;
+  background: #FFF;
+  flex-shrink: 0;
+  /* background-color: #FF6D43; */
+}
+
+.labSortby {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  /* display: flex; */
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 3%;
+  margin-top: -16%;
+  /* padding-bottom: %; */
+  /* background-color: #ff6d43; */
+}
+
+/* .break {
+  width: 1px;
+  height: 40px;
+  background: #ECECED;
+} */
+
+
+/* toggle */
+input.toggle-round {
+  display: none;
+}
+
+.CXTowerlabel {
+  margin-left: 20px;
+  top: 30px;
+  /* font-family: Montserrat; */
+  color: #000;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.CXTechlabel1 {
+  margin-left: 70px;
+  top: 30px;
+  /* font-family: Montserrat; */
+  color: #000;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+/* 
+    .labels {
+       
+        top: -60px;
+    } */
+
+
+
+input.toggle-round+label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 0px;
+  left: 100px;
+  top: 30px;
+  width: 48px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50px;
+  border: 1px solid #FF6D43;
+}
+
+input.toggle-round+label:after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #FF6D43;
+  border-radius: 100%;
+  box-shadow: 0 2px 3px #888;
+  transition: margin 0.5s;
+}
+
+input.toggle-round:checked+label {
+  background-color: #ddd;
+}
+
+input.toggle-round:checked+label:after {
+  margin-left: 30px;
+}
+
+.labels {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  margin-top: 35px;
+  gap: 20px;
+
+
+}
+.labels left-side button:hover {
+  background-color: #FF6D43;
+ 
+}
+
+.label {
+  display: none;
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+
+input.toggle-round:checked~.labels.left-side .label:nth-child(1),
+input.toggle-round:checked~.labels.left-side .label:nth-child(2),
+input.toggle-round:checked~.labels.left-side .label:nth-child(3) {
+  display: block;
+}
+
+input.toggle-round:not(:checked)~.right-side .label {
+  display: block;
+}
+
+
+.btn-active {
+  border: none;
+
+}
+
+
+
+/* Default styles */
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  .toggle-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toggle-group {
+    margin-bottom: 10px;
+  }
+
+.CXTechlabel1{
+  padding-bottom: 33px;
+  top: 30px;
+
+}
+
+.CXTowerlabel{
+  padding-bottom: 33px;
+  top: 30px;
+}
+
+  .button {
+    width: 100%;
+    height: 40px;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .button {
+    width: 120px;
+    height: 30px;
+  }
+  .CXTechlabel1{
+    padding-bottom: 33px;
+    top: 30px;
+   
+  }
+  
+  .CXTowerlabel{
+    padding-bottom: 33px;
+    top: 30px;
+  }
+
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .button {
+    width: 140px;
+    height: 35px;
+  }
+  .CXTechlabel1{
+    padding-bottom: 33px;
+    top: 30px;
+  }
+  
+  .CXTowerlabel{
+    padding-bottom: 33px;
+    top: 30px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  #btnContainer {
+    display: none;
+  }
+}
+
+/* Custom CSS to make mat-tab-label smaller */
+.custom-tab-group .mat-tab-label {
+  font-size: 12px;
+  /* Adjust the font size as per your requirement */
+  padding: 6px 6px;
+  /* Adjust the padding as per your requirement */
+}
+
+
+
+/* Add this CSS to show/hide the dropdown on click */
+.sortby {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+}
+
+.sortby:hover .dropdown-content {
+  display: block;
+}
+
+
+/* icons */
+.share svg {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* .svg1{
+  margin-right:50; 
+  display: inline-block;
+} */

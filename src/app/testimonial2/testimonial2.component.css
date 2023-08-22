@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+
+.test-div1 {
+
+    /* border: 1px solid; */
+
+    background: #ECECED;
+
+    padding: 2%;
+
+    padding-bottom: 3%;
+
+}
+
+
+
+.test-heading {
+
+    color: #000;
+
+    font-family: Montserrat;
+
+    font-size: 2.1rem;
+
+    font-style: normal;
+
+    font-weight: 600;
+
+    line-height: normal;
+
+    text-transform: capitalize;
+
+    margin-left: 1%;
+
+
+
+}
+
+
+
+.test-div2 {
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+
+    gap: 2%;
+
+}
+
+
+
+.test-div3 {
+
+    display: flex;
+
+    flex-direction: row;
+
+}
+
+
+
+.test-videoimage {
+
+    width: 430px;
+
+    height: 305px;
+
+    flex-shrink: 0;
+
+    background: #000;
+
+    margin-top: 2%;
+
+}
+
+
+
+.test-leftarrow {
+
+    width: 45.6px;
+
+    height: 80px;
+
+    flex-shrink: 0;
+
+    margin-top: 12%;
+
+    cursor: pointer;
+
+}
+
+
+
+.test-rightarrow {
+
+    width: 45.6px;
+
+    height: 80px;
+
+    flex-shrink: 0;
+
+    margin-top: 12%;
+
+    cursor: pointer;
+
+}
+
+
+
+.test-main-title {
+
+    color: #000;
+
+    font-family: Montserrat;
+
+    font-size: 24px;
+
+    font-style: normal;
+
+    font-weight: 550;
+
+    line-height: normal;
+
+    text-transform: capitalize;
+
+    margin-left: 7%;
+
+    margin-top: 4%;
+
+
+
+}
+
+
+
+.test-main-description {
+
+    color: #000;
+
+    font-family: Montserrat;
+
+    /* font-size: 16px; */
+
+    font-style: normal;
+
+    font-weight: 590;
+
+    line-height: 160%;
+
+    text-transform: capitalize;
+
+    margin-left: 7%;
+
+    margin-top: 3%;
+    overflow: hidden;
+
+
+
+
+
+}
+
+
+
+.test-main-authorName {
+
+    color: #000;
+
+    font-family: Montserrat;
+
+    font-size: 15.5px;
+
+    font-style: normal;
+
+    font-weight: 600;
+
+    line-height: 160%;
+
+    text-transform: capitalize;
+
+    margin-top: 5%;
+
+    margin-left: 7%;
+
+}
+
+
+
+.test-main-authorSmall {
+
+    color: #000;
+
+    font-family: Montserrat;
+
+    font-size: 15.5px;
+
+    font-style: normal;
+
+    font-weight: 500;
+
+    line-height: 160%;
+
+    text-transform: capitalize;
+
+    margin-left: 6.8%;
+
+    margin-top: -1%;
+
+}
+
+
+
+@media screen and (max-width: 820px) {
+
+
+
+    .test-div3 {
+
+        flex-wrap: wrap;
+
+        width: 60%;
+
+    }
+
+
+
+    .test-videoimage {
+
+        width: 100%;
+
+        height: auto;
+
+    }
+
+}
+
+
+@media (min-width: 2560px){
+    
+.test-leftarrow {
+
+    width: 45.6px;
+
+    height: 80px;
+
+    flex-shrink: 0;
+
+    margin-top: 5%;
+
+    cursor: pointer;
+
+}
+
+
+
+.test-rightarrow {
+
+    width: 45.6px;
+
+    height: 80px;
+
+    flex-shrink: 0;
+
+    margin-top: 5%;
+
+    cursor: pointer;
+
+}
+
+.test-videoimage {
+
+    width: 570px;
+
+    height: 315px;
+
+    flex-shrink: 0;
+
+    background: #000;
+
+    margin-top: 2%;
+
+}
+
+.test-heading {
+
+    color: #000;
+
+    font-family: Montserrat;
+
+    font-size: 2.4rem;
+
+    font-style: normal;
+
+    font-weight: 600;
+
+    line-height: normal;
+
+    text-transform: capitalize;
+
+    margin-left: 1%;
+
+
+
+}
+
+.test-main-description {
+
+    color: #000;
+
+    font-family: Montserrat;
+
+    /* font-size: 16px; */
+
+    font-style: normal;
+
+    font-weight: 500;
+
+    line-height: 160%;
+
+    text-transform: capitalize;
+
+    margin-left: 7%;
+
+    margin-top: 3%;
+    overflow: hidden;
+    font-size: 18px;
+
+
+
+
+
+}
+.test-main-title {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-left: 7%;
+    margin-top: 4%;
+}
+.test-main-authorSmall {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 15.5px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    text-transform: capitalize;
+    margin-left: 6.8%;
+    margin-top: -1%;
+}
+
+}

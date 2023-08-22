@@ -1,0 +1,2416 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #000;
+    padding: 0.7%;
+    font-weight: 600;
+    background-color: white;
+
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.breadcrumb-separator {
+    margin: 0 5px;
+}
+
+/* Add media queries as needed for responsiveness */
+.routing-label,
+.routing-label1,
+.routing-label2,
+.routing-label3,
+.case-study-title {
+    font-family: Montserrat;
+}
+
+.routing-label,
+.routing-label1,
+.routing-label2,
+.routing-label3 {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.routing-label1 {
+    margin-top: 3%;
+    margin-left: 3%;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.routing-label2 {
+    margin-top: -2%;
+    padding-bottom: 1%;
+    margin-left: 7.5%;
+    font-weight: 900;
+}
+
+.routing-label3 {
+    margin-top: -2.4%;
+    margin-left: 9%;
+    font-weight: 700;
+}
+
+/* ................................................................... */
+
+
+.case-study-left-part {
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-color: rgb(205, 211, 211);
+    float: left;
+    object-fit: contain;
+    margin-top: -8%;
+    position: relative;
+    overflow: hidden;
+    height: 494px;
+}
+
+.case-study-right-part {
+    float: left;
+    margin-top: -8%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(205, 211, 211);
+    height: 494px;
+}
+
+.delivery-img {
+    margin-top: -24rem;
+    margin-left: 14rem;
+    position: relative;
+}
+
+.background_img {
+    height: 112%;
+    width: 105%;
+    margin-left: -2%;
+}
+
+.nestle-img {
+    height: 115px;
+    margin-top: -154%;
+    margin-left: 1.5%;
+    position: relative;
+}
+
+.case-study-title {
+    color: #FFF;
+    height: 50px;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-left: 5.5%;
+    margin-top: -29%;
+}
+
+.right-part-title,
+.right-part-content,
+.right-part-label1,
+.right-part-label2,
+.right-part-label3 {
+    display: flex;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Montserrat;
+    font-style: normal;
+    padding: 2px;
+    text-transform: capitalize;
+}
+
+.right-part-title {
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.right-part-content {
+    margin-left: 5%;
+    margin-top: 1%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.right-part-label1 {
+    margin-top: 10px;
+    margin-left: 5%;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.right-part-label2 {
+    margin-top: 0.5%;
+    margin-left: 5%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    width: fit-content;
+}
+
+.right-part-label2,
+.right-part-label3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right-part-label3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 1px;
+}
+
+.action-buttons {
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.like1 {
+    padding-left: 20px;
+}
+
+.share {
+    padding-left: 427px;
+}
+
+.download {
+    padding-left: 20px;
+}
+
+.likes {
+    padding-left: 20px;
+}
+
+/* ................project scope............................... */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-fluid {
+    width: 100%;
+    margin-top: 9%;
+
+    flex-wrap: wrap;
+}
+
+.col-sm-7,
+.col-sm-5 {
+    flex: 0 0 50%;
+    padding-top: 43px;
+}
+
+.project-scope-title {
+    color: #002D3C;
+    font-size: 36px;
+    font-family: Montserrat;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #ff6d43;
+    letter-spacing: 2px;
+    text-underline-offset: 8px;
+}
+
+.project-scope-content,
+.project-scope-content11 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+
+.project-scope-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background-color: #0B83AB;
+}
+
+@media (max-width: 994px) {
+    .project-scope-img img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        background-color: #0B83AB;
+    }
+}
+
+@media (max-width: 992px) {
+    .project-scope-title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 994px) {
+
+    .col-sm-7,
+    .col-sm-5 {
+        flex: 0 0 100%;
+    }
+
+    .project-scope-title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .project-scope-content,
+    .project-scope-content11 {
+        font-size: 16px;
+        padding: 0%;
+    }
+}
+
+/* .............................challenge........................................................... */
+
+.challenges {
+    width: 60%;
+    height: 530px;
+    padding-top: -200px;
+}
+
+.challenges-label {
+    color: #002D3C;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #ff6d43;
+    letter-spacing: 2px;
+    text-underline-offset: 8px;
+}
+
+@media (max-width: 992px) {
+    .challenges-label {
+        font-size: 24px;
+    }
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .img-responsive {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.challenge-list {
+    margin-top: 2%;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+
+.challenge-list li {
+    margin-bottom: -30px;
+}
+
+.challenges-label1,
+.challenges-label2,
+.challenges-label3,
+.challenges-label4,
+.challenges-label5,
+.challenges-label6,
+.challenges-label7,
+.challenges-label8,
+.challenges-label9 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+    line-height: 40px;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+.challenges-dividing-line {
+    width: 100%;
+    height: 26px;
+
+    flex-shrink: 0;
+    background: rgba(255, 109, 67, 0.40);
+}
+
+.challenges-img img {
+    width: 286px;
+    height: 286px;
+    margin-left: 110%;
+    padding-top: -90%;
+    margin-bottom: 30%;
+    flex-shrink: 0;
+    background-color: aqua;
+}
+
+/* .....................ux approach...................... */
+.part6-heading {
+    color: #002D3C;
+    font-size: 40px;
+    margin-top: -1%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #ff6d43;
+    letter-spacing: 2px;
+    text-underline-offset: 8px;
+}
+
+.uximg {
+    width: 100%;
+    padding-inline: 20px;
+    height: auto;
+}
+
+@media (max-width: 2000px) {
+    .uximg {
+        width: 97%;
+
+    }
+}
+
+@media (max-width: 992px) {
+
+    .part6-heading,
+    .line33 {
+        font-size: 24px;
+        /* Adjust the font size as needed */
+    }
+}
+
+.part6-content-img {
+    width: 100px;
+    height: 500px;
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100%;
+        /* max-width: 720px; */
+    }
+}
+
+.ux-dividing-line {
+    width: 100%;
+    height: 26px;
+    margin-top: 5%;
+    flex-shrink: 0;
+    background: rgba(255, 109, 67, 0.40);
+}
+
+/* ...........................solution`............................................................... */
+.solution-part {
+    width: 100%;
+    margin-left: 3%;
+}
+
+@media (max-width: 992px) {
+    #solution-part-heading {
+        font-size: 24px;
+    }
+}
+
+.solution-part-heading {
+    color: #002D3C;
+    font-family: Montserrat;
+    font-size: 40px;
+    margin-top: -1.5%;
+    margin-left: 1%;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    text-decoration-color: #ff6d43;
+
+    letter-spacing: 2px;
+
+    text-underline-offset: 8px;
+}
+
+.solution-part-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    margin-top: 2%;
+    font-weight: 400;
+    line-height: 25px;
+    text-transform: capitalize;
+
+}
+
+.solution-list li {
+    margin-bottom: -10px;
+}
+
+.solution-text1,
+.solution-text2,
+.solution-text3,
+.solution-text4,
+.solution-text5,
+.solution-text6 {
+    padding: 8px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0.01cqb;
+    font-weight: 400;
+    line-height: 30px;
+    /* 166.667% */
+    text-transform: capitalize;
+    margin-left: 1%;
+}
+
+
+/* .....................cx design.................................... */
+.cx-design-part {
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+    background-color: #F8F8F8;
+}
+
+.cx-design-img {
+    width: 75px;
+    height: 75px;
+    margin-left: 2%;
+    margin-top: 1%;
+    padding-top: 2%;
+    flex-shrink: 0;
+}
+
+
+@media (max-width: 992px) {
+    #cx-design-heading {
+        font-size: 22px;
+    }
+}
+
+
+.cx-design-heading {
+    color: #002D3C;
+    font-family: Montserrat;
+    font-size: 30px;
+    margin-left: 2%;
+    margin-top: 2%;
+    font-style: normal;
+    font-weight: 800;
+    width: 38%;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #ff6d43;
+    letter-spacing: 2px;
+    text-underline-offset: 8px;
+}
+
+.cx-design-part ul {
+    list-style-type: none;
+    margin-left: 1%;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.list-data1,
+.list-data2,
+.list-data3,
+.list-data4,
+.list-data5,
+.list-data6 {
+    color: #0B83AB;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding: 0px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 15px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
+/* .......................persona........................... */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* .container-fluid {
+    padding: 20px;
+} */
+
+.row {
+    direction: row;
+    flex-wrap: wrap;
+    margin: -15px;
+}
+
+@media (max-width: 992px) {
+    .row {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: -15px;
+
+    }
+}
+
+
+.col-sm-6 {
+    flex: 0 0 calc(50% - 30px);
+    padding: 15px;
+}
+
+.col-sm-6 {
+    flex: 0 0 calc(50% - 30px);
+    padding: 15px;
+}
+
+.persona-heading,
+.persona-text,
+.persona-text1 {
+    font-family: Montserrat, sans-serif;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.persona-heading {
+    font-size: 24px;
+    font-weight: 600;
+    color: #002D3C;
+
+
+}
+
+.persona-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.persona-text1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #002D3C;
+    width: 60%;
+}
+
+.persona-img-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ......................user journy..................................................... */
+
+
+.col-sm-4,
+.col-sm-8 {
+    flex: 0 0 calc(50% - 30px);
+    /* Adjust column width and gutters */
+    /* padding: 15px; */
+}
+
+.user-journey-heading,
+.user-journey-text,
+.user-journey-text1 {
+    font-family: Montserrat, sans-serif;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.user-journey-heading {
+    font-size: 24px;
+    font-weight: 600;
+    color: #002D3C;
+
+}
+
+.user-journey-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.user-journey-text1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #002D3C;
+}
+
+.user-journey-img-fluid {
+    width: 97%;
+    display: block;
+    margin-right: 15%;
+}
+
+
+/* ...........................wireframe..................................... */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 
+.container {
+    padding: 20px;
+} */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+    /* Adjust margin for gutters */
+}
+
+.col-sm-4,
+.col-sm-8 {
+    flex: 0 0 calc(50% - 30px);
+    /* Adjust column width and gutters */
+    /* padding: 15px; */
+}
+
+.heading,
+.text1,
+.text11,
+.text2,
+.text21 {
+    font-family: Montserrat, sans-serif;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: 600;
+    color: #002D3C;
+
+}
+
+.text1,
+.text2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text11,
+.text21 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #002D3C;
+}
+
+.img {
+    width: 93%;
+    display: block;
+    margin-left: 5%;
+}
+
+
+/* ..................mock........................ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* .container {
+    padding: 20px;
+} */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+    /* Adjust margin for gutters */
+}
+
+.col-sm-4,
+.col-sm-8 {
+    flex: 0 0 calc(50% - 30px);
+    /* Adjust column width and gutters */
+    /* padding: 15px; */
+}
+
+.img-responsive1 {
+    width: 100%;
+    display: block;
+    margin-right: 15%;
+    margin-top: 5%;
+}
+
+.mockups-heading {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #002D3C;
+
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+.mockups-text1,
+.mockups-text2,
+.mockups-text11,
+.mockups-text21 {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #002D3C;
+    margin-left: 8%;
+}
+
+.mockups-text11,
+.mockups-text21 {
+    margin-left: 1%;
+    font-weight: 400;
+}
+
+.mockups-dividing-line {
+    width: 100%;
+    height: 26px;
+    margin-top: 4%;
+    flex-shrink: 0;
+    background: rgba(255, 109, 67, 0.40);
+}
+
+/* ........................key.................................................. */
+.keytakeways-heading {
+    color: #002D3C;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 43px;
+    text-decoration: underline;
+    text-decoration-color: #ff6d43;
+    letter-spacing: 2px;
+    text-underline-offset: 8px;
+}
+
+/* .line66 {
+    background: #FF6D43;
+    width: 355px;
+    height: 5px;
+    margin-top: -1.5%;
+   
+} */
+.keytakeways-label {
+    color: #000000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.keytakeways-right-part img {
+    padding-left: 20px;
+}
+
+@media (max-width: 992px) {
+    .keytakeways-heading {
+        font-size: 24px;
+        /* Adjust the font size as needed */
+    }
+}
+
+
+#keytakeways-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Responsive Styling */
+@media (max-width: 992px) {
+    /* Existing styles */
+
+    .keytakeways-img-container {
+        height: auto;
+        /* Adjust as needed */
+    }
+
+    .keytakeways-img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+.keytakeways-label .keytakeways-label1,
+.keytakeways-label .keytakeways-label2,
+.keytakeways-label .keytakeways-label3,
+.keytakeways-label .keytakeways-label4,
+.keytakeways-label .keytakeways-label5 {
+    width: 100%;
+    margin-left: 0;
+}
+
+.keytakeways-right-part {
+    width: 100%;
+    text-align: center;
+}
+
+.keytakeways-right-part img {
+    padding-left: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*  ....................................*/
+
+.testmonials-img img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .testimonials-heading {
+        font-size: 24px;
+        /* Adjust the font size as needed */
+    }
+}
+
+
+.testimonials-heading h5 {
+    /* margin-left: 1%; */
+    color: #002D3C;
+    font-size: 40px;
+    width: 28%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+
+    text-decoration: underline;
+    text-decoration-color: #ff6d43;
+    letter-spacing: 2px;
+    text-underline-offset: 8px;
+}
+
+@media (max-width: 768px) {
+    .testimonials-heading h5 {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .testmonials .line {
+        width: 200px;
+    }
+}
+
+/* ................................................ */
+/*  */
+
+@media (min-width: 2560px) {
+
+    .right-part-title,
+    .right-part-content,
+    .right-part-label1,
+    .right-part-label2,
+    .right-part-label3 {
+        display: flex;
+        flex-shrink: 0;
+        color: #000;
+        font-family: Montserrat;
+        font-style: normal;
+        padding: 2px;
+        text-transform: capitalize;
+    }
+
+    .right-part-title {
+        margin-top: 2%;
+        margin-left: 5%;
+        font-size: 45px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label1 {
+        margin-top: 10px;
+        margin-left: 5%;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 25px;
+        width: fit-content;
+    }
+
+    .right-part-label2,
+    .right-part-label3 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .right-part-label3 {
+        font-size: 21px;
+        font-weight: 600;
+        margin: 0 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 23px;
+        color: #000;
+        padding: 0.9%;
+        background-color: white;
+        font-weight: 600;
+    }
+
+
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .breadcrumb-item a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .breadcrumb-separator {
+        margin: 0 5px;
+    }
+
+    .action-buttons {
+        font-size: 21px;
+        margin-left: 5.5%;
+    }
+
+    /* project scope */
+    .project-scope-title {
+        color: #002D3C;
+        font-size: 44px;
+        font-family: Montserrat;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-decoration-color: #ff6d43;
+        letter-spacing: 2px;
+        text-underline-offset: 8px;
+    }
+
+    /* .project_sm_7{
+
+    } */
+    .project-scope-content,
+    .project-scope-content11 {
+        color: #000;
+        font-family: Montserrat;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 31px;
+        text-transform: capitalize;
+    }
+
+    .col-sm-7,
+    .col-sm-5 {
+        flex: 0 0 50%;
+        padding-top: 25px;
+    }
+
+    /* challages */
+
+    .challenges-label {
+        color: #002D3C;
+        font-family: Montserrat;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-decoration-color: #ff6d43;
+        letter-spacing: 2px;
+        text-underline-offset: 8px;
+    }
+
+
+
+    .img-responsive {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -21%;
+    }
+
+
+    .challenge-list {
+        margin-top: 2%;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px;
+        text-transform: capitalize;
+    }
+
+    .challenge-list li {
+        margin-bottom: -30px;
+    }
+
+    .challenges-label1,
+    .challenges-label2,
+    .challenges-label3,
+    .challenges-label4,
+    .challenges-label5,
+    .challenges-label6,
+    .challenges-label7,
+    .challenges-label8,
+    .challenges-label9 {
+        color: #000;
+        font-family: Montserrat;
+        font-size: 21px;
+        font-style: normal;
+        letter-spacing: 0.01em;
+        font-weight: 400;
+        line-height: 40px;
+        text-transform: capitalize;
+        padding: 10px;
+    }
+
+    .challenges-dividing-line {
+        width: 100%;
+        height: 26px;
+
+        flex-shrink: 0;
+        background: rgba(255, 109, 67, 0.40);
+    }
+
+    .challenges-img img {
+        width: 286px;
+        height: 286px;
+        margin-left: 110%;
+        padding-top: -90%;
+        margin-bottom: 30%;
+        flex-shrink: 0;
+        background-color: aqua;
+    }
+
+    /*  solution */
+
+    .solution-part-heading {
+        color: #002D3C;
+        font-family: Montserrat;
+        font-size: 44px;
+        margin-top: -1.5%;
+        margin-left: 1%;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+        text-decoration: underline;
+
+        text-decoration-color: #ff6d43;
+
+        letter-spacing: 2px;
+
+        text-underline-offset: 8px;
+        margin-top: 1%
+    }
+
+    .solution-part-text {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-shrink: 0;
+        color: #000;
+        font-size: 26px;
+        font-style: normal;
+        margin-top: 2%;
+        font-weight: 400;
+        line-height: 25px;
+        text-transform: capitalize;
+
+    }
+
+    .solution-list li {
+        margin-bottom: -10px;
+    }
+
+    .solution-text1,
+    .solution-text2,
+    .solution-text3,
+    .solution-text4,
+    .solution-text5,
+    .solution-text6 {
+        padding: 8px;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 25px;
+        font-style: normal;
+        letter-spacing: 0.01cqb;
+        font-weight: 400;
+        line-height: 30px;
+        text-transform: capitalize;
+        margin-left: 1%;
+    }
+
+    /* cx design */
+
+    .cx-design-heading {
+        color: #002D3C;
+        font-family: Montserrat;
+        font-size: 35px;
+        margin-left: 0%;
+        margin-top: 2%;
+        font-style: normal;
+        font-weight: 800;
+        width: 38%;
+        line-height: normal;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-decoration-color: #ff6d43;
+        letter-spacing: 2px;
+        text-underline-offset: 8px;
+    }
+
+    .cx-design-part ul {
+        list-style-type: none;
+        margin-left: 1%;
+        padding: 0;
+        overflow: hidden;
+    }
+
+
+    .list-data1 label,
+    .list-data2 label,
+    .list-data3 label,
+    .list-data4 label,
+    .list-data5 label,
+    .list-data6 label {
+        color: #0B83AB;
+        font-family: Montserrat;
+        font-size: 21px;
+        padding: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+    }
+
+    .cx-design-img {
+        width: 75px;
+        height: 75px;
+        margin-left: 0%;
+        margin-top: 0%;
+        padding-top: 2%;
+        flex-shrink: 0;
+    }
+
+    .cx_design_options {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        margin-left: -1%;
+    }
+
+    dl,
+    ol,
+    ul {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        margin-left: 1%;
+    }
+
+    .list-data1,
+    .list-data2,
+    .list-data3,
+    .list-data4,
+    .list-data5,
+    .list-data6 {
+        margin-right: 150px;
+        font-size: 25px;
+    }
+
+    .keytakeways-heading {
+        color: #002D3C;
+        font-family: Montserrat;
+        font-size: 44px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 43px;
+        text-decoration: underline;
+        text-decoration-color: #ff6d43;
+        letter-spacing: 2px;
+        text-underline-offset: 8px;
+    }
+
+    /* .line66 {
+    background: #FF6D43;
+    width: 355px;
+    height: 5px;
+    margin-top: -1.5%;
+   
+} */
+    .keytakeways-label {
+        color: #000000;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .keytakeways-right-part img {
+        padding-left: 20px;
+    }
+
+    .keytakeways-heading {
+        color: #002D3C;
+        font-family: Montserrat;
+        font-size: 44px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 1;
+        text-decoration: underline;
+        text-decoration-color: #ff6d43;
+        letter-spacing: 2px;
+        text-underline-offset: 8px;
+    }
+
+    /* .line66 {
+    background: #FF6D43;
+    width: 355px;
+    height: 5px;
+    margin-top: -1.5%;
+   
+} */
+    .keytakeways-label {
+        color: #000000;
+        font-family: Montserrat;
+        font-size: 23px;
+        font-weight: 400;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .keytakeways-right-part img {
+        padding-left: 20px;
+    }
+
+    .testimonials-heading h5 {
+        /* margin-left: 1%; */
+        color: #002D3C;
+        font-size: 44px;
+        width: 28%;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+
+        text-decoration: underline;
+        text-decoration-color: #ff6d43;
+        letter-spacing: 2px;
+        text-underline-offset: 8px;
+    }
+
+    /*  */
+    .delivery-img {
+        margin-top: -22rem;
+        margin-left: 45rem;
+        position: relative;
+    }
+
+    .background_img {
+        height: 112%;
+        width: 105%;
+        margin-left: -2%;
+    }
+
+    .nestle-img {
+        height: 135px;
+        margin-top: -78%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 3.5%;
+        margin-top: -16%;
+    }
+
+
+    /*  */
+    .img-fluid {
+        max-width: 100%;
+        margin-left: 9%;
+        height: auto;
+        width: 58%;
+    }
+
+    /*  */
+    #container_persona {
+        width: 100%;
+        margin-top: 10%;
+        background-color: #F8F8F8;
+        /* display: flex; */
+        flex-wrap: wrap;
+    }
+
+    .persona-img-fluid {
+        width: 100%;
+        display: block;
+        margin-left: -2%;
+    }
+
+    /*  */
+
+
+
+    .persona-heading,
+    .persona-text,
+    .persona-text1 {
+        font-family: Montserrat, sans-serif;
+        line-height: 1.2;
+        margin: 10px 0;
+    }
+
+    .persona-heading {
+        font-size: 41px;
+        font-weight: 600;
+        color: #002D3C;
+
+
+    }
+
+    .persona-text {
+        font-size: 34px;
+        font-weight: 600;
+    }
+
+    .persona-text1 {
+        font-size: 30px;
+        font-weight: 400;
+        color: #002D3C;
+        width: 60%;
+    }
+
+    /*.........user..................  */
+
+    .user-journey-img-fluid {
+        width: 97%;
+        display: block;
+        margin-right: 15%;
+    }
+
+    .user-journey-heading {
+        font-size: 44px;
+        font-weight: 600;
+        color: #002D3C;
+        margin-right: 57%;
+    }
+
+    .user-journey-text {
+        font-size: 34px;
+        margin-right: 58%;
+        font-weight: 600;
+    }
+
+    .user-journey-text1 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-right: 58%;
+        color: #002D3C;
+    }
+
+    /* ..................wire */
+    .img {
+        width: 93%;
+        display: block;
+        margin-left: 5%;
+    }
+
+    .heading {
+        font-size: 41px;
+        font-weight: 600;
+        color: #002D3C;
+
+    }
+
+    .text1,
+    .text2 {
+        font-size: 34px;
+        font-weight: 600;
+    }
+
+    .text11,
+    .text21 {
+        font-size: 30px;
+        font-weight: 400;
+        color: #002D3C;
+    }
+
+    /* mockup .......................*/
+
+
+
+
+    .mockups-heading {
+        font-family: Montserrat;
+        font-size: 41px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #002D3C;
+        margin-right: 49%;
+        margin-top: 9%;
+    }
+
+    .mockups-text1 {
+        font-family: Montserrat;
+        font-size: 34px;
+        font-weight: 600;
+        color: #002D3C;
+        margin-left: 2%;
+        margin-right: 45%;
+    }
+
+    .mockups-text11 {
+        font-family: Montserrat;
+        font-size: 34px;
+        font-weight: 400;
+        margin-left: 1%;
+        /* line-height: 1.2; */
+        /* color: #002D3C;
+    margin-left: 51%; */
+    }
+
+    .img-responsive1 {
+        width: 100%;
+        display: block;
+        margin-right: 15%;
+        margin-top: 5%;
+    }
+}
+
+/*  */
+/*  */
+@media screen and (min-width: 375px) and (max-width: 600px) {
+
+
+    .case-study-left-part {
+        background-repeat: no-repeat;
+        background-color: rgb(205, 211, 211);
+        float: left;
+        object-fit: contain;
+        margin-top: -8%;
+        position: relative;
+        overflow: hidden;
+        height: 310px;
+    }
+
+    .nestle-img {
+        height: 102px;
+    margin-top: -153%;
+    margin-left: 1.5%;
+    position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -17rem;
+    height: 66%;
+    margin-left: 8rem;
+    position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 2.5%;
+        margin-top: -40%;
+    }
+
+    .share {
+        padding-left: 39px;
+    }
+
+    .download {
+        padding-left: 9px;
+    }
+
+    .likes {
+        padding-left: 9px;
+    }
+
+    .like1 {
+        padding-left: 7px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #000;
+        padding: 5.7%;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 8px;
+
+    }
+
+    .right-part-label3 {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 7px;
+        margin-left: 25px;
+    }
+
+    .mockups-dividing-line {
+        margin-top: 12%;
+    }
+
+    .challenges-dividing-line {
+        margin-top: 8%;
+
+    }
+}
+
+/* ................360.................................. */
+
+/*  */
+@media screen and (max-width: 360px) and (max-width:600px) {
+
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+
+    .nestle-img {
+        height: 118px;
+        margin-top: -272%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -19rem;
+        height: 51%;
+        margin-left: 7rem;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+    height: 50px;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-left: 2.5%;
+    margin-top: -56%;
+    }
+
+    .share {
+        padding-left: 25px;
+    }
+
+    .download {
+        padding-left: 9px;
+    }
+
+    .likes {
+        padding-left: 9px;
+    }
+
+    .like1 {
+        padding-left: 7px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #000;
+        padding: 5.7%;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 8px;
+
+    }
+
+    .right-part-label3 {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 7px;
+        margin-left: 25px;
+    }
+
+
+}
+
+/* ...........820........................................ */
+
+/*  */
+@media screen and (min-width: 820px) and (max-width:1023px) {
+    .background_img {
+
+        background-color: #FFF;
+    }
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+
+    .nestle-img {
+        height: 171px;
+        margin-top: -114%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 65%;
+        margin-left: 25rem;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 6.5%;
+        margin-top: -28%;
+    }
+
+    .share {
+        padding-left: 348px;
+    }
+
+    .download {
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like1 {
+        padding-left: 34px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #000;
+        padding: 1.7%;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+
+    }
+
+    .right-part-label3 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 54px;
+        margin-left: 44px;
+    }
+}
+
+/* ...................768.............................................. */
+/*  */
+@media screen and (min-width: 768px) and (max-width:819px) {
+    .background_img {
+
+        background-color: #FFF;
+    }
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+
+    .nestle-img {
+        height: 108px;
+        margin-top: -127%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 65%;
+        margin-left: 25rem;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 6.5%;
+        margin-top: -28%;
+    }
+
+    .share {
+        padding-left: 315px;
+    }
+
+    .download {
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like1 {
+        padding-left: 34px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #000;
+        padding: 1.7%;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+
+    }
+
+    .right-part-label3 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 27px;
+        margin-left: 44px;
+    }
+
+}
+
+/* ..............912.................................... */
+/* @media screen and (min-width: 912px)  {
+    .background_img {
+
+        background-color: rgb(255 255 255);
+    }
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+
+ 
+    .nestle-img {
+        height: 134px;
+        margin-top: -110%;
+        margin-left: 4.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 65%;
+        margin-left: 27rem;
+        position: relative;
+    }
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 6.5%;
+        margin-top: -28%;
+    }
+
+    .share {
+        padding-left: 171px;
+    }
+
+    .download {
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like1 {
+        padding-left: 34px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #000;
+        padding: 1.7%;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+
+    }
+
+    .right-part-label3 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 54px;
+        margin-left: 44px;
+    }
+
+} */
+
+/* .........540......................................... */
+@media screen and (min-width: 540px) and (max-width:720px) {
+    .background_img {
+
+        background-color: #FFF;
+    }
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+
+    /*  */
+    .nestle-img {
+        height: 127px;
+        margin-top: -116%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -15rem;
+        height: 69%;
+        margin-left: 17rem;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 27px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 6.5%;
+        margin-top: -35%;
+    }
+
+    .share {
+        padding-left: 19%;
+    }
+
+    .download {
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like1 {
+        padding-left: 34px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #000;
+        padding: 2.9%;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 9px;
+
+    }
+
+    .right-part-label3 {
+        font-size: 13px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 54px;
+        margin-left: 44px;
+    }
+
+
+}
+
+/* ...............280............................ */
+/* 
+@media screen and (min-width: 280px) and (max-width:653px) {
+    .nestle-img {
+        height: 113px;
+        margin-top: -281%;
+        margin-left: 0.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 60px;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -51%;
+    }
+
+    .delivery-img {
+        margin-top: -32rem;
+        height: 42%;
+        margin-left: 9rem;
+        position: relative;
+    }
+
+    .right-part-title {
+        margin-top: 2%;
+        margin-left: 5%;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label1 {
+        margin-top: 10px;
+        margin-left: 5%;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 5px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 9px;
+    }
+
+    .case-study-right-part {
+        float: left;
+        margin-top: -8%;
+        overflow: hidden;
+        position: relative;
+        background-color: rgb(205, 211, 211);
+        height: 546px;
+    }
+
+    .mockups-dividing-line {
+        width: 100%;
+        height: 26px;
+        margin-top: 14%;
+        flex-shrink: 0;
+        background: rgba(255, 109, 67, 0.40);
+    }
+
+    .keytakeways-heading {
+        color: #002D3C;
+        font-family: Montserrat;
+        font-size: 23px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 43px;
+        text-decoration: underline;
+        text-decoration-color: #ff6d43;
+        letter-spacing: 0px;
+        text-underline-offset: 8px;
+    }
+
+    .project-scope-title {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .part6-heading {
+        font-size: 18px;
+    }
+} */
+
+/* .................412...................... */
+
+/* @media screen and (min-width: 414px)  {
+    .case-study-right-part {
+        float: left;
+        margin-top: -8%;
+        overflow: hidden;
+        position: relative;
+        background-color: rgb(205, 211, 211);
+        height: 457px;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 58px;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 3.5%;
+        margin-top: -51%;
+    }
+
+    .delivery-img {
+        margin-top: -23rem;
+    height: 64%;
+    margin-left: 7rem;
+    position: relative;
+    }
+
+    .nestle-img {
+        
+            height: 117px;
+            margin-top: -237%;
+            margin-left: 4.5%;
+            position: relative;
+        }
+    } */
+
+
+/*......................1024..............................  */
+
+@media screen and (min-width: 1024px) and (max-width:600px) {
+    .background_img {
+        background-color: #FFF;
+    }
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+
+    .nestle-img {
+        height: 158px;
+        margin-top: -187%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -28rem;
+        height: 60%;
+        margin-left: 13rem;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 6.5%;
+        margin-top: -28%;
+    }
+
+    .share {
+        padding-left: 315px;
+    }
+
+    .download {
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like1 {
+        padding-left: 34px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #000;
+        padding: 1.7%;
+        font-weight: 600;
+        background-color: white;
+    }
+
+    .right-part-content {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .right-part-label2 {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+
+    }
+
+    .right-part-label3 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 54px;
+        margin-left: 44px;
+    }
+
+}
+
+@media screen and (min-width: 912px) and (max-width:1002px){
+    .nestle-img {
+        height: 129px;
+        margin-top: -110%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width:1270px){
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+   
+}
+
