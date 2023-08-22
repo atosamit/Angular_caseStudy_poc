@@ -327,10 +327,11 @@ body {
 
 @media (max-width: 992px) {
     .img-responsive {
-        max-width: 100%;
+        max-width: 44%;
         height: auto;
         display: block;
         margin: 0 auto;
+        margin-top: -36%;
     }
 }
 
