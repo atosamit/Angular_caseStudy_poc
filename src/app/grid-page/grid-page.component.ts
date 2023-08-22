@@ -128,24 +128,7 @@ export class GridPageComponent implements OnInit {
     this.filterDataByDomain(selectedDomain);
   }
 
-  // filterDataByDomain(domain: string) {
-  //   // pagination
-  //   this.currentPage = 1; // Reset current page to 1 when applying new filters
-  //   if (domain === 'All') {
-  //     this.filteredData = [...this.data]; // Show all data
-  //   } else {
-  //     this.filteredData = this.data.filter(item => item.domain === domain); // Filter data based on selected domain
-  //   }
-  // }
 
-  // filterDataBySubDomain(subDomain: string) {
-  //   if (subDomain === '') {
-  //     this.filteredData1 = [...this.filteredData]; // Show all filtered data
-  //   } else {
-  //     this.filteredData1 = this.filteredData.filter(item => item.subDomain === subDomain); // Filter data based on selected subdomain
-  //   }
-  //   // alert("You clicked the button!")
-  // }
 
   filterDataByDomain(domain: string): void {
     if (domain === 'All') {
