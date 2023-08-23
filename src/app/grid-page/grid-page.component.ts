@@ -56,6 +56,9 @@ export class GridPageComponent implements OnInit {
   selectedSubDomain: string | null = null;
 
 
+
+
+
   constructor(private http: HttpClient, private csvDownloadService: CsvDownloadService, private likesService: LikesService) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
@@ -253,7 +256,12 @@ export class GridPageComponent implements OnInit {
   //     }
   //   );
   // }
+ 
 
+  
+    // Toggle the like status
+   
+  
   contentId = '${sys.id}'; // Replace with the actual content ID
   userId = '40jcljdzym6w'; // Replace with the actual user ID
   likesCount = 0;

@@ -151,9 +151,6 @@ img {
   width: 100%;
 }
 
-.Comments_btn:nth-child(even)  {
-  background-color: #F8F8F8;
-}
 
 
 
@@ -728,9 +725,7 @@ input.toggle-round:not(:checked)~.right-side .label {
 
 
 @media (min-width: 2560px) {
-  .column{
-
-  }
+  
   
 .grid-image {
   height: auto;
