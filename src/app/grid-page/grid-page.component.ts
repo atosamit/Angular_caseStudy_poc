@@ -18,6 +18,8 @@ export class GridPageComponent implements OnInit {
 
   isListViewActive = false; // Initially set to list view
   sortBy: any[] = [];
+  logoCollection: any[]=[];
+  domainCollection: any[]=[];
 
   toggleView(view: 'list' | 'grid') {
     if (view === 'list') {
@@ -94,15 +96,19 @@ export class GridPageComponent implements OnInit {
         }
       }
       sortByCollection{
-
         items{
-  
           list
-  
         }
-  
+      }
+    
+    logoCollection{
+      items{
+          logo{
+            url
+          }  
       }
     }
+  }
     `;
 
     this.http.post(endpoint, { query }, { headers }).subscribe(
@@ -111,7 +117,13 @@ export class GridPageComponent implements OnInit {
         this.filteredData = [...this.data]; // Initialize filteredData with all data
         this.filteredData1 = [...this.filteredData]; // Initialize filteredData with all data
         this.domains = this.getUniqueDomains(this.data); // Get unique domains
-        this.sortBy = response.data.sortByCollection.items
+        this.sortBy = response.data.sortByCollection.items;
+        this.logoCollection = response.data.logoCollection.items;
+
+        // domain and sub domains toggle
+this.domainCollection = response.data.domainCollection.items;
+
+
         console.log(this.data)
       },
       (error: any) => {

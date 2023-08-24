@@ -77,12 +77,8 @@
     border: 1px solid #FF6D43;" class="label">Analytics</button>
 </div>
 <div>
-  <!-- dropdown -->
 
-
-
-
-
+  <!-- sortby dropdown -->
   <!-- <button class="sortby" (click)="toggleDropdown()">
   <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px; margin-top: 1px;" width="14" height="14"
     viewBox="0 0 14 14" fill="none">
@@ -108,24 +104,7 @@
   </svg>
 </button> -->
 
-
-
-
-
-
-  <!-- Example split danger button -->
-  <!-- list and grid buttons -->
-
-  <!-- <div id="btnContainer" style="margin-left: 1150px; margin-top: -70px;">
-    <button class="btn" (click)="listView()"><img style="height: 35px; width: 35px; " src="../assets/Vector (3).png" alt="List View"></button>
-    <button class="btn-active" (click)="gridView()">
-        <img style="height: 35px; width: 35px;" src="../assets/Vector (2).png" alt="Grid View">
-      </button>
-      
-  </div> -->
   <br>
-
-
   <div class="row" id="content" #content style="padding: 0px 15px;">
     <ng-container *ngFor="let item of paginatedData">
 
@@ -137,20 +116,17 @@
             [routerLink]="['/case_study', item.details.sys.id]">
           <div style="margin-left: 10px;">
             <h4 [ngClass]="{'grid-text': isGridView, 'list-text': !isGridView}">{{ item.details.title }}</h4>
-
-
-
-
+            <!-- date -->
             <p *ngIf="isGridView" [ngClass]="{ 'list-text1': !isGridView, 'grid-text2': isGridView }">
               Published on <strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy' :'UTC' }}</strong>
             </p>
-
-
-
+            <!-- description -->
             <p *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
               {{ item.details.description}}
             </p>
             <div [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
+
+
 
               <!-- <button style="display: inline-block; margin-right: 20px;  border: none; background-color: white;"
                 class="Comments_btn"><img src="../assets/question-answer.png" style="width: 35px;height: 35px;"
@@ -161,12 +137,14 @@
                   style="width: 30px;height: 30px;"> {{ likesCount }}</button> -->
 
 
+
+
               <!-- like and comment for grid -->
               <!-- Comment Button -->
               <button *ngIf="isGridView"
                 style="display: inline-block; margin-right: 20px; border: none; background-color: white;"
                 class="Comments_btn">
-                <img src="../assets/question-answer.png" style="width: 35px; height: 35px;" alt="Comments">
+                <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
                 11 Comments
               </button>
 
@@ -174,45 +152,30 @@
               <button *ngIf="isGridView"
                 style="display: inline-block; margin-right: 20px; border: none; background-color: white;"
                 (click)="toggleLike(contentId, userId)" class="like_btn">
-                <img src="../assets/Vector-t.png" alt="Likes" style="width: 30px; height: 30px;">
+                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
               </button>
 
+
+
               <!-- like and comment btn for list -->
-              <button *ngIf="!isGridView"
-                style="display: inline-block; margin-right: 20px; border: none; background: none;"
-                class="Comments_btn">
-                <img src="../assets/question-answer.png" style="width: 35px; height: 35px;" alt="Comments">
+              <button *ngIf="!isGridView" class="like_comment"
+                style="display: inline-block; margin-right: 20px; border: none; background: none;" class="Comments_btn">
+                <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
                 11 Comments
               </button>
 
-              <!-- Like Button -->
+              <!-- Like Button from list view -->
               <button *ngIf="!isGridView"
                 style="display: inline-block; margin-right: 20px; border: none; background:none;"
                 (click)="toggleLike(contentId, userId)" class="like_btn">
-                <img src="../assets/Vector-t.png" alt="Likes" style="width: 30px; height: 30px;">
+                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
               </button>
-
-              
-
-
-
               <div style="float:right; display: inline-block;" *ngIf="isGridView">
 
-                <button (click)="openPopup() " style="border: none; background-color: white;"> <svg
-                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 27 27" fill="none">
-                    <g clip-path="url(#clip0_148_1224)">
-                      <path
-                        d="M18.6667 17.5502C17.8222 17.5502 17.0667 17.8815 16.4889 18.4006L8.56667 13.8173C8.62222 13.5633 8.66667 13.3092 8.66667 13.0442C8.66667 12.7791 8.62222 12.5251 8.56667 12.2711L16.4 7.73193C17 8.28414 17.7889 8.62651 18.6667 8.62651C20.5111 8.62651 22 7.14659 22 5.31325C22 3.47992 20.5111 2 18.6667 2C16.8222 2 15.3333 3.47992 15.3333 5.31325C15.3333 5.57831 15.3778 5.83233 15.4333 6.08635L7.6 10.6255C7 10.0733 6.21111 9.73092 5.33333 9.73092C3.48889 9.73092 2 11.2108 2 13.0442C2 14.8775 3.48889 16.3574 5.33333 16.3574C6.21111 16.3574 7 16.0151 7.6 15.4629L15.5111 20.0572C15.4556 20.2892 15.4222 20.5321 15.4222 20.7751C15.4222 22.5532 16.8778 24 18.6667 24C20.4556 24 21.9111 22.5532 21.9111 20.7751C21.9111 18.997 20.4556 17.5502 18.6667 17.5502ZM18.6667 4.20884C19.2778 4.20884 19.7778 4.70582 19.7778 5.31325C19.7778 5.92068 19.2778 6.41767 18.6667 6.41767C18.0556 6.41767 17.5556 5.92068 17.5556 5.31325C17.5556 4.70582 18.0556 4.20884 18.6667 4.20884ZM5.33333 14.1486C4.72222 14.1486 4.22222 13.6516 4.22222 13.0442C4.22222 12.4367 4.72222 11.9398 5.33333 11.9398C5.94444 11.9398 6.44444 12.4367 6.44444 13.0442C6.44444 13.6516 5.94444 14.1486 5.33333 14.1486ZM18.6667 21.9016C18.0556 21.9016 17.5556 21.4046 17.5556 20.7972C17.5556 20.1898 18.0556 19.6928 18.6667 19.6928C19.2778 19.6928 19.7778 20.1898 19.7778 20.7972C19.7778 21.4046 19.2778 21.9016 18.6667 21.9016Z"
-                        fill="#FF6D43" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_148_1224">
-                        <rect width="27" height="27" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg></button>
+                <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
+                    [src]="logoCollection[5].logo.url"></button>
                 <!-- popop share -->
                 <div [hidden]="!showPopup" class="popup-container">
                   <div class="popup-content">
@@ -228,8 +191,8 @@
                     <!-- Add "close-button" class -->
                   </div>
                 </div>
-                <!-- downlaod btn -->
 
+                <!-- downlaod btn -->
                 <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn"> <svg
                     xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 29 28" fill="none">
                     <path
@@ -240,40 +203,20 @@
               </div>
             </div>
 
+
+
             <div *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
               <div class="share" style="margin-top: 40px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 27 27" fill="none">
-                  <g clip-path="url(#clip0_148_1224)">
-                    <path
-                      d="M18.6667 17.5502C17.8222 17.5502 17.0667 17.8815 16.4889 18.4006L8.56667 13.8173C8.62222 13.5633 8.66667 13.3092 8.66667 13.0442C8.66667 12.7791 8.62222 12.5251 8.56667 12.2711L16.4 7.73193C17 8.28414 17.7889 8.62651 18.6667 8.62651C20.5111 8.62651 22 7.14659 22 5.31325C22 3.47992 20.5111 2 18.6667 2C16.8222 2 15.3333 3.47992 15.3333 5.31325C15.3333 5.57831 15.3778 5.83233 15.4333 6.08635L7.6 10.6255C7 10.0733 6.21111 9.73092 5.33333 9.73092C3.48889 9.73092 2 11.2108 2 13.0442C2 14.8775 3.48889 16.3574 5.33333 16.3574C6.21111 16.3574 7 16.0151 7.6 15.4629L15.5111 20.0572C15.4556 20.2892 15.4222 20.5321 15.4222 20.7751C15.4222 22.5532 16.8778 24 18.6667 24C20.4556 24 21.9111 22.5532 21.9111 20.7751C21.9111 18.997 20.4556 17.5502 18.6667 17.5502ZM18.6667 4.20884C19.2778 4.20884 19.7778 4.70582 19.7778 5.31325C19.7778 5.92068 19.2778 6.41767 18.6667 6.41767C18.0556 6.41767 17.5556 5.92068 17.5556 5.31325C17.5556 4.70582 18.0556 4.20884 18.6667 4.20884ZM5.33333 14.1486C4.72222 14.1486 4.22222 13.6516 4.22222 13.0442C4.22222 12.4367 4.72222 11.9398 5.33333 11.9398C5.94444 11.9398 6.44444 12.4367 6.44444 13.0442C6.44444 13.6516 5.94444 14.1486 5.33333 14.1486ZM18.6667 21.9016C18.0556 21.9016 17.5556 21.4046 17.5556 20.7972C17.5556 20.1898 18.0556 19.6928 18.6667 19.6928C19.2778 19.6928 19.7778 20.1898 19.7778 20.7972C19.7778 21.4046 19.2778 21.9016 18.6667 21.9016Z"
-                      fill="#FF6D43" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_148_1224">
-                      <rect width="27" height="27" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 29 28" fill="none">
-                  <path
-                    d="M22.9583 15.1667V21C22.9583 21.6417 22.4146 22.1667 21.75 22.1667H7.25C6.58542 22.1667 6.04167 21.6417 6.04167 21V15.1667C6.04167 14.525 5.49792 14 4.83333 14C4.16875 14 3.625 14.525 3.625 15.1667V22.1667C3.625 23.45 4.7125 24.5 6.04167 24.5H22.9583C24.2875 24.5 25.375 23.45 25.375 22.1667V15.1667C25.375 14.525 24.8313 14 24.1667 14C23.5021 14 22.9583 14.525 22.9583 15.1667ZM15.7083 14.7817L17.98 12.5883C18.4513 12.1333 19.2125 12.1333 19.6838 12.5883C20.155 13.0433 20.155 13.7783 19.6838 14.2333L15.3458 18.4217C14.8746 18.8767 14.1133 18.8767 13.6421 18.4217L9.30417 14.2333C8.83292 13.7783 8.83292 13.0433 9.30417 12.5883C9.77542 12.1333 10.5367 12.1333 11.0079 12.5883L13.2917 14.7817V4.66667C13.2917 4.025 13.8354 3.5 14.5 3.5C15.1646 3.5 15.7083 4.025 15.7083 4.66667V14.7817Z"
-                    fill="#FF6D43" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M9 21H18C18.83 21 19.54 20.5 19.84 19.78L22.86 12.73C22.95 12.5 23 12.26 23 12V10C23 8.9 22.1 8 21 8H14.69L15.64 3.43L15.67 3.11C15.67 2.7 15.5 2.32 15.23 2.05L14.17 1L7.58 7.59C7.22 7.95 7 8.45 7 9V19C7 20.1 7.9 21 9 21ZM9 9L13.34 4.66L12 10H21V12L18 19H9V9ZM1 9H5V21H1V9Z"
-                    fill="#FF6D43" />
-                </svg>
 
+                <!-- share icon list view -->
+                <img [src]="logoCollection[5].logo.url" class="icons">
+                <!-- download icon list view -->
+                <img [src]="logoCollection[6].logo.url" class="icons">
+                <!-- like icon list view -->
+                <img [src]="logoCollection[7].logo.url" class="icons">
+                <!-- comment icon list view -->
+                <img [src]="logoCollection[4].logo.url" class="icons">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M15 4V11H5.17L4.58 11.59L4 12.17V4H15ZM16 2H3C2.45 2 2 2.45 2 3V17L6 13H16C16.55 13 17 12.55 17 12V3C17 2.45 16.55 2 16 2ZM21 6H19V15H6V17C6 17.55 6.45 18 7 18H18L22 22V7C22 6.45 21.55 6 21 6Z"
-                    fill="#FF6D43" />
-                </svg>
-                <!-- <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
-                style="float: right;margin-top: -10px;"> Published on <br /> <strong>{{ item.details.publishedOnDate
-                  }}</strong></p> -->
                 <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
                   style="float: right;margin-top: -10px;">
                   Published on <br><strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy' :'UTC' }}</strong>
@@ -288,7 +231,7 @@
   </div>
 
 
-
+  <!-- pagination -->
   <div class="pagination">
     <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">Previous</button>
     <span class="pagination-info">{{ currentPage }} / {{ totalPages }}</span>

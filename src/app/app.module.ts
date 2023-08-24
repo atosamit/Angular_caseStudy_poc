@@ -4,11 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SlideShowComponent } from './slide-show/slide-show.component';
 import { GridPageComponent } from './grid-page/grid-page.component';
-import { TapComponent } from './tap/tap.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { TestimonialComponent } from './testimonial/testimonial.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -16,13 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CaseStudyDetailsComponent } from './case-study-details/case-study-details.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
-import { DemoComponent } from './demo/demo.component';
 import { Testimonial2Component } from './testimonial2/testimonial2.component';
 import { RouterModule } from '@angular/router';
 // import { AuthModule } from '@auth0/auth0-angular';
 import { LoginComponent } from './login/login.component';
 import { Testing1Component } from './testing1/testing1.component';
-import { BrowersSizeComponent } from './browers-size/browers-size.component';
 import { RenderingComponent } from './rendering/rendering.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
@@ -40,17 +36,13 @@ import { ResizeExampleComponent } from './resize-example/resize-example.componen
     HeaderFooterComponent,
     SlideShowComponent,
     GridPageComponent,
-    TapComponent,
-    TestimonialComponent,
     FooterComponent,
     CaseStudyDetailsComponent,
     LandingPageComponent,
     DetailsPageComponent,
-    DemoComponent,
     Testimonial2Component,
     LoginComponent,
     Testing1Component,
-    BrowersSizeComponent,
     RenderingComponent,
     ResizeExampleComponent,
   ],

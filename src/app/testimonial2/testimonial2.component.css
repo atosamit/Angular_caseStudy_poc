@@ -220,25 +220,102 @@
 @media screen and (max-width: 820px) {
 
 
+    .test-heading {
+
+        font-size: 21px;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-style: normal;
+        line-height: normal;
+    }
+
+ 
 
     .test-div3 {
 
         flex-wrap: wrap;
 
-        width: 60%;
+        width: 80%;
 
     }
 
-
+ 
 
     .test-videoimage {
 
-        width: 100%;
+         width: 90%;
 
         height: auto;
 
+        margin-left: 5%;
+
+     
+
     }
 
+ 
+
+    .test-leftarrow,.test-rightarrow{
+
+        height: 50px;
+
+        width: 32px;
+
+    }
+
+ 
+
+    .test-main-title{
+
+        font-size: 20px;
+
+        width: 120%;
+
+        margin-left: -10%;
+
+    }
+
+ 
+
+    .test-main-description{
+
+        font-size: 12px;
+
+        width: 120%;
+
+        margin-left: -10%;
+
+       
+
+    }
+
+ 
+
+    .test-main-authorName{
+
+        font-size: 15px;
+
+        width: 120%;
+
+        margin-left: -10%;
+
+    }
+
+ 
+
+    .test-main-authorSmall{
+
+        font-size: 14px;
+
+        width: 120%;
+
+        margin-left: -10%;
+
+    }
+
+ 
+
+   
 }
 
 

@@ -22,6 +22,16 @@
 .breadcrumb-item a {
     color: #000;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 3px;
+}
+
+
+
+#home_breadcrumb {
+    text-decoration-line: underline;
+    font-weight: 500;
 }
 
 .breadcrumb-separator {
@@ -66,6 +76,8 @@
     margin-left: 9%;
     font-weight: 700;
 }
+
+
 
 /* ................................................................... */
 
@@ -845,7 +857,7 @@ body {
     font-size: 40px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 43px;
+    margin-top: 4px;
     text-decoration: underline;
     text-decoration-color: #ff6d43;
     letter-spacing: 2px;
@@ -1600,6 +1612,7 @@ body {
         width: 109%;
         margin-left: -2%;
     }
+
     .case-study-left-part {
         background-repeat: no-repeat;
         background-color: rgb(255, 255, 255);
@@ -1613,16 +1626,16 @@ body {
 
     .nestle-img {
         height: 102px;
-    margin-top: -153%;
-    margin-left: 1.5%;
-    position: relative;
+        margin-top: -153%;
+        margin-left: 1.5%;
+        position: relative;
     }
 
     .delivery-img {
         margin-top: -17rem;
-    height: 66%;
-    margin-left: 8rem;
-    position: relative;
+        height: 66%;
+        margin-left: 8rem;
+        position: relative;
     }
 
     .case-study-title {
@@ -1664,26 +1677,26 @@ body {
     }
 
     .right-part-content {
-    margin-left: 5%;
-    margin-top: 1%;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 25px;
-}
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 25px;
+    }
 
     .right-part-label2 {
-    margin-top: 0.5%;
-    margin-left: 5%;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 8px;
-}
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 8px;
+    }
 
-   .right-part-label3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 3px 0 1px;
-}
+    .right-part-label3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
 
     .action-buttons {
         margin-top: 7px;
@@ -1726,13 +1739,13 @@ body {
 
     .case-study-title {
         color: #FFF;
-    height: 50px;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    text-transform: capitalize;
-    margin-left: 2.5%;
-    margin-top: -56%;
+        height: 50px;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 2.5%;
+        margin-top: -56%;
     }
 
     .share {
@@ -2403,7 +2416,7 @@ body {
 
 }
 
-@media screen and (min-width: 912px) and (max-width:1002px){
+@media screen and (min-width: 912px) and (max-width:1002px) {
     .nestle-img {
         height: 129px;
         margin-top: -110%;
@@ -2412,16 +2425,18 @@ body {
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width:1270px){
+@media screen and (min-width: 1024px) and (max-width:1270px) {
     .case-study-left-part {
         background-color: rgb(205, 211, 211);
     }
-   
+
 }
-@media screen and (min-width: 1440px)and (max-width:2459px){
+
+@media screen and (min-width: 1440px)and (max-width:2459px) {
     .case-study-left-part {
         background-color: rgb(205, 211, 211);
     }
+
     .nestle-img {
         height: 115px;
         margin-top: -141%;

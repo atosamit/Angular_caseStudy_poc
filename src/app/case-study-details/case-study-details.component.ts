@@ -131,11 +131,13 @@ export class CaseStudyDetailsComponent  {
             }
           }
             ... on DetailsPageArtifacts{
-            title1
-            screen
-            tool
+              title1
+              noOfScreenDesigned
+              screen
+              toolUsed
+              tool
             image{
-              url
+          url
             }
           }
           ... on DetailsPageKey{
@@ -191,6 +193,8 @@ export class CaseStudyDetailsComponent  {
 
         this.PageKey = response.data.detailsPage.additionalReferencesCollection.items[8];
         this.Testimonials = response.data.detailsPage.additionalReferencesCollection.items[9];
+
+        
 
 
 

@@ -224,6 +224,12 @@ img {
   margin-left: 3%;
   margin-top: -16%;
 }
+/* icons */
+
+.icons{
+  width: 31px;
+  height: 31px;
+}
 
 
 /* toggle */
