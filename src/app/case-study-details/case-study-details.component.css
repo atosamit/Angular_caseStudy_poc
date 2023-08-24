@@ -225,7 +225,7 @@ body {
 }
 
 .container-fluid {
-    width: 99%;
+    width: 100%;
     margin-top: 9%;
 
     flex-wrap: wrap;
@@ -560,12 +560,13 @@ body {
     margin-top: 2%;
     font-style: normal;
     font-weight: 800;
-    width: 38%;
+    width: -1%;
     line-height: normal;
     text-transform: uppercase;
     text-decoration: underline;
     text-decoration-color: #ff6d43;
     letter-spacing: 2px;
+    padding: 9px;
     text-underline-offset: 8px;
 }
 
@@ -827,7 +828,7 @@ body {
     font-family: Montserrat;
     font-size: 18px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.8;
     color: #002D3C;
     margin-left: 8%;
 }
@@ -1308,7 +1309,7 @@ dl, ol, ul {
     .cx-design-img {
         width: 75px;
         height: 75px;
-        margin-left: 0%;
+        margin-left: 3%;
         margin-top: 0%;
         padding-top: 2%;
         flex-shrink: 0;
