@@ -14,6 +14,15 @@ export class CaseStudyDetailsComponent  {
   data: any;
   logo: any;
   projectScope: any;
+  challenges: any;
+  UxApproch: any;
+  PageSolution: any;
+  PageArtifacts: any;
+  PageKey: any;
+  PageArtifacts1: any;
+  PageArtifacts2: any;
+  PageArtifacts3: any;
+  Testimonials: any;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) { 
     this.likesCount = this.likesService.getLikesCount(this.contentId);
@@ -46,113 +55,116 @@ export class CaseStudyDetailsComponent  {
 
     const query = `
     query{
-      detailsPage(id:"3hsx0WpSK1pt0YuHfBaARc"){
-        image{
-          url
+      detailsPage(id:"${id}"){
+      heroImg{
+        url
+      }
+      image{
+        url
+      }
+      caseStudy
+      image1{
+        url
+      }
+      title
+      description
+      domains
+      publishedName
+      publishedOnDate
+      pointOfContact
+      logoCollection{
+        items{
+          ... on Logo{
+            logo{
+              url
+            }
+          }   
         }
-        caseStudy
-        image1{
-          url
-        }
-        title
-        description
-        domains
-        publishedName
-        publishedOnDate
-        pointOfContact
-        logoCollection{
-          items{
-            ... on Logo{
-              logo{
-                url
+      }
+      additionalReferencesCollection{
+        items{
+          ... on  DetailsPageProjectScope{
+            title
+            description
+            scopeListCollection{
+              items{
+                projectScopeList
               }
-            }   
+            }
+            videoImg{
+              url
+            }
+            teamImg{
+              url
+            }
+            title2
+            list
+            list1
+            list2
+            list3
+            list4
+            list5
           }
-        }
-        additionalReferencesCollection{
-          items{
-            ... on  DetailsPageProjectScope{
-              title
-              description
-              scopeListCollection{
-                items{
-                  projectScopeList
-                }
-              }
-              videoImg{
-                url
-              }
-              teamImg{
-                url
-              }
-              title2
-              list
-              list1
-              list2
-              list3
-              list4
-              list5
-            }
-            ... on DetailsPageChallanges{
-              title
-              listCollection{
-                items{
-                  challengesList
-                }
-              }
-              image{
-                url
+          ... on DetailsPageChallanges{
+            title
+            listCollection{
+              items{
+                challengesList
               }
             }
-            ... on DetailsPageUxApproch{
-              title
-              image{
-                url
-              }
+            image{
+              url
             }
-            ... on DetailsPageSolution{
-              title1
-              listCollection{
-                items{
-                  solutionList
-                }
-              }
+          }
+          ... on DetailsPageUxApproch{
+            title
+            image{
+              url
             }
-              ... on DetailsPageArtifacts{
-              title1
-              screen
-              tool
-              image{
-                url
-              }
-            }
-            ... on DetailsPageKey{
-              title
-              image{
-                url
-              }
-              listCollection{
-                items{
-                  keysList
-                }
-              }
-            }
-            ... on DetailsPageTestimonials{
-              title
-              note1{
-                url
-              }
-              note2{
-                url
-              }
-              note3{
-                url
+          }
+          ... on DetailsPageSolution{
+            title1
+            listCollection{
+              items{
+                solutionList
               }
             }
           }
-        }
+            ... on DetailsPageArtifacts{
+            title1
+            screen
+            tool
+            image{
+              url
+            }
+          }
+          ... on DetailsPageKey{
+            title
+            image{
+              url
+            }
+            listCollection{
+              items{
+                keysList
+              }
+            }
+          }
+          ... on DetailsPageTestimonials{
+            title
+            note1{
+              url
+            }
+            note2{
+              url
+            }
+            note3{
+              url
+            }
+          }
       }
       }
+    }
+    }
     `;
 
     this.http.post(endpoint, {  query, variables: { id } }, { headers }).subscribe(
@@ -164,6 +176,34 @@ export class CaseStudyDetailsComponent  {
         console.log(this.logo)
         this.projectScope = response.data.detailsPage.additionalReferencesCollection.items[0];
         console.log(this.projectScope)
+// challeges from cms
+        this.challenges = response.data.detailsPage.additionalReferencesCollection.items[1];
+// UxApproch from cms
+        this.UxApproch = response.data.detailsPage.additionalReferencesCollection.items[2];
+// PageSolution from cms created instance
+        this.PageSolution = response.data.detailsPage.additionalReferencesCollection.items[3];
+
+// images using m=cms
+        this.PageArtifacts = response.data.detailsPage.additionalReferencesCollection.items[4];
+        this.PageArtifacts1 = response.data.detailsPage.additionalReferencesCollection.items[5];
+        this.PageArtifacts2 = response.data.detailsPage.additionalReferencesCollection.items[6];
+        this.PageArtifacts3 = response.data.detailsPage.additionalReferencesCollection.items[7];
+
+        this.PageKey = response.data.detailsPage.additionalReferencesCollection.items[8];
+        this.Testimonials = response.data.detailsPage.additionalReferencesCollection.items[9];
+
+
+
+
+       
+
+
+
+
+
+
+
+    
       },
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
@@ -216,41 +256,8 @@ export class CaseStudyDetailsComponent  {
     }
   ]
 
-  project_scope: any = [
-    {
-      heading: "Project Scope ",
-      text1: "Design and Develop a Native Mobile App to allow Nestle field users to plan and perform their daily work and collect all required data. ​Key Tasks of Technicians:",
-      text2: "  Administer the work. (Beverage dispenser with / without linked Accessory installed, spare part replaced, T&M recorded etc.…).",
-      text3: "  Collect information: Details about the beverage dispenser’s and customer outlet’s condition. Sales data (Cup sales), Quality survey (technicians fill a survey to measure- and track the quality of the beverages and the trade assets as well), etc."
-    }
-  ]
 
-  Challenges: any = [
-    {
-      heading: "Challenges",
-      text1: " Limited UX Budget and Stringent timeline",
-      text2: " Selection of Development platform : Mendix instead of bespoke development for a complex App like this. ",
-      text3: " Understand the work process either from Documents, video recordings or from a 3rd person instead from the actual user.",
-      text4: " Understand Mendix and the widgets available for Native App Development ",
-      text5: " Design Screens as per Out of Box widgets available in Mendix and the same time design the best User Experience",
-      text6: " Support the Mendix Dev team during custom widget development ",
-      text7: " Mis conception of UX/UI not needed for an out of box COTS product ",
-      text8: " No Budget to carry out complete UX Process like research, User testing etc.",
-      text9: " Create awareness about UX process to incorporate for a rich product output to business"
-    }
-  ]
-
-  solution: any = [
-    {
-      heading: "Solution",
-      text1: "Adaptive solution to support various targeted form factors",
-      text2: "Enhanced reporting by means of dashboard and logical sectioning of huge amount of data",
-      text3: "Dynamic reporting and Interactive interface that helps the user access the data at the required grain in few clicks",
-      text4: "Data visualization using charts and graphs to make data easily understandable",
-      text5: "Mobile accessibility that enables you to make informed decisions and offer a quick response irrespective of the user’s location",
-      text6: "Single source of truth by consolidating the data into the app and seamless integration"
-    }
-  ]
+ 
 title:any="our UX approach"
   cx_design: any = [
     {

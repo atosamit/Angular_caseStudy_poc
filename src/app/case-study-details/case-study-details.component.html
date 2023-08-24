@@ -27,7 +27,7 @@
         <div class="col-lg-6 case-study-left-part">
             <!-- <div> -->
             <!-- <div class="background-img"> </div> -->
-            <img src="../assets/Rect1.png" class="background_img">
+            <img [src]="data.heroImg.url" class="background_img">
 
             <img class="nestle-img" src="{{data.image.url}}">
 
@@ -118,7 +118,7 @@
 <div class="container-fluid mt-1" style="background: #F8F8F8;">
     <div class="row1" style="display: flex;
     flex-wrap: wrap;
-    margin: -15px;" *ngFor="let data of project_scope">
+    margin: -15px;">
         <div class="col-sm-7" >
             <p class="project-scope-title">
                 {{projectScope.title}}
@@ -131,10 +131,10 @@
             </h1>
             <ul class="project-scope-list">
                 <li>
-                    <div style="padding: 10px; " class="project-scope-content11"> {{data.text2}} </div>
+                    <div style="padding: 10px; " class="project-scope-content11"> {{projectScope.scopeListCollection.items[0].projectScopeList}}</div>
                 </li>
                 <li>
-                    <div class="project-scope-content11"> {{data.text3}} </div>
+                    <div class="project-scope-content11">{{projectScope.scopeListCollection.items[1].projectScopeList}} </div>
                 </li>
             </ul>
 
@@ -152,45 +152,45 @@
 
 
 <div class="container mt-5" style="padding: -10px;" style="background-color: white;">
-    <div class="row" *ngFor="let data of Challenges">
+    <div class="row" >
 
         <div class="col-sm-9">
-            <p class="challenges-label">{{data.heading}}
+            <p class="challenges-label">{{challenges.title}}
             </p>
             <div class="line1"></div>
 
             <ul class="challenge-list" style="font:inherit;">
                 <li>
-                    <div class="challenges-label1">{{data.text1}}</div>
+                    <div class="challenges-label1">{{challenges.listCollection.items[0].challengesList}}</div>
                 </li>
                 <li>
-                    <diV class="challenges-label2"> {{data.text2}}</diV>
+                    <diV class="challenges-label2"> {{challenges.listCollection.items[1].challengesList}}</diV>
                 </li>
                 <li>
-                    <div class="challenges-label3"> {{data.text3}} </div>
+                    <div class="challenges-label3"> {{challenges.listCollection.items[2].challengesList}} </div>
                 </li>
                 <li>
-                    <div class="challenges-label4"> {{data.text4}}</div>
+                    <div class="challenges-label4"> {{challenges.listCollection.items[3].challengesList}}</div>
                 </li>
                 <li>
-                    <div class="challenges-label5"> {{data.text5}}</div>
+                    <div class="challenges-label5"> {{challenges.listCollection.items[4].challengesList}}</div>
                 </li>
                 <li>
-                    <div class="challenges-label6"> {{data.text6}} </div>
+                    <div class="challenges-label6"> {{challenges.listCollection.items[5].challengesList}} </div>
                 </li>
                 <li>
-                    <div class="challenges-label7"> {{data.text7}} </div>
+                    <div class="challenges-label7"> {{challenges.listCollection.items[6].challengesList}} </div>
                 </li>
                 <li>
-                    <div class="challenges-label8">{{data.text8}}</div>
+                    <div class="challenges-label8">{{challenges.listCollection.items[7].challengesList}}</div>
                 </li>
                 <li>
-                    <div class="challenges-label9"> {{data.text9}} </div>
+                    <div class="challenges-label9"> {{challenges.listCollection.items[8].challengesList}} </div>
                 </li>
             </ul>
         </div>
         <div class="col-sm-3">
-            <img style="padding-top: 38%;" class="img-responsive" src="assets/images (1) 1.svg">
+            <img style="padding-top: 38%;" class="img-responsive" [src]="challenges.image.url">
         </div>
 
     </div>
@@ -206,7 +206,7 @@
         <div class="col-sm-12">
             <div class="part6-heading">{{title}}</div>
             <br><br>
-            <img class="uximg" src="assets/Approch 1.svg">
+            <img class="uximg" [src]="UxApproch.image.url">
         </div>
 
     </div>
@@ -220,32 +220,32 @@
 <!-- solution part ......................................................................................................-->
 
 <div class="container mt-5">
-    <div class="row" *ngFor="let data of solution">
+    <div class="row" >
         <div class="col-sm-12">
             <div id="solution-part-heading" class="solution-part-heading">
-                {{data.heading}}
+                {{PageSolution.title1}}
             </div>
             <div class="line44"></div>
 
             <div class="solution-part-text">
                 <ul class="solution-list" style=" letter-spacing:0.01cqb; font:inherit;">
                     <li>
-                        <div class="solution-text1"> {{data.text1}} </div>
+                        <div class="solution-text1"> {{PageSolution.listCollection.items[0].solutionList}} </div>
                     </li>
                     <li>
-                        <div class="solution-text2"> {{data.text2}} </div>
+                        <div class="solution-text2"> {{PageSolution.listCollection.items[1].solutionList}} </div>
                     </li>
                     <li>
-                        <div class="solution-text3"> {{data.text3}} </div>
+                        <div class="solution-text3"> {{PageSolution.listCollection.items[2].solutionList}} </div>
                     </li>
                     <li>
-                        <div class="solution-text4"> {{data.text4}}</div>
+                        <div class="solution-text4"> {{PageSolution.listCollection.items[3].solutionList}}</div>
                     </li>
                     <li>
-                        <div class="solution-text5"> {{data.text5}} </div>
+                        <div class="solution-text5"> {{PageSolution.listCollection.items[4].solutionList}} </div>
                     </li>
                     <li>
-                        <div class="solution-text6"> {{data.text6}} </div>
+                        <div class="solution-text6"> {{PageSolution.listCollection.items[5].solutionList}} </div>
                     </li>
                 </ul>
             </div>
@@ -259,9 +259,9 @@
         <div class="row"  *ngFor="let data of cx_design">
             <div class="col-sm-12" >
 
-                <div class="cx-design-img"> <img src={{data.img}}></div>
+                <div class="cx-design-img"> <img src={{projectScope.teamImg.url}}></div>
 
-                <div id="cx-design-heading" class="cx-design-heading"><label>{{data.heading}}</label></div>
+                <div id="cx-design-heading" class="cx-design-heading"><label>{{projectScope.title2}}</label></div>
 
                 <ul class="cx_design_options">
                     <div style=" float: left; ">
@@ -270,7 +270,7 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                             </svg>
-                            <label style="padding: 6px;">{{data.text1}} <img style="padding: 10px;"
+                            <label style="padding: 6px;">{{projectScope.list}} <img style="padding: 10px;"
                                     src="assets/Line 9.png"></label>
                         </div>
 
@@ -282,7 +282,7 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                             </svg>
-                            <label style="padding: 6px;">{{data.text2}} <img style="padding: 10px;"
+                            <label style="padding: 6px;">{{projectScope.list1}} <img style="padding: 10px;"
                                     src="assets/Line 9.png"></label>
                         </div>
                     </div>
@@ -293,7 +293,7 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                             </svg>
-                            <label style="padding: 6px;">{{data.text3}} <img style="padding: 10px;"
+                            <label style="padding: 6px;">{{projectScope.list2}} <img style="padding: 10px;"
                                     src="assets/Line 9.png"></label>
                         </div>
                     </div>
@@ -304,7 +304,7 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                             </svg>
-                            <label style="padding: 6px;">{{data.text4}} <img style="padding: 10px;"
+                            <label style="padding: 6px;">{{projectScope.list3}} <img style="padding: 10px;"
                                     src="assets/Line 9.png"></label>
                         </div>
                     </div>
@@ -315,7 +315,7 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                             </svg>
-                            <label style="padding: 6px;">{{data.text5}} <img style="padding: 10px;"
+                            <label style="padding: 6px;">{{projectScope.list4}} <img style="padding: 10px;"
                                     src="assets/Line 9.png"></label>
                         </div>
                     </div>
@@ -326,13 +326,14 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                             </svg>
-                            <label style="padding: 6px; margin-top: 5%;">{{data.text6}}</label>
+                            <label style="padding: 6px; margin-top: 5%;">{{projectScope.list5}}</label>
                         </div>
                     </div>
                 </ul>
             </div>
         </div>
     </div>
+    
     <!-- persona .........-->
 
     <div class="container-fluid mt-5" id="container_persona"  style="background: #f3f3f3;">
@@ -342,15 +343,15 @@
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
                     </svg>
-                    {{data.heading}}
+                    {{PageArtifacts.title1}}
                 </div>
-                <div class="persona-text">{{data.text}} <span class="persona-text1">{{data.text1}}</span></div>
+                <div class="persona-text">{{data.text}} <span class="persona-text1">{{PageArtifacts.tool}}</span></div>
                 
             </div>
 
             <div class="col-sm-6 " id="persona_img">
                
-                    <img  class="persona-img-fluid" src={{data.img}}>
+                    <img  class="persona-img-fluid" [src]="PageArtifacts.image.url">
              
             </div>
         </div>
@@ -361,7 +362,7 @@
         <div class="row" *ngFor="let data of user_journey">
             <div class="col-sm-8">
              
-                    <img class="user-journey-img-fluid" src={{data.img}}>
+                    <img class="user-journey-img-fluid" [src]="PageArtifacts1.image.url">
             
             </div>
             <div class="col-sm-4" style="float: right;">
@@ -369,7 +370,7 @@
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
                     </svg>
-                    {{data.heading}}
+                    {{PageArtifacts1.title1}}
                 </div>
 
                 <div class="user-journey-text">
@@ -377,7 +378,7 @@
                 </div>
 
                 <div class="user-journey-text1">
-                    {{data.text1}}
+                    {{PageArtifacts1.tool}}
                 </div>
             </div>
         </div>
@@ -391,20 +392,20 @@
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
                     </svg>
-                    {{data.heading}}
+                    {{PageArtifacts2.title1}}
                 </div>
 
-                <div class="text1"> {{data.text1}}    <span class="text11"> {{data.text11}} </span></div>
+                <div class="text1"> {{data.text1}}    <span class="text11"> {{PageArtifacts2.screen}} </span></div>
 
              
 
-                <div class="text2"> {{data.text2}}<span class="text21"> {{data.text21}} </span> </div>
+                <div class="text2"> {{data.text2}}<span class="text21"> {{PageArtifacts2.tool}} </span> </div>
 
                 
             </div>
             <div class="col-sm-8">
 
-                    <img class="img" src={{data.img}}>
+                    <img class="img" [src]="PageArtifacts2.image.url">
                 
             </div>
         </div>
@@ -418,7 +419,7 @@
         <div class="row" *ngFor="let data of mockups">
             <div class="col-sm-8">
                
-                    <img  class="img-responsive1" src={{data.img}}>
+                    <img  class="img-responsive1" src={{PageArtifacts3.image.url}}>
         
             </div>
 
@@ -427,9 +428,9 @@
 
                 <label class="mockups-heading"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
-                </svg>{{data.heading}}</label>
-                <div class="mockups-text1">{{data.text1}}  <span class="mockups-text11">{{data.text11}}</span></div>
-                <div class="mockups-text1">{{data.text2}}  <span class="mockups-text11">{{data.text21}}</span></div>
+                </svg>{{PageArtifacts3.title1}}</label>
+                <div class="mockups-text1">{{data.text1}}  <span class="mockups-text11">{{PageArtifacts3.screen}}</span></div>
+                <div class="mockups-text1">{{data.text2}}  <span class="mockups-text11">{{PageArtifacts3.tool}}</span></div>
             </div>
         </div>
     </div>
@@ -445,7 +446,7 @@
             <div class="col-sm-9">
                 <div>
                     <label class="keytakeways-heading">
-                        {{data.heading}}
+                        {{PageKey.title}}
                     </label>
                 </div>
 
@@ -453,26 +454,26 @@
                 <div class="keytakeways-label">
                     <ul style="font:inherit;">
                         <li>
-                            <div class="keytakeways-label1">{{data.text1}}</div>
+                            <div class="keytakeways-label1">{{PageKey.listCollection.items[0].keysList}}</div>
                         </li>
                         <li>
-                            <div class="keytakeways-label2"> {{data.text2}} </div>
+                            <div class="keytakeways-label2"> {{PageKey.listCollection.items[1].keysList}} </div>
                         </li>
                         <li>
-                            <div class="keytakeways-label3">{{data.text3}} </div>
+                            <div class="keytakeways-label3">{{PageKey.listCollection.items[2].keysList}} </div>
                         </li>
                         <li>
-                            <div class="keytakeways-label4"> {{data.text4}}</div>
+                            <div class="keytakeways-label4"> {{PageKey.listCollection.items[3].keysList}}</div>
                         </li>
                         <li>
-                            <div class="keytakeways-label5"> {{data.text5}} </div>
+                            <div class="keytakeways-label5"> {{PageKey.listCollection.items[4].keysList}} </div>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="keytakeways-img-container">
-                    <img class="keytakeways-img" src={{data.img}} alt="Key Takeaway Image">
+                    <img class="keytakeways-img" src={{PageKey.image.url}} alt="Key Takeaway Image">
                 </div>
             </div>
         </div>
@@ -486,7 +487,7 @@
         <div class="row" *ngFor="let data of testmonials">
             <div class="col-sm-12">
                 <div class="testimonials-heading">
-                    <h5> <b> {{data.heading}} </b></h5>
+                    <h5> <b> {{Testimonials.title}} </b></h5>
                 </div>
 
                 <div class="line77"></div>
