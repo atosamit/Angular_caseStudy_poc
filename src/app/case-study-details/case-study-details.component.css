@@ -203,7 +203,9 @@
 }
 
 .share {
-    padding-left: 427px;
+  
+        padding-left: 233px;
+   
 }
 
 .download {
@@ -328,24 +330,18 @@ body {
     .challenges-label {
         font-size: 24px;
     }
-}
-
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-@media (max-width: 992px) {
     .img-responsive {
-        max-width: 44%;
+        max-width: 262%;
         height: auto;
         display: block;
         margin: 0 auto;
         margin-top: -36%;
+        margin-left: 111%;
     }
 }
+
+
+
 
 .challenge-list {
     margin-top: 2%;
@@ -864,13 +860,7 @@ body {
     text-underline-offset: 8px;
 }
 
-/* .line66 {
-    background: #FF6D43;
-    width: 355px;
-    height: 5px;
-    margin-top: -1.5%;
-   
-} */
+
 .keytakeways-label {
     color: #000000;
     font-family: Montserrat;
@@ -894,11 +884,17 @@ body {
 }
 
 
-#keytakeways-img-container {
+.keytakeways-img-container {
     display: flex;
     justify-content: center;
     align-items: center;
+  
     height: 100%;
+}
+.col-sm-3 {
+    flex: 0 0 auto;
+    margin-top: 1.5%;
+    width: 24%;
 }
 
 /* Responsive Styling */
@@ -915,7 +911,11 @@ body {
         height: auto;
     }
 }
-
+dl, ol, ul {
+    margin-top: -20px;
+    margin-bottom: 1rem;
+    padding-bottom: 16px;
+}
 
 .keytakeways-label .keytakeways-label1,
 .keytakeways-label .keytakeways-label2,
@@ -926,12 +926,18 @@ body {
     margin-left: 0;
 }
 
+.keytakeways-img {
+    max-width: 100%;
+    height: auto;
+    background: #f3f3f3;
+}
+
 .keytakeways-right-part {
     width: 100%;
     text-align: center;
 }
 
-.keytakeways-right-part img {
+.keytakeways-right-part  {
     padding-left: 0;
     max-width: 100%;
     height: auto;
