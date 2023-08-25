@@ -203,9 +203,9 @@
 }
 
 .share {
-  
-        padding-left: 233px;
-   
+
+    padding-left: 233px;
+
 }
 
 .download {
@@ -330,6 +330,7 @@ body {
     .challenges-label {
         font-size: 24px;
     }
+
     .img-responsive {
         max-width: 262%;
         height: auto;
@@ -889,9 +890,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     height: 100%;
 }
+
 .col-sm-3 {
     flex: 0 0 auto;
     margin-top: 1.5%;
@@ -912,7 +914,10 @@ body {
         height: auto;
     }
 }
-dl, ol, ul {
+
+dl,
+ol,
+ul {
     margin-top: -20px;
     margin-bottom: 1rem;
     padding-bottom: 16px;
@@ -938,7 +943,7 @@ dl, ol, ul {
     text-align: center;
 }
 
-.keytakeways-right-part  {
+.keytakeways-right-part {
     padding-left: 0;
     max-width: 100%;
     height: auto;
@@ -954,38 +959,25 @@ dl, ol, ul {
 
 
 
-.testimonial1{
-
-    max-width: 37%;
-
+.testimonial1 {
+    max-width: 36%;
 }
 
-.testimonial2{
-
+.testimonial2 {
     max-width: 38%;
-
-    margin-left: -7%;
-
+    margin-left: -5%;
     margin-top: -3%;
-
- 
-
 }
 
- 
 
-.testimonial3{
-
-    max-width: 37%;
-
-    margin-left: -7%;
-
+.testimonial3 {
+    max-width: 36%;
+    margin-left: -5%;
 }
 
 @media (max-width: 992px) {
     .testimonials-heading {
         font-size: 24px;
-        /* Adjust the font size as needed */
     }
 }
 
@@ -1750,11 +1742,17 @@ dl, ol, ul {
 
     }
 
-    .keytakeways_points{
-      font: inherit;
-      font-size: 13px;
+    .keytakeways_points {
+        font: inherit;
+        font-size: 13px;
     }
-    .solution-text1, .solution-text2, .solution-text3, .solution-text4, .solution-text5, .solution-text6 {
+
+    .solution-text1,
+    .solution-text2,
+    .solution-text3,
+    .solution-text4,
+    .solution-text5,
+    .solution-text6 {
         padding: 1px;
         color: #000;
         font-family: Montserrat;
@@ -1767,12 +1765,23 @@ dl, ol, ul {
         margin-left: 1%;
     }
 
-    dl, ol, ul{
+    dl,
+    ol,
+    ul {
         margin-top: 5px;
         margin-bottom: 1rem;
         padding-bottom: 16px;
     }
-    .challenges-label1, .challenges-label2, .challenges-label3, .challenges-label4, .challenges-label5, .challenges-label6, .challenges-label7, .challenges-label8, .challenges-label9 {
+
+    .challenges-label1,
+    .challenges-label2,
+    .challenges-label3,
+    .challenges-label4,
+    .challenges-label5,
+    .challenges-label6,
+    .challenges-label7,
+    .challenges-label8,
+    .challenges-label9 {
         color: #000;
         font-family: Montserrat;
         font-size: 14px;
@@ -1784,61 +1793,76 @@ dl, ol, ul {
         padding: 9px;
     }
 
-    dl, ol, ul {
+    dl,
+    ol,
+    ul {
         margin-top: 5px;
         margin-bottom: -3rem;
         padding-bottom: 80px;
         bottom: 73px;
-   
+
     }
 
-    .project-scope-content, .project-scope-content11 {
+    .project-scope-content,
+    .project-scope-content11 {
         font-size: 14px;
         padding: 0%;
     }
+
     .persona-text {
         font-size: 16px;
         font-weight: 600;
     }
+
     .persona-text1 {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
         width: 60%;
     }
+
     .persona-heading {
         font-size: 19px;
         font-weight: 600;
         color: #002D3C;
     }
+
     .user-journey-heading {
         font-size: 19px;
         font-weight: 600;
         color: #002D3C;
     }
+
     .user-journey-text {
         font-size: 16px;
         font-weight: 600;
     }
+
     .user-journey-text1 {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
     }
+
     .heading {
         font-size: 19px;
         font-weight: 600;
         color: #002D3C;
     }
-    .text1, .text2 {
+
+    .text1,
+    .text2 {
         font-size: 16px;
         font-weight: 600;
     }
-    .text11, .text21 {
+
+    .text11,
+    .text21 {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
     }
+
     .mockups-heading {
         font-family: Montserrat;
         font-size: 19px;
@@ -1848,7 +1872,8 @@ dl, ol, ul {
         margin-left: 2%;
         margin-top: 5%;
     }
-    .mockups-text11{
+
+    .mockups-text11 {
         font-family: Montserrat;
         font-size: 16px;
         /* font-weight: 600; */
@@ -1856,6 +1881,7 @@ dl, ol, ul {
         /* color: #002D3C; */
         /* margin-left: 8%; */
     }
+
     .keytakeways-img {
         max-width: 300%;
         height: auto;
@@ -1953,105 +1979,139 @@ dl, ol, ul {
         margin-top: 7px;
         margin-left: 25px;
     }
-    .keytakeways_points{
+
+    .keytakeways_points {
         font: inherit;
         font-size: 13px;
-      }
-      .solution-text1, .solution-text2, .solution-text3, .solution-text4, .solution-text5, .solution-text6 {
-          padding: 1px;
-          color: #000;
-          font-family: Montserrat;
-          font-size: 13px;
-          font-style: normal;
-          letter-spacing: 0.01cqb;
-          font-weight: 400;
-          line-height: 30px;
-          text-transform: capitalize;
-          margin-left: 1%;
-      }
-  
-      dl, ol, ul{
-          margin-top: 5px;
-          margin-bottom: 1rem;
-          padding-bottom: 16px;
-      }
-      .challenges-label1, .challenges-label2, .challenges-label3, .challenges-label4, .challenges-label5, .challenges-label6, .challenges-label7, .challenges-label8, .challenges-label9 {
-          color: #000;
-          font-family: Montserrat;
-          font-size: 14px;
-          font-style: normal;
-          letter-spacing: 0.01em;
-          font-weight: 400;
-          line-height: 32px;
-          text-transform: capitalize;
-          padding: 9px;
-      }
-  
-      dl, ol, ul {
-          margin-top: 5px;
-          margin-bottom: -3rem;
-          padding-bottom: 80px;
-          bottom: 73px;
-     
-      }
-  
-      .project-scope-content, .project-scope-content11 {
-          font-size: 14px;
-          padding: 0%;
-      }
-      .persona-text {
-          font-size: 16px;
-          font-weight: 600;
-      }
-      .persona-text1 {
-          font-size: 15px;
-          font-weight: 400;
-          color: #002D3C;
-          width: 60%;
-      }
-      .persona-heading {
-          font-size: 19px;
-          font-weight: 600;
-          color: #002D3C;
-      }
-      .user-journey-heading {
-          font-size: 19px;
-          font-weight: 600;
-          color: #002D3C;
-      }
-      .user-journey-text {
-          font-size: 16px;
-          font-weight: 600;
-      }
-      .user-journey-text1 {
-          font-size: 15px;
-          font-weight: 400;
-          color: #002D3C;
-      }
-      .heading {
-          font-size: 19px;
-          font-weight: 600;
-          color: #002D3C;
-      }
-      .text1, .text2 {
-          font-size: 16px;
-          font-weight: 600;
-      }
-      .text11, .text21 {
-          font-size: 15px;
-          font-weight: 400;
-          color: #002D3C;
-      }
-      .mockups-heading {
-          font-family: Montserrat;
-          font-size: 19px;
-          font-weight: 600;
-          line-height: 1.2;
-          color: #002D3C;
-          margin-left: 2%;
-          margin-top: 5%;
-      }
-      .mockups-text11 {
+    }
+
+    .solution-text1,
+    .solution-text2,
+    .solution-text3,
+    .solution-text4,
+    .solution-text5,
+    .solution-text6 {
+        padding: 1px;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 13px;
+        font-style: normal;
+        letter-spacing: 0.01cqb;
+        font-weight: 400;
+        line-height: 30px;
+        text-transform: capitalize;
+        margin-left: 1%;
+    }
+
+    dl,
+    ol,
+    ul {
+        margin-top: 5px;
+        margin-bottom: 1rem;
+        padding-bottom: 16px;
+    }
+
+    .challenges-label1,
+    .challenges-label2,
+    .challenges-label3,
+    .challenges-label4,
+    .challenges-label5,
+    .challenges-label6,
+    .challenges-label7,
+    .challenges-label8,
+    .challenges-label9 {
+        color: #000;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        letter-spacing: 0.01em;
+        font-weight: 400;
+        line-height: 32px;
+        text-transform: capitalize;
+        padding: 9px;
+    }
+
+    dl,
+    ol,
+    ul {
+        margin-top: 5px;
+        margin-bottom: -3rem;
+        padding-bottom: 80px;
+        bottom: 73px;
+
+    }
+
+    .project-scope-content,
+    .project-scope-content11 {
+        font-size: 14px;
+        padding: 0%;
+    }
+
+    .persona-text {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .persona-text1 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #002D3C;
+        width: 60%;
+    }
+
+    .persona-heading {
+        font-size: 19px;
+        font-weight: 600;
+        color: #002D3C;
+    }
+
+    .user-journey-heading {
+        font-size: 19px;
+        font-weight: 600;
+        color: #002D3C;
+    }
+
+    .user-journey-text {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .user-journey-text1 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #002D3C;
+    }
+
+    .heading {
+        font-size: 19px;
+        font-weight: 600;
+        color: #002D3C;
+    }
+
+    .text1,
+    .text2 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .text11,
+    .text21 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #002D3C;
+    }
+
+    .mockups-heading {
+        font-family: Montserrat;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #002D3C;
+        margin-left: 2%;
+        margin-top: 5%;
+    }
+
+    .mockups-text11 {
         font-family: Montserrat;
         font-size: 16px;
         /* font-weight: 600; */
@@ -2059,12 +2119,13 @@ dl, ol, ul {
         /* color: #002D3C; */
         /* margin-left: 8%; */
     }
-      .keytakeways-img {
-          max-width: 300%;
-          height: auto;
-          margin-left: 107%;
-          background: #f3f3f3;
-      }
+
+    .keytakeways-img {
+        max-width: 300%;
+        height: auto;
+        margin-left: 107%;
+        background: #f3f3f3;
+    }
 
 }
 
