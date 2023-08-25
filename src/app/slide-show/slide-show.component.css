@@ -770,6 +770,8 @@ img {
   .search_button {
 
       width: 25%;
+      height: 48%;
+      font-size: 14px;
 
       /* left: 90%; */
 
@@ -906,12 +908,12 @@ img {
     
 }
 .search_icon {
-  
   background-repeat: no-repeat;
-  background-position: 10px 4px;
+  background-position: 19px 8px;
   padding-left: 50px;
   text-overflow: ellipsis;
-  background-size: 11%;
+  background-size: 10%;
+  font-size: 13px;
 }
 }
 
