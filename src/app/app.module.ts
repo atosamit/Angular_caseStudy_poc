@@ -11,6 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+
 import { CaseStudyDetailsComponent } from './case-study-details/case-study-details.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
@@ -59,6 +61,8 @@ import { ResizeExampleComponent } from './resize-example/resize-example.componen
     MatFormFieldModule,
     HttpClientModule,
     RouterModule,
+    MatSnackBarModule,
+ 
     // AuthModule.forRoot({
     //   domain: '',
     //   clientId: '',

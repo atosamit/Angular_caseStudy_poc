@@ -29,6 +29,9 @@ export class Testimonial2Component implements OnInit {
        image{
          url
        }
+       video{
+        url
+      }
        title
        description
        author

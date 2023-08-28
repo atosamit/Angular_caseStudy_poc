@@ -752,10 +752,10 @@ body {
 }
 
 .wireframes_heading,
-.text1,
-.text11,
+.wireframes_toolused,
+.wireframes_tool,
 .text2,
-.text21 {
+.wireframes_tool {
     font-family: Montserrat, sans-serif;
     line-height: 1.2;
     margin: 10px 0;
@@ -768,14 +768,14 @@ body {
 
 }
 
-.text1,
+.wireframes_toolused,
 .text2 {
     font-size: 18px;
     font-weight: 600;
 }
 
-.text11,
-.text21 {
+.wireframes_tool,
+.wireframes_tool {
     font-size: 18px;
     font-weight: 400;
     color: #002D3C;
@@ -1507,14 +1507,14 @@ ul {
 
     }
 
-    .text1,
+    .wireframes_toolused,
     .text2 {
         font-size: 34px;
         font-weight: 600;
     }
 
-    .text11,
-    .text21 {
+    .wireframes_tool,
+    .wireframes_tool {
         font-size: 30px;
         font-weight: 400;
         color: #002D3C;
@@ -1768,14 +1768,14 @@ ul {
         color: #002D3C;
     }
 
-    .text1,
+    .wireframes_toolused,
     .text2 {
         font-size: 16px;
         font-weight: 600;
     }
 
-    .text11,
-    .text21 {
+    .wireframes_tool,
+    .wireframes_tool {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
@@ -1990,14 +1990,14 @@ ul {
         color: #002D3C;
     }
 
-    .text1,
+    .wireframes_toolused,
     .text2 {
         font-size: 16px;
         font-weight: 600;
     }
 
-    .text11,
-    .text21 {
+    .wireframes_tool,
+    .wireframes_tool {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;

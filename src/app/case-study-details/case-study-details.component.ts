@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LikesService } from '../services/likes.service';
+import {  MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-case-study-details',
@@ -23,8 +24,11 @@ export class CaseStudyDetailsComponent  {
   PageArtifacts2: any;
   PageArtifacts3: any;
   Testimonials: any;
+  logoCollection: any;
+  snackBar: any;
+  
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) { 
+  constructor( private _snackBar: MatSnackBar,private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) { 
     this.likesCount = this.likesService.getLikesCount(this.contentId);
     
   }
@@ -194,6 +198,8 @@ export class CaseStudyDetailsComponent  {
         this.PageKey = response.data.detailsPage.additionalReferencesCollection.items[8];
         this.Testimonials = response.data.detailsPage.additionalReferencesCollection.items[9];
 
+        this.logoCollection=response.data.detailsPage.additionalReferencesCollection.items[10];
+
         
 
 
@@ -240,8 +246,13 @@ export class CaseStudyDetailsComponent  {
     }
   }
 
-
-
+  showSnackbar(message: string) {
+    this.snackBar.open(message, 'Dismiss', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
+  }
   publish: any = [
     {
       name: "Published Name:",
