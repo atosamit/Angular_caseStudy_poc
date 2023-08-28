@@ -22,10 +22,32 @@
     align-items: center;
   }
   
-
+.icons-container{
+  float: right;
+}
   @media (min-width: 2560px) {
     #Header{
       height: 150%;
       background-color: rgb(163, 112, 45);
     }
+  }
+
+
+  @media screen and (min-width: 375px) and (max-width: 600px) {
+    .icons-container {
+      float: right;
+      margin-top: -55px;
+      height: auto;
+      width: 39%;
+  }
+  .navbar-brand{
+   
+    height: auto;
+    width: 37%;
+  }
+  .navbar{
+    height: 56px;
+    width: 100%;
+    box-shadow: 0 2px 3px #888;
+  }
   }

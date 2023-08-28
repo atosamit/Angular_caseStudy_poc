@@ -737,9 +737,9 @@ img {
 
   .search_box {
 
-      width: 70%;
+    width: 70%;
 
-      height: 70px;
+    height: 70px;
 
   }
 
@@ -747,9 +747,9 @@ img {
 
   .search_element {
 
-      width: 90%;
+    width: 90%;
 
-      /* left: 5%; */
+    /* left: 5%; */
 
   }
 
@@ -757,11 +757,10 @@ img {
 
   .search_icon {
 
-      width: 50%;
+    width: 50%;
 
-      height: 50%;
-
-      /* left: 10px; */
+    height: 57%;
+    border-radius: 6px;
 
   }
 
@@ -769,13 +768,13 @@ img {
 
   .search_button {
 
-      width: 25%;
-      height: 48%;
-      font-size: 14px;
+    margin-left: 20px;
+    height: 52%;
+    font-size: 14px;
 
-      /* left: 90%; */
+    /* left: 90%; */
 
-      /* transform: translateX(-50%); */
+    /* transform: translateX(-50%); */
 
   }
 
@@ -791,7 +790,7 @@ img {
 
   .search_box {
 
-      width: 95%;
+    width: 95%;
 
   }
 
@@ -799,9 +798,9 @@ img {
 
   .search_element {
 
-      width: 95%;
+    width: 95%;
 
-      /* left: 2.5%; */
+    /* left: 2.5%; */
 
   }
 
@@ -809,21 +808,20 @@ img {
 
   .search_icon {
 
-      width: 60%;
-
-      /* left: 5px; */
-
+    width: 66%;
+    margin-right: -5%
   }
 
 
 
   .search_button {
 
-      width: 30%;
+    width: 20%;
+    border-radius: 8px;
 
-      /* left: 80%; */
+    /* left: 80%; */
 
-      /* transform: translateX(-50%); */
+    /* transform: translateX(-50%); */
 
   }
 
@@ -831,11 +829,7 @@ img {
 
 
 
-@media screen and (max-width: 1440px) {
-
- 
-
-}
+@media screen and (max-width: 1440px) {}
 
 
 
@@ -847,7 +841,7 @@ img {
 
   .search_box {
 
-      width: 70%;
+    width: 70%;
 
   }
 
@@ -861,7 +855,7 @@ img {
 
   .search_box {
 
-      width: 90%;
+    width: 90%;
 
   }
 
@@ -869,9 +863,9 @@ img {
 
   .search_icon {
 
-      width: 70%;
+    width: 70%;
 
-      /* left: 10px; */
+    /* left: 10px; */
 
   }
 
@@ -879,13 +873,13 @@ img {
 
   .search_button {
 
-      width: 20%;
+    width: 20%;
 
-      /* top: 16%;
+    /* top: 16%;
 
       left: 88%; */
 
-      /* transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
 
   }
 
@@ -898,22 +892,22 @@ img {
 
   margin-top: -1em;
 
-}  
+}
 
 @media screen and (min-width: 360px) and (max-width: 600px) {
   .search_box {
-    
-    margin-top: -3.5rem;
-    
-    
-}
-.search_icon {
-  background-repeat: no-repeat;
-  background-position: 19px 8px;
-  padding-left: 50px;
-  text-overflow: ellipsis;
-  background-size: 10%;
-  font-size: 13px;
-}
-}
 
+    margin-top: -3.5rem;
+
+
+  }
+
+  .search_icon {
+    background-repeat: no-repeat;
+    background-position: 2px 8px;
+    padding-left: 29px;
+    text-overflow: ellipsis;
+    background-size: 10%;
+    font-size: 12px;
+  }
+}
