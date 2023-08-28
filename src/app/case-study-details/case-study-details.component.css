@@ -79,7 +79,7 @@
 
 
 
-/* ................................................................... */
+/* ............................case study....................................... */
 
 
 .case-study-left-part {
@@ -94,14 +94,6 @@
     height: 494px;
 }
 
-.case-study-right-part {
-    float: left;
-    margin-top: -8%;
-    overflow: hidden;
-    position: relative;
-    background-color: rgb(205, 211, 211);
-    height: 494px;
-}
 
 .delivery-img {
     margin-top: -24rem;
@@ -133,11 +125,20 @@
     margin-top: -29%;
 }
 
+.case-study-right-part {
+    float: left;
+    margin-top: -8%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(205, 211, 211);
+    height: 494px;
+}
+
 .right-part-title,
-.right-part-content,
-.right-part-label1,
-.right-part-label2,
-.right-part-label3 {
+.CaseStudy_description,
+.CaseStudy_domain,
+.CaseStudy_name,
+.CaseStudy_nameDesc {
     display: flex;
     flex-shrink: 0;
     color: #000;
@@ -155,7 +156,7 @@
     line-height: normal;
 }
 
-.right-part-content {
+.CaseStudy_description {
     margin-left: 5%;
     margin-top: 1%;
     font-size: 16px;
@@ -163,7 +164,7 @@
     line-height: 25px;
 }
 
-.right-part-label1 {
+.CaseStudy_domain {
     margin-top: 10px;
     margin-left: 5%;
     font-size: 16px;
@@ -171,7 +172,7 @@
     line-height: 25px;
 }
 
-.right-part-label2 {
+.CaseStudy_name {
     margin-top: 0.5%;
     margin-left: 5%;
     font-size: 16px;
@@ -180,14 +181,14 @@
     width: fit-content;
 }
 
-.right-part-label2,
-.right-part-label3 {
+.CaseStudy_name,
+.CaseStudy_nameDesc {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.right-part-label3 {
+.CaseStudy_nameDesc {
     font-size: 16px;
     font-weight: 600;
     margin: 0 0 1px;
@@ -198,7 +199,7 @@
     margin-left: 25px;
 }
 
-.like1 {
+.like {
     padding-left: 20px;
 }
 
@@ -217,6 +218,16 @@
 }
 
 /* ................project scope............................... */
+
+#project_scope {
+    background: #F8F8F8;
+}
+
+#projectscope_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+}
 
 body {
     margin: 0;
@@ -250,9 +261,10 @@ body {
     text-underline-offset: 8px;
 }
 
-.project-scope-content,
-.project-scope-content11 {
+.project-description,
+.project-scope-Inlist {
     color: #000;
+    padding: 10px;
     font-family: Montserrat;
     font-size: 16px;
     font-style: normal;
@@ -297,19 +309,27 @@ body {
         font-weight: 600;
     }
 
-    .project-scope-content,
-    .project-scope-content11 {
+    .project-description,
+    .project-scope-Inlist {
         font-size: 16px;
         padding: 0%;
     }
 }
 
 /* .............................challenge........................................................... */
+#challenges_main {
+    background-color: white;
+    padding: -10px;
+}
 
 .challenges {
     width: 60%;
     height: 530px;
     padding-top: -200px;
+}
+
+.img-responsive {
+    padding-top: 38%;
 }
 
 .challenges-label {
@@ -336,6 +356,7 @@ body {
         height: auto;
         display: block;
         margin: 0 auto;
+
         margin-top: -36%;
         margin-left: 111%;
     }
@@ -359,15 +380,8 @@ body {
     margin-bottom: -30px;
 }
 
-.challenges-label1,
-.challenges-label2,
-.challenges-label3,
-.challenges-label4,
-.challenges-label5,
-.challenges-label6,
-.challenges-label7,
-.challenges-label8,
-.challenges-label9 {
+.challenges-label1
+ {
     color: #000;
     font-family: Montserrat;
     font-size: 16px;
@@ -398,7 +412,7 @@ body {
 }
 
 /* .....................ux approach...................... */
-.part6-heading {
+.ux_heading {
     color: #002D3C;
     font-size: 40px;
     margin-top: -1%;
@@ -414,14 +428,14 @@ body {
     text-underline-offset: 8px;
 }
 
-.uximg {
+.ux_img {
     width: 100%;
     padding-inline: 20px;
     height: auto;
 }
 
 @media (max-width: 2000px) {
-    .uximg {
+    .ux_img {
         width: 97%;
 
     }
@@ -429,7 +443,7 @@ body {
 
 @media (max-width: 992px) {
 
-    .part6-heading,
+    .ux_heading,
     .line33 {
         font-size: 24px;
         /* Adjust the font size as needed */
@@ -504,16 +518,12 @@ body {
 
 }
 
-.solution-list li {
+.solution-list {
     margin-bottom: -10px;
+    letter-spacing: 0.01cqb;
 }
 
-.solution-text1,
-.solution-text2,
-.solution-text3,
-.solution-text4,
-.solution-text5,
-.solution-text6 {
+.solution-text1 {
     padding: 8px;
     color: #000;
     font-family: Montserrat;
@@ -534,6 +544,10 @@ body {
     height: 250px;
     flex-shrink: 0;
     background-color: #F8F8F8;
+}
+
+#cxDesign_main {
+    background: #f3f3f3;
 }
 
 .cx-design-img {
@@ -579,12 +593,7 @@ body {
 }
 
 
-.list-data1,
-.list-data2,
-.list-data3,
-.list-data4,
-.list-data5,
-.list-data6 {
+.list-data1 {
     color: #0B83AB;
     font-family: Montserrat;
     font-size: 16px;
@@ -608,6 +617,10 @@ body {
 /* .container-fluid {
     padding: 20px;
 } */
+
+#container_persona {
+    background: #f3f3f3;
+}
 
 .row {
     direction: row;
@@ -639,8 +652,8 @@ body {
 }
 
 .persona-heading,
-.persona-text,
-.persona-text1 {
+.persona-toolused,
+.persona-tool {
     font-family: Montserrat, sans-serif;
     line-height: 1.2;
     margin: 10px 0;
@@ -654,12 +667,12 @@ body {
 
 }
 
-.persona-text {
+.persona-toolused {
     font-size: 18px;
     font-weight: 600;
 }
 
-.persona-text1 {
+.persona-tool {
     font-size: 18px;
     font-weight: 400;
     color: #002D3C;
@@ -683,8 +696,8 @@ body {
 }
 
 .user-journey-heading,
-.user-journey-text,
-.user-journey-text1 {
+.user-journey-toolused,
+.user-journey-tool {
     font-family: Montserrat, sans-serif;
     line-height: 1.2;
     margin: 10px 0;
@@ -697,12 +710,12 @@ body {
 
 }
 
-.user-journey-text {
+.user-journey-toolused {
     font-size: 18px;
     font-weight: 600;
 }
 
-.user-journey-text1 {
+.user-journey-tool {
     font-size: 18px;
     font-weight: 400;
     color: #002D3C;
@@ -722,27 +735,23 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+#wireframe_main{
+    background: #f3f3f3;
+}
 
-/* 
-.container {
-    padding: 20px;
-} */
 
 .row {
     display: flex;
     flex-wrap: wrap;
     margin: -15px;
-    /* Adjust margin for gutters */
 }
 
 .col-sm-4,
 .col-sm-8 {
     flex: 0 0 calc(50% - 30px);
-    /* Adjust column width and gutters */
-    /* padding: 15px; */
 }
 
-.heading,
+.wireframes_heading,
 .text1,
 .text11,
 .text2,
@@ -752,7 +761,7 @@ body {
     margin: 10px 0;
 }
 
-.heading {
+.wireframes_heading {
     font-size: 24px;
     font-weight: 600;
     color: #002D3C;
@@ -786,22 +795,15 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* .container {
-    padding: 20px;
-} */
-
 .row {
     display: flex;
     flex-wrap: wrap;
     margin: -15px;
-    /* Adjust margin for gutters */
 }
 
 .col-sm-4,
 .col-sm-8 {
     flex: 0 0 calc(50% - 30px);
-    /* Adjust column width and gutters */
-    /* padding: 15px; */
 }
 
 .img-responsive1 {
@@ -817,7 +819,6 @@ body {
     font-weight: 600;
     line-height: 1.2;
     color: #002D3C;
-
     margin-left: 2%;
     margin-top: 5%;
 }
@@ -849,6 +850,10 @@ body {
 }
 
 /* ........................key.................................................. */
+#keytakeways_main{
+    background: #f3f3f3;
+}
+
 .keytakeways-heading {
     color: #002D3C;
     font-family: Montserrat;
@@ -881,10 +886,8 @@ body {
 @media (max-width: 992px) {
     .keytakeways-heading {
         font-size: 24px;
-        /* Adjust the font size as needed */
     }
 }
-
 
 .keytakeways-img-container {
     display: flex;
@@ -900,13 +903,10 @@ body {
     width: 24%;
 }
 
-/* Responsive Styling */
-@media (max-width: 992px) {
-    /* Existing styles */
 
+@media (max-width: 992px) {
     .keytakeways-img-container {
         height: auto;
-        /* Adjust as needed */
     }
 
     .keytakeways-img {
@@ -951,14 +951,6 @@ ul {
 
 
 /*  ....................................*/
-
-/* .testmonials-img img {
-    width: 100%;
-    height: auto;
-} */
-
-
-
 .testimonial1 {
     max-width: 36%;
 }
@@ -968,7 +960,6 @@ ul {
     margin-left: -5%;
     margin-top: -3%;
 }
-
 
 .testimonial3 {
     max-width: 36%;
@@ -981,9 +972,7 @@ ul {
     }
 }
 
-
 .testimonials-heading h5 {
-    /* margin-left: 1%; */
     color: #002D3C;
     font-size: 40px;
     width: 28%;
@@ -992,7 +981,6 @@ ul {
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
-
     text-decoration: underline;
     text-decoration-color: #ff6d43;
     letter-spacing: 2px;
@@ -1014,12 +1002,11 @@ ul {
 /*  */
 
 @media (min-width: 2560px) {
-
     .right-part-title,
-    .right-part-content,
-    .right-part-label1,
-    .right-part-label2,
-    .right-part-label3 {
+    .CaseStudy_description,
+    .CaseStudy_domain,
+    .CaseStudy_name,
+    .CaseStudy_nameDesc {
         display: flex;
         flex-shrink: 0;
         color: #000;
@@ -1037,7 +1024,7 @@ ul {
         line-height: normal;
     }
 
-    .right-part-content {
+    .CaseStudy_description {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 21px;
@@ -1045,7 +1032,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label1 {
+    .CaseStudy_domain {
         margin-top: 10px;
         margin-left: 5%;
         font-size: 21px;
@@ -1053,7 +1040,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label2 {
+    .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 21px;
@@ -1062,14 +1049,14 @@ ul {
         width: fit-content;
     }
 
-    .right-part-label2,
-    .right-part-label3 {
+    .CaseStudy_name,
+    .CaseStudy_nameDesc {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    .right-part-label3 {
+    .CaseStudy_nameDesc {
         font-size: 21px;
         font-weight: 600;
         margin: 0 0 1px;
@@ -1128,8 +1115,8 @@ ul {
     /* .project_sm_7{
 
     } */
-    .project-scope-content,
-    .project-scope-content11 {
+    .project-description,
+    .project-scope-Inlist {
         color: #000;
         font-family: Montserrat;
         font-size: 21px;
@@ -1187,15 +1174,7 @@ ul {
         margin-bottom: -30px;
     }
 
-    .challenges-label1,
-    .challenges-label2,
-    .challenges-label3,
-    .challenges-label4,
-    .challenges-label5,
-    .challenges-label6,
-    .challenges-label7,
-    .challenges-label8,
-    .challenges-label9 {
+    .challenges-label1 {
         color: #000;
         font-family: Montserrat;
         font-size: 21px;
@@ -1266,12 +1245,7 @@ ul {
         margin-bottom: -10px;
     }
 
-    .solution-text1,
-    .solution-text2,
-    .solution-text3,
-    .solution-text4,
-    .solution-text5,
-    .solution-text6 {
+    .solution-text1 {
         padding: 8px;
         color: #000;
         font-family: Montserrat;
@@ -1310,24 +1284,6 @@ ul {
         overflow: hidden;
     }
 
-
-    .list-data1 label,
-    .list-data2 label,
-    .list-data3 label,
-    .list-data4 label,
-    .list-data5 label,
-    .list-data6 label {
-        color: #0B83AB;
-        font-family: Montserrat;
-        font-size: 21px;
-        padding: 10px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        text-decoration-line: underline;
-        text-transform: uppercase;
-    }
-
     .cx-design-img {
         width: 75px;
         height: 75px;
@@ -1351,12 +1307,7 @@ ul {
         margin-left: 1%;
     }
 
-    .list-data1,
-    .list-data2,
-    .list-data3,
-    .list-data4,
-    .list-data5,
-    .list-data6 {
+    .list-data1 {
         margin-right: 150px;
         font-size: 25px;
     }
@@ -1374,13 +1325,6 @@ ul {
         text-underline-offset: 8px;
     }
 
-    /* .line66 {
-    background: #FF6D43;
-    width: 355px;
-    height: 5px;
-    margin-top: -1.5%;
-   
-} */
     .keytakeways-label {
         color: #000000;
         font-family: Montserrat;
@@ -1409,13 +1353,6 @@ ul {
         text-underline-offset: 8px;
     }
 
-    /* .line66 {
-    background: #FF6D43;
-    width: 355px;
-    height: 5px;
-    margin-top: -1.5%;
-   
-} */
     .keytakeways-label {
         color: #000000;
         font-family: Montserrat;
@@ -1432,7 +1369,6 @@ ul {
     }
 
     .testimonials-heading h5 {
-        /* margin-left: 1%; */
         color: #002D3C;
         font-size: 44px;
         width: 28%;
@@ -1493,7 +1429,6 @@ ul {
         width: 100%;
         margin-top: 10%;
         background-color: #F8F8F8;
-        /* display: flex; */
         flex-wrap: wrap;
     }
 
@@ -1504,12 +1439,9 @@ ul {
     }
 
     /*  */
-
-
-
     .persona-heading,
-    .persona-text,
-    .persona-text1 {
+    .persona-toolused,
+    .persona-tool {
         font-family: Montserrat, sans-serif;
         line-height: 1.2;
         margin: 10px 0;
@@ -1519,16 +1451,14 @@ ul {
         font-size: 41px;
         font-weight: 600;
         color: #002D3C;
-
-
     }
 
-    .persona-text {
+    .persona-toolused {
         font-size: 34px;
         font-weight: 600;
     }
 
-    .persona-text1 {
+    .persona-tool {
         font-size: 30px;
         font-weight: 400;
         color: #002D3C;
@@ -1550,13 +1480,13 @@ ul {
         margin-right: 57%;
     }
 
-    .user-journey-text {
+    .user-journey-toolused {
         font-size: 34px;
         margin-right: 58%;
         font-weight: 600;
     }
 
-    .user-journey-text1 {
+    .user-journey-tool {
         font-size: 30px;
         font-weight: 500;
         margin-right: 58%;
@@ -1570,7 +1500,7 @@ ul {
         margin-left: 5%;
     }
 
-    .heading {
+    .wireframes_heading {
         font-size: 41px;
         font-weight: 600;
         color: #002D3C;
@@ -1591,9 +1521,6 @@ ul {
     }
 
     /* mockup .......................*/
-
-
-
 
     .mockups-heading {
         font-family: Montserrat;
@@ -1619,9 +1546,6 @@ ul {
         font-size: 34px;
         font-weight: 400;
         margin-left: 1%;
-        /* line-height: 1.2; */
-        /* color: #002D3C;
-    margin-left: 51%; */
     }
 
     .img-responsive1 {
@@ -1641,6 +1565,7 @@ ul {
         width: 109%;
         margin-left: -2%;
     }
+
     .right-part-title {
         margin-top: 2%;
         margin-left: 5%;
@@ -1697,7 +1622,7 @@ ul {
         padding-left: 9px;
     }
 
-    .like1 {
+    .like {
         padding-left: 7px;
     }
 
@@ -1712,7 +1637,7 @@ ul {
         background-color: white;
     }
 
-    .right-part-content {
+    .CaseStudy_description {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 14px;
@@ -1720,7 +1645,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label2 {
+    .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 15px;
@@ -1728,7 +1653,7 @@ ul {
         line-height: 8px;
     }
 
-    .right-part-label3 {
+    .CaseStudy_nameDesc {
         font-size: 15px;
         font-weight: 600;
         margin: 3px 0 1px;
@@ -1753,12 +1678,7 @@ ul {
         font-size: 13px;
     }
 
-    .solution-text1,
-    .solution-text2,
-    .solution-text3,
-    .solution-text4,
-    .solution-text5,
-    .solution-text6 {
+    .solution-text1 {
         padding: 1px;
         color: #000;
         font-family: Montserrat;
@@ -1779,15 +1699,7 @@ ul {
         padding-bottom: 16px;
     }
 
-    .challenges-label1,
-    .challenges-label2,
-    .challenges-label3,
-    .challenges-label4,
-    .challenges-label5,
-    .challenges-label6,
-    .challenges-label7,
-    .challenges-label8,
-    .challenges-label9 {
+    .challenges-label1 {
         color: #000;
         font-family: Montserrat;
         font-size: 14px;
@@ -1809,18 +1721,18 @@ ul {
 
     }
 
-    .project-scope-content,
-    .project-scope-content11 {
+    .project-description,
+    .project-scope-Inlist {
         font-size: 14px;
         padding: 0%;
     }
 
-    .persona-text {
+    .persona-toolused {
         font-size: 16px;
         font-weight: 600;
     }
 
-    .persona-text1 {
+    .persona-tool {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
@@ -1839,18 +1751,18 @@ ul {
         color: #002D3C;
     }
 
-    .user-journey-text {
+    .user-journey-toolused {
         font-size: 16px;
         font-weight: 600;
     }
 
-    .user-journey-text1 {
+    .user-journey-tool {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
     }
 
-    .heading {
+    .wireframes_heading {
         font-size: 19px;
         font-weight: 600;
         color: #002D3C;
@@ -1882,10 +1794,7 @@ ul {
     .mockups-text11 {
         font-family: Montserrat;
         font-size: 16px;
-        /* font-weight: 600; */
         line-height: 1.8;
-        /* color: #002D3C; */
-        /* margin-left: 8%; */
     }
 
     .keytakeways-img {
@@ -1943,7 +1852,7 @@ ul {
         padding-left: 9px;
     }
 
-    .like1 {
+    .like {
         padding-left: 7px;
     }
 
@@ -1958,7 +1867,7 @@ ul {
         background-color: white;
     }
 
-    .right-part-content {
+    .CaseStudy_description {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 12px;
@@ -1966,7 +1875,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label2 {
+    .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 12px;
@@ -1975,7 +1884,7 @@ ul {
 
     }
 
-    .right-part-label3 {
+    .CaseStudy_nameDesc {
         font-size: 12px;
         font-weight: 600;
         margin: 3px 0 1px;
@@ -1991,12 +1900,7 @@ ul {
         font-size: 13px;
     }
 
-    .solution-text1,
-    .solution-text2,
-    .solution-text3,
-    .solution-text4,
-    .solution-text5,
-    .solution-text6 {
+    .solution-text1 {
         padding: 1px;
         color: #000;
         font-family: Montserrat;
@@ -2017,15 +1921,7 @@ ul {
         padding-bottom: 16px;
     }
 
-    .challenges-label1,
-    .challenges-label2,
-    .challenges-label3,
-    .challenges-label4,
-    .challenges-label5,
-    .challenges-label6,
-    .challenges-label7,
-    .challenges-label8,
-    .challenges-label9 {
+    .challenges-label1{
         color: #000;
         font-family: Montserrat;
         font-size: 14px;
@@ -2047,18 +1943,18 @@ ul {
 
     }
 
-    .project-scope-content,
-    .project-scope-content11 {
+    .project-description,
+    .project-scope-Inlist {
         font-size: 14px;
         padding: 0%;
     }
 
-    .persona-text {
+    .persona-toolused {
         font-size: 16px;
         font-weight: 600;
     }
 
-    .persona-text1 {
+    .persona-tool {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
@@ -2077,18 +1973,18 @@ ul {
         color: #002D3C;
     }
 
-    .user-journey-text {
+    .user-journey-toolused {
         font-size: 16px;
         font-weight: 600;
     }
 
-    .user-journey-text1 {
+    .user-journey-tool {
         font-size: 15px;
         font-weight: 400;
         color: #002D3C;
     }
 
-    .heading {
+    .wireframes_heading {
         font-size: 19px;
         font-weight: 600;
         color: #002D3C;
@@ -2120,10 +2016,7 @@ ul {
     .mockups-text11 {
         font-family: Montserrat;
         font-size: 16px;
-        /* font-weight: 600; */
         line-height: 1.8;
-        /* color: #002D3C; */
-        /* margin-left: 8%; */
     }
 
     .keytakeways-img {
@@ -2185,7 +2078,7 @@ ul {
         padding-left: 37px;
     }
 
-    .like1 {
+    .like {
         padding-left: 34px;
     }
 
@@ -2200,7 +2093,7 @@ ul {
         background-color: white;
     }
 
-    .right-part-content {
+    .CaseStudy_description {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 16px;
@@ -2208,7 +2101,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label2 {
+    .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 14px;
@@ -2217,7 +2110,7 @@ ul {
 
     }
 
-    .right-part-label3 {
+    .CaseStudy_nameDesc {
         font-size: 14px;
         font-weight: 600;
         margin: 3px 0 1px;
@@ -2278,7 +2171,7 @@ ul {
         padding-left: 37px;
     }
 
-    .like1 {
+    .like {
         padding-left: 34px;
     }
 
@@ -2293,7 +2186,7 @@ ul {
         background-color: white;
     }
 
-    .right-part-content {
+    .CaseStudy_description {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 16px;
@@ -2301,7 +2194,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label2 {
+    .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 14px;
@@ -2310,7 +2203,7 @@ ul {
 
     }
 
-    .right-part-label3 {
+    .CaseStudy_nameDesc {
         font-size: 14px;
         font-weight: 600;
         margin: 3px 0 1px;
@@ -2322,99 +2215,6 @@ ul {
     }
 
 }
-
-/* ..............912.................................... */
-/* @media screen and (min-width: 912px)  {
-    .background_img {
-
-        background-color: rgb(255 255 255);
-    }
-
-    .case-study-left-part {
-        background-color: rgb(255 255 255);
-    }
-
- 
-    .nestle-img {
-        height: 134px;
-        margin-top: -110%;
-        margin-left: 4.5%;
-        position: relative;
-    }
-
-    .delivery-img {
-        margin-top: -22rem;
-        height: 65%;
-        margin-left: 27rem;
-        position: relative;
-    }
-    .case-study-title {
-        color: #FFF;
-        height: 50px;
-        font-size: 34px;
-        font-style: normal;
-        font-weight: 700;
-        text-transform: capitalize;
-        margin-left: 6.5%;
-        margin-top: -28%;
-    }
-
-    .share {
-        padding-left: 171px;
-    }
-
-    .download {
-        padding-left: 37px;
-    }
-
-    .likes {
-        padding-left: 37px;
-    }
-
-    .like1 {
-        padding-left: 34px;
-    }
-
-    .breadcrumb {
-        display: flex;
-        align-items: center;
-        font-family: Montserrat;
-        font-size: 16px;
-        color: #000;
-        padding: 1.7%;
-        font-weight: 600;
-        background-color: white;
-    }
-
-    .right-part-content {
-        margin-left: 5%;
-        margin-top: 1%;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 25px;
-    }
-
-    .right-part-label2 {
-        margin-top: 0.5%;
-        margin-left: 5%;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 21px;
-
-    }
-
-    .right-part-label3 {
-        font-size: 14px;
-        font-weight: 600;
-        margin: 3px 0 1px;
-    }
-
-    .action-buttons {
-        margin-top: 54px;
-        margin-left: 44px;
-    }
-
-} */
 
 /* .........540......................................... */
 @media screen and (min-width: 540px) and (max-width:720px) {
@@ -2465,7 +2265,7 @@ ul {
         padding-left: 37px;
     }
 
-    .like1 {
+    .like {
         padding-left: 34px;
     }
 
@@ -2480,7 +2280,7 @@ ul {
         background-color: white;
     }
 
-    .right-part-content {
+    .CaseStudy_description {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 14px;
@@ -2488,7 +2288,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label2 {
+    .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 13px;
@@ -2497,7 +2297,7 @@ ul {
 
     }
 
-    .right-part-label3 {
+    .CaseStudy_nameDesc {
         font-size: 13px;
         font-weight: 600;
         margin: 3px 0 1px;
@@ -2507,149 +2307,7 @@ ul {
         margin-top: 54px;
         margin-left: 44px;
     }
-
-
 }
-
-/* ...............280............................ */
-/* 
-@media screen and (min-width: 280px) and (max-width:653px) {
-    .nestle-img {
-        height: 113px;
-        margin-top: -281%;
-        margin-left: 0.5%;
-        position: relative;
-    }
-
-    .case-study-title {
-        color: #FFF;
-        height: 60px;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 700;
-        text-transform: capitalize;
-        margin-left: 5.5%;
-        margin-top: -51%;
-    }
-
-    .delivery-img {
-        margin-top: -32rem;
-        height: 42%;
-        margin-left: 9rem;
-        position: relative;
-    }
-
-    .right-part-title {
-        margin-top: 2%;
-        margin-left: 5%;
-        font-size: 28px;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .right-part-content {
-        margin-left: 5%;
-        margin-top: 1%;
-        font-size: 11px;
-        font-weight: 400;
-        line-height: 25px;
-    }
-
-    .right-part-label1 {
-        margin-top: 10px;
-        margin-left: 5%;
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 5px;
-    }
-
-    .right-part-label2 {
-        margin-top: 0.5%;
-        margin-left: 5%;
-        font-size: 9px;
-        font-weight: 400;
-        line-height: 9px;
-    }
-
-    .case-study-right-part {
-        float: left;
-        margin-top: -8%;
-        overflow: hidden;
-        position: relative;
-        background-color: rgb(205, 211, 211);
-        height: 546px;
-    }
-
-    .mockups-dividing-line {
-        width: 100%;
-        height: 26px;
-        margin-top: 14%;
-        flex-shrink: 0;
-        background: rgba(255, 109, 67, 0.40);
-    }
-
-    .keytakeways-heading {
-        color: #002D3C;
-        font-family: Montserrat;
-        font-size: 23px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-top: 43px;
-        text-decoration: underline;
-        text-decoration-color: #ff6d43;
-        letter-spacing: 0px;
-        text-underline-offset: 8px;
-    }
-
-    .project-scope-title {
-        font-size: 22px;
-        font-weight: 600;
-    }
-
-    .part6-heading {
-        font-size: 18px;
-    }
-} */
-
-/* .................412...................... */
-
-/* @media screen and (min-width: 414px)  {
-    .case-study-right-part {
-        float: left;
-        margin-top: -8%;
-        overflow: hidden;
-        position: relative;
-        background-color: rgb(205, 211, 211);
-        height: 457px;
-    }
-
-    .case-study-title {
-        color: #FFF;
-        height: 58px;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 700;
-        text-transform: capitalize;
-        margin-left: 3.5%;
-        margin-top: -51%;
-    }
-
-    .delivery-img {
-        margin-top: -23rem;
-    height: 64%;
-    margin-left: 7rem;
-    position: relative;
-    }
-
-    .nestle-img {
-        
-            height: 117px;
-            margin-top: -237%;
-            margin-left: 4.5%;
-            position: relative;
-        }
-    } */
-
 
 /*......................1024..............................  */
 
@@ -2700,7 +2358,7 @@ ul {
         padding-left: 37px;
     }
 
-    .like1 {
+    .like {
         padding-left: 34px;
     }
 
@@ -2715,7 +2373,7 @@ ul {
         background-color: white;
     }
 
-    .right-part-content {
+    .CaseStudy_description {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 16px;
@@ -2723,7 +2381,7 @@ ul {
         line-height: 25px;
     }
 
-    .right-part-label2 {
+    .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 14px;
@@ -2732,7 +2390,7 @@ ul {
 
     }
 
-    .right-part-label3 {
+    .CaseStudy_nameDesc {
         font-size: 14px;
         font-weight: 600;
         margin: 3px 0 1px;

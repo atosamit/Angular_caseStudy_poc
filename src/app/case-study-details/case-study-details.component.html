@@ -1,10 +1,4 @@
 <!-- routing label headings -->
-<!-- <div class="routing">
-    <div class="routing-label1"> <label *ngFor="let item of details" routerLink="/grid-page"> {{item.home}} </label>
-    </div>
-    <div class="routing-label2" *ngFor="let item of details"> {{item.arrow}}</div>
-    <div class="routing-label3"> {{data.title}} </div>
-</div> -->
 <div class="breadcrumb">
     <ng-container *ngFor="let item of details;  let last = last">
         <div class="breadcrumb-item">
@@ -15,18 +9,13 @@
         </div>
     </ng-container>
 </div>
-<!-- <span style="margin-left: -10%;"> -->
-<!-- </span> -->
 
-<!-- case-study part -->
-
-<!-- <div class="case-study-rectangle"> -->
 <!-- case-study left side part -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 case-study-left-part">
-            <!-- <div> -->
-            <!-- <div class="background-img"> </div> -->
+
+
             <img [src]="data.heroImg.url" class="background_img">
 
             <img class="nestle-img" src="{{data.image.url}}">
@@ -37,25 +26,20 @@
 
             <img class="delivery-img" src="{{data.image1.url}}">
         </div>
-        <!-- case-study right side part -->
-        <!-- <div class="case-study-right-part" style="font:inherit;"> -->
+
         <div class="col-lg-6 case-study-right-part">
             <div class="right-part-title"> <label class="title-label">{{data.title}} </label> </div>
 
-            <div class="right-part-content"> {{data.description}}</div>
-
-            <div class="right-part-label1">{{data.domains}}</div>
-
-            <h2 class="right-part-label2" *ngFor="let item of publish"> {{item.name}} <p class="right-part-label3">
+            <div class="CaseStudy_description"> {{data.description}}</div>
+            <div class="CaseStudy_domain">{{data.domains}}</div>
+            <h2 class="CaseStudy_name" *ngFor="let item of publish"> {{item.name}} <p class="CaseStudy_nameDesc">
                     {{data.publishedName}}</p>
             </h2>
-
-            <div class="right-part-label2" *ngFor="let item of publish">{{item.date}}<p class="right-part-label3">
+            <div class="CaseStudy_name" *ngFor="let item of publish">{{item.date}}<p class="CaseStudy_nameDesc">
                     {{data.publishedOnDate | date: 'dd-MM-yyyy' :'UTC'}}</p>
             </div>
-            <!-- {{data.publishedOn}} -->
-
-            <div class="right-part-label2" *ngFor="let item of publish"> {{item.contact}} <p class="right-part-label3">
+        
+            <div class="CaseStudy_name" *ngFor="let item of publish"> {{item.contact}} <p class="CaseStudy_nameDesc">
                     {{data.pointOfContact}}</p>
             </div>
             <!-- comments -->
@@ -72,7 +56,7 @@
 
 
                     <!-- likes -->
-                    <label class="like1">
+                    <label class="like">
                         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M6.54545 16.3636H13.9091C14.5882 16.3636 15.1691 15.9545 15.4145 15.3655L17.8855 9.59727C17.9591 9.40909 18 9.21273 18 9V7.36364C18 6.46364 17.2636 5.72727 16.3636 5.72727H11.2009L11.9782 1.98818L12.0027 1.72636C12.0027 1.39091 11.8636 1.08 11.6427 0.859091L10.7755 0L5.38364 5.39182C5.08909 5.68636 4.90909 6.09545 4.90909 6.54545V14.7273C4.90909 15.6273 5.64545 16.3636 6.54545 16.3636ZM6.54545 6.54545L10.0964 2.99455L9 7.36364H16.3636V9L13.9091 14.7273H6.54545V6.54545ZM0 6.54545H3.27273V16.3636H0V6.54545Z"
@@ -116,37 +100,31 @@
 
     <!-- project scope ...........................................................................................-->
 
-    <div class="container-fluid mt-1" style="background: #F8F8F8;">
-        <div class="row1" style="display: flex;
-    flex-wrap: wrap;
-    margin: -15px;">
+    <div class="container-fluid mt-1" id="project_scope" >
+        <div class="row1" id="projectscope_row">
             <div class="col-sm-7">
                 <p class="project-scope-title">
                     {{projectScope.title}}
                 </p>
-
                 <div class="line"></div>
-                <!-- style=" padding: 10px; letter-spacing:0.01cqb;  font-family: Montserrat; font:inherit;  " -->
-                <h1 class="project-scope-content">
+                <h1 class="project-description">
                     {{projectScope.description}}
                 </h1>
                 <ul class="project-scope-list">
                     <li>
-                        <div style="padding: 10px; " class="project-scope-content11">
+                        <div class="project-scope-Inlist">
                             {{projectScope.scopeListCollection.items[0].projectScopeList}}</div>
                     </li>
                     <li>
-                        <div class="project-scope-content11">
+                        <div class="project-scope-Inlist">
                             {{projectScope.scopeListCollection.items[1].projectScopeList}} </div>
                     </li>
                 </ul>
-
             </div>
 
             <div class="col-sm-5">
                 <img class="img-fluid" id="project-scope-img" src={{projectScope.videoImg.url}}>
             </div>
-
         </div>
     </div>
 
@@ -154,48 +132,45 @@
     <!-- challenges................................................................................................... -->
 
 
-    <div class="container mt-5" style="padding: -10px;" style="background-color: white;">
+    <div class="container mt-5"  id="challenges_main">
         <div class="row">
-
             <div class="col-sm-9">
                 <p class="challenges-label">{{challenges.title}}
                 </p>
                 <div class="line1"></div>
-
-                <ul class="challenge-list" style="font:inherit;">
+                <ul class="challenge-list">
                     <li>
                         <div class="challenges-label1">{{challenges.listCollection.items[0].challengesList}}</div>
                     </li>
                     <li>
-                        <diV class="challenges-label2"> {{challenges.listCollection.items[1].challengesList}}</diV>
+                        <diV class="challenges-label1"> {{challenges.listCollection.items[1].challengesList}}</diV>
                     </li>
                     <li>
-                        <div class="challenges-label3"> {{challenges.listCollection.items[2].challengesList}} </div>
+                        <div class="challenges-label1"> {{challenges.listCollection.items[2].challengesList}} </div>
                     </li>
                     <li>
-                        <div class="challenges-label4"> {{challenges.listCollection.items[3].challengesList}}</div>
+                        <div class="challenges-label1"> {{challenges.listCollection.items[3].challengesList}}</div>
                     </li>
                     <li>
-                        <div class="challenges-label5"> {{challenges.listCollection.items[4].challengesList}}</div>
+                        <div class="challenges-label1"> {{challenges.listCollection.items[4].challengesList}}</div>
                     </li>
                     <li>
-                        <div class="challenges-label6"> {{challenges.listCollection.items[5].challengesList}} </div>
+                        <div class="challenges-label1"> {{challenges.listCollection.items[5].challengesList}} </div>
                     </li>
                     <li>
-                        <div class="challenges-label7"> {{challenges.listCollection.items[6].challengesList}} </div>
+                        <div class="challenges-label1"> {{challenges.listCollection.items[6].challengesList}} </div>
                     </li>
                     <li>
-                        <div class="challenges-label8">{{challenges.listCollection.items[7].challengesList}}</div>
+                        <div class="challenges-label1">{{challenges.listCollection.items[7].challengesList}}</div>
                     </li>
                     <li>
-                        <div class="challenges-label9"> {{challenges.listCollection.items[8].challengesList}} </div>
+                        <div class="challenges-label1"> {{challenges.listCollection.items[8].challengesList}} </div>
                     </li>
                 </ul>
             </div>
             <div class="col-sm-3">
-                <img style="padding-top: 38%;" class="img-responsive" [src]="challenges.image.url">
+                <img class="img-responsive" [src]="challenges.image.url">
             </div>
-
         </div>
     </div>
     <div class="ux-dividing-line"> </div>
@@ -204,17 +179,15 @@
 
 
 
-    <div class="container mt-5" style="background: none;">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-sm-12">
-                <div class="part6-heading">{{title}}</div>
+                <div class="ux_heading">{{title}}</div>
                 <br><br>
-                <img class="uximg" [src]="UxApproch.image.url">
+                <img class="ux_img" [src]="UxApproch.image.url">
             </div>
-
         </div>
     </div>
-
     <div class="ux-dividing-line"> </div>
 
 
@@ -229,36 +202,34 @@
                     {{PageSolution.title1}}
                 </div>
                 <div class="line44"></div>
-
                 <div class="solution-part-text">
-                    <ul class="solution-list" style=" letter-spacing:0.01cqb; font:inherit;">
+                    <ul class="solution-list">
                         <li>
                             <div class="solution-text1"> {{PageSolution.listCollection.items[0].solutionList}} </div>
                         </li>
                         <li>
-                            <div class="solution-text2"> {{PageSolution.listCollection.items[1].solutionList}} </div>
+                            <div class="solution-text1"> {{PageSolution.listCollection.items[1].solutionList}} </div>
                         </li>
                         <li>
-                            <div class="solution-text3"> {{PageSolution.listCollection.items[2].solutionList}} </div>
+                            <div class="solution-text1"> {{PageSolution.listCollection.items[2].solutionList}} </div>
                         </li>
                         <li>
-                            <div class="solution-text4"> {{PageSolution.listCollection.items[3].solutionList}}</div>
+                            <div class="solution-text1"> {{PageSolution.listCollection.items[3].solutionList}}</div>
                         </li>
                         <li>
-                            <div class="solution-text5"> {{PageSolution.listCollection.items[4].solutionList}} </div>
+                            <div class="solution-text1"> {{PageSolution.listCollection.items[4].solutionList}} </div>
                         </li>
                         <li>
-                            <div class="solution-text6"> {{PageSolution.listCollection.items[5].solutionList}} </div>
+                            <div class="solution-text1"> {{PageSolution.listCollection.items[5].solutionList}} </div>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
         <!-- cx design part/........................................................................ -->
 
 
-        <div class="container mt-5" style="background: #f3f3f3;">
+        <div class="container mt-5" id="cxDesign_main" >
             <div class="row" *ngFor="let data of cx_design">
                 <div class="col-sm-12">
 
@@ -267,7 +238,7 @@
                     <div id="cx-design-heading" class="cx-design-heading"><label>{{projectScope.title2}}</label></div>
 
                     <ul class="cx_design_options">
-                        <div style=" float: left; ">
+                        <div class="" style="float: left;">
                             <div class="list-data1">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -280,7 +251,7 @@
                         </div>
 
                         <div style=" float: left;">
-                            <div class="list-data2">
+                            <div class="list-data1">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
@@ -291,7 +262,7 @@
                         </div>
 
                         <div style=" float: left;">
-                            <div class="list-data3">
+                            <div class="list-data1">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
@@ -302,7 +273,7 @@
                         </div>
 
                         <div style=" float: left;">
-                            <div class="list-data4">
+                            <div class="list-data1">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
@@ -313,7 +284,7 @@
                         </div>
 
                         <div style=" float: left;">
-                            <div class="list-data5">
+                            <div class="list-data1">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
@@ -324,7 +295,7 @@
                         </div>
 
                         <div style=" float: left;">
-                            <div class="list-data6">
+                            <div class="list-data1">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
@@ -339,7 +310,7 @@
 
         <!-- persona .........-->
 
-        <div class="container-fluid mt-5" id="container_persona" style="background: #f3f3f3;">
+        <div class="container-fluid mt-5" id="container_persona">
             <div class="row" *ngFor="let data of persona">
                 <div class="col-sm-6">
                     <div class="persona-heading">
@@ -348,16 +319,13 @@
                         </svg>
                         {{PageArtifacts.title1}}
                     </div>
-                    <div class="persona-text">{{PageArtifacts.toolUsed}} <span
-                            class="persona-text1">{{PageArtifacts.tool}}</span>
+                    <div class="persona-toolused">{{PageArtifacts.toolUsed}} <span
+                            class="persona-tool">{{PageArtifacts.tool}}</span>
                     </div>
-
                 </div>
 
                 <div class="col-sm-6 " id="persona_img">
-
                     <img class="persona-img-fluid" [src]="PageArtifacts.image.url">
-
                 </div>
             </div>
         </div><br><br>
@@ -366,11 +334,9 @@
         <div class="container mt-5">
             <div class="row" *ngFor="let data of user_journey">
                 <div class="col-sm-8">
-
                     <img class="user-journey-img-fluid" [src]="PageArtifacts1.image.url">
-
                 </div>
-                <div class="col-sm-4" style="float: right;">
+                <div class="col-sm-4" style="float:right;">
                     <div class="user-journey-heading">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
@@ -378,11 +344,11 @@
                         {{PageArtifacts1.title1}}
                     </div>
 
-                    <div class="user-journey-text">
+                    <div class="user-journey-toolused">
                         {{PageArtifacts1.toolUsed}}
                     </div>
 
-                    <div class="user-journey-text1">
+                    <div class="user-journey-tool">
                         {{PageArtifacts1.tool}}
                     </div>
                 </div>
@@ -390,49 +356,36 @@
         </div>
         <!-- wireframes -->
 
-        <div class="container mt-5" style="background: #f3f3f3;">
+        <div class="container mt-5" id="wireframe_main" >
             <div class="row" *ngFor="let data of Wireframes">
                 <div class="col-sm-4">
-                    <div class="heading">
+                    <div class="wireframes_heading">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
                         </svg>
                         {{PageArtifacts2.title1}}
                     </div>
 
-                    <div class="text1"> {{PageArtifacts2.noOfScreenDesigned}} <span class="text11">
+                    <div class="wireframes_toolused"> {{PageArtifacts2.noOfScreenDesigned}} <span class="text11">
                             {{PageArtifacts2.screen}} </span></div>
 
-
-
-                    <div class="text2"> {{PageArtifacts2.toolUsed}}<span class="text21"> {{PageArtifacts2.tool}} </span>
+                    <div class="wireframes_toolused"> {{PageArtifacts2.toolUsed}}<span class="text21"> {{PageArtifacts2.tool}} </span>
                     </div>
-
-
                 </div>
                 <div class="col-sm-8">
-
                     <img class="img" [src]="PageArtifacts2.image.url">
-
                 </div>
             </div>
         </div>
 
         <!-- mockups..................................................................... -->
-
-
-
         <div class="container mt-5">
             <div class="row" *ngFor="let data of mockups">
                 <div class="col-sm-8">
-
                     <img class="img-responsive1" src={{PageArtifacts3.image.url}}>
-
                 </div>
 
                 <div class="col-sm-4">
-
-
                     <label class="mockups-heading"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
@@ -445,13 +398,10 @@
             </div>
         </div>
 
-
         <div class="mockups-dividing-line"> </div>
-
         <!-- keytakeways.............................................................................................. -->
 
-
-        <div class="container mt-1" style="background: #f3f3f3;">
+        <div class="container mt-1" id="keytakeways_main">
             <div class="row" *ngFor="let data of keytakeways">
                 <div class="col-sm-9">
                     <div>
@@ -462,7 +412,7 @@
 
                     <div class="line66"></div><br>
                     <div class="keytakeways-label">
-                        <ul class="keytakeways_points" >
+                        <ul class="keytakeways_points">
                             <li>
                                 <div class="keytakeways-label1">{{PageKey.listCollection.items[0].keysList}}</div>
                             </li>
@@ -482,9 +432,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-
                     <img class="keytakeways-img" src={{PageKey.image.url}} alt="Key Takeaway Image">
-
                 </div>
             </div>
         </div>
@@ -493,60 +441,20 @@
 
         <!-- testimonials.......................................................................................................... -->
 
-        <!-- <div class="container mt-5">
-            <div class="row" *ngFor="let data of testmonials">
-                <div class="col-sm-12">
-                    <div class="testimonials-heading">
-                        <h5> <b> {{Testimonials.title}} </b></h5>
-                    </div>
-
-                    <div class="line77"></div>
-
-                    <div class="testmonials-img" style="max-width:100%; height:auto;">
-                        <img src={{data.img}}>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <div class="container mt-5">
-
             <div class="row" *ngFor="let data of testmonials">
-
                 <div class="col-sm-12">
-
                     <div class="testimonials-heading">
-
                         <h5> <b> {{Testimonials.title}} </b></h5>
-
                     </div>
-
-
-
                     <div class="line77"></div>
-
-
-
                     <div id="testmonials-img">
-
-                        <img class="col-sm-3" class="testimonial1"
-                            src={{Testimonials.note1.url}}>
-
-                        <img class="col-sm-3" class="testimonial2"
-                            src={{Testimonials.note2.url}}>
-
-                        <img class="col-sm-3" class="testimonial3"
-                            src={{Testimonials.note3.url}}>
-
+                        <img class="col-sm-3" class="testimonial1" src={{Testimonials.note1.url}}>
+                        <img class="col-sm-3" class="testimonial2" src={{Testimonials.note2.url}}>
+                        <img class="col-sm-3" class="testimonial3" src={{Testimonials.note3.url}}>
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
-
-
         <div class="challenges-dividing-line"> </div>
         <app-footer></app-footer>
