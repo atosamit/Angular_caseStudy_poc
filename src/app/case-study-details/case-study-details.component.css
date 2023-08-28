@@ -1641,7 +1641,13 @@ ul {
         width: 109%;
         margin-left: -2%;
     }
-
+    .right-part-title {
+        margin-top: 2%;
+        margin-left: 5%;
+        font-size: 27px;
+        font-weight: 600;
+        line-height: normal;
+    }
 
     .case-study-left-part {
         background-repeat: no-repeat;

@@ -52,7 +52,7 @@ export class GridPageComponent implements OnInit {
   filteredData1: any[] = []; // Filtered data based on selected subdomain
   // Initialize an empty search text
   currentPage: number = 1;
-  itemsPerPage: number = 6;
+  itemsPerPage: number = 9;
 
   selectedDomain: string | null = null;
   selectedSubDomain: string | null = null;
@@ -139,10 +139,23 @@ this.domainCollection = response.data.domainCollection.items;
   }
   selectedTabIndex: number = 0; // Default selected tab index
   handleTabChange(event: MatTabChangeEvent): void {
-    const selectedDomain = event.tab.textLabel;
+    const selectedDomain = event.tab.textLabel.split(' ')[0]; // Remove the count from the label
     this.filterDataByDomain(selectedDomain);
   }
 
+ 
+
+  getDomainCount(domain: string): number {
+    if (domain === 'All') {
+      return this.data.length;
+    }
+    return this.data.filter(item => item.domain === domain).length;
+  }
+
+  getDomainLabel(domain: string): string {
+    const count = this.getDomainCount(domain);
+    return `${domain} (${count})`;
+  }
 
 
   filterDataByDomain(domain: string): void {
