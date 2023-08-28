@@ -1,10 +1,4 @@
 <!-- routing label headings -->
-<!-- <div class="routing">
-    <div class="routing-label1"> <label *ngFor="let item of details" routerLink="/grid-page"> {{item.home}} </label>
-    </div>
-    <div class="routing-label2" *ngFor="let item of details"> {{item.arrow}}</div>
-    <div class="routing-label3"> {{data.title}} </div>
-</div> -->
 <div class="breadcrumb">
     <ng-container *ngFor="let item of details;  let last = last">
         <div class="breadcrumb-item">
@@ -15,18 +9,13 @@
         </div>
     </ng-container>
 </div>
-<!-- <span style="margin-left: -10%;"> -->
-<!-- </span> -->
 
-<!-- case-study part -->
-
-<!-- <div class="case-study-rectangle"> -->
 <!-- case-study left side part -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 case-study-left-part">
-            <!-- <div> -->
-            <!-- <div class="background-img"> </div> -->
+
+
             <img [src]="data.heroImg.url" class="background_img">
 
             <img class="nestle-img" src="{{data.image.url}}">
@@ -37,24 +26,19 @@
 
             <img class="delivery-img" src="{{data.image1.url}}">
         </div>
-        <!-- case-study right side part -->
-        <!-- <div class="case-study-right-part" style="font:inherit;"> -->
+
         <div class="col-lg-6 case-study-right-part">
             <div class="right-part-title"> <label class="title-label">{{data.title}} </label> </div>
 
             <div class="right-part-content"> {{data.description}}</div>
-
-            <div class="right-part-label1">{{data.domains}}</div>
-
+            <div class="CaseStudy_domain">{{data.domains}}</div>
             <h2 class="right-part-label2" *ngFor="let item of publish"> {{item.name}} <p class="right-part-label3">
                     {{data.publishedName}}</p>
             </h2>
-
             <div class="right-part-label2" *ngFor="let item of publish">{{item.date}}<p class="right-part-label3">
                     {{data.publishedOnDate | date: 'dd-MM-yyyy' :'UTC'}}</p>
             </div>
-            <!-- {{data.publishedOn}} -->
-
+        
             <div class="right-part-label2" *ngFor="let item of publish"> {{item.contact}} <p class="right-part-label3">
                     {{data.pointOfContact}}</p>
             </div>
@@ -124,9 +108,7 @@
                 <p class="project-scope-title">
                     {{projectScope.title}}
                 </p>
-
                 <div class="line"></div>
-                <!-- style=" padding: 10px; letter-spacing:0.01cqb;  font-family: Montserrat; font:inherit;  " -->
                 <h1 class="project-scope-content">
                     {{projectScope.description}}
                 </h1>
@@ -140,13 +122,11 @@
                             {{projectScope.scopeListCollection.items[1].projectScopeList}} </div>
                     </li>
                 </ul>
-
             </div>
 
             <div class="col-sm-5">
                 <img class="img-fluid" id="project-scope-img" src={{projectScope.videoImg.url}}>
             </div>
-
         </div>
     </div>
 
@@ -156,12 +136,10 @@
 
     <div class="container mt-5" style="padding: -10px;" style="background-color: white;">
         <div class="row">
-
             <div class="col-sm-9">
                 <p class="challenges-label">{{challenges.title}}
                 </p>
                 <div class="line1"></div>
-
                 <ul class="challenge-list" style="font:inherit;">
                     <li>
                         <div class="challenges-label1">{{challenges.listCollection.items[0].challengesList}}</div>
@@ -195,7 +173,6 @@
             <div class="col-sm-3">
                 <img style="padding-top: 38%;" class="img-responsive" [src]="challenges.image.url">
             </div>
-
         </div>
     </div>
     <div class="ux-dividing-line"> </div>
@@ -211,10 +188,8 @@
                 <br><br>
                 <img class="uximg" [src]="UxApproch.image.url">
             </div>
-
         </div>
     </div>
-
     <div class="ux-dividing-line"> </div>
 
 
@@ -229,7 +204,6 @@
                     {{PageSolution.title1}}
                 </div>
                 <div class="line44"></div>
-
                 <div class="solution-part-text">
                     <ul class="solution-list" style=" letter-spacing:0.01cqb; font:inherit;">
                         <li>
@@ -252,7 +226,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
         <!-- cx design part/........................................................................ -->
@@ -351,13 +324,10 @@
                     <div class="persona-text">{{PageArtifacts.toolUsed}} <span
                             class="persona-text1">{{PageArtifacts.tool}}</span>
                     </div>
-
                 </div>
 
                 <div class="col-sm-6 " id="persona_img">
-
                     <img class="persona-img-fluid" [src]="PageArtifacts.image.url">
-
                 </div>
             </div>
         </div><br><br>
@@ -366,9 +336,7 @@
         <div class="container mt-5">
             <div class="row" *ngFor="let data of user_journey">
                 <div class="col-sm-8">
-
                     <img class="user-journey-img-fluid" [src]="PageArtifacts1.image.url">
-
                 </div>
                 <div class="col-sm-4" style="float: right;">
                     <div class="user-journey-heading">
@@ -403,36 +371,23 @@
                     <div class="text1"> {{PageArtifacts2.noOfScreenDesigned}} <span class="text11">
                             {{PageArtifacts2.screen}} </span></div>
 
-
-
                     <div class="text2"> {{PageArtifacts2.toolUsed}}<span class="text21"> {{PageArtifacts2.tool}} </span>
                     </div>
-
-
                 </div>
                 <div class="col-sm-8">
-
                     <img class="img" [src]="PageArtifacts2.image.url">
-
                 </div>
             </div>
         </div>
 
         <!-- mockups..................................................................... -->
-
-
-
         <div class="container mt-5">
             <div class="row" *ngFor="let data of mockups">
                 <div class="col-sm-8">
-
                     <img class="img-responsive1" src={{PageArtifacts3.image.url}}>
-
                 </div>
 
                 <div class="col-sm-4">
-
-
                     <label class="mockups-heading"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <circle cx="14" cy="14" r="9" stroke="#FF6D43" stroke-width="5" />
@@ -445,11 +400,8 @@
             </div>
         </div>
 
-
         <div class="mockups-dividing-line"> </div>
-
         <!-- keytakeways.............................................................................................. -->
-
 
         <div class="container mt-1" style="background: #f3f3f3;">
             <div class="row" *ngFor="let data of keytakeways">
@@ -462,7 +414,7 @@
 
                     <div class="line66"></div><br>
                     <div class="keytakeways-label">
-                        <ul class="keytakeways_points" >
+                        <ul class="keytakeways_points">
                             <li>
                                 <div class="keytakeways-label1">{{PageKey.listCollection.items[0].keysList}}</div>
                             </li>
@@ -482,9 +434,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-
                     <img class="keytakeways-img" src={{PageKey.image.url}} alt="Key Takeaway Image">
-
                 </div>
             </div>
         </div>
@@ -493,60 +443,20 @@
 
         <!-- testimonials.......................................................................................................... -->
 
-        <!-- <div class="container mt-5">
-            <div class="row" *ngFor="let data of testmonials">
-                <div class="col-sm-12">
-                    <div class="testimonials-heading">
-                        <h5> <b> {{Testimonials.title}} </b></h5>
-                    </div>
-
-                    <div class="line77"></div>
-
-                    <div class="testmonials-img" style="max-width:100%; height:auto;">
-                        <img src={{data.img}}>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <div class="container mt-5">
-
             <div class="row" *ngFor="let data of testmonials">
-
                 <div class="col-sm-12">
-
                     <div class="testimonials-heading">
-
                         <h5> <b> {{Testimonials.title}} </b></h5>
-
                     </div>
-
-
-
                     <div class="line77"></div>
-
-
-
                     <div id="testmonials-img">
-
-                        <img class="col-sm-3" class="testimonial1"
-                            src={{Testimonials.note1.url}}>
-
-                        <img class="col-sm-3" class="testimonial2"
-                            src={{Testimonials.note2.url}}>
-
-                        <img class="col-sm-3" class="testimonial3"
-                            src={{Testimonials.note3.url}}>
-
+                        <img class="col-sm-3" class="testimonial1" src={{Testimonials.note1.url}}>
+                        <img class="col-sm-3" class="testimonial2" src={{Testimonials.note2.url}}>
+                        <img class="col-sm-3" class="testimonial3" src={{Testimonials.note3.url}}>
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
-
-
         <div class="challenges-dividing-line"> </div>
         <app-footer></app-footer>
