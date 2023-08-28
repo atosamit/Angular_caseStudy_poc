@@ -50,4 +50,28 @@
     width: 100%;
     box-shadow: 0 2px 3px #888;
   }
+ 
+  }
+  
+
+  @media screen and (min-width: 360px) and (max-width: 374px) {
+    .icons-container {
+      float: right;
+      margin-top: -55px;
+      height: auto;
+      width: 39%;
+  }
+  .navbar-brand{
+   
+    height: auto;
+    width: 37%;
+  }
+  .navbar{
+    height: 56px;
+    width: 100%;
+    box-shadow: 0 2px 3px #888;
+  }
+  nav{
+    height: 45px;
+  }
   }
