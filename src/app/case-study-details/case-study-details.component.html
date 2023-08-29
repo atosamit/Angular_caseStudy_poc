@@ -67,9 +67,9 @@
 
 
                     <!-- share -->
-                    <button class="share" style="border: none; background: none;"
+                    <button class="share"
                         (click)="showSnackbar('File downloaded')">
-                        <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="16" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M16.6657 15.5502C15.8212 15.5502 15.0657 15.8815 14.4879 16.4006L6.56569 11.8173C6.62125 11.5633 6.66569 11.3092 6.66569 11.0442C6.66569 10.7791 6.62125 10.5251 6.56569 10.2711L14.399 5.73193C14.999 6.28414 15.7879 6.62651 16.6657 6.62651C18.5101 6.62651 19.999 5.14659 19.999 3.31325C19.999 1.47992 18.5101 0 16.6657 0C14.8212 0 13.3324 1.47992 13.3324 3.31325C13.3324 3.57831 13.3768 3.83233 13.4324 4.08635L5.59902 8.6255C4.99902 8.07329 4.21013 7.73092 3.33236 7.73092C1.48791 7.73092 -0.000976562 9.21084 -0.000976562 11.0442C-0.000976562 12.8775 1.48791 14.3574 3.33236 14.3574C4.21013 14.3574 4.99902 14.0151 5.59902 13.4629L13.5101 18.0572C13.4546 18.2892 13.4212 18.5321 13.4212 18.7751C13.4212 20.5532 14.8768 22 16.6657 22C18.4546 22 19.9101 20.5532 19.9101 18.7751C19.9101 16.997 18.4546 15.5502 16.6657 15.5502ZM16.6657 2.20884C17.2768 2.20884 17.7768 2.70582 17.7768 3.31325C17.7768 3.92068 17.2768 4.41767 16.6657 4.41767C16.0546 4.41767 15.5546 3.92068 15.5546 3.31325C15.5546 2.70582 16.0546 2.20884 16.6657 2.20884ZM3.33236 12.1486C2.72125 12.1486 2.22125 11.6516 2.22125 11.0442C2.22125 10.4367 2.72125 9.93976 3.33236 9.93976C3.94347 9.93976 4.44347 10.4367 4.44347 11.0442C4.44347 11.6516 3.94347 12.1486 3.33236 12.1486ZM16.6657 19.9016C16.0546 19.9016 15.5546 19.4046 15.5546 18.7972C15.5546 18.1898 16.0546 17.6928 16.6657 17.6928C17.2768 17.6928 17.7768 18.1898 17.7768 18.7972C17.7768 19.4046 17.2768 19.9016 16.6657 19.9016Z"
                                 fill="#FF6D43" />
@@ -77,22 +77,22 @@
                     </button>
 
                     <!-- downloads -->
-                    <label class="download">
-                        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button class="download">
+                        <svg width="21" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M20.5824 13.5417V18.75C20.5824 19.3229 20.0949 19.7917 19.499 19.7917H6.49902C5.90319 19.7917 5.41569 19.3229 5.41569 18.75V13.5417C5.41569 12.9687 4.92819 12.5 4.33236 12.5C3.73652 12.5 3.24902 12.9687 3.24902 13.5417V19.7917C3.24902 20.9375 4.22402 21.875 5.41569 21.875H20.5824C21.774 21.875 22.749 20.9375 22.749 19.7917V13.5417C22.749 12.9687 22.2615 12.5 21.6657 12.5C21.0699 12.5 20.5824 12.9687 20.5824 13.5417ZM14.0824 13.1979L16.119 11.2396C16.5415 10.8333 17.224 10.8333 17.6465 11.2396C18.069 11.6458 18.069 12.3021 17.6465 12.7083L13.7574 16.4479C13.3349 16.8542 12.6524 16.8542 12.2299 16.4479L8.34069 12.7083C7.91819 12.3021 7.91819 11.6458 8.34069 11.2396C8.76319 10.8333 9.44569 10.8333 9.86819 11.2396L11.9157 13.1979V4.16667C11.9157 3.59375 12.4032 3.125 12.999 3.125C13.5949 3.125 14.0824 3.59375 14.0824 4.16667V13.1979Z"
                                 fill="#FF6D43" />
                         </svg>
-                    </label>
+                    </button>
                     <!-- likes -->
-                    <label class="likes">
-                        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    <button class="likes">
+                        <svg width="18" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg"
                             (click)="toggleLike(contentId, userId)">
                             <path
                                 d="M7.99902 20H16.999C17.829 20 18.539 19.5 18.839 18.78L21.859 11.73C21.949 11.5 21.999 11.26 21.999 11V9C21.999 7.9 21.099 7 19.999 7H13.689L14.639 2.43L14.669 2.11C14.669 1.7 14.499 1.32 14.229 1.05L13.169 0L6.57902 6.59C6.21902 6.95 5.99902 7.45 5.99902 8V18C5.99902 19.1 6.89902 20 7.99902 20ZM7.99902 8L12.339 3.66L10.999 9H19.999V11L16.999 18H7.99902V8ZM-0.000976562 8H3.99902V20H-0.000976562V8Z"
                                 fill="#FF6D43" />
-                        </svg>{{ likesCount }}
-                    </label>
+                        </svg>&nbsp;{{likesCount }}
+                    </button>
 
                 </div>
             </div>
@@ -108,7 +108,7 @@
                 <p class="project-scope-title">
                     {{projectScope.title}}
                 </p>
-                <div class="line"></div>
+               
                 <h1 class="project-description">
                     {{projectScope.description}}
                 </h1>
@@ -125,7 +125,8 @@
             </div>
 
             <div class="col-sm-5">
-                <img class="img-fluid" id="project-scope-img" src={{projectScope.videoImg.url}}>
+                <!-- <img class="img-fluid" id="project-scope-img" src={{projectScope.videoImg.url}}> -->
+                <video controls autoplay class="img-fluid" id="project-scope-img" alt="logo"  [src]="projectScope.video.url"></video>
             </div>
         </div>
     </div>
@@ -139,7 +140,7 @@
             <div class="col-sm-9">
                 <p class="challenges-label">{{challenges.title}}
                 </p>
-                <div class="line1"></div>
+               
                 <ul class="challenge-list">
                     <li>
                         <div class="challenges-items">{{challenges.listCollection.items[0].challengesList}}</div>
@@ -402,10 +403,10 @@
             </div>
         </div>
 
-        <div class="mockups-dividing-line"> </div>
+        <div class="ux-dividing-line"> </div>
         <!-- keytakeways.............................................................................................. -->
 
-        <div class="container mt-1" id="keytakeways_main">
+        <div  id="keytakeways_main">
             <div class="row" *ngFor="let data of keytakeways">
                 <div class="col-sm-9">
                     <div>
@@ -441,7 +442,7 @@
             </div>
         </div>
 
-        <div class="challenges-dividing-line"> </div>
+        <div class="ux-dividing-line"> </div>
 
         <!-- testimonials.......................................................................................................... -->
 
@@ -454,11 +455,14 @@
                     <div class="line77"></div>
                     <div id="testmonials-img">
                         <img class="col-sm-3" class="testimonial_img_1" src={{Testimonials.note1.url}}>
-                        <img class="col-sm-3" class="testimonial_img_2" src={{Testimonials.note2.url}}>
+                        <img class="col-sm-3" class="
+                        
+                        
+                        testimonial_img_2" src={{Testimonials.note2.url}}>
                         <img class="col-sm-3" class="testimonial_img_3" src={{Testimonials.note3.url}}>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="challenges-dividing-line"> </div>
+        <div class="ux-dividing-line"> </div>
         <app-footer></app-footer>

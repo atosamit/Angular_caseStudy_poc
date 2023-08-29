@@ -98,6 +98,9 @@ export class CaseStudyDetailsComponent  {
             videoImg{
               url
             }
+            video{
+              url
+            }
             teamImg{
               url
             }
