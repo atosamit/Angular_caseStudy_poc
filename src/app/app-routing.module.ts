@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
-import { RenderingComponent } from './rendering/rendering.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/grid-page', pathMatch: 'full' },

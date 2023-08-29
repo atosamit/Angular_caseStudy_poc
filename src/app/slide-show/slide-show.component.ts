@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -15,7 +15,13 @@ export class SlideShowComponent implements OnInit {
   isSlideshowRunning = false;
 
 
+  @Input() slides: any[] = [];
+  
+  currentSlideIndex: number = 0;
 
+  currentSlide(index: number) {
+    this.currentSlideIndex = index;
+  }
 
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
@@ -99,6 +105,7 @@ searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 onSearchTextChanged(){
   this.searchTextChanged.emit(this.enteredSearchValue)
 }
+
 
 }
 
