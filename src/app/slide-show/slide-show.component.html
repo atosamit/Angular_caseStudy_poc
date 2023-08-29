@@ -3,8 +3,8 @@
 
 <div
   class="slideshow-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 m-0 carousel slide banner">
+ 
   <div class="mySlides">
-
     <img [src]="data1[2].image.url" style="width:100%">
     <h1 class="text1">{{data1[0].text1}}</h1>
     <h1 class="text2">{{data1[0].text2}}</h1>
@@ -29,6 +29,17 @@
       {{data1[2].text3}}
     </h1>
   </div>
+  
+
+
+  <!-- <div class="mySlides" *ngFor="let slide of data1; let i = index">
+    <img [src]="slide.image.url" style="width:100%">
+    <h1 class="text1">{{slide.text1}}</h1>
+    <h1 class="text2">{{slide.text2}}</h1>
+    <h1 class="text3">{{slide.text3}}</h1>
+  </div>
+   -->
+  
 
   <div style="text-align:center">
     <span class="dot"></span>

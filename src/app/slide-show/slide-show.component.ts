@@ -87,7 +87,8 @@ export class SlideShowComponent implements OnInit {
     this.http.post(endpoint, { query }, { headers }).subscribe(
       (response: any) => {
         this.data1 = response.data.bannerCollection.items;
-        console.log(this.data1)
+        
+        console.log('carousel',this.data1)
       },
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
