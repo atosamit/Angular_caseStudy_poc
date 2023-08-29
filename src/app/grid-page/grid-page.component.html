@@ -1,4 +1,4 @@
-<app-slide-show (searchTextChanged)="onSearchTextEntered($event)"></app-slide-show>
+<app-slide-show (searchTextChanged)="onSearchTextEntered($event)" ></app-slide-show>
 
 <div style=" border-bottom: 1px solid #000000; height: 48px;">
   <!-- <mat-tab-group class="custom-tab-group" [(selectedIndex)]="selectedTabIndex"
@@ -49,11 +49,8 @@
     height: 30px;
     border: 1px solid #FF6D43;" class="label">HTML</button>
 
-  <button (click)="filterDataBySubDomain('Angular')" style=" 
-    width: 120px;
-    height: 30px;
-    border-radius: 50px;
-    border: 1px solid #FF6D43;" class="label">Angular</button>
+  <button  (click)="filterDataBySubDomain('Angular')" 
+    class="label">Angular</button>
 
   <button (click)="filterDataBySubDomain('CSS')" style=" 
     border-radius: 50px; width: 100px;
@@ -111,7 +108,7 @@
 </button> -->
 
   <br>
-  <div class="row" id="content" #content style="padding: 0px 15px;">
+  <div class="row" id="content" #content >
     <ng-container *ngFor="let item of paginatedData">
 
       <div class="column" [ngClass]="{ 'list-view': !isGridView }"
