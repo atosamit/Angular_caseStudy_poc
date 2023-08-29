@@ -11,7 +11,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class SlideShowComponent implements OnInit {
   slideIndex = 0;
   totalSlides!: number;
-  data1: any;
+  data1: any[] = [];
   isSlideshowRunning = false;
 
 
@@ -64,6 +64,7 @@ export class SlideShowComponent implements OnInit {
     dots[this.slideIndex - 1].className += ' active';
     setTimeout(() => this.showSlides(), 2000); // Change image every 2 seconds
   }
+  
   fetchData() {
     const endpoint = 'https://graphql.contentful.com/content/v1/spaces/40jcljdzym6w';
     const headers = new HttpHeaders({

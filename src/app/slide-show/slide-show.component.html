@@ -3,7 +3,7 @@
 
 <div
   class="slideshow-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 m-0 carousel slide banner">
- 
+
   <div class="mySlides">
     <img [src]="data1[2].image.url" style="width:100%">
     <h1 class="text1">{{data1[0].text1}}</h1>
@@ -29,17 +29,20 @@
       {{data1[2].text3}}
     </h1>
   </div>
-  
 
 
-  <!-- <div class="mySlides" *ngFor="let slide of data1; let i = index">
-    <img [src]="slide.image.url" style="width:100%">
-    <h1 class="text1">{{slide.text1}}</h1>
-    <h1 class="text2">{{slide.text2}}</h1>
-    <h1 class="text3">{{slide.text3}}</h1>
-  </div>
-   -->
+  <!-- <div class="mySlides">
+  <ng-container *ngFor="let item of data1";>
+        
+    <img [src]="item.image.url" style="width:100%">
+    <h1 class="text1">{{item.text1}}</h1>
+    <h1 class="text2">{{item.text2}}</h1>
+    <h1 class="text3">{{item.text3}}</h1>
   
+  </ng-container>
+  </div> -->
+
+
 
   <div style="text-align:center">
     <span class="dot"></span>
@@ -49,9 +52,6 @@
   <div>
 
     <div>
-
-
-
       <div style="display:flex; justify-content:center; align-content:center">
         <div class="search_box">
           <input class="search_icon" type="text" placeholder="Search by keyword, Name, Domain, date etc"
