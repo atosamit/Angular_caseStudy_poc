@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { labelConstants } from './HardcodeTags';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
   title = 'cxEvidenPortal';
   isScreenSizeSmallOrLarge = false;
+  labelConstants = labelConstants ;
 
   constructor() {
     // Initialize the value based on initial screen size
