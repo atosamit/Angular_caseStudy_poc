@@ -1,14 +1,11 @@
- <app-header-footer></app-header-footer>
- <!-- <app-login> </app-login> -->
-
- <router-outlet></router-outlet>
 
 
- <!-- <app-footer></app-footer>  -->
- <!-- <app-case-study-details></app-case-study-details> -->
- 
+ <ng-container *ngIf="!isScreenSizeSmallOrLarge">
+    <app-header-footer></app-header-footer>
+    <!-- Other content for large screens -->
+    <router-outlet></router-outlet>
+</ng-container>
 
- <!-- <app-testing1> </app-testing1> -->
-
- <!-- <app-rendering></app-rendering> -->
- <app-resize-example></app-resize-example>
+<div *ngIf="isScreenSizeSmallOrLarge" class="message">
+    Displaying a message because the screen size is either less than 300px or greater than 2570px.
+</div>

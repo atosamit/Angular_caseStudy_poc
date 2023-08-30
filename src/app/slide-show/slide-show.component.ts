@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -11,11 +11,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SlideShowComponent implements OnInit {
   slideIndex = 0;
   totalSlides!: number;
-  data1: any;
+  data1: any[] = [];
   isSlideshowRunning = false;
 
 
+  @Input() slides: any[] = [];
+  
+  currentSlideIndex: number = 0;
 
+  currentSlide(index: number) {
+    this.currentSlideIndex = index;
+  }
 
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
@@ -58,6 +64,7 @@ export class SlideShowComponent implements OnInit {
     dots[this.slideIndex - 1].className += ' active';
     setTimeout(() => this.showSlides(), 2000); // Change image every 2 seconds
   }
+  
   fetchData() {
     const endpoint = 'https://graphql.contentful.com/content/v1/spaces/40jcljdzym6w';
     const headers = new HttpHeaders({
@@ -81,7 +88,8 @@ export class SlideShowComponent implements OnInit {
     this.http.post(endpoint, { query }, { headers }).subscribe(
       (response: any) => {
         this.data1 = response.data.bannerCollection.items;
-        console.log(this.data1)
+        
+        console.log('carousel',this.data1)
       },
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
@@ -99,6 +107,7 @@ searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 onSearchTextChanged(){
   this.searchTextChanged.emit(this.enteredSearchValue)
 }
+
 
 }
 

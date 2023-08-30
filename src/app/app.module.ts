@@ -12,7 +12,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
-
 import { CaseStudyDetailsComponent } from './case-study-details/case-study-details.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
@@ -21,7 +20,6 @@ import { RouterModule } from '@angular/router';
 // import { AuthModule } from '@auth0/auth0-angular';
 import { LoginComponent } from './login/login.component';
 import { Testing1Component } from './testing1/testing1.component';
-import { RenderingComponent } from './rendering/rendering.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
@@ -46,7 +44,6 @@ import { MatButtonModule } from '@angular/material/button';
     Testimonial2Component,
     LoginComponent,
     Testing1Component,
-    RenderingComponent,
     ResizeExampleComponent,
     
   ],

@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  padding: 0px 15px
 
 }
 
@@ -365,7 +366,12 @@ input.toggle-round:not(:checked)~.right-side .label {
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.label{
+  width: 120px;
+  height: 30px;
+  border-radius: 50px;
+  border: 1px solid #FF6D43
+}
 /* Responsive styles */
 @media screen and (max-width: 600px) {
   .toggle-container {
