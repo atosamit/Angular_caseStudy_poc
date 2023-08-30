@@ -373,7 +373,7 @@ color:  #FF6D43;
   color: #FF6D43;
 }
 .list_like_comment{
-  display: inline-block; margin-right: 20px; border: none; background: none;
+  /* display: inline-block; margin-right: 20px; border: none; background: none; */
 }
 .divv{
   float:right; display: inline-block;
