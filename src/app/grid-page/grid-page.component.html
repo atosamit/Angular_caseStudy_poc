@@ -1,6 +1,6 @@
-<app-slide-show (searchTextChanged)="onSearchTextEntered($event)" ></app-slide-show>
+<app-slide-show (searchTextChanged)="onSearchTextEntered($event)"></app-slide-show>
 
-<div style=" border-bottom: 1px solid #000000; height: 48px;">
+<div class="matTab_listgrid_div">
   <!-- <mat-tab-group class="custom-tab-group" [(selectedIndex)]="selectedTabIndex"
     (selectedTabChange)="handleTabChange($event)">
     <mat-tab label="All"></mat-tab>
@@ -8,29 +8,26 @@
   </mat-tab-group> -->
 
   <mat-tab-group class="custom-tab-group" [(selectedIndex)]="selectedTabIndex"
-  (selectedTabChange)="handleTabChange($event)">
-  <mat-tab label="All ({{ getDomainCount('All') }})"></mat-tab>
-  <mat-tab *ngFor="let domain of domains" [label]="getDomainLabel(domain)"></mat-tab>
-</mat-tab-group>
+    (selectedTabChange)="handleTabChange($event)">
+    <mat-tab label="All ({{ getDomainCount('All') }})"></mat-tab>
+    <mat-tab *ngFor="let domain of domains" [label]="getDomainLabel(domain)"></mat-tab>
+  </mat-tab-group>
 
 
   <!-- list and grid buttons -->
   <div id="btnContainer">
     <div>
-      <button class="btn" style="width: 35px; position: relative; left: 10px; color: #FF6D43"
-        (click)="toggleView('list') ;listView()">
-        <img class="vector-logo" style="left: -13px; position: relative; width: 35px; height: 35px;"
-          [src]="isListViewActive ? '../assets/format-list-bulleted.png' : 'assets/Vector (3).png'" alt="List View">
+      <button class="btn" id="List_btn" (click)="toggleView('list') ;listView()">
+        <img class="list-logo" [src]="isListViewActive ? '../assets/format-list-bulleted.png' : 'assets/Vector (3).png'"
+          alt="List View">
       </button>
     </div>
 
-    <span class="separator"><img style="position: relative; left: 10px;" src="assets/Line 1.png"></span>
+    <span class="separator"><img src="assets/Line 1.png"></span>
 
     <div>
-      <button class="btn" style="position: relative; left: 10px; color: #FF6D43"
-        (click)="toggleView('grid');gridView()">
-        <img class="vector-logo" style="height: 35px; width: 35px;"
-          [src]="isListViewActive ? 'assets/Vector22.png' : '../assets/grid.png'" alt="Grid View">
+      <button class="btn" (click)="toggleView('grid');gridView()">
+        <img class="grid-logo" [src]="isListViewActive ? 'assets/Vector22.png' : '../assets/grid.png'" alt="Grid View">
       </button>
     </div>
   </div>
@@ -40,44 +37,21 @@
 
 <input id="cb_id" class="toggle-round" type="checkbox">
 <label for="cb_id"></label>
-<label class="CXTowerlabel">CX Tower</label>
-<label class="CXTechlabel1">CX Tech</label>
+<label class="CXTowerlabel">{{ labelConstants [0].CXTower }}</label>
+<label class="CXTechlabel1">{{ labelConstants [0].CXTech }}</label>
 
-<div class="labels left-side" style="margin-top: -32px; margin-left: 10px; ">
-  <button (click)="filterDataBySubDomain('HTML')" style=" 
-    border-radius: 50px; width: 100px;
-    height: 30px;
-    border: 1px solid #FF6D43;" class="label">HTML</button>
-
-  <button  (click)="filterDataBySubDomain('Angular')" 
-    class="label">Angular</button>
-
-  <button (click)="filterDataBySubDomain('CSS')" style=" 
-    border-radius: 50px; width: 100px;
-    height: 30px;
-    border: 1px solid #FF6D43;" class="label">CSS</button>
+<!-- Cx Tech -->
+<div class="labels left-side" style="margin-top: -32px; margin-left: 10px;">
+  <ng-container *ngFor="let data of cxTech">
+    <button (click)="filterDataBySubDomain(data)" class="label">{{data}}</button>
+  </ng-container>
 </div>
 
+<!-- Cx Tower -->
 <div class="labels right-side " style="margin-top: -1px;">
-  <button (click)="filterDataBySubDomain('Immersive Design')" style=" 
-    border-radius: 50px; width: 160px;
-    height: 33px;
-    border: 1px solid #FF6D43;" class="label">Immersive Design</button>
-
-  <button (click)="filterDataBySubDomain('Mobile Design')" style=" 
-    border-radius: 50px; width: 150px;
-    height: 33px;
-    border: 1px solid #FF6D43;" class="label">Mobile Design</button>
-
-  <button (click)="filterDataBySubDomain('UI Dev')" style=" 
-    border-radius: 50px; width: 120px;
-    height: 33px;
-    border: 1px solid #FF6D43;" class="label">UI Dev</button>
-
-  <button (click)="filterDataBySubDomain('Analytics')" style=" 
-    border-radius: 50px; width: 130px;
-    height: 33px;
-    border: 1px solid #FF6D43;" class="label">Analytics</button>
+  <ng-container *ngFor="let data of cxTower">
+    <button (click)="filterDataBySubDomain(data)" class="label">{{data}}</button>
+  </ng-container>
 </div>
 <div>
 
@@ -108,20 +82,21 @@
 </button> -->
 
   <br>
-  <div class="row" id="content" #content >
+  <div class="row" id="content" #content>
     <ng-container *ngFor="let item of paginatedData">
 
       <div class="column" [ngClass]="{ 'list-view': !isGridView }"
         *ngIf="searchText === '' || item.details.title ?.toLowerCase().includes(searchText)">
         <div class="divpadding" [ngClass]="{ 'column-list': !isGridView}">
-          <img class="img-fluid" [src]="item.details.itemIcon.url" style="object-fit: contain;"
-            [src]="item.details.itemIcon.url" [ngClass]="{'grid-image': isGridView, 'list-image': !isGridView}"
+          <img class="img-fluid" [src]="item.details.itemIcon.url" [src]="item.details.itemIcon.url"
+            [ngClass]="{'grid-image': isGridView, 'list-image': !isGridView}"
             [routerLink]="['/case_study', item.details.sys.id]">
-          <div style="margin-left: 10px;">
+          <div class="div2">
             <h4 [ngClass]="{'grid-text': isGridView, 'list-text': !isGridView}">{{ item.details.title }}</h4>
             <!-- date -->
             <p *ngIf="isGridView" [ngClass]="{ 'list-text1': !isGridView, 'grid-text2': isGridView }">
-              Published on <strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy' :'UTC' }}</strong>
+              {{ labelConstants [0].Publishedon }} <strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy' :'UTC'
+                }}</strong>
             </p>
             <!-- description -->
             <p *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
@@ -145,15 +120,13 @@
               <!-- like and comment for grid -->
               <!-- Comment Button -->
               <button *ngIf="isGridView"
-                style="display: inline-block; margin-right: 20px; border: none; background-color: white;"
                 class="Comments_btn">
                 <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
-                11 Comments
+                {{ labelConstants [0].Comments }}
               </button>
 
               <!-- Like Button -->
               <button *ngIf="isGridView"
-                style="display: inline-block; margin-right: 20px; border: none; background-color: white;"
                 (click)="toggleLike(contentId, userId)" class="like_btn">
                 <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
@@ -162,20 +135,22 @@
 
 
               <!-- like and comment btn for list -->
-              <button *ngIf="!isGridView" class="like_comment"
-                style="display: inline-block; margin-right: 20px; border: none; background: none;" class="Comments_btn">
+              <button *ngIf="!isGridView" class="list_like_comment"
+               class="Comments_btn">
                 <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
-                11 Comments
+                {{ labelConstants [0].Comments }}
               </button>
 
               <!-- Like Button from list view -->
               <button *ngIf="!isGridView"
-                style="display: inline-block; margin-right: 20px; border: none; background:none;"
-                (click)="toggleLike(contentId, userId)" class="like_btn">
+                (click)="toggleLike(contentId, userId)" class="list_like_btn">
                 <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
               </button>
-              <div style="float:right; display: inline-block;" *ngIf="isGridView">
+
+
+
+              <div class="divv"  *ngIf="isGridView">
 
                 <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
                     [src]="logoCollection[5].logo.url"></button>
@@ -184,24 +159,21 @@
                   <div class="popup-content">
                     <button class="popup-button" (click)="handleEmailShare('item.details.sys.id')">
                       <i class="fab fa-linkedin fa-2x" style="color: #0077B5;"></i>
-                      <span class="button-label">Share on LinkedIn</span>
+                      <span class="button-label"> {{ labelConstants [0].ShareonLinkedIn }}</span>
                     </button>
                     <button class="popup-button" (click)="handleLinkedInSharee('item.details.sys.id')">
                       <i class="far fa-envelope fa-2x" style="color: #666;"></i>
-                      <span class="button-label">Share via Email</span>
+                      <span class="button-label"> {{ labelConstants [0].ShareviaEmail }}</span>
                     </button>
-                    <button class="popup-button close-button" (click)="closePopup()">Close</button>
+                    <button class="popup-button close-button" (click)="closePopup()"> {{ labelConstants [0].CloseDiaBox
+                      }}</button>
                     <!-- Add "close-button" class -->
                   </div>
                 </div>
 
                 <!-- downlaod btn -->
-                <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn"> <svg
-                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 29 28" fill="none">
-                    <path
-                      d="M22.9583 15.1667V21C22.9583 21.6417 22.4146 22.1667 21.75 22.1667H7.25C6.58542 22.1667 6.04167 21.6417 6.04167 21V15.1667C6.04167 14.525 5.49792 14 4.83333 14C4.16875 14 3.625 14.525 3.625 15.1667V22.1667C3.625 23.45 4.7125 24.5 6.04167 24.5H22.9583C24.2875 24.5 25.375 23.45 25.375 22.1667V15.1667C25.375 14.525 24.8313 14 24.1667 14C23.5021 14 22.9583 14.525 22.9583 15.1667ZM15.7083 14.7817L17.98 12.5883C18.4513 12.1333 19.2125 12.1333 19.6838 12.5883C20.155 13.0433 20.155 13.7783 19.6838 14.2333L15.3458 18.4217C14.8746 18.8767 14.1133 18.8767 13.6421 18.4217L9.30417 14.2333C8.83292 13.7783 8.83292 13.0433 9.30417 12.5883C9.77542 12.1333 10.5367 12.1333 11.0079 12.5883L13.2917 14.7817V4.66667C13.2917 4.025 13.8354 3.5 14.5 3.5C15.1646 3.5 15.7083 4.025 15.7083 4.66667V14.7817Z"
-                      fill="#FF6D43" />
-                  </svg>
+                <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn">
+                  <img [src]="logoCollection[6].logo.url" class="icons">
                 </button>
               </div>
             </div>
@@ -222,7 +194,8 @@
 
                 <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
                   style="float: right;margin-top: -10px;">
-                  Published on <br><strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy' :'UTC' }}</strong>
+                  {{ labelConstants [0].Publishedon }} <br><strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy'
+                    :'UTC' }}</strong>
                 </p>
               </div>
             </div>
@@ -236,9 +209,11 @@
 
   <!-- pagination -->
   <div class="pagination">
-    <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">Previous</button>
+    <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">{{ labelConstants
+      [0].Previousbtn }}</button>
     <span class="pagination-info">{{ currentPage }} / {{ totalPages }}</span>
-    <button [disabled]="currentPage === totalPages" class="pagination-button" (click)="changePage(1)">Next</button>
+    <button [disabled]="currentPage === totalPages" class="pagination-button" (click)="changePage(1)">{{ labelConstants
+      [0]. Nextbtn }}</button>
   </div>
 
   <div *ngIf="isGridView">

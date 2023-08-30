@@ -24,7 +24,6 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
-import { ResizeExampleComponent } from './resize-example/resize-example.component';
 
 
 
@@ -43,7 +42,6 @@ import { ResizeExampleComponent } from './resize-example/resize-example.componen
     Testimonial2Component,
     LoginComponent,
     Testing1Component,
-    ResizeExampleComponent,
   ],
   imports: [
     BrowserModule,
