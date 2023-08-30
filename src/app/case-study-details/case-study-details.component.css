@@ -195,7 +195,7 @@
 }
 
 .action-buttons {
-    margin-top: 25px;
+    margin-top: 19px;
     margin-left: 25px;
 }
 
@@ -203,13 +203,22 @@
     padding-left: 20px;
 }
 
-.share {
+#share {
     border: none;
      background: none;
     padding-left: 230px;
 
 }
-
+/* .upper-success-snackbar {
+    background-color: #43a047; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 0 auto;
+    width: 80%; 
+  } */
 .download {
     border: none;
     background: none;
@@ -221,6 +230,23 @@
     background: none;
     padding-left: 18px;
 }
+
+.likes {
+ 
+}
+
+.liked {
+    color: #FF6D43; /* Change the color to your desired liked color */
+}
+
+.unliked {
+    color: initial; /* Reset the color to the default or inherit from parent */
+}
+
+
+
+
+
 
 /* ................project scope............................... */
 
@@ -875,7 +901,7 @@ body {
     font-size: 40px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 4px;
+    margin-top: 20px;
     margin-left: 2%;
     text-decoration: underline;
     text-decoration-color: #ff6d43;

@@ -27,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ResizeExampleComponent } from './resize-example/resize-example.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -47,6 +48,7 @@ import { ResizeExampleComponent } from './resize-example/resize-example.componen
     Testing1Component,
     RenderingComponent,
     ResizeExampleComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,10 @@ import { ResizeExampleComponent } from './resize-example/resize-example.componen
     HttpClientModule,
     RouterModule,
     MatSnackBarModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+   
+    
  
     // AuthModule.forRoot({
     //   domain: '',

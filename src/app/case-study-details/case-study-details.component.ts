@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LikesService } from '../services/likes.service';
-import {  MatSnackBar } from '@angular/material/snack-bar';
+import {  MatSnackBar, MatSnackBarDismiss } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-case-study-details',
@@ -25,10 +25,10 @@ export class CaseStudyDetailsComponent  {
   PageArtifacts3: any;
   Testimonials: any;
   logoCollection: any;
-  snackBar: any;
+
   
 
-  constructor( private _snackBar: MatSnackBar,private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) { 
+  constructor( private snackBar: MatSnackBar,private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) { 
     this.likesCount = this.likesService.getLikesCount(this.contentId);
     
   }
@@ -204,19 +204,6 @@ export class CaseStudyDetailsComponent  {
         this.logoCollection=response.data.detailsPage.additionalReferencesCollection.items[10];
 
         
-
-
-
-
-       
-
-
-
-
-
-
-
-    
       },
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
@@ -230,11 +217,12 @@ export class CaseStudyDetailsComponent  {
   comment = '';
   comments: { userId: string; comment: string }[] = [];
   newComment: string = '';
-
+  isLiked = false;
    
   toggleLike(contentId: string, userId: string): void {
     this.likesService.handleLike(contentId, userId);
     this.likesCount = this.likesService.getLikesCount(contentId);
+    this.isLiked = !this.isLiked;
   }
 
   addComment(contentId: string, userId: string, commentText: string): void {
@@ -249,13 +237,33 @@ export class CaseStudyDetailsComponent  {
     }
   }
 
-  showSnackbar(message: string) {
-    this.snackBar.open(message, 'Dismiss', {
-      duration: 3000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom',
-    });
-  }
+
+
+
+
+
+// ...............................
+
+
+openSnackBar(message: string, action: string) {
+  this.snackBar.open(message, action, {
+    duration: 6000,
+  });
+}
+
+showSuccessSnackBar() {
+  this.openSnackBar('Shared Successfully!','succes');
+}
+
+showDownloadSnackBar() {
+  this.openSnackBar('Download Successfully!','');
+}
+showlikeSnackBar() {
+  this.openSnackBar('likes Successfully!','');
+}
+// ..................................
+
+
   publish: any = [
     {
       name: "Published Name:",
