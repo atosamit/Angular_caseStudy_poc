@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { labelConstants } from '../HardcodeTags';
 
 
 @Component({
@@ -12,6 +13,7 @@ export class SlideShowComponent implements OnInit {
   slideIndex = 0;
   totalSlides!: number;
   data1: any[] = [];
+  labelConstants = labelConstants ;
   isSlideshowRunning = false;
 
 

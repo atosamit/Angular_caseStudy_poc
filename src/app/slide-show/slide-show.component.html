@@ -56,7 +56,7 @@
         <div class="search_box">
           <input class="search_icon" type="text" placeholder="Search by keyword, Name, Domain, date etc"
             [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()" />
-          <button class="search_button">Search</button>
+          <button class="search_button">{{ labelConstants [1].Searchbtn }}</button>
         </div>
       </div>
     </div>

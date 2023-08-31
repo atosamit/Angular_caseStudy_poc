@@ -5,6 +5,7 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
 import { CsvDownloadService } from '../csv-download.service';
 import { LikesService } from '../services/likes.service';
 import { jsPDF } from "jspdf"
+import { labelConstants } from '../HardcodeTags';
 
 @Component({
   selector: 'app-grid-page',
@@ -15,7 +16,8 @@ export class GridPageComponent implements OnInit {
   @ViewChild('content', { static: false }) el!: ElementRef;
 
   isGridView: boolean = true;
-
+  // all hard present here
+  labelConstants = labelConstants ;
   isListViewActive = false; // Initially set to list view
   sortBy: any[] = [];
   logoCollection: any[]=[];
@@ -49,6 +51,8 @@ export class GridPageComponent implements OnInit {
   data: any[] = [];
   filteredData: any[] = []; // Filtered data based on selected domain
   domains: string[] = []; // List of unique domains
+  cxTower: string[] = []; // List of unique cxTower
+  cxTech: string[] = []; // List of unique cxTech
   filteredData1: any[] = []; // Filtered data based on selected subdomain
   // Initialize an empty search text
   currentPage: number = 1;
@@ -82,6 +86,8 @@ export class GridPageComponent implements OnInit {
         items {
           domain
           subDomain
+          cxTech
+          cxTower
           details {
             sys{
               id
@@ -117,6 +123,8 @@ export class GridPageComponent implements OnInit {
         this.filteredData = [...this.data]; // Initialize filteredData with all data
         this.filteredData1 = [...this.filteredData]; // Initialize filteredData with all data
         this.domains = this.getUniqueDomains(this.data); // Get unique domains
+        this.cxTower = this.getCxTower(this.data); // Get unique domains
+        this.cxTech = this.getCxTech(this.data); // Get unique domains
         this.sortBy = response.data.sortByCollection.items;
         this.logoCollection = response.data.logoCollection.items;
 
@@ -125,6 +133,8 @@ this.domainCollection = response.data.domainCollection.items;
 
 
         console.log(this.data)
+        console.log(this.cxTech)
+
       },
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
@@ -142,6 +152,28 @@ this.domainCollection = response.data.domainCollection.items;
     const selectedDomain = event.tab.textLabel.split(' ')[0]; // Remove the count from the label
     this.filterDataByDomain(selectedDomain);
   }
+  getCxTower(data: any[]): string[] {
+    const cxTower = new Set<string>();
+    data.forEach(item => {
+      if (item.cxTower !== null) {
+        cxTower.add(item.cxTower);
+      }
+    });
+    return Array.from(cxTower).reverse();
+  }
+  
+
+
+  getCxTech(data: any[]): string[] {
+    const cxTech = new Set<string>();
+    data.forEach(item => {
+      if (item.cxTech !== null) {
+        cxTech.add(item.cxTech);
+      }
+    });
+    return Array.from(cxTech).reverse();
+  }
+  
 
  
 
