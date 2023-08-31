@@ -166,44 +166,44 @@
                       }}</button>
                     <!-- Add "close-button" class -->
                   </div>
+
+                  <!-- downlaod btn -->
+                  <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn">
+                    <img [src]="logoCollection[6].logo.url" class="icons">
+                  </button>
                 </div>
+            
 
-                <!-- downlaod btn -->
-                <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn">
+
+
+              <div *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
+                <div class="share" style="margin-top: 40px;">
+
+                  <!-- share icon list view -->
+                  <img [src]="logoCollection[5].logo.url" class="icons">
+                  <!-- download icon list view -->
                   <img [src]="logoCollection[6].logo.url" class="icons">
-                </button>
-              </div>
-            </div>
+                  <!-- like icon list view -->
+                  <img [src]="logoCollection[7].logo.url" class="icons">
+                  <!-- comment icon list view -->
+                  <img [src]="logoCollection[4].logo.url" class="icons">
 
-
-
-            <div *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
-              <div class="share" style="margin-top: 40px;">
-
-                <!-- share icon list view -->
-                <img [src]="logoCollection[5].logo.url" class="icons">
-                <!-- download icon list view -->
-                <img [src]="logoCollection[6].logo.url" class="icons">
-                <!-- like icon list view -->
-                <img [src]="logoCollection[7].logo.url" class="icons">
-                <!-- comment icon list view -->
-                <img [src]="logoCollection[4].logo.url" class="icons">
-
-                <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
-                  style="float: right;margin-top: -10px;">
-                  {{ labelConstants [0].Publishedon }} <br><strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy'
-                    :'UTC' }}</strong>
-                </p>
+                  <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
+                    style="float: right;margin-top: -10px;">
+                    {{ labelConstants [0].Publishedon }} <br><strong>{{ item.details.publishedOnDate | date:
+                      'dd-MM-yyyy'
+                      :'UTC' }}</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+
       </div>
     </ng-container>
-
   </div>
-
-
   <!-- pagination -->
   <div class="pagination">
     <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">{{ labelConstants

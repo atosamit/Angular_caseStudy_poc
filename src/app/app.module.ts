@@ -24,6 +24,7 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -42,6 +43,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     Testimonial2Component,
     LoginComponent,
     Testing1Component,
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     RouterModule,
     MatSnackBarModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+   
+    
  
     // AuthModule.forRoot({
     //   domain: '',
