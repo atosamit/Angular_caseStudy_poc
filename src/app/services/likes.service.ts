@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LikesService {
+  handleUnlike: any;
   getComments(contentId: string): { userId: string; comment: string; }[] {
     throw new Error('Method not implemented.');
   }

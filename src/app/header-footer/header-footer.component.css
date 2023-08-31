@@ -16,7 +16,12 @@
     height: 40px; /* Set the desired height */
     object-fit: contain; /* Adjust how the logo is displayed within the given dimensions */
   }
-  
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Adjust z-index as needed */
+  }
   .navbar-brand {
     display: flex;
     align-items: center;

@@ -2,16 +2,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LikesService } from '../services/likes.service';
-import {  MatSnackBar, MatSnackBarDismiss } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarDismiss } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-case-study-details',
   templateUrl: './case-study-details.component.html',
-  styleUrls: ['./case-study-details.component.css']
+  styleUrls: ['./case-study-details.component.css','case study.css']
 })
-export class CaseStudyDetailsComponent  {
- 
- 
+export class CaseStudyDetailsComponent {
+
+
   data: any;
   logo: any;
   projectScope: any;
@@ -26,11 +26,12 @@ export class CaseStudyDetailsComponent  {
   Testimonials: any;
   logoCollection: any;
 
-  
 
-  constructor( private snackBar: MatSnackBar,private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) { 
+
+
+  constructor(private snackBar: MatSnackBar, private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
-    
+
   }
   breadcrumbItems = [
     { label: 'Home', route: '/home' },
@@ -176,7 +177,7 @@ export class CaseStudyDetailsComponent  {
     }
     `;
 
-    this.http.post(endpoint, {  query, variables: { id } }, { headers }).subscribe(
+    this.http.post(endpoint, { query, variables: { id } }, { headers }).subscribe(
       (response: any) => {
         // console.log(response.data);
         this.data = response.data.detailsPage;
@@ -185,14 +186,14 @@ export class CaseStudyDetailsComponent  {
         console.log(this.logo)
         this.projectScope = response.data.detailsPage.additionalReferencesCollection.items[0];
         console.log(this.projectScope)
-// challeges from cms
+        // challeges from cms
         this.challenges = response.data.detailsPage.additionalReferencesCollection.items[1];
-// UxApproch from cms
+        // UxApproch from cms
         this.UxApproch = response.data.detailsPage.additionalReferencesCollection.items[2];
-// PageSolution from cms created instance
+        // PageSolution from cms created instance
         this.PageSolution = response.data.detailsPage.additionalReferencesCollection.items[3];
 
-// images using m=cms
+        // images using m=cms
         this.PageArtifacts = response.data.detailsPage.additionalReferencesCollection.items[4];
         this.PageArtifacts1 = response.data.detailsPage.additionalReferencesCollection.items[5];
         this.PageArtifacts2 = response.data.detailsPage.additionalReferencesCollection.items[6];
@@ -201,9 +202,9 @@ export class CaseStudyDetailsComponent  {
         this.PageKey = response.data.detailsPage.additionalReferencesCollection.items[8];
         this.Testimonials = response.data.detailsPage.additionalReferencesCollection.items[9];
 
-        this.logoCollection=response.data.detailsPage.additionalReferencesCollection.items[10];
+        this.logoCollection = response.data.detailsPage.additionalReferencesCollection.items[10];
 
-        
+
       },
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
@@ -217,13 +218,11 @@ export class CaseStudyDetailsComponent  {
   comment = '';
   comments: { userId: string; comment: string }[] = [];
   newComment: string = '';
-  isLiked = false;
-   
-  toggleLike(contentId: string, userId: string): void {
-    this.likesService.handleLike(contentId, userId);
-    this.likesCount = this.likesService.getLikesCount(contentId);
-    this.isLiked = !this.isLiked;
-  }
+
+  // toggleLike(contentId: string, userId: string): void {
+  //   this.likesService.handleLike(contentId, userId);
+  //   this.likesCount = this.likesService.getLikesCount(contentId);
+  // }
 
   addComment(contentId: string, userId: string, commentText: string): void {
     this.likesService.handleComment(contentId, userId, commentText);
@@ -238,32 +237,56 @@ export class CaseStudyDetailsComponent  {
   }
 
 
+  userLikeCounts: { [userId: string]: { count: number, liked: boolean } } = {};
 
 
+  toggleLike(view: 'like' | 'unlike', contentId: string, userId: string) {
+    if (view === 'like') {
+      if (!this.userLikeCounts[userId]) {
+        this.userLikeCounts[userId] = { count: 0, liked: false };
+      }
+  
+      if (!this.userLikeCounts[userId].liked) {
+        this.likesService.handleLike(contentId, userId);
+        this.userLikeCounts[userId].count++;
+      } else {
+        this.likesService.handleUnlike(contentId, userId);
+        this.userLikeCounts[userId].count--;
+      }
+  
+      this.userLikeCounts[userId].liked = !this.userLikeCounts[userId].liked;
+      this.likesCount = this.likesService.getLikesCount(contentId);
+    }
 
+  }
+  
+  // ...............................
 
-// ...............................
+  open: boolean = false;
 
+  showSuccessSnackBar(): void {
+    this.open = true;
+    this.snackBar.open('Shared Successfully!', 'Close', {
+      duration: 1000,
+      verticalPosition: 'top'
+    });
+  }
+  showlikeSnackBar() : void {
+    this.open = true;
+    this.snackBar.open('likes Successfully!', 'Close', {
+      duration: 1000,
+      verticalPosition: 'top'
+    });
+  }
+  showDownloadSnackBar(): void {
+    this.open = true;
+    this.snackBar.open('Download Successfully!', 'Close', {
+      duration: 1000,
+      verticalPosition: 'top'
+    });
+  }
 
-openSnackBar(message: string, action: string) {
-  this.snackBar.open(message, action, {
-    duration: 6000,
-  });
-}
-
-showSuccessSnackBar() {
-  this.openSnackBar('Shared Successfully!','succes');
-}
-
-showDownloadSnackBar() {
-  this.openSnackBar('Download Successfully!','');
-}
-showlikeSnackBar() {
-  this.openSnackBar('likes Successfully!','');
-}
-// ..................................
-
-
+  // ..................................
   publish: any = [
     {
       name: "Published Name:",
@@ -274,17 +297,17 @@ showlikeSnackBar() {
 
   details: any = [
     {
-      home:"Home",
-      arrow:"  >",
-      title:"Nestle C4C Go",
+      home: "Home",
+      arrow: "  >",
+      title: "Nestle C4C Go",
       comments: "11 Comments",
       likes: " 40 Likes"
     }
   ]
 
 
- 
-title:any="our UX approach"
+
+  title: any = "our UX approach"
   cx_design: any = [
     {
       img: "assets/team 1.svg",
