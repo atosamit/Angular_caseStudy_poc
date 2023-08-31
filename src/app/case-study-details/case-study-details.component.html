@@ -93,7 +93,7 @@
 
                     <button class="likes" [style.color]="userLikeCounts[userId]?.liked ? '#FF6D43' : 'initial'"
                     (click)="toggleLike(userLikeCounts[userId]?.liked ? 'unlike' : 'like', contentId, userId);">
-                <img class="likes"
+                <img 
                      [src]="userLikeCounts[userId]?.liked ? '../assets/thumbfill.png' : '../assets/thumb.png'">
                 {{ userLikeCounts[userId]?.count }}
             </button>
