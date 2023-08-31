@@ -19,7 +19,6 @@ import { Testimonial2Component } from './testimonial2/testimonial2.component';
 import { RouterModule } from '@angular/router';
 // import { AuthModule } from '@auth0/auth0-angular';
 import { LoginComponent } from './login/login.component';
-import { Testing1Component } from './testing1/testing1.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
@@ -42,7 +41,6 @@ import { MatButtonModule } from '@angular/material/button';
     DetailsPageComponent,
     Testimonial2Component,
     LoginComponent,
-    Testing1Component,
   
     
   ],

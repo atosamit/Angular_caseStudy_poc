@@ -9,7 +9,7 @@ import { labelConstants } from '../HardcodeTags';
 
 @Component({
   selector: 'app-grid-page',
-  templateUrl: './grid-page.component.html',
+  templateUrl:'./grid-page.component.html',
   styleUrls: ['./grid-page.component.css']
 })
 export class GridPageComponent implements OnInit {
