@@ -133,8 +133,7 @@
 
 
               <!-- like and comment btn for list -->
-              <button *ngIf="!isGridView" class="list_like_comment"
-                style="display: inline-block; margin-right: 20px; border: none; background: none;" class="Comments_btn">
+              <button *ngIf="!isGridView" class="list_like_comment" class="Comments_btn">
                 <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
                 {{ labelConstants [0].Comments }}
               </button>
@@ -145,26 +144,25 @@
                 {{ likesCount }}
               </button>
 
-
-
-              <div class="divv" *ngIf="isGridView">
-
-                <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
-                    [src]="logoCollection[5].logo.url"></button>
-                <!-- popop share -->
-                <div [hidden]="!showPopup" class="popup-container">
-                  <div class="popup-content">
-                    <button class="popup-button" (click)="handleEmailShare('item.details.sys.id')">
-                      <i class="fab fa-linkedin fa-2x" style="color: #0077B5;"></i>
-                      <span class="button-label"> {{ labelConstants [0].ShareonLinkedIn }}</span>
-                    </button>
-                    <button class="popup-button" (click)="handleLinkedInSharee('item.details.sys.id')">
-                      <i class="far fa-envelope fa-2x" style="color: #666;"></i>
-                      <span class="button-label"> {{ labelConstants [0].ShareviaEmail }}</span>
-                    </button>
-                    <button class="popup-button close-button" (click)="closePopup()"> {{ labelConstants [0].CloseDiaBox
-                      }}</button>
-                    <!-- Add "close-button" class -->
+                <div class="divv" *ngIf="isGridView">
+                  <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
+                      [src]="logoCollection[5].logo.url"></button>
+                  <!-- popop share -->
+                  <div [hidden]="!showPopup" class="popup-container">
+                    <div class="popup-content">
+                      <button class="popup-button" (click)="handleEmailShare('item.details.sys.id')">
+                        <i class="fab fa-linkedin fa-2x" style="color: #0077B5;"></i>
+                        <span class="button-label"> {{ labelConstants [0].ShareonLinkedIn }}</span>
+                      </button>
+                      <button class="popup-button" (click)="handleLinkedInSharee('item.details.sys.id')">
+                        <i class="far fa-envelope fa-2x" style="color: #666;"></i>
+                        <span class="button-label"> {{ labelConstants [0].ShareviaEmail }}</span>
+                      </button>
+                      <button class="popup-button close-button" (click)="closePopup()"> {{ labelConstants
+                        [0].CloseDiaBox
+                        }}</button>
+                      <!-- Add "close-button" class -->
+                    </div>
                   </div>
 
                   <!-- downlaod btn -->
