@@ -147,14 +147,11 @@
                 <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
               </button>
-<<<<<<< HEAD
+
               <div style=" display: inline-block;" *ngIf="isGridView">
-=======
-
-
 
               <div class="divv"  *ngIf="isGridView">
->>>>>>> e075b9ca283d7da865609b42372c7cf607140900
+
 
                 <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
                     [src]="logoCollection[5].logo.url"></button>
@@ -206,11 +203,11 @@
           </div>
         </div>
       </div>
-    </ng-container>
+  
 
   </div>
-
-
+</ng-container>
+</div>
   <!-- pagination -->
   <div class="pagination">
     <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">{{ labelConstants
