@@ -119,15 +119,13 @@
 
               <!-- like and comment for grid -->
               <!-- Comment Button -->
-              <button *ngIf="isGridView"
-                class="Comments_btn">
+              <button *ngIf="isGridView" class="Comments_btn">
                 <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
                 {{ labelConstants [0].Comments }}
               </button>
 
               <!-- Like Button -->
-              <button *ngIf="isGridView"
-                (click)="toggleLike(contentId, userId)" class="like_btn">
+              <button *ngIf="isGridView" (click)="toggleLike(contentId, userId)" class="like_btn">
                 <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
               </button>
@@ -135,79 +133,75 @@
 
 
               <!-- like and comment btn for list -->
-              <button *ngIf="!isGridView" class="list_like_comment"
-               class="Comments_btn">
+              <button *ngIf="!isGridView" class="list_like_comment" class="Comments_btn">
                 <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
                 {{ labelConstants [0].Comments }}
               </button>
 
               <!-- Like Button from list view -->
-              <button *ngIf="!isGridView"
-                (click)="toggleLike(contentId, userId)" class="list_like_btn">
+              <button *ngIf="!isGridView" (click)="toggleLike(contentId, userId)" class="list_like_btn">
                 <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
               </button>
 
-              <div style=" display: inline-block;" *ngIf="isGridView">
-
-              <div class="divv"  *ngIf="isGridView">
-
-
-                <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
-                    [src]="logoCollection[5].logo.url"></button>
-                <!-- popop share -->
-                <div [hidden]="!showPopup" class="popup-container">
-                  <div class="popup-content">
-                    <button class="popup-button" (click)="handleEmailShare('item.details.sys.id')">
-                      <i class="fab fa-linkedin fa-2x" style="color: #0077B5;"></i>
-                      <span class="button-label"> {{ labelConstants [0].ShareonLinkedIn }}</span>
-                    </button>
-                    <button class="popup-button" (click)="handleLinkedInSharee('item.details.sys.id')">
-                      <i class="far fa-envelope fa-2x" style="color: #666;"></i>
-                      <span class="button-label"> {{ labelConstants [0].ShareviaEmail }}</span>
-                    </button>
-                    <button class="popup-button close-button" (click)="closePopup()"> {{ labelConstants [0].CloseDiaBox
-                      }}</button>
-                    <!-- Add "close-button" class -->
+                <div class="divv" *ngIf="isGridView">
+                  <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
+                      [src]="logoCollection[5].logo.url"></button>
+                  <!-- popop share -->
+                  <div [hidden]="!showPopup" class="popup-container">
+                    <div class="popup-content">
+                      <button class="popup-button" (click)="handleEmailShare('item.details.sys.id')">
+                        <i class="fab fa-linkedin fa-2x" style="color: #0077B5;"></i>
+                        <span class="button-label"> {{ labelConstants [0].ShareonLinkedIn }}</span>
+                      </button>
+                      <button class="popup-button" (click)="handleLinkedInSharee('item.details.sys.id')">
+                        <i class="far fa-envelope fa-2x" style="color: #666;"></i>
+                        <span class="button-label"> {{ labelConstants [0].ShareviaEmail }}</span>
+                      </button>
+                      <button class="popup-button close-button" (click)="closePopup()"> {{ labelConstants
+                        [0].CloseDiaBox
+                        }}</button>
+                      <!-- Add "close-button" class -->
+                    </div>
                   </div>
+
+                  <!-- downlaod btn -->
+                  <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn">
+                    <img [src]="logoCollection[6].logo.url" class="icons">
+                  </button>
                 </div>
+            
 
-                <!-- downlaod btn -->
-                <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn">
+
+
+              <div *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
+                <div class="share" style="margin-top: 40px;">
+
+                  <!-- share icon list view -->
+                  <img [src]="logoCollection[5].logo.url" class="icons">
+                  <!-- download icon list view -->
                   <img [src]="logoCollection[6].logo.url" class="icons">
-                </button>
-              </div>
-            </div>
+                  <!-- like icon list view -->
+                  <img [src]="logoCollection[7].logo.url" class="icons">
+                  <!-- comment icon list view -->
+                  <img [src]="logoCollection[4].logo.url" class="icons">
 
-
-
-            <div *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
-              <div class="share" style="margin-top: 40px;">
-
-                <!-- share icon list view -->
-                <img [src]="logoCollection[5].logo.url" class="icons">
-                <!-- download icon list view -->
-                <img [src]="logoCollection[6].logo.url" class="icons">
-                <!-- like icon list view -->
-                <img [src]="logoCollection[7].logo.url" class="icons">
-                <!-- comment icon list view -->
-                <img [src]="logoCollection[4].logo.url" class="icons">
-
-                <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
-                  style="float: right;margin-top: -10px;">
-                  {{ labelConstants [0].Publishedon }} <br><strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy'
-                    :'UTC' }}</strong>
-                </p>
+                  <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
+                    style="float: right;margin-top: -10px;">
+                    {{ labelConstants [0].Publishedon }} <br><strong>{{ item.details.publishedOnDate | date:
+                      'dd-MM-yyyy'
+                      :'UTC' }}</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-  
 
+
+      </div>
+    </ng-container>
   </div>
-</ng-container>
-</div>
   <!-- pagination -->
   <div class="pagination">
     <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">{{ labelConstants
