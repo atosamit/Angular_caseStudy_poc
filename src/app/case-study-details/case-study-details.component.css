@@ -506,6 +506,7 @@ body {
     width: 107%;
     margin-left: -2%;
     height: 26px;
+    overflow: hidden;
     margin-top: 2%;
     background: rgba(255, 109, 67, 0.40);
 }

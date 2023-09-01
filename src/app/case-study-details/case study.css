@@ -674,6 +674,7 @@
     .ux-dividing-line{
         width: 119%;
         margin-left: -9%;
+        overflow: hidden;
         height: 26px;
         margin-top: 2%;
         background: rgba(255, 109, 67, 0.40);
@@ -900,6 +901,7 @@
     .ux-dividing-line{
         width: 141%;
         margin-left: -16%;
+        overflow: hidden;
         height: 26px;
         margin-top: 2%;
         background: rgba(255, 109, 67, 0.40);
