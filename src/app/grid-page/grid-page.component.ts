@@ -2,7 +2,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
-import { CsvDownloadService } from '../csv-download.service';
 import { LikesService } from '../services/likes.service';
 import { jsPDF } from "jspdf"
 import { labelConstants } from '../HardcodeTags';
@@ -67,7 +66,7 @@ export class GridPageComponent implements OnInit {
 
 
 
-  constructor(private router: Router,private http: HttpClient, private csvDownloadService: CsvDownloadService, private likesService: LikesService) {
+  constructor(private router: Router,private http: HttpClient, private likesService: LikesService) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
@@ -239,8 +238,7 @@ export class GridPageComponent implements OnInit {
     alert("Downloaded Successfully!")
     const csvData = this.convertToCSV(this.data);
     const filename = 'data.csv';
-    this.csvDownloadService.downloadCSV(csvData, filename);
-
+   
   }
   private convertToCSV(data: any[]): string {
     const separator = ','; // You can change the separator to ';' if you prefer.
@@ -295,31 +293,6 @@ export class GridPageComponent implements OnInit {
     window.open(linkedInShareUrl, '_blank');
     this.closePopup();
   }
-
-  // for download pdf
-
-  // downloadPDF(id: string) {
-  //   const apiUrl = `http://localhost:4200/case_study/${id}`;
-
-  //   this.http.get(apiUrl, { responseType: 'arraybuffer' }).subscribe(
-  //     (response: ArrayBuffer) => {
-  //       const blob = new Blob([response], { type: 'application/pdf' });
-  //       const url = window.URL.createObjectURL(blob);
-
-  //       const a = document.createElement('a');
-  //       a.href = url;
-  //       a.download = `case_study_${id}.pdf`;
-  //       document.body.appendChild(a);
-  //       a.click();
-
-  //       window.URL.revokeObjectURL(url);
-  //       document.body.removeChild(a);
-  //     },
-  //     error => {
-  //       console.error('Error generating PDF:', error);
-  //     }
-  //   );
-  // }
 
 
 
