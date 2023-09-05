@@ -122,9 +122,16 @@
               </button>
 
               <!-- Like Button -->
-              <button *ngIf="isGridView" (click)="toggleLike(contentId, userId)" class="like_btn">
+              <!-- <button *ngIf="isGridView" (click)="toggleLike(contentId, userId)" class="like_btn">
                 <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
+              </button> -->
+
+
+              <!-- like btn using redux -->
+              <button *ngIf="isGridView" (click)="toggleCount()" class="like_btn">
+                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
+                {{counterdisplay}}
               </button>
 
 
@@ -137,9 +144,13 @@
               </button>
 
               <!-- Like Button from list view -->
-              <button *ngIf="!isGridView" (click)="toggleLike(contentId, userId)" class="list_like_btn">
+              <!-- <button *ngIf="!isGridView" (click)="toggleLike(contentId, userId)" class="list_like_btn">
                 <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
                 {{ likesCount }}
+              </button> -->
+              <button *ngIf="!isGridView"  (click)="toggleCount()" class="list_like_btn">
+                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
+                {{ counterdisplay }}
               </button>
 
 

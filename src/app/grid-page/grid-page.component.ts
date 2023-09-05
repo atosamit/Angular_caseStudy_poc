@@ -6,6 +6,9 @@ import { LikesService } from '../services/likes.service';
 import { jsPDF } from "jspdf"
 import { labelConstants } from '../HardcodeTags';
 import { Router } from '@angular/router'; // Import the Router module
+import { Store } from '@ngrx/store';
+// import { decrement, increment, } from 'src/app/store/counter.actions';
+import { decrement,increment } from 'src/store/counter.actions';
 
 @Component({
   selector: 'app-grid-page',
@@ -22,6 +25,7 @@ export class GridPageComponent implements OnInit {
   sortBy: any[] = [];
   logoCollection: any[] = [];
   domainCollection: any[] = [];
+  isIncrementing: any;
  
 
   toggleView(view: 'list' | 'grid') {
@@ -66,13 +70,19 @@ export class GridPageComponent implements OnInit {
 
 
 
-  constructor(private router: Router,private http: HttpClient, private likesService: LikesService) {
+  constructor(private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
-
+  counterdisplay!:number;
   ngOnInit() {
     this.fetchData();
+    this.store.select('counter').subscribe(data=>{
+      this.counterdisplay=data.counter;
+      console.log(data.counter)
+  
+    })
+    console.log(this.store)
   }
   fetchData() {
     const endpoint = 'https://graphql.contentful.com/content/v1/spaces/40jcljdzym6w';
@@ -353,6 +363,19 @@ export class GridPageComponent implements OnInit {
   }
   get totalPages() {
     return Math.ceil(this.filteredData1.length / this.itemsPerPage);
+  }
+
+  
+
+  // redux here
+  toggleCount() {
+    if (this.isIncrementing) {
+     console.log("hello")
+      this.store.dispatch(decrement());
+    } else {
+      this.store.dispatch(increment());
+    }
+    this.isIncrementing = !this.isIncrementing;
   }
 }
 
