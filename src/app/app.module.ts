@@ -24,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -41,6 +42,7 @@ import { MatButtonModule } from '@angular/material/button';
     DetailsPageComponent,
     Testimonial2Component,
     LoginComponent,
+    ErrorComponent,
   
     
   ],
