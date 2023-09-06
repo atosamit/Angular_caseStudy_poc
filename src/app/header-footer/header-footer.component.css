@@ -41,7 +41,7 @@
   @media screen and (min-width: 375px) and (max-width: 600px) {
     .icons-container {
       float: right;
-      margin-top: -55px;
+      margin-top: -51px;
       height: auto;
       width: 39%;
   }
@@ -62,9 +62,9 @@
   @media screen and (min-width: 360px) and (max-width: 374px) {
     .icons-container {
       float: right;
-      margin-top: -55px;
+      margin-top: -49px;
       height: auto;
-      width: 39%;
+      width: 41%;
   }
   .navbar-brand{
    
