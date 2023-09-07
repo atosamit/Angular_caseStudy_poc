@@ -2,26 +2,31 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
-import { CsvDownloadService } from '../csv-download.service';
 import { LikesService } from '../services/likes.service';
 import { jsPDF } from "jspdf"
 import { labelConstants } from '../HardcodeTags';
+import { Router } from '@angular/router'; // Import the Router module
+import { Store } from '@ngrx/store';
+// import { decrement, increment, } from 'src/app/store/counter.actions';
+import { decrement,increment } from 'src/store/counter.actions';
 
 @Component({
   selector: 'app-grid-page',
   templateUrl: './grid-page.component.html',
-  styleUrls: ['./grid-page.component.css']
+  styleUrls: ['./grid-page.component.css','./grid-page.css']
 })
 export class GridPageComponent implements OnInit {
   @ViewChild('content', { static: false }) el!: ElementRef;
 
   isGridView: boolean = true;
   // all hard present here
-  labelConstants = labelConstants ;
+  labelConstants = labelConstants;
   isListViewActive = false; // Initially set to list view
   sortBy: any[] = [];
-  logoCollection: any[]=[];
-  domainCollection: any[]=[];
+  logoCollection: any[] = [];
+  domainCollection: any[] = [];
+  isIncrementing: any;
+ 
 
   toggleView(view: 'list' | 'grid') {
     if (view === 'list') {
@@ -65,13 +70,19 @@ export class GridPageComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient, private csvDownloadService: CsvDownloadService, private likesService: LikesService) {
+  constructor(private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
-
+  counterdisplay!:number;
   ngOnInit() {
     this.fetchData();
+    this.store.select('counter').subscribe(data=>{
+      this.counterdisplay=data.counter;
+      console.log(data.counter)
+  
+    })
+    console.log(this.store)
   }
   fetchData() {
     const endpoint = 'https://graphql.contentful.com/content/v1/spaces/40jcljdzym6w';
@@ -129,15 +140,20 @@ export class GridPageComponent implements OnInit {
         this.logoCollection = response.data.logoCollection.items;
 
         // domain and sub domains toggle
-this.domainCollection = response.data.domainCollection.items;
+        this.domainCollection = response.data.domainCollection.items;
 
 
         console.log(this.data)
         console.log(this.cxTech)
 
+        
+
       },
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
+
+
+       
       }
     );
   }
@@ -161,7 +177,7 @@ this.domainCollection = response.data.domainCollection.items;
     });
     return Array.from(cxTower).reverse();
   }
-  
+
 
 
   getCxTech(data: any[]): string[] {
@@ -173,9 +189,9 @@ this.domainCollection = response.data.domainCollection.items;
     });
     return Array.from(cxTech).reverse();
   }
-  
 
- 
+
+
 
   getDomainCount(domain: string): number {
     if (domain === 'All') {
@@ -232,8 +248,7 @@ this.domainCollection = response.data.domainCollection.items;
     alert("Downloaded Successfully!")
     const csvData = this.convertToCSV(this.data);
     const filename = 'data.csv';
-    this.csvDownloadService.downloadCSV(csvData, filename);
-
+   
   }
   private convertToCSV(data: any[]): string {
     const separator = ','; // You can change the separator to ';' if you prefer.
@@ -289,36 +304,11 @@ this.domainCollection = response.data.domainCollection.items;
     this.closePopup();
   }
 
-  // for download pdf
 
-  // downloadPDF(id: string) {
-  //   const apiUrl = `http://localhost:4200/case_study/${id}`;
 
-  //   this.http.get(apiUrl, { responseType: 'arraybuffer' }).subscribe(
-  //     (response: ArrayBuffer) => {
-  //       const blob = new Blob([response], { type: 'application/pdf' });
-  //       const url = window.URL.createObjectURL(blob);
+  // Toggle the like status
 
-  //       const a = document.createElement('a');
-  //       a.href = url;
-  //       a.download = `case_study_${id}.pdf`;
-  //       document.body.appendChild(a);
-  //       a.click();
 
-  //       window.URL.revokeObjectURL(url);
-  //       document.body.removeChild(a);
-  //     },
-  //     error => {
-  //       console.error('Error generating PDF:', error);
-  //     }
-  //   );
-  // }
- 
-
-  
-    // Toggle the like status
-   
-  
   contentId = '${sys.id}'; // Replace with the actual content ID
   userId = '40jcljdzym6w'; // Replace with the actual user ID
   likesCount = 0;
@@ -373,6 +363,19 @@ this.domainCollection = response.data.domainCollection.items;
   }
   get totalPages() {
     return Math.ceil(this.filteredData1.length / this.itemsPerPage);
+  }
+
+  
+
+  // redux here
+  toggleCount() {
+    if (this.isIncrementing) {
+     console.log("hello")
+      this.store.dispatch(decrement());
+    } else {
+      this.store.dispatch(increment());
+    }
+    this.isIncrementing = !this.isIncrementing;
   }
 }
 

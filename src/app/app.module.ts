@@ -19,12 +19,14 @@ import { Testimonial2Component } from './testimonial2/testimonial2.component';
 import { RouterModule } from '@angular/router';
 // import { AuthModule } from '@auth0/auth0-angular';
 import { LoginComponent } from './login/login.component';
-import { Testing1Component } from './testing1/testing1.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { ErrorComponent } from './error/error.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from 'src/store/counter.reducer';
 
 
 
@@ -42,7 +44,7 @@ import { MatButtonModule } from '@angular/material/button';
     DetailsPageComponent,
     Testimonial2Component,
     LoginComponent,
-    Testing1Component,
+    ErrorComponent,
   
     
   ],
@@ -62,6 +64,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    StoreModule.forRoot({counter:counterReducer})
    
     
  
