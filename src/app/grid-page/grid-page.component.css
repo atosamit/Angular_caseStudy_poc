@@ -394,6 +394,15 @@ input.toggle-round:not(:checked)~.right-side .label {
   border: none;
 }
 
+/* .mat-mdc-tab .mdc-tab__text-label {
+  color: var(--mat-tab-header-inactive-label-text-color);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 550;
+  font-family: 'Montserrat';
+  line-height: normal;
+  word-spacing: 2%;
+} */
 /* Default styles */
 .labels {
   display: flex;
@@ -811,7 +820,8 @@ input.toggle-round:not(:checked)~.right-side .label {
 .mat-mdc-tab .mdc-tab__text-label {
  
   font-size: 21px;
-  font-family: Montserrat;
+  font-family: 'Montserrat';
+  font-weight: 600;
 }
   .list-text {
     font-size: 20px;
