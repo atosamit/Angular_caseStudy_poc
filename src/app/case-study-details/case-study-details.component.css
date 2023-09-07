@@ -318,40 +318,6 @@ body {
     background-color: #0B83AB;
 }
 
-@media (max-width: 994px) {
-    .project-scope-img img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        background-color: #0B83AB;
-    }
-}
-
-@media (max-width: 992px) {
-    .project-scope-title {
-        font-size: 24px;
-    }
-}
-
-@media only screen and (max-width: 994px) {
-
-    .col-sm-7,
-    .col-sm-5 {
-        flex: 0 0 100%;
-    }
-
-    .project-scope-title {
-        font-size: 24px;
-        font-weight: 600;
-    }
-
-    .project-description,
-    .project-scope-Inlist {
-        font-size: 16px;
-        padding: 0%;
-    }
-}
 
 /* .............................challenge........................................................... */
 #challenges_main {
@@ -383,23 +349,6 @@ body {
     letter-spacing: 2px;
     text-underline-offset: 8px;
 }
-
-@media (max-width: 992px) {
-    .challenges-label {
-        font-size: 24px;
-    }
-
-    .img-responsive {
-        max-width: 262%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-
-        margin-top: -36%;
-        margin-left: 111%;
-    }
-}
-
 
 
 
@@ -466,25 +415,15 @@ body {
     text-underline-offset: 8px;
 }
 
-.ux_img {
+.ux_img{
     width: 100%;
-    padding-inline: 20px;
+    padding-inline: 74px;
     height: auto;
 }
-
 @media (max-width: 2000px) {
     .ux_img {
         width: 97%;
 
-    }
-}
-
-@media (max-width: 992px) {
-
-    .ux_heading,
-    .line33 {
-        font-size: 24px;
-        /* Adjust the font size as needed */
     }
 }
 
@@ -517,11 +456,6 @@ body {
     margin-left: 3%;
 }
 
-@media (max-width: 992px) {
-    #solution-part-heading {
-        font-size: 24px;
-    }
-}
 
 .solution-part-heading {
     color: #002D3C;
@@ -599,12 +533,6 @@ body {
 }
 
 
-@media (max-width: 992px) {
-    #cx-design-heading {
-        font-size: 22px;
-    }
-}
-
 
 .cx-design-heading {
     color: #002D3C;
@@ -641,8 +569,14 @@ body {
     font-weight: 600;
     line-height: normal;
     margin-right: 14px;
-    text-decoration-line: underline;
+    text-decoration: underline;
+    text-decoration-color: #0B83AB;
     text-transform: uppercase;
+}
+.cx_design_label{
+    padding: 6px;   
+    text-decoration: underline;                     
+    text-decoration-color: #0B83AB;
 }
 
 /* .......................persona........................... */
@@ -667,17 +601,6 @@ body {
     /* margin: -15px; */
 }
 
-@media (max-width: 992px) {
-    .row {
-
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        flex-wrap: wrap;
-        /* margin: -15px; */
-
-    }
-}
 
 
 .col-sm-6 {
@@ -823,7 +746,7 @@ body {
 .img {
     width: 93%;
     display: block;
-    margin-left: 5%;
+    margin-left: 18%;
 }
 
 
@@ -927,11 +850,7 @@ body {
     padding-left: 20px;
 }
 
-@media (max-width: 992px) {
-    .keytakeways-heading {
-        font-size: 24px;
-    }
-}
+
 
 .keytakeways-img-container {
     display: flex;
@@ -946,27 +865,6 @@ body {
     margin-top: 1.5%;
     width: 24%;
 }
-
-
-@media (max-width: 992px) {
-    .keytakeways-img-container {
-        height: auto;
-    }
-
-    .keytakeways-img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-/* dl,
-ol,
-ul {
-    margin-top: -20px;
-    margin-bottom: 1rem;
-    margin-left: 1%;
-    padding-bottom: 16px;
-} */
 
 .keytakeways-items
  {
@@ -1011,11 +909,7 @@ ul {
     margin-left: -5%;
 }
 
-@media (max-width: 992px) {
-    .testimonials-heading {
-        font-size: 24px;
-    }
-}
+
 
 .testimonials-heading h5 {
     color: #002D3C;
@@ -1032,18 +926,9 @@ ul {
     text-underline-offset: 8px;
 }
 
-@media (max-width: 768px) {
-    .testimonials-heading h5 {
-        font-size: 24px;
-        line-height: 1;
-    }
 
-    .testmonials .line {
-        width: 200px;
-    }
-}
 
-/* ................................................ */
+/* ....................2560............................ */
 /*  */
 
 @media (min-width: 2560px) {

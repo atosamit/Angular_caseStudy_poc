@@ -671,9 +671,9 @@
         margin-top: 27px;
         margin-left: 44px;
     }
-    .ux-dividing-line{
+    .ux-dividing-line {
         width: 119%;
-        margin-left: -9%;
+        margin-left: -13%;
         overflow: hidden;
         height: 26px;
         margin-top: 2%;
@@ -682,7 +682,7 @@
     #keytakeways_main {
         background: #f3f3f3;
         margin-left: -6%;
-        margin-right: -8%;
+        margin-right: -6%;
         margin-bottom: -2%;
     }
     .keytakeways-heading {
@@ -691,7 +691,7 @@
         font-size: 24px;
         font-weight: 600;
         text-transform: uppercase;
-        margin-top: 4px;
+        margin-top: 25px;
         margin-left: 9%;
         text-decoration: underline;
         text-decoration-color: #ff6d43;
@@ -701,7 +701,15 @@
     .keytakeways_points {
         margin-left: 7%;
     }
+    .testimonials-heading h5 {
+        font-size: 24px;
+        line-height: 1;
+    }
 
+    .testmonials .line {
+        width: 200px;
+
+}
 }
 
 /* .........540......................................... */
@@ -799,10 +807,10 @@
 
 /*......................1024..............................  */
 
-@media screen and (min-width: 1024px) and (max-width:600px) {
+@media screen and (min-width: 1024px) and (max-width:1279px) {
     .background_img {
         /* max-width: 108%; */
-        background-color: #FFF;
+        background-color: rgb(205, 211, 211);
     }
 
     .case-study-left-part {
@@ -888,6 +896,30 @@
         margin-top: 54px;
         margin-left: 44px;
     }
+    .img-responsive {
+        max-width: 110%;
+        padding-top: 31%;
+    }
+    .ux-dividing-line {
+        width: 111%;
+        margin-left: -5%;
+        height: 26px;
+        overflow: hidden;
+        margin-top: 2%;
+        background: rgba(255, 109, 67, 0.40);
+    }
+    #keytakeways_main{
+        background: #f3f3f3;
+        margin-left: -5%;
+        margin-right: -5%;
+        margin-bottom: -2%;
+    }
+    .keytakeways_points {
+        margin-left: 6%;
+    }
+    .keytakeways-heading {
+        margin-left: 7%;
+    }
 
 }
 
@@ -898,8 +930,21 @@
         margin-left: 5.5%;
         position: relative;
     }
+    .row{
+ 
+        flex-direction: row;
+       
+    }
+    .img-responsive{
+        max-width: 126%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -36%;
+        margin-left: -9%;
+    }
     .ux-dividing-line{
-        width: 141%;
+        width: 133%;
         margin-left: -16%;
         overflow: hidden;
         height: 26px;
@@ -908,9 +953,9 @@
     }
     #keytakeways_main {
         background: #f3f3f3;
-    margin-left: -16%;
-    margin-right: -19%;
-    margin-bottom: -2%;
+        margin-left: -16%;
+        margin-right: -19%;
+        margin-bottom: -2%;
     }
     .keytakeways-heading {
         color: #002D3C;
@@ -918,12 +963,13 @@
         font-size: 24px;
         font-weight: 600;
         text-transform: uppercase;
-        margin-top: 4px;
+        margin-top: 15px;
         margin-left: 9%;
         text-decoration: underline;
         text-decoration-color: #ff6d43;
         letter-spacing: 2px;
         text-underline-offset: 8px;
+    
     }
     .keytakeways_points {
         margin-left: 7%;
@@ -949,3 +995,122 @@
         position: relative;
     }
 }
+
+/* .......................992....................................... */
+
+
+@media (max-width: 994px) {
+    .project-scope-img img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        background-color: #0B83AB;
+    }
+}
+
+@media (max-width: 992px) {
+    .project-scope-title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 994px) {
+
+    .col-sm-7,
+    .col-sm-5 {
+        flex: 0 0 100%;
+    }
+
+    .project-scope-title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .project-description,
+    .project-scope-Inlist {
+        font-size: 16px;
+        padding: 0%;
+    }
+}
+
+@media (max-width: 992px) {
+    .testimonials-heading {
+        font-size: 24px;
+    }
+}
+@media (max-width: 992px) {
+    .keytakeways-heading {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .row {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+        /* margin: -15px; */
+
+    }
+}
+
+@media (max-width: 992px) {
+    #cx-design-heading {
+        font-size: 22px;
+    }
+}
+@media (max-width: 992px) {
+    #solution-part-heading {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .ux_heading,
+    .line33 {
+        font-size: 24px;
+        /* Adjust the font size as needed */
+    }
+}
+
+@media (max-width: 992px) {
+    .challenges-label {
+        font-size: 24px;
+    }
+
+    .img-responsive {
+        max-width: 262%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+
+        margin-top: -36%;
+        margin-left: 111%;
+    }
+}
+
+
+
+/* @media (max-width: 992px) {
+    .keytakeways-img-container {
+        height: auto;
+    }
+
+    .keytakeways-img {
+        max-width: 100%;
+        height: auto;
+    }
+} */
+
+/* dl,
+ol,
+ul {
+    margin-top: -20px;
+    margin-bottom: 1rem;
+    margin-left: 1%;
+    padding-bottom: 16px;
+} */
