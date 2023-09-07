@@ -23,6 +23,6 @@ export class AppComponent {
 
   private updateScreenSizeFlag() {
     const screenWidth = window.innerWidth;
-    this.isScreenSizeSmallOrLarge = screenWidth < 300 || screenWidth > 2590;
+    this.isScreenSizeSmallOrLarge = screenWidth < 350 || screenWidth > 2590;
   }
 }

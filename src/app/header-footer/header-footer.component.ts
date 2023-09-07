@@ -50,29 +50,5 @@ export class HeaderFooterComponent   {
      );
    }
 
-
-  //  login() {
-  //   this.auth.loginWithRedirect();
-  // }
-
-  // logout() {
-  //   this.auth.logout({ 
-  //     logoutParams: {
-  //       returnTo: this.document.location.origin 
-  //     }
-  //   });
-  // }
-
-
-  // for sideicon btn
-  // data1 = {
-  //   logo1: { url: 'data.logo1.url' },
-  //   logo2: { url: 'data.logo2.url' }
-  // };
-  // showImages = false;
-
-  // toggleImages(): void {
-  //   this.showImages = !this.showImages;
-  // }
   
 }
