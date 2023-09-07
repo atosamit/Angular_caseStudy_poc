@@ -13,7 +13,7 @@ import { decrement,increment } from 'src/store/counter.actions';
 @Component({
   selector: 'app-grid-page',
   templateUrl: './grid-page.component.html',
-  styleUrls: ['./grid-page.component.css']
+  styleUrls: ['./grid-page.component.css','./grid-page.css']
 })
 export class GridPageComponent implements OnInit {
   @ViewChild('content', { static: false }) el!: ElementRef;
