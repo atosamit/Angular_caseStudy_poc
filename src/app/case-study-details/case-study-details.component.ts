@@ -164,12 +164,24 @@ export class CaseStudyDetailsComponent {
             note1{
               url
             }
+            note1Img2{
+              url
+            }
+            note1Text
             note2{
               url
             }
+             note2Img2{
+              url
+            }
+            note2Text
             note3{
               url
             }
+             note3Img2{
+              url
+            }
+            note3Text
           }
       }
       }
