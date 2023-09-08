@@ -243,29 +243,6 @@ export class GridPageComponent implements OnInit {
   }
 
 
-  // download button fn
-  downloadCSVFile() {
-    alert("Downloaded Successfully!")
-    const csvData = this.convertToCSV(this.data);
-    const filename = 'data.csv';
-   
-  }
-  private convertToCSV(data: any[]): string {
-    const separator = ','; // You can change the separator to ';' if you prefer.
-    const keys = Object.keys(data[0]);
-
-    // Generate the header row
-    let csv = keys.join(separator) + '\n';
-
-    // Generate rows
-    data.forEach((item) => {
-      const row = keys.map((key) => item[key]).join(separator);
-      csv += row + '\n';
-    });
-
-    return csv;
-  }
-
   // Share page implemention (using)
 
   @ViewChild('popupContent', { static: false }) popupContent!: ElementRef;
