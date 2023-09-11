@@ -177,7 +177,14 @@
         padding-inline: 14px;
         height: auto;
     }
-
+    .ux-dividing-line {
+        width: 110%;
+        margin-left: -5%;
+        height: 26px;
+        overflow: hidden;
+        margin-top: 2%;
+        background: rgba(255, 109, 67, 0.40);
+    }
     .persona-toolused {
         font-size: 16px;
         font-weight: 600;
@@ -259,18 +266,25 @@
     }
 }
 
-/* ...........820........................................ */
+/* ...........820..768...................................... */
 
-@media screen and (min-width: 820px) and (max-width:1023px) {
+@media screen and (min-width: 768px) and (max-width:911px) {
     .background_img {
         max-width: 108%;
         background-color: #FFF;
     }
-
+    .container, .container-md, .container-sm {
+        max-width: 797px;
+    }
     .case-study-left-part {
         background-color: rgb(255 255 255);
     }
-
+    #img_row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
     .nestle-img {
         height: 171px;
         margin-top: -114%;
@@ -347,11 +361,52 @@
         margin-top: 54px;
         margin-left: 44px;
     }
+    .ux-dividing-line {
+        width: 119%;
+        margin-left: -10%;
+        height: 26px;
+        overflow: hidden;
+        margin-top: 2%;
+        background: 
+    }
+    #keytakeways_main{
+        background: #f3f3f3;
+        margin-left: -9%;
+        margin-right: -10%;
+        margin-bottom: -2%;
+    }
+    .keytakeways_points {
+        margin-left: 12%;
+    }
+    .keytakeways-heading {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-left: 14%;
+     
+    }
+    .keytakeways-img {
+        max-width: 101%;
+        height: auto;
+        margin-left: 0%;
+        vertical-align: middle;
+        align-items: center;
+      
+    }
+    
+    .img-responsive {
+        max-width: 101%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -36%;
+        margin-left: 0%;
+    }
 }
 
 /* ...................768.............................................. */
 /*  */
-@media screen and (min-width: 768px) and (max-width:819px) {
+/* @media screen and (min-width: 768px) and (max-width:819px) {
     .background_img {
 
         background-color: #FFF;
@@ -484,7 +539,7 @@
         width: 200px;
 
     }
-}
+} */
 
 /* .........540......................................... */
 @media screen and (min-width: 540px) and (max-width:720px) {
@@ -706,17 +761,41 @@
 }
 
 @media screen and (min-width: 912px) and (max-width:1002px) {
+    .background_img{
+        background-color: white;
+        height: 112%;
+        width: 106%;
+        margin-left: -2%;
+    }
+    .container, .container-md, .container-sm {
+        max-width: 890px;
+    }
+    #img_row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
     .nestle-img {
         height: 129px;
         margin-top: -110%;
         margin-left: 5.5%;
         position: relative;
     }
-
+    .case-study-title {
+        height: 50px;
+        font-size: 34px;
+        margin-left: 5.5%;
+        margin-top: -25%;
+    }
+    .delivery-img{
+        margin-top: -24rem;
+        margin-left: 31rem;
+        position: relative;
+    }
     .row {
-
         flex-direction: row;
-
     }
 
     .img-responsive {
@@ -739,31 +818,25 @@
 
     #keytakeways_main {
         background: #f3f3f3;
-        margin-left: -16%;
-        margin-right: -19%;
+        margin-left: -17%;
+        margin-right: -3%;
         margin-bottom: -2%;
     }
-
     .keytakeways-heading {
-        color: #002D3C;
-        font-family: Montserrat;
-        font-size: 24px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-top: 15px;
-        margin-left: 9%;
-        text-decoration: underline;
-        text-decoration-color: #ff6d43;
-        letter-spacing: 2px;
-        text-underline-offset: 8px;
+        margin-left: 19%;
 
     }
-
+    .keytakeways-img {
+        max-width: 96%;
+        height: auto;
+        margin-left: 1%;
+        background: #f3f3f3;
+    }
     .keytakeways_points {
-        margin-left: 7%;
+        margin-left: 18%;
     }
-}
 
+}
 
 @media screen and (min-width: 1440px)and (max-width:2459px) {
     .case-study-left-part {
@@ -789,19 +862,17 @@
         background-color: #0B83AB;
     }
 
-    .project-scope-title {
-        font-size: 24px;
-    }
+    .row {
 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
 
     .col-sm-7,
     .col-sm-5 {
         flex: 0 0 100%;
-    }
-
-    .project-scope-title {
-        font-size: 24px;
-        font-weight: 600;
     }
 
     .project-description,
@@ -810,20 +881,31 @@
         padding: 0%;
     }
 
-    .testimonials-heading {
+    /* .img-responsive {
+        max-width: 262%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -36%;
+        margin-left: 111%;
+    } */
+    .project-scope-title {
+        font-size: 24px;
+    }
+
+
+    .project-scope-title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+
+    .testimonials-heading h5{
         font-size: 24px;
     }
 
     .keytakeways-heading {
         font-size: 24px;
-    }
-
-    .row {
-
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        flex-wrap: wrap;
     }
 
     #cx-design-heading {
@@ -842,14 +924,7 @@
         font-size: 24px;
     }
 
-    .img-responsive {
-        max-width: 262%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        margin-top: -36%;
-        margin-left: 111%;
-    }
+
 }
 
 
@@ -878,7 +953,6 @@ ul {
 } */
 
 /* ................360.................................. */
-
 /* 
 @media screen and (max-width: 360px) and (max-width:600px) {
     .background_img {
@@ -1115,5 +1189,4 @@ ul {
         margin-left: 107%;
         background: #f3f3f3;
     }
-
 } */

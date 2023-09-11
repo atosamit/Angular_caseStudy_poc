@@ -143,7 +143,7 @@
 
 
     <div class="container mt-5" id="challenges_main">
-        <div class="row">
+        <div class="row" id="img_row">
             <div class="col-sm-9">
                 <p class="challenges-label">{{challenges.title}}
                 </p>
@@ -321,7 +321,7 @@
         <!-- persona .........-->
 
         <div class="container-fluid mt-5" id="container_persona">
-            <div class="row" *ngFor="let data of persona">
+            <div class="row" id="img_row" *ngFor="let data of persona">
                 <div class="col-sm-6">
                     <div class="persona-heading">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -342,7 +342,7 @@
         <!-- user journey -->
 
         <div class="container mt-5">
-            <div class="row" *ngFor="let data of user_journey">
+            <div class="row"  id="img_row" *ngFor="let data of user_journey">
                 <div class="col-sm-8">
                     <img class="user-journey-img-fluid" [src]="PageArtifacts1.image.url">
                 </div>
@@ -367,7 +367,7 @@
         <!-- wireframes -->
 
         <div class="container mt-5" id="wireframe_main">
-            <div class="row" *ngFor="let data of Wireframes">
+            <div class="row"   id="img_row" *ngFor="let data of Wireframes">
                 <div class="col-sm-4">
                     <div class="wireframes_heading">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -392,7 +392,7 @@
 
         <!-- mockups..................................................................... -->
         <div class="container mt-5">
-            <div class="row" *ngFor="let data of mockups">
+            <div class="row"  id="img_row" *ngFor="let data of mockups">
                 <div class="col-sm-8">
                     <img class="img-responsive1" src={{PageArtifacts3.image.url}}>
                 </div>
@@ -414,7 +414,7 @@
         <!-- keytakeways.............................................................................................. -->
 
         <div  id="keytakeways_main">
-            <div class="row" *ngFor="let data of keytakeways">
+            <div class="row" id="img_row" *ngFor="let data of keytakeways">
                 <div class="col-sm-9">
                     <div>
                         <label class="keytakeways-heading">
