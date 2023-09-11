@@ -39,12 +39,12 @@
 
 
   @media screen and (min-width: 375px) and (max-width: 600px) {
-    .icons-container {
+    /* .icons-container {
       float: right;
-      margin-top: -51px;
+      margin-top: -43px;
       height: auto;
-      width: 39%;
-  }
+      width: 38%;
+  } */
   .navbar-brand{
    
     height: auto;
@@ -60,12 +60,12 @@
   
 
   @media screen and (min-width: 360px) and (max-width: 374px) {
-    .icons-container {
-      float: right;
-      margin-top: -49px;
-      height: auto;
-      width: 41%;
-  }
+    /* .icons-container {
+       float: right;
+    margin-top: -43px;
+    height: auto;
+    width: 38%;
+  } */
   .navbar-brand{
    
     height: auto;
@@ -81,5 +81,15 @@
   }
   }
 
+
+@media screen and (max-width:912px) {
+  .icons-container {
+    float: right;
+    margin-top: -43px;
+    height: auto;
+    /* width: 38%;
+    margin-right: -21%; */
+}
+}
 
   
