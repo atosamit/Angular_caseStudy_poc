@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { labelConstants } from './HardcodeTags';
+import { ErrorService } from './error.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   isScreenSizeSmallOrLarge = false;
   labelConstants = labelConstants ;
 
-  constructor() {
+  constructor(public errorService: ErrorService) {
     // Initialize the value based on initial screen size
     this.updateScreenSizeFlag();
   }

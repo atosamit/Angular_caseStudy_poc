@@ -7,6 +7,7 @@ import { jsPDF } from "jspdf"
 import { labelConstants } from '../HardcodeTags';
 import { Router } from '@angular/router'; // Import the Router module
 import { Store } from '@ngrx/store';
+import { ErrorService } from '../error.service';
 // import { decrement, increment, } from 'src/app/store/counter.actions';
 import { decrement,increment } from 'src/store/counter.actions';
 
@@ -26,7 +27,7 @@ export class GridPageComponent implements OnInit {
   logoCollection: any[] = [];
   domainCollection: any[] = [];
   isIncrementing: any;
- 
+
 
   toggleView(view: 'list' | 'grid') {
     if (view === 'list') {
@@ -70,7 +71,7 @@ export class GridPageComponent implements OnInit {
 
 
 
-  constructor(private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
+  constructor(private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
@@ -152,7 +153,8 @@ export class GridPageComponent implements OnInit {
       (error: any) => {
         console.error('Error while fetching Contentful data', error);
 
-
+// Set the error flag to true
+this.errorService.setIsError(true);
        
       }
     );

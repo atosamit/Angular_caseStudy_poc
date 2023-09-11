@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,7 +7,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./error.component.css']
 })
 export class ErrorComponent {
+
+  
   errorMessage: string | null = null;
+ 
 
   constructor(private route: ActivatedRoute) {
     // Retrieve the error message from the query parameter

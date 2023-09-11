@@ -15,7 +15,7 @@ export class SlideShowComponent implements OnInit {
   data1: any[] = [];
   labelConstants = labelConstants ;
   isSlideshowRunning = false;
-
+  isError = false;
 
   @Input() slides: any[] = [];
   
@@ -31,6 +31,7 @@ export class SlideShowComponent implements OnInit {
     this.totalSlides = document.getElementsByClassName('mySlides').length;
     this.startSlideshow();
     this.fetchData();
+    this.isError = false;
   }
 
   onSearchClick() {
