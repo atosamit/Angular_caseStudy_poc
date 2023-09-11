@@ -26,9 +26,6 @@ export class Testimonial2Component implements OnInit {
 
       testimonials(id:"2sOPT6bdaPAWoysfKdnYdF"){
        heading
-       image{
-         url
-       }
        video{
         url
       }
