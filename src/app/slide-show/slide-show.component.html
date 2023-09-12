@@ -60,15 +60,4 @@
       </div>
     </div>
 
-    <div *ngIf="!isError; else errorContent">
-      <!-- Your header content goes here -->
-      <header>
-        <!-- The existing header content -->
-      </header>
-    </div>
-    
-    <ng-template #errorContent>
-      <!-- Display the error component here -->
-      <app-error></app-error>
-    </ng-template>
     
