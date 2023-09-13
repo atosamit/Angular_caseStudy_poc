@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap'); */
+
 
 
 .breadcrumb {
@@ -873,6 +872,7 @@ body {
     margin-left: 15px;
 }
 .keytakeways_points{
+    margin-top: 3%;
     margin-left: 1%;
 }
 .keytakeways-img {
