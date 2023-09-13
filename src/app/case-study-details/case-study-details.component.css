@@ -1,12 +1,12 @@
 @import '../Fonts/Fonts.css';
+
 .breadcrumb {
     display: flex;
     align-items: center;
-    font-family: Montserrat;
+    font-family: Montserrat-Semibold;
     font-size: 16px;
     color: #000;
     padding: 0.7%;
-    font-weight: 600;
     background-color: white;
 
 }
@@ -20,7 +20,7 @@
     color: #000;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
     padding: 3px;
 }
 
@@ -65,7 +65,7 @@
     margin-top: -2%;
     padding-bottom: 1%;
     margin-left: 7.5%;
-    font-weight: 900;
+    font-family: Montserrat-Black;
 }
 
 .routing-label3 {
@@ -157,7 +157,7 @@
     margin-left: 5%;
     margin-top: 1%;
     font-size: 16px;
-    font-weight: 400;
+    font-family: Montserrat-Regular;
     line-height: 25px;
 }
 
@@ -165,7 +165,7 @@
     margin-top: 10px;
     margin-left: 5%;
     font-size: 16px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
     line-height: 25px;
 }
 
@@ -173,7 +173,7 @@
     margin-top: 0.5%;
     margin-left: 5%;
     font-size: 16px;
-    font-weight: 400;
+    font-family: Montserrat-Regular;
     line-height: 25px;
     width: fit-content;
 }
@@ -187,7 +187,7 @@
 
 .CaseStudy_nameDesc {
     font-size: 16px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
     margin: 0 0 1px;
 }
 
@@ -202,28 +202,29 @@
 
 #share {
     border: none;
-     background: none;
+    background: none;
     padding-left: 230px;
 
 }
+
 /* Add this style to position the snackbar at the upper side of the screen */
 .upper-success-snackbar ::ng-deep .mat-simple-snackbar {
     bottom: auto;
     top: 0;
     transform: translateY(0);
     justify-content: flex-start;
-  }
-  
-  .upper-success-snackbar ::ng-deep .mat-simple-snackbar span.mat-simple-snackbar-message {
+}
+
+.upper-success-snackbar ::ng-deep .mat-simple-snackbar span.mat-simple-snackbar-message {
     align-items: flex-start;
     text-align: left;
     padding: 8px;
-  }
-  
-  .upper-success-snackbar ::ng-deep .mat-simple-snackbar button.mat-simple-snackbar-action {
+}
+
+.upper-success-snackbar ::ng-deep .mat-simple-snackbar button.mat-simple-snackbar-action {
     margin-top: 4px;
-  }
-  
+}
+
 .download {
     border: none;
     background: none;
@@ -238,11 +239,13 @@
 
 
 .liked {
-    color: #FF6D43; /* Change the color to your desired liked color */
+    color: #FF6D43;
+    /* Change the color to your desired liked color */
 }
 
 .unliked {
-    color: initial; /* Reset the color to the default or inherit from parent */
+    color: initial;
+    /* Reset the color to the default or inherit from parent */
 }
 
 
@@ -285,8 +288,8 @@ body {
 .project-scope-title {
     color: #002D3C;
     font-size: 36px;
-    font-family: Montserrat;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
+
     line-height: normal;
     text-transform: uppercase;
     text-decoration: underline;
@@ -299,10 +302,10 @@ body {
 .project-scope-Inlist {
     color: #000;
     padding: 10px;
-    font-family: Montserrat;
+    font-family: Montserrat-Regular;
     font-size: 17px;
     font-style: normal;
-    font-weight: 400;
+
     line-height: 30px;
     text-transform: capitalize;
 }
@@ -334,10 +337,10 @@ body {
 
 .challenges-label {
     color: #002D3C;
-    font-family: Montserrat;
+    font-family: Montserrat-SemiBold;
     font-size: 40px;
     font-style: normal;
-    font-weight: 900;
+
     margin-left: 1%;
     line-height: normal;
     text-transform: uppercase;
@@ -352,10 +355,10 @@ body {
 .challenge-list {
     margin-top: 2%;
     color: #000;
-    font-family: Montserrat;
+    font-family: Montserrat-Regular;
     font-size: 17px;
     font-style: normal;
-    font-weight: 400;
+
     line-height: 30px;
     text-transform: capitalize;
 }
@@ -364,14 +367,13 @@ body {
     margin-bottom: -30px;
 }
 
-.challenges-items
- {
+.challenges-items {
     color: #000;
-    font-family: Montserrat;
+    font-family: Montserrat-Regular;
     font-size: 16px;
     font-style: normal;
     letter-spacing: 0.01em;
-    font-weight: 400;
+   
     line-height: 40px;
     text-transform: capitalize;
     padding: 10px;
@@ -401,9 +403,9 @@ body {
     font-size: 40px;
     margin-top: -1%;
     margin-left: 1%;
-    font-family: Montserrat;
+    font-family: Montserrat-Semibold;
     font-style: normal;
-    font-weight: 600;
+
     line-height: normal;
     text-transform: uppercase;
     text-decoration: underline;
@@ -412,11 +414,12 @@ body {
     text-underline-offset: 8px;
 }
 
-.ux_img{
+.ux_img {
     width: 100%;
     padding-inline: 74px;
     height: auto;
 }
+
 @media (max-width: 2000px) {
     .ux_img {
         width: 97%;
@@ -456,12 +459,11 @@ body {
 
 .solution-part-heading {
     color: #002D3C;
-    font-family: Montserrat;
+    font-family: Montserrat-SemiBold;
     font-size: 40px;
     margin-top: -1.5%;
     margin-left: 1%;
     font-style: normal;
-    font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
     text-decoration: underline;
@@ -482,7 +484,7 @@ body {
     font-size: 20px;
     font-style: normal;
     margin-top: 2%;
-    font-weight: 400;
+    font-family: Montserrat-Regular;
     line-height: 25px;
     text-transform: capitalize;
 
@@ -496,11 +498,11 @@ body {
 .solution-items {
     padding: 8px;
     color: #000;
-    font-family: Montserrat;
+    font-family: Montserrat-Regular;
     font-size: 17px;
     font-style: normal;
     letter-spacing: 0.01cqb;
-    font-weight: 400;
+   
     line-height: 18px;
     /* 166.667% */
     text-transform: capitalize;
@@ -533,12 +535,11 @@ body {
 
 .cx-design-heading {
     color: #002D3C;
-    font-family: Montserrat;
+    font-family: Montserrat-SemiBold;
     font-size: 30px;
     margin-left: 2%;
     margin-top: 2%;
     font-style: normal;
-    font-weight: 800;
     width: -1%;
     line-height: normal;
     text-transform: uppercase;
@@ -559,20 +560,21 @@ body {
 
 .cx_list {
     color: #0B83AB;
-    font-family: Montserrat;
+    font-family: Montserrat-Semibold;
     font-size: 16px;
     padding: 0px;
     font-style: normal;
-    font-weight: 600;
+
     line-height: normal;
     margin-right: 14px;
     text-decoration: underline;
     text-decoration-color: #0B83AB;
     text-transform: uppercase;
 }
-.cx_design_label{
-    padding: 6px;   
-    text-decoration: underline;                     
+
+.cx_design_label {
+    padding: 6px;
+    text-decoration: underline;
     text-decoration-color: #0B83AB;
 }
 
@@ -620,7 +622,7 @@ body {
 
 .persona-heading {
     font-size: 24px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
     color: #002D3C;
 
 
@@ -628,12 +630,12 @@ body {
 
 .persona-toolused {
     font-size: 18px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
 }
 
 .persona-tool {
     font-size: 18px;
-    font-weight: 400;
+    font-family: Montserrat-Regular;
     color: #002D3C;
     width: 60%;
 }
@@ -664,19 +666,19 @@ body {
 
 .user-journey-heading {
     font-size: 24px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
     color: #002D3C;
 
 }
 
 .user-journey-toolused {
     font-size: 18px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
 }
 
 .user-journey-tool {
     font-size: 18px;
-    font-weight: 400;
+    font-family: Montserrat-Regular;
     color: #002D3C;
 }
 
@@ -694,7 +696,8 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
-#wireframe_main{
+
+#wireframe_main {
     background: #f3f3f3;
 }
 
@@ -722,7 +725,7 @@ body {
 
 .wireframes_heading {
     font-size: 24px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
     color: #002D3C;
 
 }
@@ -730,13 +733,13 @@ body {
 .wireframes_toolused,
 .text2 {
     font-size: 18px;
-    font-weight: 600;
+    font-family: Montserrat-Semibold;
 }
 
 .wireframes_tool,
 .wireframes_tool {
     font-size: 18px;
-    font-weight: 400;
+    font-family: Montserrat-Regular;
     color: #002D3C;
 }
 
@@ -773,9 +776,9 @@ body {
 }
 
 .mockups-heading {
-    font-family: Montserrat;
+    font-family: Montserrat-Semibold;
     font-size: 24px;
-    font-weight: 600;
+
     line-height: 1.2;
     color: #002D3C;
     margin-left: 2%;
@@ -786,9 +789,9 @@ body {
 .mockups-text2,
 .mockups-tool,
 .mockups-text21 {
-    font-family: Montserrat;
+    font-family: Montserrat-Semibold;
     font-size: 18px;
-    font-weight: 600;
+
     line-height: 1.8;
     color: #002D3C;
     margin-left: 8%;
@@ -797,7 +800,7 @@ body {
 .mockups-tool,
 .mockups-text21 {
     margin-left: 1%;
-    font-weight: 400;
+    font-family: Montserrat-Regular;
 }
 
 .mockups-dividing-line {
@@ -809,7 +812,7 @@ body {
 }
 
 /* ........................key.................................................. */
-#keytakeways_main{
+#keytakeways_main {
     background: #f3f3f3;
     margin-left: -1%;
     margin-right: -2%;
@@ -819,9 +822,9 @@ body {
 
 .keytakeways-heading {
     color: #002D3C;
-    font-family: Montserrat;
+    font-family: Montserrat-Semibold;
     font-size: 40px;
-    font-weight: 600;
+
     text-transform: uppercase;
     margin-top: 20px;
     margin-left: 2%;
@@ -834,9 +837,9 @@ body {
 
 .keytakeways-label {
     color: #000000;
-    font-family: Montserrat;
+    font-family: Montserrat-Regular;
     font-size: 17px;
-    font-weight: 400;
+ 
     line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
@@ -863,15 +866,17 @@ body {
     width: 24%;
 }
 
-.keytakeways-items
- {
+.keytakeways-items {
     width: 100%;
     margin-left: 0;
     margin-left: 15px;
 }
-.keytakeways_points{
+
+.keytakeways_points {
+    margin-top: 2%;
     margin-left: 1%;
 }
+
 .keytakeways-img {
     max-width: 100%;
     height: auto;
@@ -901,7 +906,7 @@ body {
     margin-top: -3%;
 }
 
-.testimonial_img_3{
+.testimonial_img_3 {
     max-width: 36%;
     margin-left: -5%;
 }
@@ -912,9 +917,9 @@ body {
     color: #002D3C;
     font-size: 40px;
     width: 28%;
-    font-family: Montserrat;
+    font-family: 'Montserrat-SemiBold';
     font-style: normal;
-    font-weight: 900;
+    margin-top: -2%;
     line-height: normal;
     text-transform: uppercase;
     text-decoration: underline;
@@ -929,6 +934,7 @@ body {
 /*  */
 
 @media (min-width: 2560px) {
+
     .right-part-title,
     .CaseStudy_description,
     .CaseStudy_domain,
@@ -942,10 +948,12 @@ body {
         padding: 2px;
         text-transform: capitalize;
     }
+
     #Header {
         height: 9%;
         /* background-color: rgb(163, 112, 45); */
     }
+
     .right-part-title {
         margin-top: 2%;
         margin-left: 5%;
@@ -958,7 +966,7 @@ body {
         margin-left: 5%;
         margin-top: 1%;
         font-size: 21px;
-        font-weight: 400;
+        font-family: Montserrat-Regular;
         line-height: 25px;
     }
 
@@ -974,7 +982,7 @@ body {
         margin-top: 0.5%;
         margin-left: 5%;
         font-size: 21px;
-        font-weight: 400;
+        font-family: Montserrat-Regular;
         line-height: 25px;
         width: fit-content;
     }
@@ -1000,12 +1008,12 @@ body {
     .breadcrumb {
         display: flex;
         align-items: center;
-        font-family: Montserrat;
+        font-family: Montserrat-Semibold;
         font-size: 23px;
         color: #000;
         padding: 0.9%;
         background-color: white;
-        font-weight: 600;
+
     }
 
 
@@ -1032,8 +1040,8 @@ body {
     .project-scope-title {
         color: #002D3C;
         font-size: 44px;
-        font-family: Montserrat;
-        font-weight: 600;
+        font-family: Montserrat-Semibold;
+
         line-height: normal;
         text-transform: uppercase;
         text-decoration: underline;
@@ -1048,10 +1056,10 @@ body {
     .project-description,
     .project-scope-Inlist {
         color: #000;
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 21px;
         font-style: normal;
-        font-weight: 400;
+       
         line-height: 31px;
         text-transform: capitalize;
     }
@@ -1066,10 +1074,10 @@ body {
 
     .challenges-label {
         color: #002D3C;
-        font-family: Montserrat;
+        font-family: Montserrat-SemiBold;
         font-size: 44px;
         font-style: normal;
-        font-weight: 900;
+
         margin-left: 1%;
         line-height: normal;
         text-transform: uppercase;
@@ -1093,10 +1101,10 @@ body {
     .challenge-list {
         margin-top: 2%;
         color: #000;
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 21px;
         font-style: normal;
-        font-weight: 400;
+      
         line-height: 40px;
         text-transform: capitalize;
     }
@@ -1107,11 +1115,11 @@ body {
 
     .challenges-items {
         color: #000;
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 21px;
         font-style: normal;
         letter-spacing: 0.01em;
-        font-weight: 400;
+        
         line-height: 40px;
         text-transform: capitalize;
         padding: 10px;
@@ -1139,20 +1147,16 @@ body {
 
     .solution-part-heading {
         color: #002D3C;
-        font-family: Montserrat;
+        font-family: Montserrat-SemiBold;
         font-size: 44px;
         margin-top: -1.5%;
         margin-left: 1%;
         font-style: normal;
-        font-weight: 900;
         line-height: normal;
         text-transform: uppercase;
         text-decoration: underline;
-
         text-decoration-color: #ff6d43;
-
         letter-spacing: 2px;
-
         text-underline-offset: 8px;
         margin-top: 1%
     }
@@ -1166,7 +1170,7 @@ body {
         font-size: 26px;
         font-style: normal;
         margin-top: 2%;
-        font-weight: 400;
+        font-family: Montserrat-Regular;
         line-height: 25px;
         text-transform: capitalize;
 
@@ -1179,11 +1183,10 @@ body {
     .solution-items {
         padding: 8px;
         color: #000;
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 25px;
         font-style: normal;
         letter-spacing: 0.01cqb;
-        font-weight: 400;
         line-height: 30px;
         text-transform: capitalize;
         margin-left: 1%;
@@ -1193,12 +1196,12 @@ body {
 
     .cx-design-heading {
         color: #002D3C;
-        font-family: Montserrat;
+        font-family: Montserrat-SemiBold;
         font-size: 35px;
         margin-left: 0%;
         margin-top: 2%;
         font-style: normal;
-        font-weight: 800;
+
         width: 38%;
         line-height: normal;
         text-transform: uppercase;
@@ -1245,9 +1248,8 @@ body {
 
     .keytakeways-heading {
         color: #002D3C;
-        font-family: Montserrat;
+        font-family: Montserrat-SemiBold;
         font-size: 44px;
-        font-weight: 600;
         text-transform: uppercase;
         margin-top: 43px;
         text-decoration: underline;
@@ -1258,9 +1260,9 @@ body {
 
     .keytakeways-label {
         color: #000000;
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 18px;
-        font-weight: 400;
+  
         line-height: 30px;
         letter-spacing: 0em;
         text-align: left;
@@ -1273,9 +1275,9 @@ body {
 
     .keytakeways-heading {
         color: #002D3C;
-        font-family: Montserrat;
+        font-family: Montserrat-SemiBold;
         font-size: 44px;
-        font-weight: 600;
+
         text-transform: uppercase;
         margin-top: 1;
         text-decoration: underline;
@@ -1286,9 +1288,9 @@ body {
 
     .keytakeways-label {
         color: #000000;
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 23px;
-        font-weight: 400;
+    
         line-height: 40px;
         letter-spacing: 0em;
         text-align: left;
@@ -1303,9 +1305,9 @@ body {
         color: #002D3C;
         font-size: 44px;
         width: 28%;
-        font-family: Montserrat;
+        font-family: Montserrat-SemiBold;
         font-style: normal;
-        font-weight: 900;
+
         line-height: normal;
         text-transform: uppercase;
 
@@ -1391,7 +1393,7 @@ body {
 
     .persona-tool {
         font-size: 30px;
-        font-weight: 400;
+        font-family: Montserrat-Regular;
         color: #002D3C;
         width: 60%;
     }
@@ -1447,16 +1449,16 @@ body {
     .wireframes_tool,
     .wireframes_tool {
         font-size: 30px;
-        font-weight: 400;
+        font-family: Montserrat-Regular;
         color: #002D3C;
     }
 
     /* mockup .......................*/
 
     .mockups-heading {
-        font-family: Montserrat;
+        font-family: Montserrat-Semibold;
         font-size: 41px;
-        font-weight: 600;
+
         line-height: 1.2;
         color: #002D3C;
         margin-right: 49%;
@@ -1464,18 +1466,17 @@ body {
     }
 
     .mockups-toolused {
-        font-family: Montserrat;
+        font-family: Montserrat-Semibold;
         font-size: 34px;
-        font-weight: 600;
         color: #002D3C;
         margin-left: 2%;
         margin-right: 45%;
     }
 
     .mockups-tool {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 34px;
-        font-weight: 400;
+ 
         margin-left: 1%;
     }
 
