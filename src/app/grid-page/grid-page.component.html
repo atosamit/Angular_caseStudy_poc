@@ -14,7 +14,7 @@
   <div id="btnContainer">
     <div>
       <button class="btn" id="List_btn" (click)="toggleView('list') ;listView()">
-        <img class="list-logo" [src]="isListViewActive ? '../assets/format-list-bulleted.png' : 'assets/Vector (3).png'"
+        <img alt="list_button" class="list-logo" [src]="isListViewActive ? '../assets/format-list-bulleted.png' : 'assets/Vector (3).png'"
           alt="List View">
       </button>
     </div>
@@ -23,7 +23,7 @@
 
     <div>
       <button class="btn" (click)="toggleView('grid');gridView()">
-        <img class="grid-logo" [src]="isListViewActive ? 'assets/Vector22.png' : '../assets/grid.png'" alt="Grid View">
+        <img alt="grid_button" class="grid-logo" [src]="isListViewActive ? 'assets/Vector22.png' : '../assets/grid.png'" alt="Grid View">
       </button>
     </div>
   </div>
@@ -85,7 +85,7 @@
       <div class="column" [ngClass]="{ 'list-view': !isGridView }"
         *ngIf="searchText === '' || item.details.title ?.toLowerCase().includes(searchText)">
         <div class="divpadding" [ngClass]="{ 'column-list': !isGridView}">
-          <img class="img-fluid" [src]="item.details.itemIcon.url" [src]="item.details.itemIcon.url"
+          <img alt="grid_images" width="440" height="260" class="img-fluid" [src]="item.details.itemIcon.url" [src]="item.details.itemIcon.url"
             [ngClass]="{'grid-image': isGridView, 'list-image': !isGridView}"
             [routerLink]="['/case_study', item.details.sys.id]">
           <div class="div2">
@@ -117,7 +117,7 @@
               <!-- like and comment for grid -->
               <!-- Comment Button -->
               <button *ngIf="isGridView" class="Comments_btn">
-                <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
+                <img  [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
                 {{ labelConstants [0].Comments }}
               </button>
 
@@ -157,7 +157,7 @@
 
               <div class="divv" *ngIf="isGridView">
 
-                <button (click)="openPopup() " style="border: none; background-color: white;"> <img class="icons"
+                <button (click)="openPopup() " style="border: none; background-color: white;"> <img alt="Share_icon" class="icons"
                     [src]="logoCollection[5].logo.url"></button>
                 <!-- popop share -->
                 <div [hidden]="!showPopup" class="popup-container">
@@ -178,7 +178,7 @@
 
                 <!-- downlaod btn -->
                 <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn">
-                  <img [src]="logoCollection[6].logo.url" class="icons">
+                  <img alt="download_icon" [src]="logoCollection[6].logo.url" class="icons">
                 </button>
               </div>
 
@@ -189,13 +189,13 @@
                 <div class="share" style="margin-top: 40px;">
 
                   <!-- share icon list view -->
-                  <img [src]="logoCollection[5].logo.url" class="icons">
+                  <img alt="Share_icon" [src]="logoCollection[5].logo.url" class="icons">
                   <!-- download icon list view -->
-                  <img [src]="logoCollection[6].logo.url" class="icons">
+                  <img alt="download_icon" [src]="logoCollection[6].logo.url" class="icons">
                   <!-- like icon list view -->
-                  <img [src]="logoCollection[7].logo.url" class="icons">
+                  <img alt="like_icon" [src]="logoCollection[7].logo.url" class="icons">
                   <!-- comment icon list view -->
-                  <img [src]="logoCollection[4].logo.url" class="icons">
+                  <img alt="comment_icon" [src]="logoCollection[4].logo.url" class="icons">
 
                   <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
                     style="float: right;margin-top: -10px;">

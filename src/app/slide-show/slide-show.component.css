@@ -850,21 +850,14 @@ img {
 
 
 @media screen and (min-width: 481px) and (max-width: 746px) {
-
-
-
   .search_box {
-
     width: 90%;
-
   }
 
 
 
   .search_icon {
-
     width: 70%;
-
     /* left: 10px; */
 
   }
@@ -872,36 +865,19 @@ img {
 
 
   .search_button {
-
     width: 20%;
-
-    /* top: 16%;
-
-      left: 88%; */
-
-    /* transform: translate(-50%, -50%); */
-
   }
-
 }
 
 
 .searchBar {
-
-
-
   margin-top: -1em;
-
 }
 
 @media screen and (min-width: 360px) and (max-width: 600px) {
   .search_box {
-
     margin-top: -3.5rem;
-
-
   }
-
   .search_icon {
     background-repeat: no-repeat;
     background-position: 5px 9px;

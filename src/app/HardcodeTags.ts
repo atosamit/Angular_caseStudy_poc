@@ -14,6 +14,7 @@ export const labelConstants =
     },
     {
         Searchbtn:"Search",
+        Placeholder:"Search by keyword, Name, Domain, date etc"
     },
     {
         Errormsg:" Displaying a message because the screen size is either less than 300px or greater than 2570px."

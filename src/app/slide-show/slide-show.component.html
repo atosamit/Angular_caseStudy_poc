@@ -4,7 +4,7 @@
   class="slideshow-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 m-0 carousel slide banner">
 
   <div class="mySlides">
-    <img [src]="data1[2].image.url" style="width:100%">
+    <img  class="img-fluid" alt="carousel_img1" [src]="data1[2].image.url" width="1440" height="528" style="width:100%">
     <h1 class="text1">{{data1[0].text1}}</h1>
     <h1 class="text2">{{data1[0].text2}}</h1>
     <h1 class="text3">
@@ -12,7 +12,7 @@
     </h1>
   </div>
   <div class="mySlides">
-    <img [src]="data1[1].image.url" style="width:100%">
+    <img  class="img-fluid" alt="carousel_img1" [src]="data1[1].image.url" width="1440" height="528" style="width:100%">
     <h1 class="text5">{{data1[1].text1}}</h1>
     <h1 class="text4">{{data1[1].text2}}</h1>
     <h1 class="text6">
@@ -21,7 +21,7 @@
   </div>
 
   <div class="mySlides">
-    <img [src]="data1[0].image.url" style="width:100%">
+    <img  class="img-fluid" alt="carousel_img1" [src]="data1[0].image.url" width="1440" height="528" style="width:100%">
     <h1 class="text1">{{data1[2].text1}}</h1>
     <h1 class="text2">{{data1[2].text2}}</h1>
     <h1 class="text3">
@@ -53,7 +53,7 @@
     <div>
       <div style="display:flex; justify-content:center; align-content:center">
         <div class="search_box">
-          <input class="search_icon" type="text" placeholder="Search by keyword, Name, Domain, date etc"
+          <input class="search_icon" type="text" [placeholder]="labelConstants[1].Placeholder"
             [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()" />
           <button class="search_button">{{ labelConstants [1].Searchbtn }}</button>
         </div>
