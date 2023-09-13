@@ -1,9 +1,8 @@
-
-@media screen and (min-width: 375px) and (max-width: 600px) {
+@media screen and (min-width: 360px) and (max-width: 600px) {
 
     .background_img {
         height: 112%;
-        width: 109%;
+        width: 107%;
         margin-left: -2%;
     }
 
@@ -25,14 +24,16 @@
         overflow: hidden;
         height: 310px;
     }
+
     .case-study-right-part {
         float: left;
         margin-top: -9%;
         overflow: hidden;
         position: relative;
         background-color: rgb(205, 211, 211);
-        height: 515px;
+        height: 530px;
     }
+
     .nestle-img {
         height: 102px;
         margin-top: -153%;
@@ -43,29 +44,28 @@
     .delivery-img {
         margin-top: -17rem;
         height: 66%;
-        margin-left: 8rem;
+        margin-left: 10rem;
         position: relative;
     }
 
     .case-study-title {
-        color: #FFF;
         height: 50px;
         font-size: 25px;
-        font-style: normal;
         font-weight: 700;
-        text-transform: capitalize;
-        margin-left: 2.5%;
+        margin-left: 5.5%;
         margin-top: -40%;
     }
 
     .share {
         padding-left: 30px;
     }
+
     #share {
         border: none;
         background: none;
         padding-left: 50px;
     }
+
     .download {
         padding-left: 9px;
     }
@@ -84,7 +84,7 @@
         font-family: Montserrat;
         font-size: 16px;
         color: #000;
-        padding: 5.7%;
+        padding: 3.2%;
         font-weight: 600;
         background-color: white;
     }
@@ -100,7 +100,7 @@
     .CaseStudy_name {
         margin-top: 0.5%;
         margin-left: 5%;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 400;
         line-height: 8px;
     }
@@ -112,8 +112,8 @@
     }
 
     .action-buttons {
-        margin-top: 7px;
-        margin-left: 25px;
+        margin-top: 18px;
+        margin-left: 11px;
     }
 
     .mockups-dividing-line {
@@ -133,14 +133,10 @@
 
     .solution-items {
         padding: 1px;
-        color: #000;
-        font-family: Montserrat;
         font-size: 13px;
-        font-style: normal;
         letter-spacing: 0.01cqb;
         font-weight: 400;
         line-height: 30px;
-        text-transform: capitalize;
         margin-left: 1%;
     }
 
@@ -153,14 +149,10 @@
     }
 
     .challenges-items {
-        color: #000;
-        font-family: Montserrat;
         font-size: 14px;
-        font-style: normal;
         letter-spacing: 0.01em;
         font-weight: 400;
         line-height: 32px;
-        text-transform: capitalize;
         padding: 9px;
     }
 
@@ -180,6 +172,19 @@
         padding: 0%;
     }
 
+    .ux_img {
+        width: 96%;
+        padding-inline: 14px;
+        height: auto;
+    }
+    .ux-dividing-line {
+        width: 110%;
+        margin-left: -5%;
+        height: 26px;
+        overflow: hidden;
+        margin-top: 2%;
+        background: rgba(255, 109, 67, 0.40);
+    }
     .persona-toolused {
         font-size: 16px;
         font-weight: 600;
@@ -235,19 +240,22 @@
     }
 
     .mockups-heading {
-        font-family: Montserrat;
         font-size: 19px;
         font-weight: 600;
         line-height: 1.2;
-        color: #002D3C;
         margin-left: 2%;
         margin-top: 5%;
     }
 
     .mockups-tool {
-        font-family: Montserrat;
         font-size: 16px;
         line-height: 1.8;
+    }
+
+    .img {
+        width: 93%;
+        display: block;
+        margin-left: 9%;
     }
 
     .keytakeways-img {
@@ -258,247 +266,25 @@
     }
 }
 
-/* ................360.................................. */
+/* ...........820..768...................................... */
 
-/*  */
-@media screen and (max-width: 360px) and (max-width:600px) {
-
-
-    .case-study-left-part {
-        background-color: rgb(255 255 255);
-    }
-
-    .nestle-img {
-        height: 118px;
-        margin-top: -272%;
-        margin-left: 1.5%;
-        position: relative;
-    }
-
-    .delivery-img {
-        margin-top: -19rem;
-        height: 51%;
-        margin-left: 7rem;
-        position: relative;
-    }
-
-    .case-study-title {
-        color: #FFF;
-        height: 50px;
-        font-size: 25px;
-        font-style: normal;
-        font-weight: 700;
-        text-transform: capitalize;
-        margin-left: 2.5%;
-        margin-top: -56%;
-    }
-
-    .share {
-        padding-left: 25px;
-    }
-    #share {
-        border: none;
-        background: none;
-        padding-left: 50px;
-    }
-    .download {
-        padding-left: 9px;
-    }
-
-    .likes {
-        padding-left: 9px;
-    }
-
-    .like {
-        padding-left: 7px;
-    }
-
-    .breadcrumb {
-        display: flex;
-        align-items: center;
-        font-family: Montserrat;
-        font-size: 16px;
-        color: #000;
-        padding: 5.7%;
-        font-weight: 600;
-        background-color: white;
-    }
-
-    .CaseStudy_description {
-        margin-left: 5%;
-        margin-top: 1%;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 25px;
-    }
-
-    .CaseStudy_name {
-        margin-top: 0.5%;
-        margin-left: 5%;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 8px;
-
-    }
-
-    .CaseStudy_nameDesc {
-        font-size: 12px;
-        font-weight: 600;
-        margin: 3px 0 1px;
-    }
-
-    .action-buttons {
-        margin-top: 7px;
-        margin-left: 25px;
-    }
-
-    .keytakeways_points {
-        font: inherit;
-        font-size: 13px;
-        margin-right: 2%;
-    }
-
-    .solution-items {
-        padding: 1px;
-        color: #000;
-        font-family: Montserrat;
-        font-size: 13px;
-        font-style: normal;
-        letter-spacing: 0.01cqb;
-        font-weight: 400;
-        line-height: 30px;
-        text-transform: capitalize;
-        margin-left: 1%;
-    }
-
-    dl,
-    ol,
-    ul {
-        margin-top: 5px;
-        margin-bottom: 1rem;
-        padding-bottom: 16px;
-    }
-
-    .challenges-items{
-        color: #000;
-        font-family: Montserrat;
-        font-size: 14px;
-        font-style: normal;
-        letter-spacing: 0.01em;
-        font-weight: 400;
-        line-height: 32px;
-        text-transform: capitalize;
-        padding: 9px;
-    }
-
-    dl,
-    ol,
-    ul {
-        margin-top: 5px;
-        margin-bottom: -3rem;
-        padding-bottom: 80px;
-        bottom: 73px;
-
-    }
-
-    .project-description,
-    .project-scope-Inlist {
-        font-size: 14px;
-        padding: 0%;
-    }
-
-    .persona-toolused {
-        font-size: 16px;
-        font-weight: 600;
-    }
-
-    .persona-tool {
-        font-size: 15px;
-        font-weight: 400;
-        color: #002D3C;
-        width: 60%;
-    }
-
-    .persona-heading {
-        font-size: 19px;
-        font-weight: 600;
-        color: #002D3C;
-    }
-
-    .user-journey-heading {
-        font-size: 19px;
-        font-weight: 600;
-        color: #002D3C;
-    }
-
-    .user-journey-toolused {
-        font-size: 16px;
-        font-weight: 600;
-    }
-
-    .user-journey-tool {
-        font-size: 15px;
-        font-weight: 400;
-        color: #002D3C;
-    }
-
-    .wireframes_heading {
-        font-size: 19px;
-        font-weight: 600;
-        color: #002D3C;
-    }
-
-    .wireframes_toolused,
-    .text2 {
-        font-size: 16px;
-        font-weight: 600;
-    }
-
-    .wireframes_tool,
-    .wireframes_tool {
-        font-size: 15px;
-        font-weight: 400;
-        color: #002D3C;
-    }
-
-    .mockups-heading {
-        font-family: Montserrat;
-        font-size: 19px;
-        font-weight: 600;
-        line-height: 1.2;
-        color: #002D3C;
-        margin-left: 2%;
-        margin-top: 5%;
-    }
-
-    .mockups-tool {
-        font-family: Montserrat;
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    .keytakeways-img {
-        max-width: 300%;
-        height: auto;
-        margin-left: 107%;
-        background: #f3f3f3;
-    }
-
-}
-
-/* ...........820........................................ */
-
-/*  */
-@media screen and (min-width: 820px) and (max-width:1023px) {
+@media screen and (min-width: 768px) and (max-width:911px) {
     .background_img {
         max-width: 108%;
         background-color: #FFF;
     }
-
+    .container, .container-md, .container-sm {
+        max-width: 797px;
+    }
     .case-study-left-part {
         background-color: rgb(255 255 255);
     }
-
+    #img_row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
     .nestle-img {
         height: 171px;
         margin-top: -114%;
@@ -514,12 +300,9 @@
     }
 
     .case-study-title {
-        color: #FFF;
         height: 50px;
         font-size: 34px;
-        font-style: normal;
         font-weight: 700;
-        text-transform: capitalize;
         margin-left: 6.5%;
         margin-top: -28%;
     }
@@ -578,11 +361,52 @@
         margin-top: 54px;
         margin-left: 44px;
     }
+    .ux-dividing-line{
+        width: 113%;
+        margin-left: -10%;
+        height: 26px;
+        overflow: hidden;
+        margin-top: 2%;
+      
+    }
+    #keytakeways_main{
+        background: #f3f3f3;
+        margin-left: -9%;
+        margin-right: -3%;
+        margin-bottom: -2%;
+    }
+    .keytakeways_points {
+        margin-left: 12%;
+    }
+    .keytakeways-heading {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-left: 14%;
+     
+    }
+    .keytakeways-img {
+        max-width: 101%;
+        height: auto;
+        margin-left: 0%;
+        vertical-align: middle;
+        align-items: center;
+      
+    }
+    
+    .img-responsive {
+        max-width: 101%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -36%;
+        margin-left: 0%;
+    }
 }
 
 /* ...................768.............................................. */
 /*  */
-@media screen and (min-width: 768px) and (max-width:819px) {
+/* @media screen and (min-width: 768px) and (max-width:819px) {
     .background_img {
 
         background-color: #FFF;
@@ -671,38 +495,51 @@
         margin-top: 27px;
         margin-left: 44px;
     }
-    .ux-dividing-line{
+
+    .ux-dividing-line {
         width: 119%;
-        margin-left: -9%;
+        margin-left: -13%;
         overflow: hidden;
         height: 26px;
         margin-top: 2%;
         background: rgba(255, 109, 67, 0.40);
     }
+
     #keytakeways_main {
         background: #f3f3f3;
         margin-left: -6%;
-        margin-right: -8%;
+        margin-right: -6%;
         margin-bottom: -2%;
     }
+
     .keytakeways-heading {
         color: #002D3C;
         font-family: Montserrat;
         font-size: 24px;
         font-weight: 600;
         text-transform: uppercase;
-        margin-top: 4px;
+        margin-top: 25px;
         margin-left: 9%;
         text-decoration: underline;
         text-decoration-color: #ff6d43;
         letter-spacing: 2px;
         text-underline-offset: 8px;
     }
+
     .keytakeways_points {
         margin-left: 7%;
     }
 
-}
+    .testimonials-heading h5 {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .testmonials .line {
+        width: 200px;
+
+    }
+} */
 
 /* .........540......................................... */
 @media screen and (min-width: 540px) and (max-width:720px) {
@@ -799,14 +636,17 @@
 
 /*......................1024..............................  */
 
-@media screen and (min-width: 1024px) and (max-width:600px) {
+@media screen and (min-width: 1024px) and (max-width:1279px) {
     .background_img {
         /* max-width: 108%; */
-        background-color: #FFF;
+        background-color: rgb(205, 211, 211);
     }
 
-    .case-study-left-part {
+    /* .case-study-left-part {
         background-color: rgb(255 255 255);
+    } */
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
     }
 
     .nestle-img {
@@ -889,50 +729,111 @@
         margin-left: 44px;
     }
 
+    .img-responsive {
+        max-width: 110%;
+        padding-top: 31%;
+    }
+
+    .ux-dividing-line {
+        width: 111%;
+        margin-left: -5%;
+        height: 26px;
+        overflow: hidden;
+        margin-top: 2%;
+        background: rgba(255, 109, 67, 0.40);
+    }
+
+    #keytakeways_main {
+        background: #f3f3f3;
+        margin-left: -5%;
+        margin-right: -5%;
+        margin-bottom: -2%;
+    }
+
+    .keytakeways_points {
+        margin-left: 6%;
+    }
+
+    .keytakeways-heading {
+        margin-left: 7%;
+    }
+
 }
 
 @media screen and (min-width: 912px) and (max-width:1002px) {
+    .background_img{
+        background-color: white;
+        height: 112%;
+        width: 106%;
+        margin-left: -2%;
+    }
+    .container, .container-md, .container-sm {
+        max-width: 890px;
+    }
+    #img_row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
     .nestle-img {
         height: 129px;
         margin-top: -110%;
         margin-left: 5.5%;
         position: relative;
     }
-    .ux-dividing-line{
-        width: 141%;
+    .case-study-title {
+        height: 50px;
+        font-size: 34px;
+        margin-left: 5.5%;
+        margin-top: -25%;
+    }
+    .delivery-img{
+        margin-top: -24rem;
+        margin-left: 31rem;
+        position: relative;
+    }
+    .row {
+        flex-direction: row;
+    }
+
+    .img-responsive {
+        max-width: 126%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -36%;
+        margin-left: -9%;
+    }
+
+    .ux-dividing-line {
+        width: 119%;
         margin-left: -16%;
         overflow: hidden;
         height: 26px;
         margin-top: 2%;
         background: rgba(255, 109, 67, 0.40);
     }
+
     #keytakeways_main {
         background: #f3f3f3;
-    margin-left: -16%;
-    margin-right: -19%;
-    margin-bottom: -2%;
+        margin-left: -17%;
+        margin-right: -3%;
+        margin-bottom: -2%;
     }
     .keytakeways-heading {
-        color: #002D3C;
-        font-family: Montserrat;
-        font-size: 24px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-top: 4px;
-        margin-left: 9%;
-        text-decoration: underline;
-        text-decoration-color: #ff6d43;
-        letter-spacing: 2px;
-        text-underline-offset: 8px;
+        margin-left: 19%;
+
+    }
+    .keytakeways-img {
+        max-width: 96%;
+        height: auto;
+        margin-left: 1%;
+        background: #f3f3f3;
     }
     .keytakeways_points {
-        margin-left: 7%;
-    }
-}
-
-@media screen and (min-width: 1024px) and (max-width:1270px) {
-    .case-study-left-part {
-        background-color: rgb(205, 211, 211);
+        margin-left: 18%;
     }
 
 }
@@ -949,3 +850,343 @@
         position: relative;
     }
 }
+
+/* .......................992....................................... */
+
+@media (max-width: 992px) {
+    .project-scope-img img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        background-color: #0B83AB;
+    }
+
+    .row {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .col-sm-7,
+    .col-sm-5 {
+        flex: 0 0 100%;
+    }
+
+    .project-description,
+    .project-scope-Inlist {
+        font-size: 16px;
+        padding: 0%;
+    }
+
+    /* .img-responsive {
+        max-width: 262%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -36%;
+        margin-left: 111%;
+    } */
+    .project-scope-title {
+        font-size: 24px;
+    }
+
+
+    .project-scope-title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+
+    .testimonials-heading h5{
+        font-size: 24px;
+    }
+
+    .keytakeways-heading {
+        font-size: 24px;
+    }
+
+    #cx-design-heading {
+        font-size: 22px;
+    }
+
+    #solution-part-heading {
+        font-size: 24px;
+    }
+
+    .ux_heading {
+        font-size: 24px;
+    }
+
+    .challenges-label {
+        font-size: 24px;
+    }
+
+
+}
+
+
+
+
+
+
+/* @media (max-width: 992px) {
+    .keytakeways-img-container {
+        height: auto;
+    }
+
+    .keytakeways-img {
+        max-width: 100%;
+        height: auto;
+    }
+} */
+
+/* dl,
+ol,
+ul {
+    margin-top: -20px;
+    margin-bottom: 1rem;
+    margin-left: 1%;
+    padding-bottom: 16px;
+} */
+
+/* ................360.................................. */
+/* 
+@media screen and (max-width: 360px) and (max-width:600px) {
+    .background_img {
+        height: 64%;
+        width: 103%;
+        margin-left: -2%;
+    }
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+    .case-study-right-part {
+        float: left;
+        margin-top: -48%;
+       
+        height: 494px;
+    }
+    .nestle-img {
+        height: 118px;
+        margin-top: -148%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -19rem;
+        height: 51%;
+        margin-left: 7rem;
+        position: relative;
+    }
+
+    .case-study-title{
+        height: 50px;
+        font-size: 25px;
+        margin-left: 2.5%;
+        margin-top: -19%;
+    }
+
+    #share {
+        border: none;
+        background: none;
+        padding-left: 37px;
+    }
+    .download {
+        padding-left: 9px;
+    }
+
+    .likes {
+        padding-left: 9px;
+    }
+
+    .like {
+        padding-left: 7px;
+    }
+
+    .breadcrumb {
+        font-size: 16px;
+        color: #000;
+        padding: 1.7%;
+    }
+    .CaseStudy_description {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+    .right-part-title{
+        margin-top: 2%;
+        margin-left: 5%;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .CaseStudy_name {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 8px;
+
+    }
+
+    .CaseStudy_nameDesc {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 7px;
+        margin-left: 25px;
+    }
+
+    .keytakeways_points {
+        font: inherit;
+        font-size: 13px;
+        margin-right: 9%;
+    }
+    .img {
+        width: 93%;
+        display: block;
+        margin-left: 7%;
+    }
+    .solution-items {
+        padding: 1px;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 13px;
+        font-style: normal;
+        letter-spacing: 0.01cqb;
+        font-weight: 400;
+        line-height: 30px;
+        text-transform: capitalize;
+        margin-left: 1%;
+    }
+
+    dl,
+    ol,
+    ul {
+        margin-top: 5px;
+        margin-bottom: 1rem;
+        padding-bottom: 16px;
+    }
+
+    .challenges-items{
+        color: #000;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        letter-spacing: 0.01em;
+        font-weight: 400;
+        line-height: 32px;
+        text-transform: capitalize;
+        padding: 9px;
+    }
+
+    dl,
+    ol,
+    ul {
+        margin-top: 5px;
+        margin-bottom: -3rem;
+        padding-bottom: 80px;
+        bottom: 73px;
+
+    }
+
+    .project-description,
+    .project-scope-Inlist {
+        font-size: 14px;
+        padding: 0%;
+    }
+    .ux_img {
+        padding-inline: 24px;
+    }
+    .persona-toolused {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .persona-tool {
+        font-size: 15px;
+        font-weight: 400;
+        color: #002D3C;
+        width: 60%;
+    }
+
+    .persona-heading {
+        font-size: 19px;
+        font-weight: 600;
+        color: #002D3C;
+    }
+
+    .user-journey-heading {
+        font-size: 19px;
+        font-weight: 600;
+        color: #002D3C;
+    }
+
+    .user-journey-toolused {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .user-journey-tool {
+        font-size: 15px;
+        font-weight: 400;
+        color: #002D3C;
+    }
+
+    .wireframes_heading {
+        font-size: 19px;
+        font-weight: 600;
+        color: #002D3C;
+    }
+
+    .wireframes_toolused,
+    .text2 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .wireframes_tool,
+    .wireframes_tool {
+        font-size: 15px;
+        font-weight: 400;
+        color: #002D3C;
+    }
+
+    .mockups-heading {
+        font-family: Montserrat;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #002D3C;
+        margin-left: 2%;
+        margin-top: 5%;
+    }
+
+    .mockups-tool {
+        font-family: Montserrat;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+    .testimonials-heading h5{
+        font-size: 24px;
+    }
+    .keytakeways-heading {
+        margin-left: 6%;
+    }
+    .keytakeways-img {
+        max-width: 300%;
+        height: auto;
+        margin-left: 107%;
+        background: #f3f3f3;
+    }
+} */
