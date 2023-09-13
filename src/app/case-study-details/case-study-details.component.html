@@ -14,22 +14,13 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 case-study-left-part">
-
-
-            <img [src]="data.heroImg.url" class="background_img">
-
-            <img class="nestle-img" src="{{data.image.url}}">
-
-
+            <img [src]="data.heroImg.url" alt="Background_img" class="background_img" loading="lazy">
+            <img class="nestle-img" alt="nestle-img" src="{{data.image.url}}">
             <p class="case-study-title"> {{data.caseStudy}}</p>
-
-
-            <img class="delivery-img" src="{{data.image1.url}}">
+            <img class="delivery-img" src="{{data.image1.url}}" alt="delivery-img" loading="lazy">
         </div>
-
         <div class="col-lg-6 case-study-right-part">
             <div class="right-part-title"> <label class="title-label">{{data.title}} </label> </div>
-
             <div class="CaseStudy_description"> {{data.description}}</div>
             <div class="CaseStudy_domain">{{data.domains}}</div>
             <h2 class="CaseStudy_name" *ngFor="let item of publish"> {{item.name}} <p class="CaseStudy_nameDesc">
@@ -38,7 +29,6 @@
             <div class="CaseStudy_name" *ngFor="let item of publish">{{item.date}}<p class="CaseStudy_nameDesc">
                     {{data.publishedOnDate | date: 'dd-MM-yyyy' :'UTC'}}</p>
             </div>
-
             <div class="CaseStudy_name" *ngFor="let item of publish"> {{item.contact}} <p class="CaseStudy_nameDesc">
                     {{data.pointOfContact}}</p>
             </div>
@@ -54,7 +44,6 @@
                         </svg>
                         {{item.comments}} </label>
 
-
                     <!-- likes -->
                     <label class="like">
                         <!-- <img [src]="logoCollection.items[2].logo.url"> -->
@@ -65,9 +54,8 @@
                         </svg>
                         {{item.likes}} </label>
 
-
                     <!-- share -->
-                    
+
                     <button id="share" class="upper-success-snackbar" color="primary" (click)="showSuccessSnackBar()">
                         <svg width="16" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -75,11 +63,7 @@
                                 fill="#FF6D43" />
                         </svg>
                     </button>
-                    <!-- <mat-snack-bar [open]="open" (opened)="handleClose()">
-                        {{ open ? 'Snackbar is open' : 'Snackbar is closed' }}
-                      </mat-snack-bar> -->
-
-                   
+               
                     <!-- downloads -->
                     <button class="download" color="primary" (click)="showDownloadSnackBar()">
                         <svg width="21" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,24 +72,18 @@
                                 fill="#FF6D43" />
                         </svg>
                     </button>
+
                     <!-- likes -->
-
-
                     <button class="likes" [style.color]="userLikeCounts[userId]?.liked ? '#FF6D43' : 'initial'"
-                    (click)="toggleLike(userLikeCounts[userId]?.liked ? 'unlike' : 'like', contentId, userId);">
-                <img 
-                     [src]="userLikeCounts[userId]?.liked ? '../assets/thumbfill.png' : '../assets/thumb.png'">
-                {{ userLikeCounts[userId]?.count }}
-            </button>
-            
-         <!-- HTML template -->
-
-
+                        (click)="toggleLike(userLikeCounts[userId]?.liked ? 'unlike' : 'like', contentId, userId);">
+                        <img loading="lazy" alt="thumbfill_Img"
+                            [src]="userLikeCounts[userId]?.liked ? '../assets/thumbfill.png' : '../assets/thumb.png'">
+                        {{ userLikeCounts[userId]?.count }}
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- project scope ...........................................................................................-->
 
@@ -115,7 +93,7 @@
                 <p class="project-scope-title">
                     {{projectScope.title}}
                 </p>
-               
+
                 <h1 class="project-description">
                     {{projectScope.description}}
                 </h1>
@@ -133,7 +111,8 @@
 
             <div class="col-sm-5">
                 <!-- <img class="img-fluid" id="project-scope-img" src={{projectScope.videoImg.url}}> -->
-                <video controls autoplay class="img-fluid" id="project-scope-img" alt="logo"  [src]="projectScope.video.url"></video>
+                <video controls class="img-fluid" id="project-scope-img" alt="logo"
+                    [src]="projectScope.video.url"></video>
             </div>
         </div>
     </div>
@@ -141,13 +120,11 @@
 
     <!-- challenges................................................................................................... -->
 
-
     <div class="container mt-5" id="challenges_main">
         <div class="row" id="img_row">
             <div class="col-sm-9">
                 <p class="challenges-label">{{challenges.title}}
                 </p>
-               
                 <ul class="challenge-list">
                     <li>
                         <div class="challenges-items">{{challenges.listCollection.items[0].challengesList}}</div>
@@ -179,7 +156,7 @@
                 </ul>
             </div>
             <div class="col-sm-3">
-                <img class="img-responsive" [src]="challenges.image.url">
+                <img class="img-responsive" alt="challenges_img" [src]="challenges.image.url" loading="lazy">
             </div>
         </div>
     </div>
@@ -194,13 +171,11 @@
             <div class="col-sm-12">
                 <div class="ux_heading">{{title}}</div>
                 <br><br>
-                <img class="ux_img" [src]="UxApproch.image.url">
+                <img class="ux_img" alt="ux_img" [src]="UxApproch.image.url" loading="lazy">
             </div>
         </div>
     </div>
     <div class="ux-dividing-line"> </div>
-
-
 
 
     <!-- solution part ......................................................................................................-->
@@ -211,7 +186,7 @@
                 <div id="solution-part-heading" class="solution-part-heading">
                     {{PageSolution.title1}}
                 </div>
-                <div class="line44"></div>
+
                 <div class="solution-part-text">
                     <ul class="solution-list">
                         <li>
@@ -243,7 +218,8 @@
             <div class="row" *ngFor="let data of cx_design">
                 <div class="col-sm-12">
 
-                    <div class="cx-design-img"> <img src={{projectScope.teamImg.url}}></div>
+                    <div class="cx-design-img"> <img src={{projectScope.teamImg.url}} alt="cx_design_img"
+                            loading="lazy"></div>
 
                     <div id="cx-design-heading" class="cx-design-heading"><label>{{projectScope.title2}}</label></div>
 
@@ -254,8 +230,8 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
-                                <label class="cx_design_label">{{projectScope.list}} <img style="padding: 10px;"
-                                        src="assets/Line 9.png"></label>
+                                <label class="cx_design_label">{{projectScope.list}}
+                                    <img style="padding: 10px;" alt="cx_design_label" src="assets/Line 9.png"></label>
                             </div>
 
                         </div>
@@ -266,8 +242,8 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
-                                <label  class="cx_design_label" style="padding: 6px;">{{projectScope.list1}} <img style="padding: 10px;"
-                                        src="assets/Line 9.png"></label>
+                                <label class="cx_design_label" style="padding: 6px;">{{projectScope.list1}} <img
+                                        alt="cx_design_label" style="padding: 10px;" src="assets/Line 9.png"></label>
                             </div>
                         </div>
 
@@ -278,7 +254,7 @@
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
                                 <label class="cx_design_label">{{projectScope.list2}} <img style="padding: 10px;"
-                                        src="assets/Line 9.png"></label>
+                                        alt="cx_design_label" src="assets/Line 9.png"></label>
                             </div>
                         </div>
 
@@ -289,7 +265,7 @@
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
                                 <label class="cx_design_label">{{projectScope.list3}} <img style="padding: 10px;"
-                                        src="assets/Line 9.png"></label>
+                                        alt="cx_design_label" src="assets/Line 9.png"></label>
                             </div>
                         </div>
 
@@ -299,8 +275,8 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
-                                <label class="cx_design_label" >{{projectScope.list4}} <img style="padding: 10px;"
-                                        src="assets/Line 9.png"></label>
+                                <label class="cx_design_label">{{projectScope.list4}} <img style="padding: 10px;"
+                                        alt="cx_design_label" src="assets/Line 9.png"></label>
                             </div>
                         </div>
 
@@ -335,16 +311,17 @@
                 </div>
 
                 <div class="col-sm-6 " id="persona_img">
-                    <img class="persona-img-fluid" [src]="PageArtifacts.image.url">
+                    <img alt="persona_img" class="persona-img-fluid" [src]="PageArtifacts.image.url" loading="lazy">
                 </div>
             </div>
         </div><br><br>
         <!-- user journey -->
 
         <div class="container mt-5">
-            <div class="row"  id="img_row" *ngFor="let data of user_journey">
+            <div class="row" id="img_row" *ngFor="let data of user_journey">
                 <div class="col-sm-8">
-                    <img class="user-journey-img-fluid" [src]="PageArtifacts1.image.url">
+                    <img class="user-journey-img-fluid" alt="user_journy_img" [src]="PageArtifacts1.image.url"
+                        loading="lazy">
                 </div>
                 <div class="col-sm-4" style="float:right;">
                     <div class="user-journey-heading">
@@ -367,7 +344,7 @@
         <!-- wireframes -->
 
         <div class="container mt-5" id="wireframe_main">
-            <div class="row"   id="img_row" *ngFor="let data of Wireframes">
+            <div class="row" id="img_row" *ngFor="let data of Wireframes">
                 <div class="col-sm-4">
                     <div class="wireframes_heading">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -385,16 +362,16 @@
                     </div>
                 </div>
                 <div class="col-sm-8">
-                    <img class="img" [src]="PageArtifacts2.image.url">
+                    <img class="img" alt="wireframe_img" [src]="PageArtifacts2.image.url" loading="lazy">
                 </div>
             </div>
         </div>
 
         <!-- mockups..................................................................... -->
         <div class="container mt-5">
-            <div class="row"  id="img_row" *ngFor="let data of mockups">
+            <div class="row" id="img_row" *ngFor="let data of mockups">
                 <div class="col-sm-8">
-                    <img class="img-responsive1" src={{PageArtifacts3.image.url}}>
+                    <img class="img-responsive1" alt="mockups_img" src={{PageArtifacts3.image.url}} loading="lazy">
                 </div>
 
                 <div class="col-sm-4">
@@ -413,7 +390,7 @@
         <div class="ux-dividing-line"> </div>
         <!-- keytakeways.............................................................................................. -->
 
-        <div  id="keytakeways_main">
+        <div id="keytakeways_main">
             <div class="row" id="img_row" *ngFor="let data of keytakeways">
                 <div class="col-sm-9">
                     <div>
@@ -422,7 +399,7 @@
                         </label>
                     </div>
 
-                    <div class="line66"></div><br>
+
                     <div class="keytakeways-label">
                         <ul class="keytakeways_points">
                             <li>
@@ -444,11 +421,10 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <img class="keytakeways-img" src={{PageKey.image.url}} alt="Key Takeaway Image">
+                    <img class="keytakeways-img" src={{PageKey.image.url}} alt="Key_Takeaway_Image" loading="lazy">
                 </div>
             </div>
         </div>
-
         <div class="ux-dividing-line"> </div>
 
         <!-- testimonials.......................................................................................................... -->
@@ -459,11 +435,14 @@
                     <div class="testimonials-heading">
                         <h5> <b> {{Testimonials.title}} </b></h5>
                     </div>
-                    <div class="line77"></div>
+
                     <div id="testmonials-img">
-                        <img class="col-sm-3" class="testimonial_img_1" src={{Testimonials.note1Img2.url}}>
-                        <img class="col-sm-3" class="testimonial_img_2" src={{Testimonials.note2Img2.url}}>
-                        <img class="col-sm-3" class="testimonial_img_3" src={{Testimonials.note3Img2.url}}>
+                        <img class="col-sm-3" alt="testmonials_img" class="testimonial_img_1"
+                            src={{Testimonials.note1Img2.url}} loading="lazy">
+                        <img class="col-sm-3" alt="testmonials_img" class="testimonial_img_2"
+                            src={{Testimonials.note2Img2.url}} loading="lazy">
+                        <img class="col-sm-3" alt="testmonials_img" class="testimonial_img_3"
+                            src={{Testimonials.note3Img2.url}} loading="lazy">
                     </div>
                 </div>
             </div>
