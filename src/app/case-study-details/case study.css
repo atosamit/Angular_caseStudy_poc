@@ -258,7 +258,12 @@
         display: block;
         margin-left: 9%;
     }
-
+    #keytakeways_main{
+        background: #f3f3f3;
+        margin-left: -5%;
+        margin-right: -6%;
+        margin-bottom: -2%;
+    }
     .keytakeways-img {
         max-width: 300%;
         height: auto;
@@ -301,7 +306,7 @@
     .delivery-img {
         margin-top: -22rem;
         height: 65%;
-        margin-left: 25rem;
+        margin-left: 22rem;
         position: relative;
     }
 
@@ -376,13 +381,12 @@
 
     }
 
-    #keytakeways_main {
+    #keytakeways_main{
         background: #f3f3f3;
-        margin-left: -9%;
-        margin-right: -3%;
+        margin-left: -5%;
+        margin-right: -6%;
         margin-bottom: -2%;
     }
-
     .keytakeways_points {
         margin-left: 12%;
     }
@@ -420,6 +424,7 @@
     .background_img {
         max-width: 108%;
         background-color: #FFF;
+        margin-left: -1%;
     }
 
     .container,
@@ -781,13 +786,12 @@
 }
 
 @media screen and (min-width: 912px) and (max-width:1002px) {
-    .background_img {
+    .background_img{
         background-color: white;
         height: 112%;
-        width: 106%;
+        width: 107.5%;
         margin-left: -2%;
     }
-
     .container,
     .container-md,
     .container-sm {
@@ -1592,6 +1596,33 @@
         position: relative;
     }
 }
+@media screen and (min-width: 601px)and (max-width: 664px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+    margin-top: -156%;
+    margin-left: 5.5%;
+    position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -35%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 15rem;
+        position: relative;
+    }
+}
 /* .......................992....................................... */
 
 @media (max-width: 992px) {
@@ -1660,7 +1691,3 @@
 
 }
 
-
-/* .case-study-left-part {
-        background-color: rgb(205, 211, 211);
-    } */
