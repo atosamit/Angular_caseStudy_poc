@@ -24,11 +24,16 @@
   }
   .Eviden_logo {
     display: flex;
-    align-items: center;
+   margin-left: -12%;
+   width: fit-content;
+  height: 49px;
+
+   padding: 10px;
   }
   
 .icons-container{
   float: right;
+  padding-bottom: 7px;
 }
   @media (min-width: 2560px) {
     #Header{
@@ -39,11 +44,7 @@
 
 
   @media screen and (min-width: 375px) and (max-width: 600px) {
-  .Eviden_logo{
-   
-    height: auto;
-    width: 37%;
-  }
+  
   .navbar{
     height: 56px;
     width: 100%;
@@ -54,11 +55,7 @@
   
 
   @media screen and (min-width: 360px) and (max-width: 374px) {
-  .Eviden_logo{
-   
-    height: auto;
-    width: 37%;
-  }
+  
   .navbar{
     height: 56px;
     width: 100%;
@@ -72,9 +69,17 @@
 
 @media screen and (max-width:912px) {
   .icons-container {
-    float: right;
-    margin-top: -43px;
+  
+    margin-top: -46px;
     height: auto;
+  
+   
+}
+
+.Eviden_logo {
+  width: fit-content;
+    height: 45px;
+    margin-left: -17%;
 }
 }
 

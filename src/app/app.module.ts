@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import { SlideShowComponent } from './slide-show/slide-show.component';
 import { GridPageComponent } from './grid-page/grid-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ErrorComponent } from './error/error.component';
 import { StoreModule } from '@ngrx/store';
@@ -45,8 +45,8 @@ import { counterReducer } from 'src/store/counter.reducer';
     Testimonial2Component,
     LoginComponent,
     ErrorComponent,
-  
-    
+
+
   ],
   imports: [
     BrowserModule,
@@ -64,10 +64,10 @@ import { counterReducer } from 'src/store/counter.reducer';
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    StoreModule.forRoot({counter:counterReducer})
-   
-    
- 
+    StoreModule.forRoot({ counter: counterReducer })
+
+
+
     // AuthModule.forRoot({
     //   domain: '',
     //   clientId: '',

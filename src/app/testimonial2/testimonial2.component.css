@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import '../Fonts/Fonts.css';
 
 .test-div1 {
     /* border: 1px solid; */
@@ -10,10 +10,9 @@
 
 .test-heading {
     color: #000;
-    font-family: 'Montserrat';
+    font-family:Montserrat-Medium;
     font-size: 2.1rem;
     font-style: normal;
-    font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
     margin-left: 1%;
@@ -62,10 +61,9 @@
 
 .test-main-title {
     color: #000;
-    font-family: Montserrat;
+    font-family: Montserrat-Medium;
     font-size: 24px;
     font-style: normal;
-    font-weight: 550;
     line-height: normal;
     text-transform: capitalize;
     margin-left: 7%;
@@ -74,9 +72,8 @@
 
 .test-main-description {
     color: #000;
-    font-family: 'Montserrat';
+    font-family: Montserrat-Regular;
     font-style: normal;
-    font-weight: 500;
     line-height: 160%;
     text-transform: capitalize;
     margin-left: 7%;
@@ -84,15 +81,14 @@
     overflow: hidden;
 }
 
-.test-main-authorName {
+.authorName {
     color: #000;
-    font-family: Montserrat;
+    font-family: Montserrat-Semibold;
     font-size: 15.5px;
     font-style: normal;
-    font-weight: 600;
     line-height: 160%;
     text-transform: capitalize;
-    margin-top: 5%;
+    margin-top: 13%;
     margin-left: 7%;
 }
 
@@ -100,10 +96,9 @@
 
 .test-main-authorSmall {
     color: #000;
-    font-family: Montserrat;
+    font-family: Montserrat-Medium;
     font-size: 15.5px;
     font-style: normal;
-    font-weight: 500;
     line-height: 160%;
     text-transform: capitalize;
     margin-left: 6.8%;
@@ -152,7 +147,7 @@
         margin-left: -10%;
     }
 
-    .test-main-authorName {
+    .authorName {
         font-size: 15px;
         width: 120%;
         margin-left: -10%;
@@ -164,6 +159,7 @@
         font-size: 14px;
         width: 120%;
         margin-left: -10%;
+        margin-top: -3%;
     }
 }
 
@@ -216,10 +212,12 @@
 
     .test-main-authorSmall {
         font-size: 15.5px;
-        font-weight: 600;
         line-height: 160%;
         margin-left: 6.8%;
         margin-top: -1%;
     }
 
+    .authorName{
+        margin-top: 5%;
+    }
 }

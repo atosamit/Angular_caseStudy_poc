@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import '../Fonts/Fonts.css';
 
 .row {
   display: flex;
@@ -42,17 +41,15 @@ img {
 .list-text {
   font-size: 15px;
   margin-left: 19px;
-  font-family: Montserrat;
-  font-weight: 900;
+  font-family: Montserrat-Semibold;
 }
 
 .list-text1 {
   font-size: 12.5px;
   margin-left: 19px;
   color: #000;
-  font-family: Montserrat;
+  font-family: Montserrat-Regular;
   font-style: normal;
-  font-weight: 500;
   line-height: 20px;
   text-transform: lowercase;
 }
@@ -60,8 +57,8 @@ img {
 .grid-text {
   font-size: 15px;
   margin-left: 1px;
-  font-family: Montserrat;
-  font-weight: 800;
+  font-family: Montserrat-Semibold;
+
 }
 
 .grid-image {
@@ -73,12 +70,11 @@ img {
 
   margin-left: 6px;
   color: #000;
-  font-family: Montserrat;
+  font-family: Montserrat-Regular;
   font-size: 12px;
   font-style: normal;
   margin-left: -13px;
   margin-top: -3%;
-  font-weight: 400;
   line-height: 1px;
   text-transform: capitalize;
 }
@@ -86,10 +82,9 @@ img {
 .grid-text2 {
   margin-left: 1px;
   color: #000;
-  font-family: Montserrat;
+  font-family: Montserrat-Regular;
   font-size: 10px;
   font-style: normal;
-  font-weight: 500;
   line-height: 16px;
   text-transform: capitalize;
   margin-top: -3%;
@@ -140,10 +135,9 @@ img {
   /* Adjust the margin between the tab group and other elements */
   max-width: 85%;
   top: 20px;
-  font-family: Montserrat;
+  font-family: Montserrat-Bold;
   font-size: 15px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   text-transform: capitalize;
 
@@ -207,10 +201,9 @@ input.toggle-round {
   margin-left: 20px;
   top: 30px;
   color: #000;
-  font-family: Montserrat;
-  font-size: 15px;
+  font-family: Montserrat-Semibold;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   text-transform: capitalize;
 }
@@ -219,10 +212,9 @@ input.toggle-round {
   margin-left: 70px;
   top: 30px;
   color: #000;
-  font-family: Montserrat;
-  font-size: 15px;
+  font-family: Montserrat-Semibold;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   text-transform: capitalize;
 }
@@ -241,7 +233,7 @@ input.toggle-round+label {
   cursor: pointer;
   padding: 0px;
   position: relative;
-  left: 100px;
+  left: 108px;
   top: 27px;
   width: 42px;
   height: 15px;
@@ -282,10 +274,9 @@ input.toggle-round:checked+label:after {
   display: none;
   color: #000;
   text-align: center;
-  font-family: Montserrat;
+  font-family: Montserrat-Semibold;
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   text-transform: capitalize;
 }
@@ -300,9 +291,6 @@ input.toggle-round:checked+label:after {
 
 /* internal to external */
 .list-logo {
-  /* width: 30px;
-  height: 30px;
-  flex-shrink: 0; */
   left: -13px;
   position: relative;
   width: 35px;
