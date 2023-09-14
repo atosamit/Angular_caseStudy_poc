@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-
-
-=======
 @import '../Fonts/Fonts.css';
->>>>>>> Anjali
+
 
 .breadcrumb {
     display: flex;
@@ -876,14 +872,8 @@ body {
     margin-left: 0;
     margin-left: 15px;
 }
-<<<<<<< HEAD
 .keytakeways_points{
     margin-top: 3%;
-=======
-
-.keytakeways_points {
-    margin-top: 2%;
->>>>>>> Anjali
     margin-left: 1%;
 }
 
