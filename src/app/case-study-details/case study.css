@@ -511,7 +511,10 @@
 /*......................1024..............................  */
 
 @media screen and (min-width: 1024px) and (max-width:1279px) {
- 
+    .background_img {
+        /* max-width: 108%; */
+        background-color: rgb(205, 211, 211);
+    }
 
     /* .case-study-left-part {
         background-color: rgb(255 255 255);
@@ -733,6 +736,7 @@
       
         height: 50px;
         font-size: 34px;
+
         font-weight: 700;
         margin-left: 5.5%;
         margin-top: -24%;
