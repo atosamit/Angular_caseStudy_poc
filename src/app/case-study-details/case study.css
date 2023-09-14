@@ -697,7 +697,7 @@
 
 }
 
-@media screen and (min-width: 1440px)and (max-width:2459px) {
+@media screen and (min-width: 1440px)and (max-width:1500px) {
     .case-study-left-part {
         background-color: rgb(205, 211, 211);
     }
@@ -709,7 +709,89 @@
         position: relative;
     }
 }
+@media screen and (min-width: 1501px)and (max-width:1600px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
 
+    .nestle-img {
+        height: 115px;
+        margin-top: -125%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -22%;
+    }
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 20rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1601px)and (max-width:1800px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 115px;
+        margin-top: -113%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -18%;
+    }
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 20rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1801px)and (max-width:2559px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 145px;
+        margin-top: -101%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -18%;
+    }
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 28rem;
+        position: relative;
+    }
+}
 /* .......................992....................................... */
 
 @media (max-width: 992px) {
@@ -739,10 +821,6 @@
         font-size: 16px;
         padding: 0%;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> Anjali
     .project-scope-title {
         font-size: 24px;
     }
@@ -783,7 +861,3 @@
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> Anjali
