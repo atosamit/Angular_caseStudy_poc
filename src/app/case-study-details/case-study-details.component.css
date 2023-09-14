@@ -3,7 +3,7 @@
 .breadcrumb {
     display: flex;
     align-items: center;
-    font-family: Montserrat-Semibold;
+    font-family: Montserrat-Regular;
     font-size: 16px;
     color: #000;
     padding: 0.7%;
@@ -28,7 +28,8 @@
 
 #home_breadcrumb {
     text-decoration-line: underline;
-    font-weight: 500;
+    font-family: Montserrat-Medium;
+    
 }
 
 .breadcrumb-separator {
