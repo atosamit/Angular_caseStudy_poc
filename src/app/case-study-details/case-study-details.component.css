@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.breadcrumb-item a {
+.breadcrumb-item span {
     color: #000;
     text-decoration: none;
     font-size: 16px;
@@ -94,6 +94,8 @@
 
 
 .delivery-img {
+    height:360 ;
+    width:360 ;
     margin-top: -24rem;
     margin-left: 14rem;
     position: relative;
@@ -102,6 +104,7 @@
 .background_img {
     height: 112%;
     width: 106%;
+   
     margin-left: -2%;
 }
 
@@ -196,8 +199,11 @@
     margin-top: 19px;
     margin-left: 25px;
 }
-
+.comments{
+    font-family: Montserrat-Regular;
+}
 .like {
+    font-family: Montserrat-Regular;
     padding-left: 20px;
 }
 
@@ -209,24 +215,24 @@
 }
 
 /* Add this style to position the snackbar at the upper side of the screen */
-.upper-success-snackbar ::ng-deep .mat-simple-snackbar {
+.Share_icon ::ng-deep .mat-simple-snackbar {
     bottom: auto;
     top: 0;
     transform: translateY(0);
     justify-content: flex-start;
 }
 
-.upper-success-snackbar ::ng-deep .mat-simple-snackbar span.mat-simple-snackbar-message {
+.Share_icon ::ng-deep .mat-simple-snackbar span.mat-simple-snackbar-message {
     align-items: flex-start;
     text-align: left;
     padding: 8px;
 }
 
-.upper-success-snackbar ::ng-deep .mat-simple-snackbar button.mat-simple-snackbar-action {
+.Share_icon ::ng-deep .mat-simple-snackbar button.mat-simple-snackbar-action {
     margin-top: 4px;
 }
 
-.download {
+.download_button {
     border: none;
     background: none;
     padding-left: 20px;
@@ -518,18 +524,21 @@ body {
     flex-shrink: 0;
     background-color: #F8F8F8;
 }
-
+ul.cx_design_options {
+    list-style-type: none; /* Removes bullets */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
 #cxDesign_main {
     background: #f3f3f3;
 }
 
 .cx-design-img {
     width: 75px;
-    height: 75px;
-    margin-left: 2%;
+    height: 93px;
+    margin-left: 3%;
     margin-top: 1%;
     padding-top: 2%;
-    flex-shrink: 0;
 }
 
 
@@ -539,7 +548,7 @@ body {
     font-family: Montserrat-SemiBold;
     font-size: 30px;
     margin-left: 2%;
-    margin-top: 2%;
+    /* margin-top: 2%; */
     font-style: normal;
     width: -1%;
     line-height: normal;
@@ -562,18 +571,19 @@ body {
 .cx_list {
     color: #0B83AB;
     font-family: Montserrat-Semibold;
-    font-size: 16px;
+    font-size: 15px;
     padding: 0px;
     font-style: normal;
-
     line-height: normal;
-    margin-right: 14px;
+    margin-left: 3%;
+    margin-right: 6px;
     text-decoration: underline;
     text-decoration-color: #0B83AB;
     text-transform: uppercase;
 }
 
 .cx_design_label {
+    color: #0B83AB;
     padding: 6px;
     text-decoration: underline;
     text-decoration-color: #0B83AB;
@@ -914,7 +924,7 @@ body {
 
 
 
-.testimonials-heading h5 {
+.testimonials-heading  {
     color: #002D3C;
     font-size: 40px;
     width: 28%;
@@ -1200,7 +1210,7 @@ body {
         font-family: Montserrat-SemiBold;
         font-size: 35px;
         margin-left: 0%;
-        margin-top: 2%;
+        /* margin-top: 2%; */
         font-style: normal;
 
         width: 38%;
@@ -1221,11 +1231,10 @@ body {
 
     .cx-design-img {
         width: 75px;
-        height: 75px;
+        height: 93px;
         margin-left: 3%;
-        margin-top: 0%;
+        margin-top: 1%;
         padding-top: 2%;
-        flex-shrink: 0;
     }
 
     .cx_design_options {
@@ -1320,6 +1329,8 @@ body {
 
     /*  */
     .delivery-img {
+        height:auto ;
+        width:auto ;
         margin-top: -22rem;
         margin-left: 45rem;
         position: relative;

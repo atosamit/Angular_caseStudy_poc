@@ -24,6 +24,7 @@
     "@ngrx/store": "^16.2.0",
     "bootstrap": "^5.3.1",
     "jspdf": "^2.5.1",
+    "ng-lazy-load": "^1.0.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

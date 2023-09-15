@@ -66,7 +66,7 @@
         padding-left: 50px;
     }
 
-    .download {
+    .download_button {
         padding-left: 9px;
     }
 
@@ -322,7 +322,7 @@
         padding-left: 348px;
     }
 
-    .download {
+    .download_button {
         padding-left: 37px;
     }
 
@@ -470,7 +470,7 @@
         padding-left: 348px;
     }
 
-    .download {
+    .download_button {
         padding-left: 37px;
     }
 
@@ -608,7 +608,7 @@
         padding-left: 19%;
     }
 
-    .download {
+    .download_button {
         padding-left: 37px;
     }
 
@@ -668,43 +668,19 @@
         background-color: rgb(205, 211, 211);
     }
 
-    /* .case-study-left-part {
-        background-color: rgb(255 255 255);
-    } */
-    /* .case-study-left-part {
-        background-color: rgb(205, 211, 211);
+
+    .action-buttons {
+        margin-top: 3px;
+        margin-left: 29px;
+    }
+   
+    #share{
+        border: none;
+        background: none;
+        padding-left: 95px;
     }
 
-    .nestle-img {
-        height: 158px;
-        margin-top: -187%;
-        margin-left: 1.5%;
-        position: relative;
-    }
-
-    .delivery-img {
-        margin-top: -28rem;
-        height: 60%;
-        margin-left: 13rem;
-        position: relative;
-    }
-
-    .case-study-title {
-        color: #FFF;
-        height: 50px;
-        font-size: 34px;
-        font-style: normal;
-        font-weight: 700;
-        text-transform: capitalize;
-        margin-left: 6.5%;
-        margin-top: -28%;
-    } */
-
-    .share {
-        padding-left: 315px;
-    }
-
-    .download {
+    .download_button{
         padding-left: 37px;
     }
 
@@ -749,10 +725,10 @@
         margin: 3px 0 1px;
     }
 
-    .action-buttons {
+    /* .action-buttons {
         margin-top: 54px;
         margin-left: 44px;
-    }
+    } */
 
     .img-responsive {
         max-width: 110%;
@@ -782,9 +758,30 @@
     .keytakeways-heading {
         margin-left: 7%;
     }
-
 }
+/* }
+@media screen and (min-width: 1024px) and (max-width:1279px) {
+    .action-buttons {
+        margin-top: 3px;
+        margin-left: 29px;
+    }
+   
+    .share {
+        padding-left: 115px;
+    }
 
+    .download_button{
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like {
+        padding-left: 34px;
+    }
+} */
 @media screen and (min-width: 912px) and (max-width:1002px) {
     .background_img{
         background-color: white;
