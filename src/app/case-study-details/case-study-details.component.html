@@ -41,14 +41,20 @@
 
             <div class="action-buttons">
                 <div *ngFor="let item of details">
-                    <label class="comments">
+                    <!-- <label class="comments" (click)="showInputField(item)"> -->
+                        <label class="comments"> 
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M11.25 3V8.25H3.8775L3.435 8.6925L3 9.1275V3H11.25ZM12 1.5H2.25C1.8375 1.5 1.5 1.8375 1.5 2.25V12.75L4.5 9.75H12C12.4125 9.75 12.75 9.4125 12.75 9V2.25C12.75 1.8375 12.4125 1.5 12 1.5ZM15.75 4.5H14.25V11.25H4.5V12.75C4.5 13.1625 4.8375 13.5 5.25 13.5H13.5L16.5 16.5V5.25C16.5 4.8375 16.1625 4.5 15.75 4.5Z"
                                 fill="#FF6D43" />
                         </svg>
                         {{item.comments}} </label>
+                    <!-- comments -->
 
+                   
+
+                    <!-- <div *ngFor="let comment of comments$ | async"></div> -->
+                    <!-- ................-->
                     <!-- likes -->
                     <label class="like">
                         <!-- <img [src]="logoCollection.items[2].logo.url"> -->
@@ -85,7 +91,16 @@
                             [src]="userLikeCounts[userId]?.liked ? '../assets/thumbfill.png' : '../assets/thumb.png'">
                         {{ userLikeCounts[userId]?.count }}
                     </button>
-                </div>
+
+                    <!-- <div *ngIf="item.showInput">
+                        <input style="      margin-left: 1%;
+                        height: 23px;
+                        width: 178Px;" [(ngModel)]="item.newComment1">
+                        <button style="  height: 24Px;
+                        width: 66px;" (click)="addComment1(item)">Add</button>
+                    </div>
+                </div> -->
+                
             </div>
         </div>
     </div>
@@ -305,9 +320,9 @@
             <div class="row" *ngFor="let data of cx_design">
                 <div class="col-sm-12">
 
-              
-                        <img class="cx-design-img" src={{projectScope.teamImg.url}} alt="cx_design_img" loading="lazy">
-                  
+
+                    <img class="cx-design-img" src={{projectScope.teamImg.url}} alt="cx_design_img" loading="lazy">
+
 
                     <div id="cx-design-heading" class="cx-design-heading"><label>{{projectScope.title2}}</label></div>
 
