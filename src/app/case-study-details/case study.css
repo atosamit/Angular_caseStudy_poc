@@ -289,7 +289,7 @@
         background-color: rgb(255 255 255);
     }
 
-    #img_row {
+    #img_row1,#img_row2,#img_row3,#img_row4,#img_row5 {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -437,7 +437,7 @@
         background-color: rgb(255 255 255);
     }
 
-    #img_row {
+    #img_row1,#img_row2,#img_row3,#img_row4,#img_row5  {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -795,7 +795,7 @@
         max-width: 890px;
     }
 
-    #img_row {
+    #img_row1,#img_row2,#img_row3,#img_row4,#img_row5 {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -1684,7 +1684,5 @@
     .challenges-label {
         font-size: 24px;
     }
-
-
 }
 

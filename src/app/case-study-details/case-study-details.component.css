@@ -296,7 +296,7 @@ body {
     color: #002D3C;
     font-size: 36px;
     font-family: Montserrat-Semibold;
-
+    margin-left: 1.5%;
     line-height: normal;
     text-transform: uppercase;
     text-decoration: underline;
@@ -316,7 +316,9 @@ body {
     line-height: 30px;
     text-transform: capitalize;
 }
-
+.project-scope-li{
+    margin-left: 2%;
+}
 .project-scope-img img {
     max-width: 100%;
     height: auto;
@@ -348,7 +350,7 @@ body {
     font-size: 40px;
     font-style: normal;
 
-    margin-left: 1%;
+    margin-left: 2%;
     line-height: normal;
     text-transform: uppercase;
     text-decoration: underline;
@@ -365,7 +367,7 @@ body {
     font-family: Montserrat-Regular;
     font-size: 17px;
     font-style: normal;
-
+margin-left: 2.1%;
     line-height: 30px;
     text-transform: capitalize;
 }
@@ -409,7 +411,7 @@ body {
     color: #002D3C;
     font-size: 40px;
     margin-top: -1%;
-    margin-left: 1%;
+    margin-left: 1.5%;
     font-family: Montserrat-Semibold;
     font-style: normal;
 
@@ -469,7 +471,7 @@ body {
     font-family: Montserrat-SemiBold;
     font-size: 40px;
     margin-top: -1.5%;
-    margin-left: 1%;
+    margin-left: 1.5%;
     font-style: normal;
     line-height: normal;
     text-transform: uppercase;
@@ -498,6 +500,7 @@ body {
 }
 
 .solution-list {
+    margin-left: 2%;
     margin-bottom: -10px;
     letter-spacing: 0.01cqb;
 }
@@ -837,8 +840,8 @@ body {
     font-size: 40px;
 
     text-transform: uppercase;
-    margin-top: 20px;
-    margin-left: 2%;
+    margin-top: 35px;
+    margin-left: 3%;
     text-decoration: underline;
     text-decoration-color: #ff6d43;
     letter-spacing: 2px;
@@ -884,8 +887,8 @@ body {
 }
 
 .keytakeways_points {
-    margin-top: 2%;
-    margin-left: 1%;
+    margin-top: 3%;
+    margin-left: 3%;
 }
 
 .keytakeways-img {
@@ -930,6 +933,7 @@ body {
     width: 28%;
     font-family: 'Montserrat-SemiBold';
     font-style: normal;
+    margin-left: 0.5%;
     margin-top: -2%;
     line-height: normal;
     text-transform: uppercase;
@@ -940,7 +944,9 @@ body {
 }
 
 
-
+p {
+    line-height: 1.5;
+   }
 /* ....................2560............................ */
 /*  */
 
@@ -1188,6 +1194,7 @@ body {
     }
 
     .solution-list li {
+        /* margin-left: 2%; */
         margin-bottom: -10px;
     }
 
@@ -1209,7 +1216,7 @@ body {
         color: #002D3C;
         font-family: Montserrat-SemiBold;
         font-size: 35px;
-        margin-left: 0%;
+        margin-left: 2%;
         /* margin-top: 2%; */
         font-style: normal;
 
@@ -1252,7 +1259,7 @@ body {
     }
 
     .cx_list {
-        margin-right: 150px;
+        margin-right: 84px;
         font-size: 25px;
     }
 
@@ -1488,7 +1495,7 @@ body {
     .mockups-tool {
         font-family: Montserrat-Regular;
         font-size: 34px;
- 
+
         margin-left: 1%;
     }
 

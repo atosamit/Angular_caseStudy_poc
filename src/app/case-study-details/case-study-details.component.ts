@@ -198,11 +198,11 @@ export class CaseStudyDetailsComponent {
       (response: any) => {
         // console.log(response.data);
         this.data = response.data.detailsPage;
-        console.log(this.data)
+        // console.log(this.data)
         this.logo = response.data.detailsPage.logoCollection.items;
-        console.log(this.logo)
+        // console.log(this.logo)
         this.projectScope = response.data.detailsPage.additionalReferencesCollection.items[0];
-        console.log(this.projectScope)
+        // console.log(this.projectScope)
         // challeges from cms
         this.challenges = response.data.detailsPage.additionalReferencesCollection.items[1];
         // UxApproch from cms
