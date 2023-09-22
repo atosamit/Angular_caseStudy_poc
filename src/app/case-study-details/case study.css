@@ -114,7 +114,10 @@
         margin-top: 18px;
         margin-left: 11px;
     }
-
+    .project-description, .project-scope-Inlist {
+        font-size: 14px;
+        padding: 0%;
+    }
     .mockups-dividing-line {
         margin-top: 12%;
     }
@@ -269,6 +272,10 @@
         height: auto;
         margin-left: 107%;
         background: #f3f3f3;
+    }
+    .keytakeways-heading{
+        font-size: 24px;
+        margin-left: 7%;
     }
 }
 /* ..............549 ....767............................. */
@@ -521,21 +528,18 @@
     }
 
     .ux-dividing-line {
-        width: 113%;
-        margin-left: -10%;
+        width: 104%;
+        margin-left: -3%;
         height: 26px;
         overflow: hidden;
         margin-top: 2%;
-
     }
-
     #keytakeways_main {
         background: #f3f3f3;
         margin-left: -9%;
-        margin-right: -3%;
+        margin-right: -1%;
         margin-bottom: -2%;
     }
-
     .keytakeways_points {
         margin-left: 12%;
     }
@@ -735,9 +739,9 @@
         padding-top: 31%;
     }
 
-    .ux-dividing-line {
+    .ux-dividing-line{
         width: 111%;
-        margin-left: -5%;
+        margin-left: 0%;
         height: 26px;
         overflow: hidden;
         margin-top: 2%;
@@ -1646,7 +1650,7 @@
 
     .project-description,
     .project-scope-Inlist {
-        font-size: 16px;
+        font-size: 14px;
         padding: 0%;
     }
 
@@ -1655,13 +1659,13 @@
     }
 
 
-    .project-scope-title {
+    /* .project-scope-title {
         font-size: 24px;
         font-weight: 600;
-    }
+    } */
 
 
-    .testimonials-heading h5 {
+    .testimonials-heading {
         font-size: 24px;
     }
 
