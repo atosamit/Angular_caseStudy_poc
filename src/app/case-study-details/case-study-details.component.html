@@ -261,15 +261,16 @@
                             <label>{{projectScope.title2}}</label>
                         </div>
                         <ul class="cx_design_options">
-
+                            <!-- persona -->
                             <li class="cx_list" style="float: left;">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
-                                <label class="cx_design_label"> {{projectScope.list}}
-                                    <img style="padding: 10px;" alt="cx_design_label" src="assets/Line 9.png">
-                                </label>
+                                <a href="#container_persona">
+                                    <label class="cx_design_label"> {{projectScope.list}}
+                                        <img style="padding: 10px;" alt="cx_design_label" src="assets/Line 9.png">
+                                    </label></a>
                             </li>
                             <!--  user-->
                             <li class="cx_list" style=" float: left;">
@@ -278,9 +279,11 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
-                                <a  href="#wireframe_main" onclick="scrollToElement('wireframe_main'); return true;" > <label class="cx_design_label"
-                                        style="padding: 6px;">{{projectScope.list1}}<img alt="cx_design_label"
-                                            style="padding: 10px;" src="assets/Line 9.png"></label> </a>
+                                <a href="#user_journey_main">
+                                    <label class="cx_design_label" style="padding: 6px;">{{projectScope.list1}}
+                                        <img alt="cx_design_label" style="padding: 10px;" src="assets/Line 9.png">
+                                    </label>
+                                </a>
 
                             </li>
                             <!--wireframe  -->
@@ -290,22 +293,24 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
-                                <label class="cx_design_label">{{projectScope.list2}} <img style="padding: 10px;"
-                                        alt="cx_design_label" src="assets/Line 9.png"></label>
-
+                                <a href="#wireframe_main">
+                                    <label class="cx_design_label">{{projectScope.list2}} <img style="padding: 10px;"
+                                            alt="cx_design_label" src="assets/Line 9.png"></label>
+                                </a>
                             </li>
-
+                            <!-- mockup -->
                             <li class="cx_list" style=" float: left;">
 
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="9" cy="9" r="7" stroke="#FF6D43" stroke-width="4" />
                                 </svg>
-                                <label class="cx_design_label">{{projectScope.list3}} <img style="padding: 10px;"
-                                        alt="cx_design_label" src="assets/Line 9.png"></label>
-
+                                <a href="#wireframe_main">
+                                    <label class="cx_design_label">{{projectScope.list3}} <img style="padding: 10px;"
+                                            alt="cx_design_label" src="assets/Line 9.png"></label>
+                                </a>
                             </li>
-
+                            <!-- visual -->
                             <li class="cx_list" style=" float: left;">
 
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -332,7 +337,7 @@
             </div>
             <!-- persona .........-->
 
-            <div class="container-fluid mt-5"  id="container_persona">
+            <div class="container-fluid mt-5" id="container_persona">
                 <div class="row" id="img_row1" *ngFor="let data of persona">
                     <div class="col-sm-6">
                         <div role="region" aria-label="persona_heading" class="persona-heading">
@@ -386,7 +391,6 @@
                 </div>
             </div>
             <!-- wireframes -->
-        <div id="wireframe_new">
             <div class="container mt-5" id="wireframe_main">
                 <div class="row" id="img_row3" *ngFor="let data of Wireframes">
                     <div class="col-sm-4">
@@ -415,16 +419,7 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <script>
-            function scrollToElement(elementId) {
-                var element = document.getElementById(elementId);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-            </script>
             <!-- mockups..................................................................... -->
             <div class="container mt-5">
                 <div class="row" id="img_row4" *ngFor="let data of mockups">
@@ -499,7 +494,6 @@
 
                         <label class="testimonials-heading"> {{Testimonials.title}}</label>
 
-
                         <div role="region" aria-label="testimonial_img" id="testmonials-img">
                             <img class="col-sm-3" alt="testmonials_img" class="testimonial_img_1"
                                 src={{Testimonials.note1Img2.url}} loading="lazy">
@@ -513,30 +507,4 @@
             </div>
             <div class="ux-dividing-line"> </div>
 
-
-
-            <!-- <script>
-                // Add an event listener to the anchor tag with href="#wireframe_main"
-                document.querySelector('a[href="#wireframe_main"]').addEventListener('click', function (e) {
-                    // Prevent the default behavior of the anchor tag (i.e., navigating to a different page)
-                    e.preventDefault();
-            
-                    // Get a reference to the target div with id="wireframe_main"
-                    const targetDiv = document.getElementById('wireframe_main');
-            
-                    // Check if the target div exists
-                    if (targetDiv) {
-                        // Calculate the offsetTop of the target div relative to the document
-                        const targetOffset = targetDiv.offsetTop;
-            
-                        // Scroll to the target div using the scrollIntoView method on the document's body
-                        // You can adjust the behavior option as needed (e.g., 'smooth' for smooth scrolling)
-                        window.scrollTo({
-                            top: targetOffset,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            </script> -->
-            
             <app-footer></app-footer>

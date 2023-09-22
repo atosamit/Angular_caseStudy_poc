@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'grid-page', component: LandingPageComponent },
   { path: 'case_study/:id', component: DetailsPageComponent },
   { path: 'error', component: ErrorComponent },
+  // {path:'wireframe',component:DetailsPageComponent}
  
 
 ];
