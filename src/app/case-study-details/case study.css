@@ -560,14 +560,13 @@
         align-items: center;
 
     }
-
     .img-responsive {
-        max-width: 101%;
+        max-width: 137%;
         height: auto;
         display: block;
         margin: 0 auto;
-        margin-top: -36%;
-        margin-left: 0%;
+        margin-top: -377%;
+        margin-left: 334%;
     }
 }
 
