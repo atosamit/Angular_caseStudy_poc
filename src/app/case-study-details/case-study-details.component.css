@@ -887,8 +887,13 @@ body {
 }
 
 .keytakeways_points {
+<<<<<<< Updated upstream
     margin-top: 3%;
     margin-left: 3%;
+=======
+    margin-top: 2%;
+    margin-left: 1%;
+>>>>>>> Stashed changes
 }
 
 .keytakeways-img {
