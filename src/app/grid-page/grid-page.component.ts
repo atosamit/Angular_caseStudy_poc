@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { LikesService } from '../services/likes.service';
-import { jsPDF } from "jspdf"
+// import { jsPDF } from "jspdf"
 import { labelConstants } from '../HardcodeTags';
 import { Router } from '@angular/router'; // Import the Router module
 import { Store } from '@ngrx/store';
@@ -297,12 +297,12 @@ this.errorService.setIsError(true);
 
 
   makePDF() {
-    let pdf = new jsPDF('p', 'pt', 'a4');
-    pdf.html(this.el.nativeElement, {
-      callback: (pdf) => {
-        pdf.save("tasteCase.pdf");
-      }
-    });
+    // let pdf = new jsPDF('p', 'pt', 'a4');
+    // pdf.html(this.el.nativeElement, {
+    //   callback: (pdf) => {
+    //     pdf.save("tasteCase.pdf");
+    //   }
+    // });
 
   }
 

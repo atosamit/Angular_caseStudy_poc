@@ -87,7 +87,7 @@
         <div class="divpadding" [ngClass]="{ 'column-list': !isGridView}">
           <img alt="grid_images" width="440" height="260" class="img-fluid" [src]="item.details.itemIcon.url" [src]="item.details.itemIcon.url"
             [ngClass]="{'grid-image': isGridView, 'list-image': !isGridView}"
-            [routerLink]="['/case_study', item.details.sys.id]">
+            [routerLink]="['/case_study', item.details.sys.id]" >
           <div class="div2">
             <h4 [ngClass]="{'grid-text': isGridView, 'list-text': !isGridView}">{{ item.details.title }}</h4>
             <!-- date -->
@@ -222,9 +222,14 @@
       [0]. Nextbtn }}</button>
   </div>
 
+
+
+<!-- testimonil call here -->
+
   <div *ngIf="isGridView">
     <app-testimonial2></app-testimonial2>
   </div>
 
+  
   <app-footer></app-footer>
   <ng-template #dataContent>

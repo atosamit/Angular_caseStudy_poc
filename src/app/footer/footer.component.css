@@ -1,3 +1,4 @@
+@import '../Fonts/Fonts.css';
 .center-card {
   display: flex;
   justify-content: center;
@@ -6,93 +7,46 @@
   /* font-size: small; */
   text-transform: capitalize;
   color: #000;
-  font-family: Montserrat;
+  font-family: Montserrat-Regular;
   font-size: 12px;
   font-style: normal;
-  font-weight: 400;
   line-height: 150%;
   /* 25.6px */
   text-transform: capitalize;
-
 }
-
 
 @media (min-width: 2560px){
-
   .center-card {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     height: auto;
-
     /* font-size: small; */
-
     text-transform: capitalize;
-
     color: #000;
-
-    font-family: Montserrat;
-
+    font-family: Montserrat-Regular;
     font-size: 15px;
-
     font-style: normal;
-
-    font-weight: 400;
-
     line-height: 160%;
-
     /* 25.6px */
-
     text-transform: capitalize;
-
- 
-
   }
-
 }
-
- 
-
- 
-
 @media (min-width: 1646px) {
-
   .center-card {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     height: auto;
-
     /* font-size: small; */
-
     text-transform: capitalize;
-
     color: #000;
-
-    font-family: Montserrat;
-
+    font-family: Montserrat-Regular;
     font-size: 15px;
-
     font-style: normal;
-
-    font-weight: 400;
-
     line-height: 160%;
-
     /* 25.6px */
-
     text-transform: capitalize;
-
- 
-
   }
 
 }
