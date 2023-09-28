@@ -89,7 +89,7 @@
             [ngClass]="{'grid-image': isGridView, 'list-image': !isGridView}"
             [routerLink]="['/case_study', item.details.sys.id]" >
           <div class="div2">
-            <h4 [ngClass]="{'grid-text': isGridView, 'list-text': !isGridView}">{{ item.details.title }}</h4>
+            <p [ngClass]="{'grid-text': isGridView, 'list-text': !isGridView}">{{ item.details.title }}</p>
             <!-- date -->
             <p *ngIf="isGridView" [ngClass]="{ 'list-text1': !isGridView, 'grid-text2': isGridView }">
               {{ labelConstants [0].Publishedon }} <strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy' :'UTC'

@@ -51,6 +51,7 @@ img {
   font-family: Montserrat-Regular;
   font-style: normal;
   line-height: 20px;
+  
   text-transform: lowercase;
 }
 
@@ -58,12 +59,16 @@ img {
   font-size: 15px;
   margin-left: 1px;
   font-family: Montserrat-Semibold;
-
+  text-overflow: ellipsis;
+  /* white-space: nowrap;
+  overflow: hidden; */
 }
 
 .grid-image {
-  height: 250px;
-  width: 430px;
+  /* height: 250px;
+  width: 430px; */
+    width: 430px;
+    height: auto;
 }
 
 .grid-text1 {
@@ -91,12 +96,12 @@ img {
 }
 
 .list-view:nth-child(even) {
-  background-color: #F8F8F8;
+  background-color:none;
   width: 100%;
 }
 
 .list-view:nth-child(odd) {
-  background-color: none;
+  background-color: #F8F8F8;
   width: 100%;
 }
 
@@ -129,6 +134,8 @@ img {
   --mat-tab-header-active-focus-indicator-color: #ff6d43;
   --mat-tab-header-active-hover-indicator-color: #ff6d43;
 }
+
+
 
 .custom-tab-group {
   margin-bottom: 10px;

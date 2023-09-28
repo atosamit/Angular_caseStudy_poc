@@ -44,6 +44,12 @@
     /* .divpadding{
       padding: 5%;
     } */
+
+    .divv[_ngcontent-ng-c1911925320] {
+        float: right;
+        display: inline-block;
+        margin-top: 0;
+    }
 }
 
 /* Responsive styles */
@@ -168,8 +174,9 @@
     .grid-text {
         font-size: 13px;
         margin-left: 19px;
-        font-family: Montserrat;
+        /* font-family: Montserrat; */
         font-weight: 900;
+        margin-left: 0%;
     }
 
 
