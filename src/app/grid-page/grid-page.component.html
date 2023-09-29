@@ -1,7 +1,6 @@
 <app-slide-show (searchTextChanged)="onSearchTextEntered($event)"></app-slide-show>
 
 <div class="matTab_listgrid_div">
-
   <!-- navigation bar mat tap -->
   <mat-tab-group class="custom-tab-group" [(selectedIndex)]="selectedTabIndex"
     (selectedTabChange)="handleTabChange($event)">
@@ -9,21 +8,25 @@
     <mat-tab *ngFor="let domain of domains" [label]="getDomainLabel(domain)"></mat-tab>
   </mat-tab-group>
 
-
   <!-- list and grid buttons -->
   <div id="btnContainer">
     <div>
-      <button class="btn" id="List_btn" (click)="toggleView('list') ;listView()">
-        <img alt="list_button" class="list-logo" [src]="isListViewActive ? '../assets/format-list-bulleted.png' : 'assets/Vector (3).png'"
-          alt="List View">
+      <button class="btn" id="List_btn" (click)="toggleView('list'); listView()">
+        <img alt="list_button" class="list-logo" [src]="
+            isListViewActive
+              ? '../assets/format-list-bulleted.png'
+              : 'assets/Vector (3).png'
+          " alt="List View" />
       </button>
     </div>
 
-    <span class="separator"><img src="assets/Line 1.png"></span>
+    <span class="separator"><img alt="shlash" src="assets/Line 1.png" /></span>
 
     <div>
-      <button class="btn" (click)="toggleView('grid');gridView()">
-        <img alt="grid_button" class="grid-logo" [src]="isListViewActive ? 'assets/Vector22.png' : '../assets/grid.png'" alt="Grid View">
+      <button class="btn" (click)="toggleView('grid'); gridView()">
+        <img alt="grid_button" class="grid-logo" [src]="
+            isListViewActive ? 'assets/Vector22.png' : '../assets/grid.png'
+          " alt="Grid View" />
       </button>
     </div>
   </div>
@@ -31,205 +34,149 @@
 
 <!-- toggle -->
 
-<input id="cb_id" class="toggle-round" type="checkbox">
+<input id="cb_id" class="toggle-round" type="checkbox" />
 <label for="cb_id"></label>
-<label class="CXTowerlabel">{{ labelConstants [0].CXTower }}</label>
-<label class="CXTechlabel1">{{ labelConstants [0].CXTech }}</label>
+<label class="CXTowerlabel">{{ labelConstants[0].CXTower }}</label>
+<label class="CXTechlabel1">{{ labelConstants[0].CXTech }}</label>
 
 <!-- Cx Tech -->
-<div class="labels left-side" style="margin-top: -32px; margin-left: 10px;">
+<div class="labels left-side" style="margin-top: -32px; margin-left: 10px">
   <ng-container *ngFor="let data of cxTech">
-    <button (click)="filterDataBySubDomain(data)" class="label">{{data}}</button>
+    <button (click)="filterDataBySubDomain(data)" class="label">
+      {{ data }}
+    </button>
   </ng-container>
 </div>
 
 <!-- Cx Tower -->
-<div class="labels right-side " style="margin-top: -1px;">
+<div class="labels right-side" style="margin-top: -1px">
   <ng-container *ngFor="let data of cxTower">
-    <button (click)="filterDataBySubDomain(data)" class="label">{{data}}</button>
+    <button (click)="filterDataBySubDomain(data)" class="label">
+      {{ data }}
+    </button>
   </ng-container>
 </div>
 <div>
-
-  <!-- sortby dropdown -->
-  <!-- <button class="sortby" (click)="toggleDropdown()">
-  <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px; margin-top: 1px;" width="14" height="14"
-    viewBox="0 0 14 14" fill="none">
-    <path
-      d="M0.186163 1.40875C1.9633 3.675 5.24485 7.875 5.24485 7.875V13.125C5.24485 13.6062 5.64075 14 6.12463 14H7.88417C8.36805 14 8.76394 13.6062 8.76394 13.125V7.875C8.76394 7.875 12.0367 3.675 13.8138 1.40875C14.2625 0.83125 13.849 0 13.1188 0H0.881183C0.150972 0 -0.262521 0.83125 0.186163 1.40875Z"
-      fill="black" />
-  </svg> -->
-  <!-- <label class="labSortby">Sort by</label> -->
-  <!-- <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 16 11" fill="none">
-    <path d="M1.88 0L8 6.39898L14.12 0L16 1.96999L8 10.3529L0 1.96999L1.88 0Z" fill="black" />
-  </svg> -->
-  <!-- Dropdown content -->
-  <!-- <ul class="dropdown-content" [ngStyle]="{ 'display': dropdownOpen ? 'block' : 'none' }">
-    <li>{{sortBy[0].list}}</li>
-    <li>{{sortBy[1].list}}</li>
-    <li>{{sortBy[2].list}}</li>
-    <li>{{sortBy[3].list}}</li> -->
-  <!-- Add more options as needed -->
-  <!-- </ul> -->
-  <!-- SVG to show when the dropdown is open -->
-  <!-- <svg *ngIf="dropdownOpen" xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 16 11" fill="none">
-    <path d="M1.88 10.3529L8 3.95392L14.12 10.3529L16 8.38291L8 -3.62396e-05L0 8.38291L1.88 10.3529Z" fill="black" />
-  </svg>
-</button> -->
-
-  <br>
+  <br />
 
   <div class="row" id="content" #content>
     <ng-container *ngFor="let item of paginatedData">
+      <div class="column" [ngClass]="{ 'list-view': !isGridView }" *ngIf="
+          searchText === '' ||
+          item.details.title?.toLowerCase().includes(searchText)
+        ">
+        <div class="divpadding" [ngClass]="{ 'column-list': !isGridView }">
+          <img alt="grid_images" width="440" height="260" class="img-fluid" [src]="item.details.itemIcon.url"
+            [src]="item.details.itemIcon.url" [ngClass]="{ 'grid-image': isGridView, 'list-image': !isGridView }"
+            [routerLink]="['/case_study', item.details.sys.id]" />
 
-      <div class="column" [ngClass]="{ 'list-view': !isGridView }"
-        *ngIf="searchText === '' || item.details.title ?.toLowerCase().includes(searchText)">
-        <div class="divpadding" [ngClass]="{ 'column-list': !isGridView}">
-          <img alt="grid_images" width="440" height="260" class="img-fluid" [src]="item.details.itemIcon.url" [src]="item.details.itemIcon.url"
-            [ngClass]="{'grid-image': isGridView, 'list-image': !isGridView}"
-            [routerLink]="['/case_study', item.details.sys.id]" >
-          <div class="div2">
-            <h4 [ngClass]="{'grid-text': isGridView, 'list-text': !isGridView}">{{ item.details.title }}</h4>
-            <!-- date -->
-            <p *ngIf="isGridView" [ngClass]="{ 'list-text1': !isGridView, 'grid-text2': isGridView }">
-              {{ labelConstants [0].Publishedon }} <strong>{{ item.details.publishedOnDate | date: 'dd-MM-yyyy' :'UTC'
-                }}</strong>
+          <div [ngClass]="{ 'grid-div2': isGridView, 'list-div2': !isGridView }">
+            <p [ngClass]="{ 'grid-text': isGridView, 'list-text': !isGridView }">
+              {{ item.details.title }}
             </p>
-            <!-- description -->
-            <p *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
-              {{ item.details.description}}
-            </p>
-            <div [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
+            <div [ngClass]="{'list-div4':!isGridView}">
+              <!-- description -->
+              <p *ngIf="!isGridView" [ngClass]="{ 'list-text1': !isGridView }">
+                {{ item.details.description }}
+              </p>
+              <!-- date -->
+              <p [ngClass]="{
+                  'grid-text2': isGridView,
+                  'list-text1': !isGridView
+                }">
+                {{ labelConstants[0].Publishedon }}
+                <strong>{{
+                  item.details.publishedOnDate | date : "dd-MM-yyyy" : "UTC"
+                  }}</strong>
+              </p>
+            </div>
+            <div [ngClass]="{ 'grid-div3': isGridView, 'list-div3': !isGridView }">
+              <div *ngIf="isGridView" class="grid-div4">
+                <!-- like and comment for grid -->
+                <!-- Comment Button -->
+                <button *ngIf="isGridView" class="Comments_btn">
+                  <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
+                  {{ labelConstants[0].Comments }}
+                </button>
 
+                <!-- like btn using redux -->
+                <button *ngIf="isGridView" (click)="toggleCount()" class="like_btn">
+                  <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons" />
+                  {{ counterdisplay }}
+                </button>
+              </div>
 
+              <div *ngIf="!isGridView" class="grid-div4">
+                <!-- like and comment btn for list -->
+                <button *ngIf="!isGridView" class="Comments_btn">
+                  <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
+                  {{ labelConstants[0].Comments }}
+                </button>
 
-              <!-- <button style="display: inline-block; margin-right: 20px;  border: none; background-color: white;"
-                class="Comments_btn"><img src="../assets/question-answer.png" style="width: 35px;height: 35px;"
-                  alt="Comments"> 11
-                Comments</button>
-              <button style="display: inline-block; margin-right: 20px; border: none; background-color: white;"
-                (click)="toggleLike(contentId, userId)" class="like_btn"><img src="../assets/Vector-t.png" alt="Likes"
-                  style="width: 30px;height: 30px;"> {{ likesCount }}</button> -->
+                <button *ngIf="!isGridView" (click)="toggleCount()" class="like_btn">
+                  <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons" />
+                  {{ counterdisplay }}
+                </button>
+              </div>
 
-
-
-
-              <!-- like and comment for grid -->
-              <!-- Comment Button -->
-              <button *ngIf="isGridView" class="Comments_btn">
-                <img  [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
-                {{ labelConstants [0].Comments }}
-              </button>
-
-              <!-- Like Button -->
-              <!-- <button *ngIf="isGridView" (click)="toggleLike(contentId, userId)" class="like_btn">
-                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
-                {{ likesCount }}
-              </button> -->
-
-
-              <!-- like btn using redux -->
-              <button *ngIf="isGridView" (click)="toggleCount()" class="like_btn">
-                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
-                {{counterdisplay}}
-              </button>
-
-
-
-              <!-- like and comment btn for list -->
-              <button *ngIf="!isGridView" class="list_like_comment"
-                style="display: inline-block; margin-right: 20px; border: none; background: none;" class="Comments_btn">
-                <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments">
-                {{ labelConstants [0].Comments }}
-              </button>
-
-              <!-- Like Button from list view -->
-              <!-- <button *ngIf="!isGridView" (click)="toggleLike(contentId, userId)" class="list_like_btn">
-                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
-                {{ likesCount }}
-              </button> -->
-              <button *ngIf="!isGridView" (click)="toggleCount()" class="list_like_btn">
-                <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons">
-                {{ counterdisplay }}
-              </button>
-
-
-
-              <div class="divv" *ngIf="isGridView">
-
-                <button (click)="openPopup() " style="border: none; background-color: white;"> <img alt="Share_icon" class="icons"
-                    [src]="logoCollection[5].logo.url"></button>
+              <div class="grid-div5" *ngIf="isGridView">
+                <button (click)="openPopup()" style="border: none; background-color: white">
+                  <img alt="Share_icon" class="icons" [src]="logoCollection[5].logo.url" />
+                </button>
                 <!-- popop share -->
                 <div [hidden]="!showPopup" class="popup-container">
                   <div class="popup-content">
                     <button class="popup-button" (click)="handleEmailShare('item.details.sys.id')">
-                      <i class="fab fa-linkedin fa-2x" style="color: #0077B5;"></i>
-                      <span class="button-label"> {{ labelConstants [0].ShareonLinkedIn }}</span>
+                      <i class="fab fa-linkedin fa-2x" style="color: #0077b5"></i>
+                      <span class="button-label">
+                        {{ labelConstants[0].ShareonLinkedIn }}</span>
                     </button>
                     <button class="popup-button" (click)="handleLinkedInSharee('item.details.sys.id')">
-                      <i class="far fa-envelope fa-2x" style="color: #666;"></i>
-                      <span class="button-label"> {{ labelConstants [0].ShareviaEmail }}</span>
+                      <i class="far fa-envelope fa-2x" style="color: #666"></i>
+                      <span class="button-label">
+                        {{ labelConstants[0].ShareviaEmail }}</span>
                     </button>
-                    <button class="popup-button close-button" (click)="closePopup()"> {{ labelConstants [0].CloseDiaBox
-                      }}</button>
+                    <button class="popup-button close-button" (click)="closePopup()">
+                      {{ labelConstants[0].CloseDiaBox }}
+                    </button>
                     <!-- Add "close-button" class -->
                   </div>
                 </div>
 
                 <!-- downlaod btn -->
-                <button (click)="makePDF()" style="border: none; background-color: white;" class="download_btn">
-                  <img alt="download_icon" [src]="logoCollection[6].logo.url" class="icons">
+                <button (click)="makePDF()" style="border: none; background-color: white" class="download_btn">
+                  <img alt="download_icon" [src]="logoCollection[6].logo.url" class="icons" />
                 </button>
               </div>
 
-
-
-
-              <div *ngIf="!isGridView" [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}">
-                <div class="share" style="margin-top: 40px;">
-
-                  <!-- share icon list view -->
-                  <img alt="Share_icon" [src]="logoCollection[5].logo.url" class="icons">
-                  <!-- download icon list view -->
-                  <img alt="download_icon" [src]="logoCollection[6].logo.url" class="icons">
-                  <!-- like icon list view -->
-                  <img alt="like_icon" [src]="logoCollection[7].logo.url" class="icons">
-                  <!-- comment icon list view -->
-                  <img alt="comment_icon" [src]="logoCollection[4].logo.url" class="icons">
-
-                  <p [ngClass]="{'grid-text1': isGridView, 'list-text1': !isGridView}"
-                    style="float: right;margin-top: -10px;">
-                    {{ labelConstants [0].Publishedon }} <br><strong>{{ item.details.publishedOnDate | date:
-                      'dd-MM-yyyy'
-                      :'UTC' }}</strong>
-                  </p>
-                </div>
+              <div *ngIf="!isGridView">
+                <!-- share icon list view -->
+                <img alt="Share_icon" [src]="logoCollection[5].logo.url" class="icons" />
+                <!-- download icon list view -->
+                <img alt="download_icon" [src]="logoCollection[6].logo.url" class="icons" />
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
     </ng-container>
   </div>
+
   <!-- pagination -->
   <div class="pagination">
-    <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">{{ labelConstants
-      [0].Previousbtn }}</button>
+    <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">
+      {{ labelConstants[0].Previousbtn }}
+    </button>
     <span class="pagination-info">{{ currentPage }} / {{ totalPages }}</span>
-    <button [disabled]="currentPage === totalPages" class="pagination-button" (click)="changePage(1)">{{ labelConstants
-      [0]. Nextbtn }}</button>
+    <button [disabled]="currentPage === totalPages" class="pagination-button" (click)="changePage(1)">
+      {{ labelConstants[0].Nextbtn }}
+    </button>
   </div>
-
-
-
-<!-- testimonil call here -->
 
   <div *ngIf="isGridView">
     <app-testimonial2></app-testimonial2>
   </div>
 
-  
   <app-footer></app-footer>
-  <ng-template #dataContent>
+  <ng-template #dataContent></ng-template>
+</div>
