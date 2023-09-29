@@ -82,10 +82,10 @@
   <div class="row" id="content" #content>
     <ng-container *ngFor="let item of paginatedData">
 
-      <div class="column" [ngClass]="{ 'list-view': !isGridView }"
+      <div   class="column" [ngClass]="{ 'list-view': !isGridView }"
         *ngIf="searchText === '' || item.details.title ?.toLowerCase().includes(searchText)">
         <div class="divpadding" [ngClass]="{ 'column-list': !isGridView}">
-          <img alt="grid_images" width="440" height="260" class="img-fluid" [src]="item.details.itemIcon.url" [src]="item.details.itemIcon.url"
+          <img  alt="grid_images" width="440" height="260" class="img-fluid" [src]="item.details.itemIcon.url" [src]="item.details.itemIcon.url"
             [ngClass]="{'grid-image': isGridView, 'list-image': !isGridView}"
             [routerLink]="['/case_study', item.details.sys.id]" >
           <div class="div2">
