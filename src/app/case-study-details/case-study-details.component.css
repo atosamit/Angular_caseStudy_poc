@@ -1,8 +1,4 @@
 @import '../Fonts/Fonts.css';
-<<<<<<< HEAD
-
-=======
->>>>>>> Sneha
 
 .breadcrumb {
     display: flex;
@@ -889,20 +885,15 @@ body {
     margin-left: 0;
     margin-left: 15px;
 }
-<<<<<<< HEAD
+
 .keytakeways_points{
     margin-top: 3%;
-=======
+}
 
 .keytakeways_points {
-<<<<<<< Updated upstream
-    margin-top: 3%;
-    margin-left: 3%;
-=======
     margin-top: 2%;
->>>>>>> Sneha
     margin-left: 1%;
->>>>>>> Stashed changes
+
 }
 
 .keytakeways-img {
