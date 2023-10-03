@@ -1,6 +1,6 @@
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { LikesService } from '../services/likes.service';
 // import { jsPDF } from "jspdf"
@@ -73,7 +73,7 @@ export class GridPageComponent implements OnInit {
 
   constructor(private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
-
+    this.updateScreenSizeFlag();
   }
   counterdisplay!:number;
   ngOnInit() {
@@ -85,6 +85,21 @@ export class GridPageComponent implements OnInit {
     })
     console.log(this.store)
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.updateScreenSizeFlag();
+  }
+
+  private updateScreenSizeFlag() {
+    const screenWidth = window.innerWidth;
+   if(screenWidth < 800){
+    this.isGridView = true
+   }
+  }
+
+
+
   fetchData() {
     const endpoint = 'https://graphql.contentful.com/content/v1/spaces/40jcljdzym6w';
     const headers = new HttpHeaders({

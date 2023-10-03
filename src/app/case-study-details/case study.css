@@ -32,7 +32,7 @@
         overflow: hidden;
         position: relative;
         background-color: rgb(205, 211, 211);
-        height: 530px;
+        /* height: 530px; */
     }
 
     .nestle-img {
