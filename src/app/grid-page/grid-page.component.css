@@ -4,23 +4,33 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 0px 15px
+  padding: 0px 20px;
 }
 
 .column {
-  width: auto;
-  padding: 1px;
-  box-sizing: border-box;
+  width: 33.33%;
+  /* height: 2212.5%; */
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  /* border:1px solid */
+}
+.column p {
+  margin-bottom: 0rem;
+}
 
+.divpadding{
+  width: 100%;
 }
 
 .column-list {
   display: flex;
   align-items: center;
+  column-gap: 15px;
+  /* border: 1px solid; */
 }
+
 
 img {
   object-fit: contain;
@@ -32,21 +42,19 @@ img {
 }
 
 .list-image {
-  height: 260px;
-  width: 440px;
-  padding: 11px;
-  margin-top: -15px;
+  padding: 0px;
+  width: auto;
 }
 
 .list-text {
   font-size: 15px;
-  margin-left: 19px;
+  /* margin-left: 19px; */
   font-family: Montserrat-Semibold;
 }
 
 .list-text1 {
   font-size: 12.5px;
-  margin-left: 19px;
+  /* margin-left: 19px; */
   color: #000;
   font-family: Montserrat-Regular;
   font-style: normal;
@@ -55,48 +63,92 @@ img {
   text-transform: lowercase;
 }
 
+.list-div2{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-div3{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.list-div4{
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
 .grid-text {
   font-size: 15px;
-  margin-left: 1px;
+  /* margin-left: 1px; */
   font-family: Montserrat-Semibold;
   text-overflow: ellipsis;
-  /* white-space: nowrap;
-  overflow: hidden; */
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .grid-image {
   /* height: 250px;
   width: 430px; */
-    width: 430px;
-    height: auto;
+  padding: 0px;
+}
+
+.grid-div2{
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid; */
+  padding: 0px 3px;
+  row-gap: 2px;
 }
 
 .grid-text1 {
 
-  margin-left: 6px;
+  /* margin-left: 6px; */
   color: #000;
   font-family: Montserrat-Regular;
   font-size: 12px;
   font-style: normal;
-  margin-left: -13px;
-  margin-top: -3%;
+  /* margin-left: -13px;
+  margin-top: -3%; */
   line-height: 1px;
   text-transform: capitalize;
 }
 
 .grid-text2 {
-  margin-left: 1px;
+  /* margin-left: 1px; */
   color: #000;
   font-family: Montserrat-Regular;
   font-size: 10px;
   font-style: normal;
-  line-height: 16px;
+  /* line-height: 16px; */
   text-transform: capitalize;
-  margin-top: -3%;
+  /* margin-top: -3%; */
+}
+
+.grid-div3{
+  color: #000;
+  font-family: Montserrat-Regular;
+  font-size: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: -3%;
+}
+.grid-div4{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.grid-div5{
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .list-view:nth-child(even) {
-  background-color:none;
+  background-color: none;
   width: 100%;
 }
 
@@ -313,22 +365,23 @@ input.toggle-round:checked+label:after {
 
 }
 
-.div2 {
-  margin-left: 10px;
-}
 
 .Comments_btn {
   display: inline-block;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   border: none;
-  background-color: white;
+  background-color: inherit;
+  font-family: 'Montserrat-Regular';
+  font-size: 12px;
 }
 
 .like_btn {
   display: inline-block;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   border: none;
-  background-color: white;
+  background-color: inherit;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
 }
 
 .separator {
@@ -336,12 +389,6 @@ input.toggle-round:checked+label:after {
   left: 10px;
 }
 
-.list_like_btn {
-  display: inline-block;
-  margin-right: 20px;
-  border: none;
-  background: none;
-}
 
 .list-logo:hover {
   color: #FF6D43;
@@ -355,10 +402,6 @@ input.toggle-round:checked+label:after {
   color: #FF6D43;
 }
 
-.divv {
-  float: right;
-  display: inline-block;
-}
 
 input.toggle-round:checked~.labels.left-side .label:nth-child(1),
 input.toggle-round:checked~.labels.left-side .label:nth-child(2),
@@ -419,13 +462,8 @@ input.toggle-round:not(:checked)~.right-side .label {
   display: block;
 }
 
-/* icons */
-.share svg {
-  display: inline-block;
-  margin-right: 10px;
-}
 
-/* popop window */
+/* popup window */
 /* Styling for the pop-up container */
 .popup-container {
   position: fixed;
