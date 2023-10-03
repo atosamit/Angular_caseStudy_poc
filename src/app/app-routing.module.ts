@@ -9,8 +9,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/grid-page', pathMatch: 'full' },
   // { path: 'login', component: LoginComponent },
   { path: 'grid-page', component: LandingPageComponent },
-  { path: "case_study/:id", component: DetailsPageComponent },
+  { path: 'case_study/:id', component: DetailsPageComponent },
   { path: 'error', component: ErrorComponent },
+  // {path:'wireframe',component:DetailsPageComponent}
  
 
 ];

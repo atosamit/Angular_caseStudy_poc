@@ -3,7 +3,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LikesService } from '../services/likes.service';
 import { MatSnackBar, MatSnackBarDismiss } from '@angular/material/snack-bar';
+import * as CommentActions from '../comment.actions';
 
+import { Store, select } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store'; // Import createFeatureSelector and createSelector
+import { CommentState } from '../comment.state';
+// import { CommentState } from './comment.state';
 @Component({
   selector: 'app-case-study-details',
   templateUrl: './case-study-details.component.html',
@@ -29,7 +34,7 @@ export class CaseStudyDetailsComponent {
 
 
 
-  constructor(private snackBar: MatSnackBar, private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) {
+  constructor(private snackBar: MatSnackBar,private store: Store, private http: HttpClient, private route: ActivatedRoute, private likesService: LikesService) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
@@ -193,11 +198,11 @@ export class CaseStudyDetailsComponent {
       (response: any) => {
         // console.log(response.data);
         this.data = response.data.detailsPage;
-        console.log(this.data)
+        // console.log(this.data)
         this.logo = response.data.detailsPage.logoCollection.items;
-        console.log(this.logo)
+        // console.log(this.logo)
         this.projectScope = response.data.detailsPage.additionalReferencesCollection.items[0];
-        console.log(this.projectScope)
+        // console.log(this.projectScope)
         // challeges from cms
         this.challenges = response.data.detailsPage.additionalReferencesCollection.items[1];
         // UxApproch from cms
@@ -393,6 +398,48 @@ export class CaseStudyDetailsComponent {
     }
   ]
 
+
+
+  // 
+
+
+// ..........comments...........................
+
+// newComment1: string = '';
+
+// //constructor(private store: Store) {}
+// // Define selectors
+// private selectCommentState = createFeatureSelector<CommentState>('commentState');
+// private selectComments = createSelector(this.selectCommentState, (state) => state.comments);
+
+// comments$ = this.store.pipe(select(this.selectComments)); // Use the selectComments selector
+
+
+
+//...........................................
+// addComment1() {
+//   if (this.newComment1) {
+//     this.store.dispatch(
+//      CommentActions.createComment({ text: this.newComment1 })
+ 
+//     );
+//     // this.newComment = '';
+//     console.log(this.newComment1 );
+//   }
+// }
+// addComment1(item: { newComment1: string; showInput: boolean; }) {
+//   // Handle adding the comment here, e.g., push it to an array or send it to a server.
+//   console.log(item.newComment1);
+
+//   // Reset the input field and hide it
+//   item.newComment1 = '';
+//   item.showInput = false;
+// }
+// // 
+// showInputField(item: { showInput: boolean; newComment1: string; }) {
+//   item.showInput = true;
+//   item.newComment1 = ''; // Initialize the input field
+// }
 
 
 }

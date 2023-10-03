@@ -66,7 +66,7 @@
         padding-left: 50px;
     }
 
-    .download {
+    .download_button {
         padding-left: 9px;
     }
 
@@ -114,7 +114,10 @@
         margin-top: 18px;
         margin-left: 11px;
     }
-
+    .project-description, .project-scope-Inlist {
+        font-size: 14px;
+        padding: 0%;
+    }
     .mockups-dividing-line {
         margin-top: 12%;
     }
@@ -176,6 +179,7 @@
         padding-inline: 14px;
         height: auto;
     }
+
     .ux-dividing-line {
         width: 110%;
         margin-left: -5%;
@@ -184,6 +188,7 @@
         margin-top: 2%;
         background: rgba(255, 109, 67, 0.40);
     }
+
     .persona-toolused {
         font-size: 16px;
         font-weight: 600;
@@ -256,34 +261,48 @@
         display: block;
         margin-left: 9%;
     }
-
+    #keytakeways_main{
+        background: #f3f3f3;
+        margin-left: -5%;
+        margin-right: -6%;
+        margin-bottom: -2%;
+    }
     .keytakeways-img {
         max-width: 300%;
         height: auto;
         margin-left: 107%;
         background: #f3f3f3;
     }
+    .keytakeways-heading{
+        font-size: 24px;
+        margin-left: 7%;
+    }
 }
+/* ..............549 ....767............................. */
 
-/* ...........820..768...................................... */
-
-@media screen and (min-width: 768px) and (max-width:911px) {
+@media screen and (min-width: 549px) and (max-width:767px) {
     .background_img {
         max-width: 108%;
         background-color: #FFF;
     }
-    .container, .container-md, .container-sm {
+
+    .container,
+    .container-md,
+    .container-sm {
         max-width: 797px;
     }
+
     .case-study-left-part {
         background-color: rgb(255 255 255);
     }
-    #img_row {
+
+    #img_row1,#img_row2,#img_row3,#img_row4,#img_row5 {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         flex-wrap: wrap;
     }
+
     .nestle-img {
         height: 171px;
         margin-top: -114%;
@@ -294,7 +313,7 @@
     .delivery-img {
         margin-top: -22rem;
         height: 65%;
-        margin-left: 25rem;
+        margin-left: 22rem;
         position: relative;
     }
 
@@ -310,7 +329,7 @@
         padding-left: 348px;
     }
 
-    .download {
+    .download_button {
         padding-left: 37px;
     }
 
@@ -359,39 +378,43 @@
         margin-top: 54px;
         margin-left: 44px;
     }
-    .ux-dividing-line{
+
+    .ux-dividing-line {
         width: 113%;
         margin-left: -10%;
         height: 26px;
         overflow: hidden;
         margin-top: 2%;
-      
+
     }
+
     #keytakeways_main{
         background: #f3f3f3;
-        margin-left: -9%;
-        margin-right: -3%;
+        margin-left: -5%;
+        margin-right: -6%;
         margin-bottom: -2%;
     }
     .keytakeways_points {
         margin-left: 12%;
     }
+
     .keytakeways-heading {
         font-size: 40px;
         font-weight: 600;
         margin-top: 20px;
         margin-left: 14%;
-     
+
     }
+
     .keytakeways-img {
         max-width: 101%;
         height: auto;
         margin-left: 0%;
         vertical-align: middle;
         align-items: center;
-      
+
     }
-    
+
     .img-responsive {
         max-width: 101%;
         height: auto;
@@ -401,6 +424,152 @@
         margin-left: 0%;
     }
 }
+
+/* ...........820..768...................................... */
+
+@media screen and (min-width: 768px) and (max-width:911px) {
+    .background_img {
+        max-width: 108%;
+        background-color: #FFF;
+        margin-left: -1%;
+    }
+
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 797px;
+    }
+
+    .case-study-left-part {
+        background-color: rgb(255 255 255);
+    }
+
+    #img_row1,#img_row2,#img_row3,#img_row4,#img_row5  {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .nestle-img {
+        height: 171px;
+        margin-top: -114%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 65%;
+        margin-left: 25rem;
+        position: relative;
+    }
+
+    .case-study-title {
+        height: 50px;
+        font-size: 34px;
+        font-weight: 700;
+        margin-left: 6.5%;
+        margin-top: -28%;
+    }
+
+    .share {
+        padding-left: 348px;
+    }
+
+    .download_button {
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like {
+        padding-left: 34px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        font-family: Montserrat-Semibold;
+        font-size: 16px;
+        color: #000;
+        padding: 1.7%;
+        background-color: white;
+    }
+
+    .CaseStudy_description {
+        margin-left: 5%;
+        margin-top: 1%;
+        font-size: 16px;
+        font-family: Montserrat-Regular;
+        line-height: 25px;
+    }
+
+    .CaseStudy_name {
+        margin-top: 0.5%;
+        margin-left: 5%;
+        font-size: 14px;
+        font-family: Montserrat-Regular;
+        line-height: 21px;
+
+    }
+
+    .CaseStudy_nameDesc {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 3px 0 1px;
+    }
+
+    .action-buttons {
+        margin-top: 54px;
+        margin-left: 44px;
+    }
+
+    .ux-dividing-line {
+        width: 104%;
+        margin-left: -3%;
+        height: 26px;
+        overflow: hidden;
+        margin-top: 2%;
+    }
+    #keytakeways_main {
+        background: #f3f3f3;
+        margin-left: -9%;
+        margin-right: -1%;
+        margin-bottom: -2%;
+    }
+    .keytakeways_points {
+        margin-left: 12%;
+    }
+
+    .keytakeways-heading {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-left: 14%;
+
+    }
+
+    .keytakeways-img {
+        max-width: 101%;
+        height: auto;
+        margin-left: 0%;
+        vertical-align: middle;
+        align-items: center;
+
+    }
+    .img-responsive {
+        max-width: 137%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -377%;
+        margin-left: 334%;
+    }
+}
+
 /* .........540......................................... */
 @media screen and (min-width: 540px) and (max-width:720px) {
     .background_img {
@@ -413,7 +582,7 @@
     }
 
     /*  */
-    .nestle-img {
+    /* .nestle-img {
         height: 127px;
         margin-top: -116%;
         margin-left: 5.5%;
@@ -436,13 +605,13 @@
         text-transform: capitalize;
         margin-left: 6.5%;
         margin-top: -35%;
-    }
+    } */
 
     .share {
         padding-left: 19%;
     }
 
-    .download {
+    .download_button {
         padding-left: 37px;
     }
 
@@ -461,7 +630,7 @@
         font-size: 16px;
         color: #000;
         padding: 2.9%;
-      
+
         background-color: white;
     }
 
@@ -502,43 +671,19 @@
         background-color: rgb(205, 211, 211);
     }
 
-    /* .case-study-left-part {
-        background-color: rgb(255 255 255);
-    } */
-    .case-study-left-part {
-        background-color: rgb(205, 211, 211);
+
+    .action-buttons {
+        margin-top: 3px;
+        margin-left: 29px;
+    }
+   
+    #share{
+        border: none;
+        background: none;
+        padding-left: 95px;
     }
 
-    .nestle-img {
-        height: 158px;
-        margin-top: -187%;
-        margin-left: 1.5%;
-        position: relative;
-    }
-
-    .delivery-img {
-        margin-top: -28rem;
-        height: 60%;
-        margin-left: 13rem;
-        position: relative;
-    }
-
-    .case-study-title {
-        color: #FFF;
-        height: 50px;
-        font-size: 34px;
-        font-style: normal;
-        font-weight: 700;
-        text-transform: capitalize;
-        margin-left: 6.5%;
-        margin-top: -28%;
-    }
-
-    .share {
-        padding-left: 315px;
-    }
-
-    .download {
+    .download_button{
         padding-left: 37px;
     }
 
@@ -583,19 +728,19 @@
         margin: 3px 0 1px;
     }
 
-    .action-buttons {
+    /* .action-buttons {
         margin-top: 54px;
         margin-left: 44px;
-    }
+    } */
 
     .img-responsive {
         max-width: 110%;
         padding-top: 31%;
     }
 
-    .ux-dividing-line {
+    .ux-dividing-line{
         width: 111%;
-        margin-left: -5%;
+        margin-left: 0%;
         height: 26px;
         overflow: hidden;
         margin-top: 2%;
@@ -616,43 +761,70 @@
     .keytakeways-heading {
         margin-left: 7%;
     }
-
 }
+/* }
+@media screen and (min-width: 1024px) and (max-width:1279px) {
+    .action-buttons {
+        margin-top: 3px;
+        margin-left: 29px;
+    }
+   
+    .share {
+        padding-left: 115px;
+    }
 
+    .download_button{
+        padding-left: 37px;
+    }
+
+    .likes {
+        padding-left: 37px;
+    }
+
+    .like {
+        padding-left: 34px;
+    }
+} */
 @media screen and (min-width: 912px) and (max-width:1002px) {
     .background_img{
         background-color: white;
         height: 112%;
-        width: 106%;
+        width: 107.5%;
         margin-left: -2%;
     }
-    .container, .container-md, .container-sm {
+    .container,
+    .container-md,
+    .container-sm {
         max-width: 890px;
     }
-    #img_row {
+
+    #img_row1,#img_row2,#img_row3,#img_row4,#img_row5 {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         flex-wrap: wrap;
     }
 
-    .nestle-img {
+    /* .nestle-img {
         height: 129px;
         margin-top: -110%;
         margin-left: 5.5%;
         position: relative;
     }
+
     .case-study-title {
         height: 50px;
         font-size: 34px;
         margin-left: 5.5%;
         margin-top: -25%;
     }
-    .delivery-img{
+
+    .delivery-img {
         margin-top: -24rem;
         margin-left: 31rem;
         position: relative;
-    }
+    } */
+
     .row {
         flex-direction: row;
     }
@@ -681,35 +853,776 @@
         margin-right: -3%;
         margin-bottom: -2%;
     }
+
     .keytakeways-heading {
         margin-left: 19%;
 
     }
+
     .keytakeways-img {
         max-width: 96%;
         height: auto;
         margin-left: 1%;
         background: #f3f3f3;
     }
+
     .keytakeways_points {
         margin-left: 18%;
     }
 
 }
 
-@media screen and (min-width: 1440px)and (max-width:2459px) {
+@media screen and (min-width: 1440px)and (max-width:1500px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 135px;
+        margin-top: -137%;
+        margin-left: 4.5%;
+        position: relative;
+    }
+    .case-study-title {
+      
+        height: 50px;
+        font-size: 34px;
+
+        font-weight: 700;
+        margin-left: 5.5%;
+        margin-top: -24%;
+    }
+}
+
+@media screen and (min-width: 1501px)and (max-width:1600px) {
     .case-study-left-part {
         background-color: rgb(205, 211, 211);
     }
 
     .nestle-img {
         height: 115px;
-        margin-top: -141%;
+        margin-top: -125%;
         margin-left: 1.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -22%;
+    }
+
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 20rem;
         position: relative;
     }
 }
 
+@media screen and (min-width: 1601px)and (max-width:1800px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 115px;
+        margin-top: -113%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -18%;
+    }
+
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 20rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1801px)and (max-width:2000px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 145px;
+        margin-top: -101%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -18%;
+    }
+
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 28rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 2001px)and (max-width:2150px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 161px;
+        margin-top: -92%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -16%;
+    }
+
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 28rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 2151px)and (max-width:2350px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 173px;
+        margin-top: -84%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -16%;
+    }
+
+    .delivery-img {
+        margin-top: -24rem;
+        margin-left: 28rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 2351px)and (max-width:2525px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 173px;
+        margin-top: -77%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -13%;
+    }
+
+    .delivery-img {
+        margin-top: -24rem;
+        height: 78%;
+        margin-left: 38rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 2526px)and (max-width:2559px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 191px;
+        margin-top: -69%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -13%;
+    }
+
+    .delivery-img {
+        margin-top: -24rem;
+        height: 78%;
+        margin-left: 38rem;
+        position: relative;
+    }
+}
+
+
+
+@media screen and (min-width: 421px)and (max-width: 453px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 106px;
+        margin-top: -140%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -35%;
+    }
+
+    .delivery-img {
+        margin-top: -16rem;
+        height: 63%;
+        margin-left: 13rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 454px)and (max-width: 480px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 106px;
+        margin-top: -132%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-left: 5.5%;
+        margin-top: -35%;
+    }
+
+    .delivery-img {
+        margin-top: -16rem;
+        height: 63%;
+        margin-left: 13rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 481px)and (max-width:522px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 106px;
+        margin-top: -122%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 25px;
+        margin-left: 5.5%;
+        margin-top: -31%;
+    }
+
+    .delivery-img {
+        margin-top: -16rem;
+        height: 63%;
+        margin-left: 13rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 523px)and (max-width: 560px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 106px;
+        margin-top: -112%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 25px;
+        margin-left: 5.5%;
+        margin-top: -31%;
+    }
+
+    .delivery-img {
+        margin-top: -16rem;
+        height: 63%;
+        margin-left: 13rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 561px)and (max-width: 600px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 106px;
+        margin-top: -104%;
+        margin-left: 3.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 25px;
+        margin-left: 5.5%;
+        margin-top: -27%;
+    }
+
+    .delivery-img {
+        margin-top: -16rem;
+        height: 63%;
+        margin-left: 18rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 665px)and (max-width: 700px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+        margin-top: -142%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -31%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 18rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 701px)and (max-width: 740px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+        margin-top: -135%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -31%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 18rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 741px)and (max-width: 790px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+        margin-top: -126%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -31%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 18rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 791px)and (max-width: 850px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+        margin-top: -117%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -28%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 18rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 851px)and (max-width: 911px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+        margin-top: -109%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -28%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 24rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 912px)and (max-width: 985px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+        margin-top: -101%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -26%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 24rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 986px)and (max-width: 991px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+    margin-top: -93%;
+    margin-left: 5.5%;
+    position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -27%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 28rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 992px)and (max-width: 1035px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+    margin-top: -93%;
+    margin-left: 5.5%;
+    position: relative;
+    }
+    .col-lg-6 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -27%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 28rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1036px)and (max-width: 1100px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+        margin-top: -187%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 31px;
+        margin-left: 8.5%;
+        margin-top: -32%
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 11rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1101px)and (max-width: 1200px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 158px;
+        margin-top: -170%;
+        margin-left: 1.5%;
+        position: relative;
+    }
+    
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 31px;
+        margin-left: 8.5%;
+        margin-top: -32%
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 11rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1201px)and (max-width: 1279px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 158px;
+        margin-top: -155%;
+        margin-left: 5.5%;
+        position: relative;
+    }
+    
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 31px;
+        margin-left: 8.5%;
+        margin-top: -32%
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 14rem;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1280px)and (max-width: 1439px) {
+    .case-study-left-part {
+        background-color: rgb(205, 211, 211);
+    }
+
+    .nestle-img {
+        height: 158px;
+    margin-top: -140%;
+    margin-left: 5.5%;
+    position: relative;
+
+    }
+    
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 33px;
+        margin-left: 8.5%;
+        margin-top: -24%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 14rem;
+        position: relative;
+    }
+}
+@media screen and (min-width: 601px)and (max-width: 664px) {
+    .case-study-left-part {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .nestle-img {
+        height: 156px;
+    margin-top: -156%;
+    margin-left: 5.5%;
+    position: relative;
+    }
+
+    .case-study-title {
+        color: #FFF;
+        height: 50px;
+        font-size: 35px;
+        margin-left: 8.5%;
+        margin-top: -35%;
+    }
+
+    .delivery-img {
+        margin-top: -22rem;
+        height: 71%;
+        margin-left: 15rem;
+        position: relative;
+    }
+}
 /* .......................992....................................... */
 
 @media (max-width: 992px) {
@@ -736,21 +1649,25 @@
 
     .project-description,
     .project-scope-Inlist {
-        font-size: 16px;
+        font-size: 14px;
         padding: 0%;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> Sneha
     .project-scope-title {
         font-size: 24px;
     }
 
 
-    .project-scope-title {
+    /* .project-scope-title {
         font-size: 24px;
         font-weight: 600;
-    }
+    } */
 
 
-    .testimonials-heading h5{
+    .testimonials-heading {
         font-size: 24px;
     }
 
@@ -773,9 +1690,10 @@
     .challenges-label {
         font-size: 24px;
     }
-
-
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Sneha
