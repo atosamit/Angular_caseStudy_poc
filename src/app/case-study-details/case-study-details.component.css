@@ -89,7 +89,7 @@
     margin-top: -9%;
     position: relative;
     overflow: hidden;
-    /* height: 500px; */
+    height: 500px;
 }
 
 .delivery-img {
@@ -120,6 +120,7 @@
     font-size: 34px;
     font-style: normal;
     font-weight: 700;
+    font-family: Montserrat-Semibold;
     text-transform: capitalize;
     margin-left: 5.5%;
     margin-top: -29%;
@@ -131,7 +132,7 @@
     overflow: hidden;
     position: relative;
     background-color: rgb(205, 211, 211);
-    /* height: 500px; */
+    height: 500px;
 }
 
 .right-part-title,
@@ -153,6 +154,7 @@
     margin-left: 5%;
     font-size: 40px;
     font-weight: 600;
+    font-family: Montserrat-Regular;
     line-height: normal;
 }
 
@@ -1366,6 +1368,7 @@ p {
         font-size: 34px;
         font-style: normal;
         font-weight: 700;
+        font-family: Montserrat-Semibold;
         text-transform: capitalize;
         margin-left: 3.5%;
         margin-top: -16%;
