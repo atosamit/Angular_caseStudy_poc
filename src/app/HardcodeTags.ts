@@ -18,5 +18,18 @@ export const labelConstants =
     },
     {
         Errormsg:" Displaying a message because the screen size is either less than 300px or greater than 2570px."
+    },
+
+    {
+        Usermanagement:"User management",
+        Name:"Name*",
+        LastName:"Last Name*",
+        Emailaddress:"Email address*",
+        Selectrole:"Select role*",
+        Admin:"Admin",
+        User:"User",
+         Adduser:" + Add user"
     }
+    
+
 ]

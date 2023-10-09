@@ -27,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ErrorComponent } from './error/error.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from 'src/store/counter.reducer';
+import { UserManagementComponent } from './user-management/user-management.component';
 
 
 
@@ -45,6 +46,7 @@ import { counterReducer } from 'src/store/counter.reducer';
     Testimonial2Component,
     LoginComponent,
     ErrorComponent,
+    UserManagementComponent,
 
 
   ],
