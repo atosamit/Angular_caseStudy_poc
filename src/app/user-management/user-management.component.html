@@ -1,55 +1,61 @@
 <div class="main_div">
     <div class="div">
         <h1 class="user_management_heading">{{ labelConstants[3].Usermanagement}}</h1>
-        <div class="subdiv1">
-            <div class="subdiv">
-                <span class="name">{{ labelConstants[3].Name}}</span>
-                <input class="name_input" placeholder="Enter name">
+        <form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+            <div class="subdiv1">
+                <div class="subdiv">
+                    <span class="name">{{ labelConstants[3].Name}}</span>
+                    <input class="name_input" type="text" name="fname" ngModel placeholder="Enter name">
+                </div>
+
+
+                <div class="subdiv">
+                    <span>{{ labelConstants[3].LastName}}</span>
+                    <input class="lastName_input" type="text" name="lname" ngModel placeholder="Enter last name">
+                </div>
+
+
+                <div class="subdiv">
+                    <span>{{ labelConstants[3]. Emailaddress}}</span>
+                    <input class="email_imput" ngModel placeholder="Enter address" name="email" type="email" >
+                </div>
+
+                <div class="subdiv">
+                    <span>{{ labelConstants[3]. ValidityDate}}</span>
+                    <input class="email_imput" ngModel placeholder="validity Date" name="accountValidity" type="text" >
+                </div>
+
+                <div class="dropdown">
+                    <mat-form-field appearance="outline" style="width: 300px; margin: 8px;">
+                        <mat-select ngModel name="contentIds" placeholder="Select contents"  multiple
+                           >
+                            <mat-option *ngFor="let content of contents" [value]="content.details.sys.id ">
+                                {{ content.details.title }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="subdiv">
+                    <button class="add_user_btn"> {{ labelConstants[3].Adduser}}</button>
+
+
+                </div>
+
             </div>
-
-
-            <div class="subdiv">
-                <span>{{ labelConstants[3].LastName}}</span>
-                <input class="lastName_input" placeholder="Enter last name">
-            </div>
-
-
-            <div class="subdiv">
-                <span>{{ labelConstants[3]. Emailaddress}}</span>
-                <input class="email_imput" placeholder="Enter address">
-            </div>
-
-
-            <div class="subdiv">
-                <label for="role">{{ labelConstants[3].Selectrole}}</label>
-                <select id="role" class="Select_dropDown" name="role">
-                    <option value="" disabled selected hidden>Select role</option>
-                    <option value="admin">{{ labelConstants[3].Admin}}</option>
-                    <option value="user">{{ labelConstants[3].User}}</option>
-                    <!-- Add more role options as needed -->
-                </select>
-            </div>
-
-            <div class="subdiv">
-                <button class="add_user_btn"> {{ labelConstants[3].Adduser}}</button>
-
-
-            </div>
-
-        </div>
-    
+        </form>
     </div>
-<div style="border: 1px solid #ECECED;
+    <div style="border: 1px solid #ECECED;
 opacity: .5;"></div>
     <!-- table -->
     <div>
         <div style="display: flex; justify-content: space-between;">
             <h1 class="userList">User list</h1>
-            <input class="search_bar" placeholder="Search" >
+            <input class="search_bar" placeholder="Search">
         </div>
 
         <!-- existing.component.html -->
-        <div *ngFor="let tableData of tablesData">
+        <!-- <div *ngFor="let tableData of tablesData">
             <table id="customers">
                 <tr>
                     <th *ngFor="let header of tableHeaders">{{ header }}</th>
@@ -58,9 +64,9 @@ opacity: .5;"></div>
                     <td *ngFor="let cell of row">{{ cell }}</td>
                 </tr>
             </table>
-        </div>
+        </div> -->
 
-        <!-- <table id="customers">
+        <table id="customers">
             <tr>
 
                 <th>Name</th>
@@ -71,12 +77,12 @@ opacity: .5;"></div>
                 <th>Action</th>
             </tr>
             <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Maria Anders</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
 
             </tr>
             <tr>
@@ -91,7 +97,7 @@ opacity: .5;"></div>
 
 
 
-        </table> -->
+        </table>
     </div>
 
 </div>

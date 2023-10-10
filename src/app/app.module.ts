@@ -29,7 +29,8 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from 'src/store/counter.reducer';
 import { UserManagementComponent } from './user-management/user-management.component';
 
-
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -66,6 +67,8 @@ import { UserManagementComponent } from './user-management/user-management.compo
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatSelectModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({ counter: counterReducer })
 
 

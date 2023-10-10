@@ -75,6 +75,20 @@ export class GridPageComponent implements OnInit {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   counterdisplay!:number;
   ngOnInit() {
     this.fetchData();

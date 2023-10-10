@@ -28,7 +28,8 @@ export const labelConstants =
         Selectrole:"Select role*",
         Admin:"Admin",
         User:"User",
-         Adduser:" + Add user"
+         Adduser:" + Add user",
+         ValidityDate:"ValidityDate"
     }
     
 
