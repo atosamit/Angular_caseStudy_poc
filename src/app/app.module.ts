@@ -28,7 +28,7 @@ import { ErrorComponent } from './error/error.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from 'src/store/counter.reducer';
 import { UserManagementComponent } from './user-management/user-management.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -69,6 +69,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
     StoreModule.forRoot({ counter: counterReducer })
 
 

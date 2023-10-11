@@ -17,18 +17,17 @@
 
                 <div class="subdiv">
                     <span>{{ labelConstants[3]. Emailaddress}}</span>
-                    <input class="email_imput" ngModel placeholder="Enter address" name="email" type="email" >
+                    <input class="email_imput" ngModel placeholder="Enter address" name="email" type="email">
                 </div>
 
                 <div class="subdiv">
                     <span>{{ labelConstants[3]. ValidityDate}}</span>
-                    <input class="email_imput" ngModel placeholder="validity Date" name="accountValidity" type="text" >
+                    <input class="email_imput" ngModel placeholder="validity Date" name="accountValidity" type="date">
                 </div>
 
                 <div class="dropdown">
                     <mat-form-field appearance="outline" style="width: 300px; margin: 8px;">
-                        <mat-select ngModel name="contentIds" placeholder="Select contents"  multiple
-                           >
+                        <mat-select ngModel name="contentIds" placeholder="Select contents" multiple>
                             <mat-option *ngFor="let content of contents" [value]="content.details.sys.id ">
                                 {{ content.details.title }}
                             </mat-option>
@@ -53,49 +52,25 @@ opacity: .5;"></div>
             <h1 class="userList">User list</h1>
             <input class="search_bar" placeholder="Search">
         </div>
-
-        <!-- existing.component.html -->
-        <!-- <div *ngFor="let tableData of tablesData">
-            <table id="customers">
-                <tr>
-                    <th *ngFor="let header of tableHeaders">{{ header }}</th>
-                </tr>
-                <tr *ngFor="let row of tableData">
-                    <td *ngFor="let cell of row">{{ cell }}</td>
-                </tr>
-            </table>
-        </div> -->
-
         <table id="customers">
             <tr>
-
-                <th>Name</th>
+                <th >Name </th>
                 <th>Last Name</th>
                 <th>Email address</th>
-                <th>Role</th>
-                <th>User</th>
-                <th>Action</th>
+       
+                <th>Content ID</th>
+                <th>validity Date</th>
+                <!-- <th>Action</th> -->
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
+            <tr *ngFor="let item of users ">
+                <td>{{ item.fname }}</td>
+                <td>{{ item.lname }}</td>
+                <td>{{ item.email }}</td>
+            
+                <td>{{item.contentIds}}</td>
+                <!-- <td>{{ item.accountValidity }}</td> -->
+                
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Maria Anders</td>
-            </tr>
-
-
-
 
         </table>
     </div>

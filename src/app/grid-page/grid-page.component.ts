@@ -78,17 +78,6 @@ export class GridPageComponent implements OnInit {
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   counterdisplay!:number;
   ngOnInit() {
     this.fetchData();
