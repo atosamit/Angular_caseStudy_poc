@@ -161,7 +161,7 @@
 .CaseStudy_description {
     margin-left: 5%;
     margin-top: 1%;
-    font-size: 16px;
+    font-size: 17px;
     font-family: Montserrat-Regular;
     line-height: 25px;
 }
@@ -169,7 +169,7 @@
 .CaseStudy_domain {
     margin-top: 10px;
     margin-left: 5%;
-    font-size: 16px;
+    font-size: 17px;
     font-family: Montserrat-Semibold;
     line-height: 25px;
 }
@@ -177,7 +177,7 @@
 .CaseStudy_name {
     margin-top: 0.5%;
     margin-left: 5%;
-    font-size: 16px;
+    font-size: 17px;
     font-family: Montserrat-Regular;
     line-height: 25px;
     width: fit-content;
@@ -295,7 +295,7 @@ body {
 
 .project-scope-title {
     color: #002D3C;
-    font-size: 36px;
+    font-size: 40px;
     font-family: Montserrat-Semibold;
     margin-left: 1.5%;
     line-height: normal;
@@ -380,7 +380,7 @@ margin-left: 2.1%;
 .challenges-items {
     color: #000;
     font-family: Montserrat-Regular;
-    font-size: 16px;
+    font-size: 17px;
     font-style: normal;
     letter-spacing: 0.01em;
    

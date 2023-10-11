@@ -21,12 +21,13 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ErrorComponent } from './error/error.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from 'src/store/counter.reducer';
+import { LoginuserComponent } from './loginuser/loginuser.component';
 
 
 
@@ -45,6 +46,7 @@ import { counterReducer } from 'src/store/counter.reducer';
     Testimonial2Component,
     LoginComponent,
     ErrorComponent,
+    LoginuserComponent,
 
 
   ],
@@ -62,6 +64,8 @@ import { counterReducer } from 'src/store/counter.reducer';
     HttpClientModule,
     RouterModule,
     MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     StoreModule.forRoot({ counter: counterReducer })

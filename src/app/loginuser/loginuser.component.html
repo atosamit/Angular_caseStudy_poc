@@ -1,0 +1,38 @@
+
+
+
+
+<div class="login-form-container" style="margin-top: 198px;">
+  <div class="login-icon">
+    <i class="fas fa-user"></i> <!-- You can replace "fas fa-user" with your desired icon class -->
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email*:</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+      <div class="error1" *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+        Email is required.
+      </div>
+      <div class="error1" *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">
+        Invalid email format.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password*:</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+      <div class="error1" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+        Password is required.
+      </div>
+      <div class="error1"
+        *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched">
+        Password must be at least 6 characters long.
+      </div>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+  </form>
+</div>
+
+
+<app-header-footer *ngIf="isAuthenticated"></app-header-footer>
+<router-outlet></router-outlet>
+<!-- <app-footer *ngIf="isAuthenticated"></app-footer> -->
