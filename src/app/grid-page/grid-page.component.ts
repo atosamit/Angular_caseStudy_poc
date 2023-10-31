@@ -10,6 +10,7 @@ import { Store } from '@ngrx/store';
 import { ErrorService } from '../error.service';
 // import { decrement, increment, } from 'src/app/store/counter.actions';
 import { decrement,increment } from 'src/store/counter.actions';
+import { CommentService } from '../services/comment.service';
 
 @Component({
   selector: 'app-grid-page',
@@ -27,6 +28,10 @@ export class GridPageComponent implements OnInit {
   logoCollection: any[] = [];
   domainCollection: any[] = [];
   isIncrementing: any;
+  
+  isTextareaOpen = false;
+  isCommentBoxOpen: boolean = false;
+
 
 
   toggleView(view: 'list' | 'grid') {
@@ -71,7 +76,7 @@ export class GridPageComponent implements OnInit {
 
 
 
-  constructor(private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
+  constructor(private commentService: CommentService, private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
@@ -358,6 +363,30 @@ this.errorService.setIsError(true);
       this.store.dispatch(increment());
     }
     this.isIncrementing = !this.isIncrementing;
+  }
+
+
+  toggleTextarea() {
+    this.isTextareaOpen = !this.isTextareaOpen;
+  }
+
+  submitComment(contentId: string, userId: string) {
+    if (this.comment.trim()) { // Check if the comment is not empty
+      this.commentService.addComment(contentId, userId, this.comment).subscribe(
+        (response) => {
+          // Handle the success response here and log the entered comment
+          console.log(`Comment "${this.comment}" posted successfully:`, response);
+          // Clear the comment input field after a successful submission
+          this.comment = '';
+        },
+        (error) => {
+          // Handle any errors here
+          console.error('Error posting comment:', error);
+        });
+    }
+
+    // Toggle the comment box visibility
+    this.isCommentBoxOpen = !this.isCommentBoxOpen;
   }
 }
 
