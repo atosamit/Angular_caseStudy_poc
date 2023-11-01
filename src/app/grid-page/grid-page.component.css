@@ -565,3 +565,12 @@ input.toggle-round:not(:checked)~.right-side .label {
 ::ng-deep .mat-ripple {
   overflow: hidden;
 }
+
+/* submit button for comment */
+.orange-button {
+  background-color: #ff6D43;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  cursor: pointer;
+}

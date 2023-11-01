@@ -31,6 +31,7 @@ export class GridPageComponent implements OnInit {
   
   isTextareaOpen = false;
   isCommentBoxOpen: boolean = false;
+  itemCommentBoxStates: { [key: string]: boolean } = {};
 
 
 
@@ -366,28 +367,38 @@ this.errorService.setIsError(true);
   }
 
 
-  toggleTextarea() {
-    this.isTextareaOpen = !this.isTextareaOpen;
+  toggleCommentBox(itemId: string) {
+    // Toggle the comment box state for the item
+    this.itemCommentBoxStates[itemId] = !this.itemCommentBoxStates[itemId];
   }
 
-  submitComment(contentId: string, userId: string) {
-    if (this.comment.trim()) { // Check if the comment is not empty
-      this.commentService.addComment(contentId, userId, this.comment).subscribe(
+  
+
+  submitComment(contentId: string) {
+    console.log(' contentId:', this.contentId);
+    console.log('Debug: userId:', this.userId);
+    console.log('Debug: this.comment:', this.comment);
+  
+    if (this.comment.trim()) {
+      this.commentService.addComment(contentId, this.userId, this.comment).subscribe(
         (response) => {
+          console.log('Comment posted successfully:', response);
           // Handle the success response here and log the entered comment
-          console.log(`Comment "${this.comment}" posted successfully:`, response);
+          console.log(`Comment "${this.comment}" posted successfully. ContentId: ${this.contentId}, UserId: ${this.userId}`);
           // Clear the comment input field after a successful submission
           this.comment = '';
         },
         (error) => {
-          // Handle any errors here
           console.error('Error posting comment:', error);
         });
     }
-
+  
+  
+  
     // Toggle the comment box visibility
     this.isCommentBoxOpen = !this.isCommentBoxOpen;
   }
-}
+  
 
+}
 
