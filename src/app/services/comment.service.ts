@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CommentService {
-  private apiUrl = 'http://172.19.113.4:3000/api/comment/:contentIdentifier'; // Replace with your actual API endpoint
+  private apiUrl = 'http://172.19.113.4:3000/api/comment/:contentIdentifier'; 
 
   constructor(private http: HttpClient) {}
 
