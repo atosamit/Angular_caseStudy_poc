@@ -94,7 +94,7 @@
               <div *ngIf="isGridView" class="grid-div4">
                 <!-- like and comment for grid -->
                 <!-- Comment Button -->
-                <div>
+              
                   <button *ngIf="isGridView" class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id)">
                     <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
                     {{ labelConstants[0].Comments }}
@@ -104,7 +104,7 @@
                     <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
                     <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id)" class="orange-button">Submit</button>
                   </div>
-                </div>
+               
                 
                 <!-- like btn using redux -->
                 <button *ngIf="isGridView" (click)="toggleCount()" class="like_btn">
