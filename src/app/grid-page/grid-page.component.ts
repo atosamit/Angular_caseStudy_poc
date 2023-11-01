@@ -387,6 +387,8 @@ this.errorService.setIsError(true);
           console.log(`Comment "${this.comment}" posted successfully. ContentId: ${this.contentId}, UserId: ${this.userId}`);
           // Clear the comment input field after a successful submission
           this.comment = '';
+
+          alert("Comment send successfully");
         },
         (error) => {
           console.error('Error posting comment:', error);
