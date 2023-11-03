@@ -24,4 +24,13 @@ export class CommentService {
 
     return this.http.post(this.apiUrl, comment, { headers });
   }
+
+  fetchComments(contentId: string): Observable<string[]> {
+    // Define the URL for fetching comments
+    const url = this.apiUrl.replace('{contentIdentifier}', contentId);
+
+    return this.http.get<string[]>(url);
+  }
 }
+
+

@@ -18,6 +18,8 @@ import { CommentService } from '../services/comment.service';
   styleUrls: ['./grid-page.component.css','./grid-page.css']
 })
 export class GridPageComponent implements OnInit {
+
+  
   @ViewChild('content', { static: false }) el!: ElementRef;
 
   isGridView: boolean = true;
@@ -32,6 +34,8 @@ export class GridPageComponent implements OnInit {
   isTextareaOpen = false;
   isCommentBoxOpen: boolean = false;
   itemCommentBoxStates: { [key: string]: boolean } = {};
+
+  
 
 
 
@@ -373,7 +377,6 @@ this.errorService.setIsError(true);
   }
 
   
-
   submitComment(contentId: string) {
     console.log(' contentId:', this.contentId);
     console.log('Debug: userId:', this.userId);
@@ -387,19 +390,13 @@ this.errorService.setIsError(true);
           console.log(`Comment "${this.comment}" posted successfully. ContentId: ${this.contentId}, UserId: ${this.userId}`);
           // Clear the comment input field after a successful submission
           this.comment = '';
-
-          alert("Comment send successfully");
         },
         (error) => {
           console.error('Error posting comment:', error);
         });
     }
-  
-  
-  
-    // Toggle the comment box visibility
-    this.isCommentBoxOpen = !this.isCommentBoxOpen;
   }
+
   
 
 }

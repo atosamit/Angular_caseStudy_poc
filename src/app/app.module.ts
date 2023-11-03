@@ -31,6 +31,7 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginuserComponent } from './loginuser/loginuser.component';
 
 
 
@@ -48,6 +49,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     ErrorComponent,
     UserManagementComponent,
+    LoginuserComponent,
 
 
   ],
