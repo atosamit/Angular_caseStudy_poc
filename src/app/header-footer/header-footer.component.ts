@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 // import { AuthService } from '@auth0/auth0-angular';
 
 
@@ -10,8 +10,11 @@ import { Component, Inject, OnInit } from '@angular/core';
   styleUrls: ['./header-footer.component.css']
 })
 export class HeaderFooterComponent   {
+  @Input() shouldShowHeader = true;
    // data call through CMS
    data: any;
+  router: any;
+  
   //  constructor(private http: HttpClient, public auth: AuthService ,  @Inject(DOCUMENT) public document: Document,)
    constructor(private http: HttpClient,    @Inject(DOCUMENT) public document: Document,) { }
    ngOnInit() {
@@ -54,7 +57,7 @@ export class HeaderFooterComponent   {
     console.log('Logout button clicked');    
   
     // You can also navigate the user to the login page if needed
-    // this.router.navigate(['/loginuser']);
+     this.router.navigate(['/login']);
     window.location.reload()
     // Clear the session storage
     sessionStorage.clear();

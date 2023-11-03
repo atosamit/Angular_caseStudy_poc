@@ -34,7 +34,7 @@ export class LoginuserComponent {
          if (response.response.token) { 
            //sessionStorage.setItem('isAuthenticate', 'true');
            this.router.navigate(['/grid-page']);
-            window.location.reload();
+            //window.location.reload();
           }
         },
         (error) => {

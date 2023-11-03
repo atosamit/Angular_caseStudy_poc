@@ -1,4 +1,4 @@
-<div class="sticky-header">
+<div class="sticky-header" *ngIf="shouldShowHeader">
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top mr-3" id="Header" style=" width: 100%;  box-shadow: 0 2px 3px #888;">
   <a class="" style="margin-left: 30px;" routerLink="/grid-page">
     <img alt="Eviden_logo" class="Eviden_logo" [src]="data.logo.url"  width="150" height="30"> 
@@ -29,7 +29,10 @@
       <!-- Example icon: Font Awesome user icon -->
       <span class="separator" style="margin-right: 20px;"><img width="2px" height="36px" alt="slash" src="assets/Line 1.png"></span>
       <img alt="header_logo2" [src]="data.logo2.url" width="36px" height="36px" style="margin-right: 20px;">  <!-- Example icon: Font Awesome bell icon -->
-      <img src="../assets/logout.jpg" width="36px" height="36px" (click)="logout()">
+      <a routerLink="/login">
+        <img src="../assets/logout.jpg" width="36px" height="36px" (click)="logout()">
+      </a>
+      
     </div>
   </div>
 </nav>

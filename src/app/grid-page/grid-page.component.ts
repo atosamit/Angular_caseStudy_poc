@@ -56,6 +56,7 @@ export class GridPageComponent implements OnInit {
   }
 
   gridView() {
+    const email = sessionStorage.getItem('userEmail');
     const elements = document.getElementsByClassName('column');
     for (let i = 0; i < elements.length; i++) {
       elements[i].setAttribute('style', '');
