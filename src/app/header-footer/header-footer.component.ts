@@ -50,5 +50,18 @@ export class HeaderFooterComponent   {
      );
    }
 
+   logout() {
+    console.log('Logout button clicked');    
+  
+    // You can also navigate the user to the login page if needed
+    // this.router.navigate(['/loginuser']);
+    window.location.reload()
+    // Clear the session storage
+    sessionStorage.clear();
+
+    // Set isAuthenticated to false
+    sessionStorage.setItem('isAuthenticated', 'false');
+
+  }
   
 }

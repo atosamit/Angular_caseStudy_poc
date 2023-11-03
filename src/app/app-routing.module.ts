@@ -9,7 +9,7 @@ import { GridPageComponent } from './grid-page/grid-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/grid-page', pathMatch: 'full' },
-  // { path: 'login', component: LoginComponent },
+   { path: 'login', component: LoginComponent },
   { path: 'grid-page', component: GridPageComponent },
   { path: "case_study/:id", component: DetailsPageComponent },
   { path: 'error', component: ErrorComponent },
