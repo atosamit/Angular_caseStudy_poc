@@ -10,10 +10,9 @@ import { Router } from '@angular/router';
 })
 export class LoginuserComponent {
   loginForm!: FormGroup;
-
+  hideHeader: boolean = false;
 
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) {}
-
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -24,19 +23,18 @@ export class LoginuserComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const formData = this.loginForm.value;
-  
-      const api = 'http://172.19.113.4:3000/api/login';
-  
+      const api = 'https://contentmanagement-7iyh.onrender.com/api/login';
+      
       this.http.post(api, formData).subscribe(
         (response: any) => {
           // console.log(formData);
-          console.log(response);
-          console.log(response.status);
+          // console.log(response);
+          console.log(response.response.token);
           console.log('POST request success:', response);
-  
-          if (response.status===200) {
-           
-            this.router.navigate(['/grid-page']);
+         if (response.response.token) { 
+           sessionStorage.setItem('isAuthenticate', 'true');
+           this.router.navigate(['/grid-page']);
+            window.location.reload();
           }
         },
         (error) => {
@@ -45,9 +43,5 @@ export class LoginuserComponent {
       );
     }
   }
-  
-
-  // .............................
-
-   isAuthenticated: boolean = false;
+  // ........................................................
 }

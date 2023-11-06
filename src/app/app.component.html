@@ -1,28 +1,26 @@
+<!-- Display your data here -->
+<ng-template #dataContent>
+
+  <ng-container *ngIf="!isScreenSizeSmallOrLarge">
+    <ng-container *ngIf="isAuthenticated">
+      <app-header-footer></app-header-footer>
+      <router-outlet></router-outlet>
+    </ng-container>
+    <ng-container *ngIf="!isAuthenticated">
+      <app-loginuser></app-loginuser>
+    </ng-container>
+  </ng-container>
 
 
-    <!-- Display your data here -->
-    <ng-template #dataContent>
-
- <ng-container *ngIf="!isScreenSizeSmallOrLarge">
-    <app-header-footer></app-header-footer>
-    
-    <!-- Other content for large screens -->
-    <router-outlet></router-outlet>
-</ng-container>
-
-
-
-
-<div *ngIf="isScreenSizeSmallOrLarge" class="message">
+  <div *ngIf="isScreenSizeSmallOrLarge" class="message">
     {{ labelConstants [2].Errormsg }}
-</div>
+  </div>
+  
+</ng-template>
 
-  </ng-template>
-  
-  <div *ngIf="!errorService.getIsError(); then dataContent else errorContent"></div>
-  
-  <ng-template #errorContent>
-    <!-- Display the error component here -->
-    <app-error></app-error>
-  </ng-template>
-    
+<!-- Error -->
+<div *ngIf="!errorService.getIsError(); then dataContent else errorContent"></div>
+<ng-template #errorContent>
+  <!-- Display the error component here -->
+  <app-error></app-error>
+</ng-template>

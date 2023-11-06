@@ -1,5 +1,5 @@
 <!-- routing label headings -->
-
+<!-- <app-header-footer></app-header-footer> -->
 <div class="breadcrumb">
     <ng-container *ngFor="let item of details;  let last = last">
         <div class="breadcrumb-item">
@@ -17,7 +17,7 @@
     <div class="row" style="height: auto;">
         <div class="col-lg-6 case-study-left-part">
             <!--  -->
-            <img  [routerLink]="['/loginuser']"  srcset="{{data.heroImg.url}} 1x, {{data.heroImg.url_2x}} 2x" sizes="(max-width: 720px) 100vw, 50vw"
+            <img  srcset="{{data.heroImg.url}} 1x, {{data.heroImg.url_2x}} 2x" sizes="(max-width: 720px) 100vw, 50vw"
                 width="natural_width" height="natural_height" alt="Background_img" class="background_img"
                 loading="lazy">
             <img width="" height="" class="nestle-img" alt="nestle-img" src="{{data.image.url}}">

@@ -1,10 +1,10 @@
 
 
 
-
 <div class="login-form-container" style="margin-top: 198px;">
+
   <div class="login-icon">
-    <i class="fas fa-user"></i> <!-- You can replace "fas fa-user" with your desired icon class -->
+    <i class="fas fa-user"></i> 
   </div>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -32,7 +32,3 @@
   </form>
 </div>
 
-
-<app-header-footer *ngIf="isAuthenticated"></app-header-footer>
-<router-outlet></router-outlet>
-<!-- <app-footer *ngIf="isAuthenticated"></app-footer> -->
