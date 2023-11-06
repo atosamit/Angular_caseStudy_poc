@@ -90,44 +90,52 @@
                   }}</strong>
               </p>
             </div>
+           
+           
             <div [ngClass]="{ 'grid-div3': isGridView, 'list-div3': !isGridView }">
               <div *ngIf="isGridView" class="grid-div4">
                 <!-- like and comment for grid -->
+                
                 <!-- Comment Button -->
-              
-                <button *ngIf="isGridView" class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id)">
+                <button *ngIf="isGridView || !isGridView" class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id);">
                   <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
                   {{ labelConstants[0].Comments }}
                 </button>
+                
                 
                 <div>
                   <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
                   <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="orange-button">Submit</button>
                 </div>
-
                 
                 
-               
                 
-                <!-- like btn using redux -->
+               <!-- like btn using redux -->
                 <button *ngIf="isGridView" (click)="toggleCount()" class="like_btn">
                   <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons" />
                   {{ counterdisplay }}
                 </button>
               </div>
 
-              <div *ngIf="!isGridView" class="grid-div4">
-                <!-- like and comment btn for list -->
-                <button *ngIf="!isGridView" class="Comments_btn">
+              <div *ngIf="!isGridView" class="list-div">
+                <!-- Comments button and section -->
+                <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id); fetchComments(item.details.sys.id)">
                   <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
                   {{ labelConstants[0].Comments }}
                 </button>
-
-                <button *ngIf="!isGridView" (click)="toggleCount()" class="like_btn">
+              
+                <div>
+                  <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                </div><div class="blue-button"><button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" >Submit</button>
+                  </div>
+              
+                <!-- Like button -->
+                <button (click)="toggleCount()" class="like_btn">
                   <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons" />
                   {{ counterdisplay }}
                 </button>
               </div>
+              
 
               <div class="grid-div5" *ngIf="isGridView">
                 <button (click)="openPopup()" style="border: none; background-color: white">

@@ -570,7 +570,12 @@ input.toggle-round:not(:checked)~.right-side .label {
 .orange-button {
   background-color: #ff6D43;
   color: white;
-  padding: 5px 5px;
+  /* padding: 5px 5px; */
   border: none;
   cursor: pointer;
+}
+
+.blue-button{
+  
+  margin-top: -2px;
 }

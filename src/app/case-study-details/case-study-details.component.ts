@@ -224,8 +224,8 @@ export class CaseStudyDetailsComponent {
     );
   }
 
-  contentId = 'OhON6XBAeZ0LHmYy0hlxfv_wPFAtYwSzuhjdLR991XU'; // Replace with the actual content ID
-  userId = '40jcljdzym6w'; // Replace with the actual user ID
+  contentId = 'OhON6XBAeZ0LHmYy0hlxfv_wPFAtYwSzuhjdLR991XU'; 
+  userId = '40jcljdzym6w';
   likesCount = 0;
   comment = '';
   comments: { userId: string; comment: string }[] = [];

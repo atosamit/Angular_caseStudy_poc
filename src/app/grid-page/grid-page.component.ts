@@ -31,14 +31,14 @@ export class GridPageComponent implements OnInit {
   domainCollection: any[] = [];
   isIncrementing: any;
   
-  isTextareaOpen = false;
+  // isTextareaOpen = false;
   isCommentBoxOpen: boolean = false;
   itemCommentBoxStates: { [key: string]: boolean } = {};
 
   
 
 
-
+ 
   toggleView(view: 'list' | 'grid') {
     if (view === 'list') {
       this.isListViewActive = true;
@@ -174,6 +174,8 @@ this.errorService.setIsError(true);
       }
     );
   }
+
+  
   // for domain dynamic
   getUniqueDomains(data: any[]): string[] {
     const uniqueDomains = new Set<string>();
@@ -304,7 +306,7 @@ this.errorService.setIsError(true);
 
 
   contentId = '${sys.id}'; // Replace with the actual content ID
-  userId = '40jcljdzym6w'; // Replace with the actual user ID
+  //userId = '40jcljdzym6w'; // Replace with the actual user ID
   likesCount = 0;
   comment = '';
   comments: { userId: string; comment: string }[] = [];
@@ -339,14 +341,7 @@ this.errorService.setIsError(true);
   }
 
 
-  addComment(contentId: string, userId: string, commentText: string): void {
-
-    this.likesService.handleComment(contentId, userId, commentText);
-
-    this.comments = this.likesService.getComments(this.contentId);
-
-  }
-
+  
   get paginatedData() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
@@ -376,7 +371,11 @@ this.errorService.setIsError(true);
   toggleCommentBox(itemId: string) {
     // Toggle the comment box state for the item
     this.itemCommentBoxStates[itemId] = !this.itemCommentBoxStates[itemId];
+  
+    this.contentId = this.contentId;
+    this.fetchComments(this.contentId);
   }
+  
 
   
   submitComment(contentId: string) {
@@ -402,6 +401,20 @@ this.errorService.setIsError(true);
       }
     }
   }
+
+  
+  fetchComments(contentId: string) {
+    this.commentService.getComments(contentId).subscribe(
+      (comments) => {
+        this.comments = comments;
+        console.log('Fetched comments:', this.comments);
+      },
+      (error) => {
+        console.error('Error fetching comments:', error);
+      }
+    );
+  }
+
 
 
   
