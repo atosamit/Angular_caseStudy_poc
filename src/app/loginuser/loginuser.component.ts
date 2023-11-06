@@ -27,14 +27,17 @@ export class LoginuserComponent {
       
       this.http.post(api, formData).subscribe(
         (response: any) => {
-          // console.log(formData);
-          // console.log(response);
+          console.log(response);
           console.log(response.response.token);
           console.log('POST request success:', response);
-         if (response.response.token) { 
-           //sessionStorage.setItem('isAuthenticate', 'true');
+         if (response) { 
+          console.log("amit");
+           sessionStorage.setItem('isAuthenticate', 'true');
+           sessionStorage.setItem('userEmail', response.response.email);
+           console.log(sessionStorage.getItem('userEmail'));
            this.router.navigate(['/grid-page']);
-            //window.location.reload();
+          //  if(response.response.token)
+          //   window.location.reload();
           }
         },
         (error) => {

@@ -77,12 +77,13 @@ export class GridPageComponent implements OnInit {
 
   selectedDomain: string | null = null;
   selectedSubDomain: string | null = null;
-
-
+  userEmail: string | null;
+  
 
 
 
   constructor(private commentService: CommentService, private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
+    this.userEmail = sessionStorage.getItem('userEmail');
     this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
@@ -379,24 +380,31 @@ this.errorService.setIsError(true);
 
   
   submitComment(contentId: string) {
-    console.log(' contentId:', this.contentId);
-    console.log('Debug: userId:', this.userId);
+    console.log(' contentId:', contentId); // Use the function parameter
+    console.log('Debug: userId:', this.userEmail); // Use this.userEmail as userId
     console.log('Debug: this.comment:', this.comment);
   
     if (this.comment.trim()) {
-      this.commentService.addComment(contentId, this.userId, this.comment).subscribe(
-        (response) => {
-          console.log('Comment posted successfully:', response);
-          // Handle the success response here and log the entered comment
-          console.log(`Comment "${this.comment}" posted successfully. ContentId: ${this.contentId}, UserId: ${this.userId}`);
-          // Clear the comment input field after a successful submission
-          this.comment = '';
-        },
-        (error) => {
-          console.error('Error posting comment:', error);
-        });
+      if (this.userEmail !== null) {
+        this.commentService.addComment(this.userEmail, this.comment, contentId).subscribe(
+          (response) => {
+            console.log('Comment posted successfully:', response);
+            // Handle the success response here and log the entered comment
+            console.log(`Comment "${this.comment}" posted successfully. ContentId: ${contentId}, UserId: ${this.userEmail}`);
+            // Clear the comment input field after a successful submission
+            this.comment = '';
+          },
+          (error) => {
+            console.error('Error posting comment:', error);
+          });
+      } else {
+        console.error('UserEmail is null, cannot post a comment.');
+      }
     }
   }
+
+
+  
 
   
 

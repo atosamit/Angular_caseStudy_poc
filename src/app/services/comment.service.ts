@@ -6,13 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CommentService {
-  private apiUrl = 'http://172.19.113.4:3000/api/comment/:contentIdentifier'; 
-
+  private baseUrl = 'https://contentmanagement-7iyh.onrender.com/api/comment';
+  
   constructor(private http: HttpClient) {}
 
-  addComment(contentId: string, userId: string, commentText: string): Observable<any> {
+  addComment(userId: string, commentText: string, contentId: string): Observable<any> {
     const comment = {
-      contentId: contentId,
       userId: userId,
       text: commentText
     };
@@ -22,14 +21,9 @@ export class CommentService {
       'Content-Type': 'application/json'
     });
 
-    return this.http.post(this.apiUrl, comment, { headers });
-  }
+    const apiUrl = `${this.baseUrl}/${contentId}`;
 
-  fetchComments(contentId: string): Observable<string[]> {
-    // Define the URL for fetching comments
-    const url = this.apiUrl.replace('{contentIdentifier}', contentId);
-
-    return this.http.get<string[]>(url);
+    return this.http.post(apiUrl, comment, { headers });
   }
 }
 

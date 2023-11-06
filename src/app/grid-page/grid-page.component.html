@@ -104,6 +104,8 @@
                   <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
                   <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="orange-button">Submit</button>
                 </div>
+
+                
                 
                
                 
