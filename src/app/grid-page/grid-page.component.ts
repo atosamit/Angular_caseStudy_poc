@@ -434,42 +434,7 @@ fetchComments(contentId: string) {
 
  
 //function to post the like
- 
-// submitLike(contentId: string) {
-//   console.log(' contentId:', contentId);
-//   console.log('Debug: userId:', this.userEmail);
 
-//   const userId = this.userEmail;
-
-//   if (userId) {
-//     this.commentService.addLike(userId, contentId).subscribe(
-//       (response) => {
-//         if (response && response.hasOwnProperty('message')) {
-//           if (response.message === 'You have already liked this content') {
-//             console.log('Already Liked:', response.message);
-//             // Handle case where content is already liked
-//           } else if (response.message === 'Content liked successfully') {
-//             console.log('Like added successfully:', response);
-//             console.log(`Content liked successfully. ContentId: ${contentId}, UserId: ${this.userEmail}`);
-//             // Handle successful like addition
-//           } else {
-//             console.log('Unexpected Response:', response);
-          
-//           }
-//         } else {
-//           console.log('Unexpected Response Format:', response);
-        
-//         }
-//       },
-//       (error) => {
-//         console.error('Error adding like:', error);
-//         }
-//     );
-//   } else {
-//     console.error('UserEmail is null, cannot submit a like.');
-//   }
-// }
- 
 isContentLiked: boolean = false;
 likedCounts: Map<string, number> = new Map<string, number>();
 
