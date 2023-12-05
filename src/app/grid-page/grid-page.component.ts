@@ -22,6 +22,13 @@ export class GridPageComponent implements OnInit {
   
   @ViewChild('content', { static: false }) el!: ElementRef;
 
+  contentId: string = '7a3t4QUm9Yq0GsjlSPqsuT';
+  commentCount: number = 0; 
+  
+  isLiked: boolean = false;
+
+  fetchedComments: string[] = []; 
+
   isGridView: boolean = true;
   // all hard present here
   labelConstants = labelConstants;
@@ -34,9 +41,8 @@ export class GridPageComponent implements OnInit {
   // isTextareaOpen = false;
   isCommentBoxOpen: boolean = false;
   itemCommentBoxStates: { [key: string]: boolean } = {};
-
   
-
+ 
 
  
   toggleView(view: 'list' | 'grid') {
@@ -77,14 +83,14 @@ export class GridPageComponent implements OnInit {
 
   selectedDomain: string | null = null;
   selectedSubDomain: string | null = null;
-  userEmail: string | null;
+  userEmail: string | null = sessionStorage.getItem('userEmail');
   
 
 
 
   constructor(private commentService: CommentService, private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
     this.userEmail = sessionStorage.getItem('userEmail');
-    this.likesCount = this.likesService.getLikesCount(this.contentId);
+    // this.likesCount = this.likesService.getLikesCount(this.contentId);
 
   }
   
@@ -305,9 +311,9 @@ this.errorService.setIsError(true);
   // Toggle the like status
 
 
-  contentId = '${sys.id}'; // Replace with the actual content ID
+  // contentId = '${sys.id}'; // Replace with the actual content ID
   //userId = '40jcljdzym6w'; // Replace with the actual user ID
-  likesCount = 0;
+  // likesCount = 0;
   comment = '';
   comments: { userId: string; comment: string }[] = [];
   newComment: string = '';
@@ -325,10 +331,10 @@ this.errorService.setIsError(true);
 
 
 
-  toggleLike(contentId: string, userId: string): void {
-    this.likesService.handleLike(contentId, userId);
-    this.likesCount = this.likesService.getLikesCount(contentId);
-  }
+  // toggleLike(contentId: string, userId: string): void {
+  //   this.likesService.handleLike(contentId, userId);
+  //   this.likesCount = this.likesService.getLikesCount(contentId);
+  // }
 
 
 
@@ -368,22 +374,24 @@ this.errorService.setIsError(true);
   }
 
 
+  // function to toggle between comment box
+  
   toggleCommentBox(itemId: string) {
     // Toggle the comment box state for the item
     this.itemCommentBoxStates[itemId] = !this.itemCommentBoxStates[itemId];
   
     this.contentId = this.contentId;
-    this.fetchComments(this.contentId);
+    // this.fetchComments(this.contentId);
   }
   
 
-  
+  //function for posting the comment
   submitComment(contentId: string) {
     console.log(' contentId:', contentId); // Use the function parameter
     console.log('Debug: userId:', this.userEmail); // Use this.userEmail as userId
     console.log('Debug: this.comment:', this.comment);
   
-    if (this.comment.trim()) {
+    if (this.comment.trim() !== '') {
       if (this.userEmail !== null) {
         this.commentService.addComment(this.userEmail, this.comment, contentId).subscribe(
           (response) => {
@@ -395,26 +403,56 @@ this.errorService.setIsError(true);
           },
           (error) => {
             console.error('Error posting comment:', error);
-          });
+          }
+        );
       } else {
         console.error('UserEmail is null, cannot post a comment.');
       }
+    } else {
+      console.error('Comment is empty, cannot submit.');
     }
   }
 
-  
-  fetchComments(contentId: string) {
-    this.commentService.getComments(contentId).subscribe(
-      (comments) => {
-        this.comments = comments;
-        console.log('Fetched comments:', this.comments);
-      },
-      (error) => {
-        console.error('Error fetching comments:', error);
-      }
-    );
+
+
+
+  // Function to fetch the comments
+fetchComments(contentId: string) {
+  console.log('Fetching comments for contentId:', contentId);
+
+  this.commentService.getComments(contentId).subscribe(
+    (comments) => {
+      console.log('Comments fetched successfully:', comments);
+      
+      this.comments = comments; // Assuming 'comments' is a property in your component to store fetched comments
+    },
+    (error) => {
+      console.error('Error fetching comments:', error);
+    }
+  );
+}
+
+ 
+//function to post the like
+ 
+toggleLike(contentId: string) {
+  if (!this.userEmail) {
+    console.error('User email not found!');
+    return;
   }
 
+  this.commentService.likePost(contentId, this.userEmail)
+    .subscribe(
+      () => {
+        console.log(`Post ${contentId} liked successfully by user ${this.userEmail}!`);
+        // Add any additional actions after liking the post if needed
+      },
+      (error) => {
+        console.error('Failed to like post:', error);
+        // Handle error if needed
+      }
+    );
+}
 
 
   

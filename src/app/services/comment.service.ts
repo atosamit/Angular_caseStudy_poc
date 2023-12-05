@@ -2,16 +2,29 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 
+
+interface Comment {
+  userId: string;
+  comment: string;
+  contentId:string;
+}
+
+interface body{
+
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class CommentService {
   private baseUrl = 'https://contentmanagement-7iyh.onrender.com/api/comment';
-  private BaseUrl = 'https://contentmanagement-7iyh.onrender.com/api/comments';
+  //private BaseUrl = 'https://contentmanagement-7iyh.onrender.com/api/comments';
   constructor(private http: HttpClient) {}
 
   addComment(userId: string, commentText: string, contentId: string): Observable<any> {
     const comment = {
+      contentId:contentId,
       userId: userId,
       text: commentText
     };
@@ -26,18 +39,27 @@ export class CommentService {
     return this.http.post(apiUrl, comment, { headers });
   }
 
-  getComments(contentId: string): Observable<any> {
-    const apiUrl = `${this.BaseUrl}/${contentId}`;
-  
-    return this.http.get(apiUrl)
-      .pipe(
-        catchError((error: any) => {
-          console.error('Error fetching comments:', error);
-          return throwError(error);
-        })
-      );
+  getComments(contentId: string): Observable<Comment[]> {
+    const apiUrl = `https://contentmanagement-7iyh.onrender.com/api/comments/${contentId}`;
+
+    // Make a GET request to fetch comments based on the contentId
+    return this.http.get<Comment[]>(apiUrl);
   }
   
+  likePost(contentId: string, userId: string): Observable<any> {
+    const apiUrl = `https://contentmanagement-7iyh.onrender.com/api/like/${contentId}`; // Modify the API URL to include contentId
+  
+   const body = {
+    userId: userId,
+    contentId: contentId 
+  }; // 
+  
+    return this.http.post(apiUrl, body);
+  }
+  
+  
+
+
 
 }
 
