@@ -46,15 +46,10 @@ export class CommentService {
     return this.http.get<Comment[]>(apiUrl);
   }
   
-  likePost(contentId: string, userId: string): Observable<any> {
-    const apiUrl = `https://contentmanagement-7iyh.onrender.com/api/like/${contentId}`; // Modify the API URL to include contentId
-  
-   const body = {
-    userId: userId,
-    contentId: contentId 
-  }; // 
-  
-    return this.http.post(apiUrl, body);
+  addLike(userId: string, contentId: string): Observable<any> {
+    const likeData = { userId, contentId };
+    const url = `https://contentmanagement-7iyh.onrender.com/api/like/${contentId}`;
+    return this.http.post<any>(url, likeData);
   }
   
   

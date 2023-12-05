@@ -18,7 +18,7 @@ import { CommentService } from '../services/comment.service';
   styleUrls: ['./grid-page.component.css','./grid-page.css']
 })
 export class GridPageComponent implements OnInit {
-
+  response: { message: string; } | undefined;
   
   @ViewChild('content', { static: false }) el!: ElementRef;
 
@@ -26,7 +26,7 @@ export class GridPageComponent implements OnInit {
   commentCount: number = 0; 
   
   isLiked: boolean = false;
-
+   
   fetchedComments: string[] = []; 
 
   isGridView: boolean = true;
@@ -415,7 +415,7 @@ this.errorService.setIsError(true);
 
 
 
-
+ 
   // Function to fetch the comments
 fetchComments(contentId: string) {
   console.log('Fetching comments for contentId:', contentId);
@@ -435,27 +435,89 @@ fetchComments(contentId: string) {
  
 //function to post the like
  
-toggleLike(contentId: string) {
-  if (!this.userEmail) {
-    console.error('User email not found!');
-    return;
-  }
+// submitLike(contentId: string) {
+//   console.log(' contentId:', contentId);
+//   console.log('Debug: userId:', this.userEmail);
 
-  this.commentService.likePost(contentId, this.userEmail)
-    .subscribe(
-      () => {
-        console.log(`Post ${contentId} liked successfully by user ${this.userEmail}!`);
-        // Add any additional actions after liking the post if needed
+//   const userId = this.userEmail;
+
+//   if (userId) {
+//     this.commentService.addLike(userId, contentId).subscribe(
+//       (response) => {
+//         if (response && response.hasOwnProperty('message')) {
+//           if (response.message === 'You have already liked this content') {
+//             console.log('Already Liked:', response.message);
+//             // Handle case where content is already liked
+//           } else if (response.message === 'Content liked successfully') {
+//             console.log('Like added successfully:', response);
+//             console.log(`Content liked successfully. ContentId: ${contentId}, UserId: ${this.userEmail}`);
+//             // Handle successful like addition
+//           } else {
+//             console.log('Unexpected Response:', response);
+          
+//           }
+//         } else {
+//           console.log('Unexpected Response Format:', response);
+        
+//         }
+//       },
+//       (error) => {
+//         console.error('Error adding like:', error);
+//         }
+//     );
+//   } else {
+//     console.error('UserEmail is null, cannot submit a like.');
+//   }
+// }
+ 
+isContentLiked: boolean = false;
+likedCounts: Map<string, number> = new Map<string, number>();
+
+submitLike(contentId: string) {
+  const userId = this.userEmail;
+
+  if (userId) {
+    if (!this.likedCounts.has(userId)) {
+      this.likedCounts.set(userId, 0); // Initialize count for the userId if not present
+    }
+
+    this.commentService.addLike(userId, contentId).subscribe(
+      (response) => {
+        if (response && response.hasOwnProperty('message')) {
+          if (response.message === 'You have already liked this content') {
+            console.log('Already Liked:', response.message);
+            const count = this.likedCounts.get(userId) || 0;
+            if (count > 0) {
+              this.isContentLiked = false; // Set isContentLiked to false if count is greater than 0
+              this.likedCounts.set(userId, count - 1); // Decrement count for the userId
+              console.log('Like count after unlike:', this.likedCounts.get(userId)); // Log count after unlike
+            }
+          } else if (response.message === 'Content liked successfully') {
+            console.log('Like added successfully:', response);
+            console.log(`Content liked successfully. ContentId: ${contentId}, UserId: ${this.userEmail}`);
+            this.isContentLiked = true;
+            const count = this.likedCounts.get(userId) || 0;
+            this.likedCounts.set(userId, count + 1); // Increment count for the userId
+            console.log('Like count after like:', this.likedCounts.get(userId)); // Log count after like
+          } else {
+            console.log('Unexpected Response:', response);
+            // Handle unexpected response
+          }
+        } else {
+          console.log('Unexpected Response Format:', response);
+          // Handle unexpected response format
+        }
       },
       (error) => {
-        console.error('Failed to like post:', error);
-        // Handle error if needed
+        console.error('Error adding like:', error);
+        // Handle error cases here
       }
     );
+  } else {
+    console.error('UserEmail is null, cannot submit a like.');
+  }
 }
 
-
-  
 
   
 

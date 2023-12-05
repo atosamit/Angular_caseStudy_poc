@@ -247,6 +247,12 @@ img {
   height: 31px;
 }
 
+.icons1 {
+  width: 300px;
+  height: 300px;
+}
+
+
 
 /* toggle */
 input.toggle-round {
@@ -579,3 +585,4 @@ input.toggle-round:not(:checked)~.right-side .label {
   
   margin-top: -2px;
 }
+
