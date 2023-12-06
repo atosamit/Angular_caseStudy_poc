@@ -586,3 +586,8 @@ input.toggle-round:not(:checked)~.right-side .label {
   margin-top: -2px;
 }
 
+.orange {
+  filter: brightness(1.5) sepia(1) hue-rotate(180deg);
+}
+
+

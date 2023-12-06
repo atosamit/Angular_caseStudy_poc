@@ -22,10 +22,10 @@ export class GridPageComponent implements OnInit {
   
   @ViewChild('content', { static: false }) el!: ElementRef;
 
-  contentId: string = '7a3t4QUm9Yq0GsjlSPqsuT';
-  commentCount: number = 0; 
+  // contentId: string = '7a3t4QUm9Yq0GsjlSPqsuT';
   
-  isLiked: boolean = false;
+  
+
    
   fetchedComments: string[] = []; 
 
@@ -38,11 +38,21 @@ export class GridPageComponent implements OnInit {
   domainCollection: any[] = [];
   isIncrementing: any;
   
-  // isTextareaOpen = false;
+
+
+  //comments
+  comment = '';
+  comments: { userId: string; comment: string }[] = [];
   isCommentBoxOpen: boolean = false;
   itemCommentBoxStates: { [key: string]: boolean } = {};
   
- 
+  //like
+  likedIcon = 'https://www.gstatic.com/images/icons/material/system/1x/thumb_up_black_24dp.png';
+  notLikedIcon = 'https://www.gstatic.com/images/icons/material/system/1x/thumb_up_off_alt_black_24dp.png';
+  isContentLiked: boolean = false;
+  likedCounts: Map<string, number> = new Map<string, number>();
+  likedStatusMap: Map<string, boolean> = new Map<string, boolean>();
+  likeCountMap: Map<string, number> = new Map<string, number>();
 
  
   toggleView(view: 'list' | 'grid') {
@@ -311,12 +321,9 @@ this.errorService.setIsError(true);
   // Toggle the like status
 
 
-  // contentId = '${sys.id}'; // Replace with the actual content ID
-  //userId = '40jcljdzym6w'; // Replace with the actual user ID
-  // likesCount = 0;
-  comment = '';
-  comments: { userId: string; comment: string }[] = [];
-  newComment: string = '';
+  
+ 
+ 
 
 
   makePDF() {
@@ -331,11 +338,7 @@ this.errorService.setIsError(true);
 
 
 
-  // toggleLike(contentId: string, userId: string): void {
-  //   this.likesService.handleLike(contentId, userId);
-  //   this.likesCount = this.likesService.getLikesCount(contentId);
-  // }
-
+ 
 
 
   // Function to perform the search
@@ -362,16 +365,6 @@ this.errorService.setIsError(true);
 
   
 
-  // redux here
-  toggleCount() {
-    if (this.isIncrementing) {
-     console.log("hello")
-      this.store.dispatch(decrement());
-    } else {
-      this.store.dispatch(increment());
-    }
-    this.isIncrementing = !this.isIncrementing;
-  }
 
 
   // function to toggle between comment box
@@ -380,8 +373,6 @@ this.errorService.setIsError(true);
     // Toggle the comment box state for the item
     this.itemCommentBoxStates[itemId] = !this.itemCommentBoxStates[itemId];
   
-    this.contentId = this.contentId;
-    // this.fetchComments(this.contentId);
   }
   
 
@@ -435,35 +426,47 @@ fetchComments(contentId: string) {
  
 //function to post the like
 
-isContentLiked: boolean = false;
-likedCounts: Map<string, number> = new Map<string, number>();
+// Function to retrieve saved like status from localStorage
+retrieveLikedStatus(contentId: string): boolean {
+  const status = localStorage.getItem(contentId);
+  return status === 'true'; // Return the stored status as a boolean
+}
+
+
+initializeLikedStatus(contentId: string) {
+  // Assuming contentIds are unique identifiers for each item
+  this.likedStatusMap.set(contentId, false); // Initialize all items as not liked initially
+}
 
 submitLike(contentId: string) {
   const userId = this.userEmail;
-
   if (userId) {
-    if (!this.likedCounts.has(userId)) {
-      this.likedCounts.set(userId, 0); // Initialize count for the userId if not present
+    // Check if liked status for the content exists in the map, if not, initialize it to false
+    if (!this.likedStatusMap.has(contentId)) {
+      this.likedStatusMap.set(contentId, false);
     }
+
+    // Use the content's specific liked status from the map
+    const isContentLiked = this.likedStatusMap.get(contentId);
 
     this.commentService.addLike(userId, contentId).subscribe(
       (response) => {
         if (response && response.hasOwnProperty('message')) {
           if (response.message === 'You have already liked this content') {
             console.log('Already Liked:', response.message);
-            const count = this.likedCounts.get(userId) || 0;
-            if (count > 0) {
-              this.isContentLiked = false; // Set isContentLiked to false if count is greater than 0
-              this.likedCounts.set(userId, count - 1); // Decrement count for the userId
-              console.log('Like count after unlike:', this.likedCounts.get(userId)); // Log count after unlike
+            if (isContentLiked) {
+              this.likedStatusMap.set(contentId, false); // Update liked status to false
+              this.likeCountMap.set(contentId, (this.likeCountMap.get(contentId) || 0) - 1); // Decrease like count
+              console.log('Like count after unlike:', this.likeCountMap.get(contentId)); // Log count after like // Log count after unlike
+              localStorage.setItem(contentId, 'false'); // Save the status to localStorage
             }
           } else if (response.message === 'Content liked successfully') {
             console.log('Like added successfully:', response);
             console.log(`Content liked successfully. ContentId: ${contentId}, UserId: ${this.userEmail}`);
-            this.isContentLiked = true;
-            const count = this.likedCounts.get(userId) || 0;
-            this.likedCounts.set(userId, count + 1); // Increment count for the userId
-            console.log('Like count after like:', this.likedCounts.get(userId)); // Log count after like
+            this.likedStatusMap.set(contentId, true); // Update liked status to true
+            this.likeCountMap.set(contentId, (this.likeCountMap.get(contentId) || 0) + 1); // Increase like count
+            localStorage.setItem(contentId, 'true'); // Save the status to localStorage
+            console.log('Like count after like:', this.likeCountMap.get(contentId)); // Log count after like // Log count after like
           } else {
             console.log('Unexpected Response:', response);
             // Handle unexpected response
@@ -482,6 +485,7 @@ submitLike(contentId: string) {
     console.error('UserEmail is null, cannot submit a like.');
   }
 }
+
 
 
   

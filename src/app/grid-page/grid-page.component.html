@@ -103,24 +103,27 @@
                   {{ labelConstants[0].Comments }}
                 </button>
                 
-               
-             
-                <div>
+               <div>
                   <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
                   <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="orange-button">Submit</button>
                 </div>
                 
-                <!-- like btn using redux -->
-                <button *ngIf="isGridView" (click)="submitLike(item.details.sys.id)" class="like_btn">
-                  <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons" />
-                  Like
-                </button>
-                
-              
-              </div>
+             <!-- Like button-->
+            <button *ngIf="isGridView"
+                (click)="submitLike(item.details.sys.id)"
+                [ngClass]="{ 'liked': likedStatusMap.get(item.details.sys.id), 'not-liked': !likedStatusMap.get(item.details.sys.id) }">
+                <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons orange" />
+                Like
+                <span>{{ likeCountMap.get(item.details.sys.id) || 0 }}</span>
+              </button>
+           </div>
 
-              <div *ngIf="!isGridView" class="list-div">
+           <!--For list view-->
+             
+           <div *ngIf="!isGridView" class="list-div">
                 <!-- Comments button and section -->
+                 
+                <!-- Comment Button -->
                 <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id); fetchComments(item.details.sys.id)">
                   <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
                   {{ labelConstants[0].Comments }}
@@ -132,13 +135,14 @@
                   </div>
               
                 <!-- Like button -->
-                <button *ngIf="isGridView" (click)="submitLike(item.details.sys.id)" class="like_btn">
-                  <img [src]="logoCollection[7].logo.url" alt="Likes" class="icons" />
-                  Like
-                  {{ likedCounts }}
-                </button>
+                <button *ngIf="!isGridView"(click)="submitLike(item.details.sys.id)"
+                [ngClass]="{ 'liked': likedStatusMap.get(item.details.sys.id), 'not-liked': !likedStatusMap.get(item.details.sys.id) }">
+                <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons orange" />
+                Like
+                <span>{{ likeCountMap.get(item.details.sys.id) || 0 }}</span>
+              </button>
                 
-              </div>
+           </div>
               
 
               <div class="grid-div5" *ngIf="isGridView">
