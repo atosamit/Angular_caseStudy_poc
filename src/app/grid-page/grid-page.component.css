@@ -247,6 +247,10 @@ img {
   height: 31px;
 }
 
+.icons1 {
+  width: 300px;
+  height: 300px;
+}
 
 
 
@@ -569,13 +573,12 @@ input.toggle-round:not(:checked)~.right-side .label {
 }
 
 /* submit button for comment */
-.submit-button {
+.orange-button {
   background-color: #ff6D43;
   color: white;
   /* padding: 5px 5px; */
   border: none;
   cursor: pointer;
-  margin-left: 8px;
 }
 
 .blue-button{
@@ -583,16 +586,8 @@ input.toggle-round:not(:checked)~.right-side .label {
   margin-top: -2px;
 }
 
-
-
-.like-icon{
- cursor: pointer;
+.orange {
+  filter: brightness(1.5) sepia(1) hue-rotate(180deg);
 }
 
-.cancel-button {
-  background-color: #ff6D43;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-left: 10px;
-}
+
