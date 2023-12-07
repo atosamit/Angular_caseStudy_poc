@@ -47,8 +47,15 @@ export class GridPageComponent implements OnInit {
   itemCommentBoxStates: { [key: string]: boolean } = {};
   
   //like
-  likedIcon = 'https://www.gstatic.com/images/icons/material/system/1x/thumb_up_black_24dp.png';
-  notLikedIcon = 'https://www.gstatic.com/images/icons/material/system/1x/thumb_up_off_alt_black_24dp.png';
+
+  //black icon
+  // likedIcon = 'https://www.gstatic.com/images/icons/material/system/1x/thumb_up_black_24dp.png';
+  // notLikedIcon = 'https://www.gstatic.com/images/icons/material/system/1x/thumb_up_off_alt_black_24dp.png';
+   
+  //orange icon
+  likedIcon = 'https://th.bing.com/th/id/R.59bb1857523a6ab9a363f0ffae12471e?rik=0%2fHvONgjAfHDWw&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2f5%2fS%2ff%2fH%2fQ%2fT%2forange-thumb-like.svg.hi.png&ehk=kuWZO2rvkVoKZ92qQovZRzTb0GfLeVeaHZEWIS8EmUM%3d&risl=&pid=ImgRaw&r=0';
+  notLikedIcon = 'https://th.bing.com/th/id/OIP.KnvekyV7OUuJbWuk3j3xNQHaGn?w=1604&h=1432&rs=1&pid=ImgDetMain';
+  
   isContentLiked: boolean = false;
   likedCounts: Map<string, number> = new Map<string, number>();
   likedStatusMap: Map<string, boolean> = new Map<string, boolean>();
@@ -364,7 +371,13 @@ this.errorService.setIsError(true);
   }
 
   
+  cancelComment(contentId: string) {
+    // Reset the comment variable or perform any necessary action when cancel is clicked
+    this.comment = ''; // Reset the comment input field
+    this.toggleCommentBox(contentId); // Toggle the comment box if needed
 
+    this.itemCommentBoxStates[contentId] = false;
+  }
 
 
   // function to toggle between comment box
