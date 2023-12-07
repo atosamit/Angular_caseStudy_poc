@@ -9,8 +9,9 @@ interface Comment {
   contentId:string;
 }
 
-interface body{
-
+interface LikeResponse {
+  success: boolean;
+  message: string;
 }
 
 
@@ -49,7 +50,7 @@ export class CommentService {
   addLike(userId: string, contentId: string): Observable<any> {
     const likeData = { userId, contentId };
     const url = `https://contentmanagement-7iyh.onrender.com/api/like/${contentId}`;
-    return this.http.post<any>(url, likeData);
+    return this.http.post<LikeResponse>(url, likeData);
   }
   
   

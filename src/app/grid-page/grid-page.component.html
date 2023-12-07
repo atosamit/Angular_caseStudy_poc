@@ -105,17 +105,20 @@
                 
                <div>
                   <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
-                  <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="orange-button">Submit</button>
+                  <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="submit-button">Submit</button>
+                  <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="cancelComment(item.details.sys.id)" class="cancel-button">Cancel</button>
                 </div>
-                
+
+                <!-- <div *ngFor="let fetchedComment of comments">
+                  {{ fetchedComment }}
+                </div>
+                 -->
              <!-- Like button-->
-            <button *ngIf="isGridView"
-                (click)="submitLike(item.details.sys.id)"
-                [ngClass]="{ 'liked': likedStatusMap.get(item.details.sys.id), 'not-liked': !likedStatusMap.get(item.details.sys.id) }">
-                <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons orange" />
-                Like
-                <span>{{ likeCountMap.get(item.details.sys.id) || 0 }}</span>
-              </button>
+             <span *ngIf="isGridView" (click)="submitLike(item.details.sys.id)">
+              <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons" />
+              Like
+              <!-- <span>{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
+            </span>
            </div>
 
            <!--For list view-->
@@ -131,16 +134,17 @@
               
                 <div>
                   <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
-                </div><div class="blue-button"><button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" >Submit</button>
-                  </div>
+                </div>
+                <div ><button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="submit-button">Submit</button>
+                   <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="cancelComment(item.details.sys.id)" class="cancel-button">Cancel</button></div>
+                
               
                 <!-- Like button -->
-                <button *ngIf="!isGridView"(click)="submitLike(item.details.sys.id)"
-                [ngClass]="{ 'liked': likedStatusMap.get(item.details.sys.id), 'not-liked': !likedStatusMap.get(item.details.sys.id) }">
-                <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons orange" />
-                Like
-                <span>{{ likeCountMap.get(item.details.sys.id) || 0 }}</span>
-              </button>
+                <span *ngIf="!isGridView" (click)="submitLike(item.details.sys.id)">
+                  <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons" />
+                  Like
+                  <!-- <span>{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
+                </span>
                 
            </div>
               
