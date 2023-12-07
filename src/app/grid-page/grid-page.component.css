@@ -579,6 +579,16 @@ input.toggle-round:not(:checked)~.right-side .label {
   /* padding: 5px 5px; */
   border: none;
   cursor: pointer;
+  margin-left: 5px;
+}
+
+.cancel-button{
+  background-color: #ff6D43;
+  color: white;
+  /* padding: 5px 5px; */
+  border: none;
+  cursor: pointer;
+  margin-left: 16px;
 }
 
 .blue-button{
