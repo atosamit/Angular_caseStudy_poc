@@ -423,6 +423,9 @@ this.errorService.setIsError(true);
   // Function to fetch the comments
   fetchComments(contentId: string) {
     this.commentService.getComments(contentId).subscribe(
+      (commentsObject) => {
+        if (commentsObject && typeof commentsObject === 'object') {
+          this.comments = Object.values(commentsObject);
           console.log('Comments fetched successfully:', this.comments);
           this.cdr.detectChanges(); // Manually trigger change detection
         } else {
@@ -431,6 +434,8 @@ this.errorService.setIsError(true);
       },
       (error) => {
         console.error('Error fetching comments:', error);
+      }
+    );
   }
   
   
