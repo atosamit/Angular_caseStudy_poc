@@ -11,7 +11,7 @@ import { ErrorService } from '../error.service';
 // import { decrement, increment, } from 'src/app/store/counter.actions';
 import { decrement,increment } from 'src/store/counter.actions';
 import { CommentService } from '../services/comment.service';
-
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-grid-page',
   templateUrl: './grid-page.component.html',
@@ -105,7 +105,7 @@ export class GridPageComponent implements OnInit {
 
 
 
-  constructor(private commentService: CommentService, private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
+  constructor(private cdr: ChangeDetectorRef,private commentService: CommentService, private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
     this.userEmail = sessionStorage.getItem('userEmail');
     // this.likesCount = this.likesService.getLikesCount(this.contentId);
 
@@ -418,23 +418,24 @@ this.errorService.setIsError(true);
   }
 
 
-
+  showComments: boolean = false;
  
   // Function to fetch the comments
-fetchComments(contentId: string) {
-  console.log('Fetching comments for contentId:', contentId);
+  fetchComments(contentId: string) {
+    this.commentService.getComments(contentId).subscribe(
+          console.log('Comments fetched successfully:', this.comments);
+          this.cdr.detectChanges(); // Manually trigger change detection
+        } else {
+          console.error('Invalid comments data received:', commentsObject);
+        }
+      },
+      (error) => {
+        console.error('Error fetching comments:', error);
+  }
+  
+  
+  
 
-  this.commentService.getComments(contentId).subscribe(
-    (comments) => {
-      console.log('Comments fetched successfully:', comments);
-      
-      this.comments = comments; // Assuming 'comments' is a property in your component to store fetched comments
-    },
-    (error) => {
-      console.error('Error fetching comments:', error);
-    }
-  );
-}
 
  
 //function to post the like
@@ -504,4 +505,5 @@ submitLike(contentId: string) {
   
 
 }
+
 
