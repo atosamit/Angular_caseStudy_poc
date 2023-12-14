@@ -144,26 +144,45 @@
               </button>
               
               <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
-                <!-- Display existing comments -->
-                <div *ngIf="comments.length > 0" class="comment-box">
-                  <div class="comment-scroll">
-                    <div *ngFor="let comment of comments.slice(4)">
-                      {{ comment.comment }}
+                <!-- Display comments -->
+                <div class="comment-container">
+                  <div class="comment-box">
+                    <div class="comment-scroll">
+                      <div *ngFor="let comment of comments">
+                        {{ comment.comment }}
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <!-- Text area for adding new comments -->
-                <div>
-                  <textarea [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
-                </div>
               
-                <!-- Submit and Cancel buttons -->
-                <div>
-                  <button (click)="postOrFetchComments(item.details.sys.id)" class="orange-button">Submit</button>
-                  <button (click)="cancelComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="cancel-button">Cancel</button>   
+                  <!-- Text area for adding new comments -->
+                  <div>
+                    <textarea [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                  </div>
+              
+                  <!-- Button to fetch comments -->
+                  <div>
+                    <button (click)="fetchComments(item.details.sys.id)" class="orange-button2"> Comments</button>
+                  </div>
+              
+                  <!-- Button to submit comments -->
+                  <div>
+                    <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit </button>
+                 
+              
+                  <!-- Cancel button -->
+                 
+                    <button (click)="cancelComment(item.details.sys.id); postOrFetchComments(item.details.sys.id)" class="cancel-button">Cancel</button>   
+                  </div>
                 </div>
               </div>
+              
+              <!-- <div *ngIf="!itemCommentBoxStates[item.details.sys.id]">
+               
+                <div>
+                  <button (click)="toggleCommentBox(item.details.sys.id)" class="orange-button">Comments </button>
+                </div>
+              </div> -->
+              
               
 
               
