@@ -600,4 +600,13 @@ input.toggle-round:not(:checked)~.right-side .label {
   filter: brightness(1.5) sepia(1) hue-rotate(180deg);
 }
 
+.comment-box {
+  height: 200px; /* Set the height of the box */
+  overflow: auto; /* Enable scrolling if content exceeds the box height */
+  border: 1px solid #ccc; /* Optional: add a border for the box */
+}
+
+.comment-scroll {
+  padding: 10px; /* Optional: add padding for better readability */
+}
 

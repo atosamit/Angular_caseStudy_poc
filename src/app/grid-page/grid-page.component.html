@@ -115,7 +115,21 @@
               Like
               <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
             </span>
-           </div>
+            <button (click)="fetchComments(item.details.sys.id)">Fetch Comments</button>
+            <div>
+              <div *ngIf="comments.length === 0">
+                 No comments fetched
+              </div>
+             <div *ngIf="comments.length > 0">
+                <ul>
+                   <li *ngFor="let comment of comments">
+                     {{ comment.comment }}
+                   </li>
+                </ul>
+            </div>
+          </div>
+
+        </div>
 
            <!--For list view-->
              
@@ -123,16 +137,35 @@
                 <!-- Comments button and section -->
                  
                 <!-- Comment Button -->
-                <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id);">
-                  <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
-                  {{ labelConstants[0].Comments }}
-                </button>
+              <!-- Button to toggle comment box -->
+              <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id)">
+                <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
+                {{ labelConstants[0].Comments }}
+              </button>
               
-                <div>
-                  <textarea *ngIf="itemCommentBoxStates[item.details.sys.id]" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
-                </div><div><button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="submitComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="orange-button">Submit</button>
-                  <button *ngIf="itemCommentBoxStates[item.details.sys.id]" (click)="cancelComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="cancel-button">Cancel</button>   
+              <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                <!-- Display existing comments -->
+                <div *ngIf="comments.length > 0" class="comment-box">
+                  <div class="comment-scroll">
+                    <div *ngFor="let comment of comments.slice(4)">
+                      {{ comment.comment }}
+                    </div>
+                  </div>
                 </div>
+
+                <!-- Text area for adding new comments -->
+                <div>
+                  <textarea [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                </div>
+              
+                <!-- Submit and Cancel buttons -->
+                <div>
+                  <button (click)="postOrFetchComments(item.details.sys.id)" class="orange-button">Submit</button>
+                  <button (click)="cancelComment(item.details.sys.id); toggleCommentBox(item.details.sys.id)" class="cancel-button">Cancel</button>   
+                </div>
+              </div>
+              
+
               
                 <!-- Like button -->
                 <span *ngIf="!isGridView" class="like-container" (click)="submitLike(item.details.sys.id)">
@@ -140,14 +173,8 @@
                   Like
                   <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
                 </span>
-                <button (click)="fetchComments(item.details.sys.id)">Fetch Comments</button>
-                <div>
-                  {{ comments | json }}
-                  <span *ngIf="comments.length === 0">No comments fetched</span>
-                  <ul *ngFor="let comment of comments">
-                    <li>{{ comment.userId }} - {{ comment.comment }}</li>
-                  </ul>
-                </div>
+               
+
                 
            </div>
               

@@ -383,10 +383,25 @@ this.errorService.setIsError(true);
   // function to toggle between comment box
   
   toggleCommentBox(itemId: string) {
-    // Toggle the comment box state for the item
     this.itemCommentBoxStates[itemId] = !this.itemCommentBoxStates[itemId];
-  
+    
+    if (this.itemCommentBoxStates[itemId]) {
+      // Fetch comments when the comment box is opened
+      this.fetchComments(itemId);
+    }
   }
+  
+  postOrFetchComments(itemId: string) {
+    if (this.comment) {
+      // Post comment if there's content in the textarea
+      this.submitComment(itemId);
+    } else {
+      // Fetch comments if there's no content in the textarea
+      this.fetchComments(itemId);
+    }
+  }
+
+  
   
 
   //function for posting the comment
@@ -418,28 +433,45 @@ this.errorService.setIsError(true);
   }
 
 
+  formattedComments: string = '';
+  // Function to format comments for display in textarea
+formatComments() {
+  this.formattedComments = this.comments.map(comment => comment.comment).join('\n');
+}
+
   showComments: boolean = false;
- 
+  currentContentId: string | null = null;
   // Function to fetch the comments
   fetchComments(contentId: string) {
-    this.commentService.getComments(contentId).subscribe(
-      (commentsObject) => {
-        if (commentsObject && typeof commentsObject === 'object') {
-          this.comments = Object.values(commentsObject);
-          console.log('Comments fetched successfully:', this.comments);
-          this.cdr.detectChanges(); // Manually trigger change detection
-        } else {
-          console.error('Invalid comments data received:', commentsObject);
+    this.showComments = !this.showComments; // Toggle the flag on button click
+    this.currentContentId = contentId;
+
+    if (this.showComments) {
+      this.commentService.getComments(contentId).subscribe(
+        (data: any) => {
+          if (
+            data &&
+            data.comments &&
+            Array.isArray(data.comments) &&
+            this.currentContentId === contentId
+          ) {
+            this.comments = data.comments.map((comment: any) => ({
+              userId: '', // Add logic to get user ID if available
+              comment: comment.text
+            }));
+            console.log('Comments fetched successfully:', this.comments);
+          } else {
+            console.error('Invalid comments data received or content changed:', data);
+          }
+        },
+        (error) => {
+          console.error('Error fetching comments:', error);
         }
-      },
-      (error) => {
-        console.error('Error fetching comments:', error);
-      }
-    );
+      );
+    } else {
+      this.comments = []; // If comments are hidden, clear the comments array
+    }
   }
-  
-  
-  
 
 
  
