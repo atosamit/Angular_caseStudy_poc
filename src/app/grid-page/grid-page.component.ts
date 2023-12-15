@@ -42,7 +42,7 @@ export class GridPageComponent implements OnInit {
 
   //comments
   comment = '';
-  comments: { userId: string; comment: string }[] = [];
+  comments: { userId: string; comment: string ;createdAt: string}[] = [];
   isCommentBoxOpen: boolean = false;
   itemCommentBoxStates: { [key: string]: boolean } = {};
   
@@ -457,7 +457,8 @@ formatComments() {
           ) {
             this.comments = data.comments.map((comment: any) => ({
               userId: '', // Add logic to get user ID if available
-              comment: comment.text
+              comment: comment.text,
+              createdAt: comment.createdAt
             }));
             console.log('Comments fetched successfully:', this.comments);
           } else {

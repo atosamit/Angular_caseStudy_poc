@@ -140,7 +140,8 @@
               <!-- Button to toggle comment box -->
               <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id)">
                 <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
-                {{ labelConstants[0].Comments }}
+                <!-- {{ labelConstants[0].Comments }} -->
+                {{ item.details.commentCount }}
               </button>
               
               <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
@@ -149,8 +150,11 @@
                   <div class="comment-box">
                     <div class="comment-scroll">
                       <div *ngFor="let comment of comments">
-                        {{ comment.comment }}
+                       <p> {{ comment.comment }}
+                     <span style="margin-left: 30px;">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span></p>
+                      
                       </div>
+                      
                     </div>
                   </div>
               

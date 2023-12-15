@@ -7,6 +7,7 @@ interface Comment {
   userId: string;
   comment: string;
   contentId:string;
+  createdAt: string;
 }
 
 interface body{
@@ -26,7 +27,8 @@ export class CommentService {
     const comment = {
       contentId:contentId,
       userId: userId,
-      text: commentText
+      text: commentText,
+      
     };
 
     const headers = new HttpHeaders({
@@ -52,7 +54,11 @@ export class CommentService {
     return this.http.post<any>(url, likeData);
   }
   
-  
+  getCommentsWithDates(itemId: string): Observable<Comment[]> {
+    const url = `https://contentmanagement-7iyh.onrender.com/api/comments/${itemId}`;
+
+    return this.http.get<Comment[]>(url);
+  }
 
 
 
