@@ -609,14 +609,52 @@ input.toggle-round:not(:checked)~.right-side .label {
   filter: brightness(1.5) sepia(1) hue-rotate(180deg);
 }
 
-.comment-box {
-  height: 200px; /* Set the height of the box */
-  overflow: auto; /* Enable scrolling if content exceeds the box height */
-  border: 1px solid #ccc; /* Optional: add a border for the box */
+/* .comment-box {
+  height: 200px; 
+  overflow: auto; 
+  border: 1px solid #ccc; 
 }
 
 .comment-scroll {
-  padding: 10px; /* Optional: add padding for better readability */
+  padding: 10px; 
+} */
+
+/* Comment box container */
+.comment-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 300px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+/* Individual comment */
+.comment {
+  margin-bottom: 15px;
+}
+
+/* Comment content */
+.comment-content {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* Comment text */
+.comment-content p {
+  margin: 0;
+}
+
+/* Comment metadata */
+.comment-meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Comment date */
+.comment-meta .comment-date {
+  margin-right: 10px;
 }
 
 
