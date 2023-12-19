@@ -543,12 +543,27 @@ submitLike(contentId: string) {
 
 //delete comment
 
+// deleteComment(commentId: string, contentId: string) {
+//   // Your delete logic using commentId and contentId
+//   this.commentService.deleteComment(commentId, contentId).subscribe(
+//     (response) => {
+//       console.log('Comment deleted successfully:', response);
+//       // Handle success response or update UI accordingly
+//     },
+//     (error) => {
+//       console.error('Error deleting comment:', error);
+//     }
+//   );
+// }
+
+
 deleteComment(commentId: string, contentId: string) {
   // Your delete logic using commentId and contentId
   this.commentService.deleteComment(commentId, contentId).subscribe(
     (response) => {
-      console.log('Comment deleted successfully:', response);
-      // Handle success response or update UI accordingly
+      console.log('Comment deleted successfully:',response);
+      // Update the comments array to remove the deleted comment from the UI
+      this.comments = this.comments.filter(comment => comment.commentId !== commentId);
     },
     (error) => {
       console.error('Error deleting comment:', error);
