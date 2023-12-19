@@ -42,7 +42,7 @@ export class GridPageComponent implements OnInit {
 
   //comments
   comment = '';
-  comments: { userId: string; comment: string ;createdAt: string}[] = [];
+  comments: { userId: string; comment: string ;createdAt: string;commentId: string}[] = [];
   isCommentBoxOpen: boolean = false;
   itemCommentBoxStates: { [key: string]: boolean } = {};
   
@@ -441,6 +441,7 @@ formatComments() {
 
   showComments: boolean = false;
   currentContentId: string | null = null;
+  
   // Function to fetch the comments
   fetchComments(contentId: string) {
     this.showComments = !this.showComments; // Toggle the flag on button click
@@ -458,7 +459,8 @@ formatComments() {
             this.comments = data.comments.map((comment: any) => ({
               userId: '', // Add logic to get user ID if available
               comment: comment.text,
-              createdAt: comment.createdAt
+              createdAt: comment.createdAt,
+              commentId: comment._id
             }));
             console.log('Comments fetched successfully:', this.comments);
           } else {
@@ -539,6 +541,20 @@ submitLike(contentId: string) {
 }
 
 
+//delete comment
+
+deleteComment(commentId: string, contentId: string) {
+  // Your delete logic using commentId and contentId
+  this.commentService.deleteComment(commentId, contentId).subscribe(
+    (response) => {
+      console.log('Comment deleted successfully:', response);
+      // Handle success response or update UI accordingly
+    },
+    (error) => {
+      console.error('Error deleting comment:', error);
+    }
+  );
+}
 
   
 

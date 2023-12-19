@@ -8,6 +8,7 @@ interface Comment {
   comment: string;
   contentId:string;
   createdAt: string;
+  
 }
 
 interface body{
@@ -61,7 +62,13 @@ export class CommentService {
   }
 
 
+  deleteComment(commentId: string, contentId: string): Observable<any> {
+    const url = `https://contentmanagement-7iyh.onrender.com/api/Rcomment/${commentId}/${contentId}`;
 
+    return this.http.delete(url);
+  }
+  
+ 
 }
 
 

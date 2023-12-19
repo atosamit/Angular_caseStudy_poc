@@ -153,15 +153,17 @@
                         <div class="comment-content">
                           <!-- Comment text -->
                           <p>{{ comment.comment }}</p>
-                          
                           <!-- Comment date -->
                           <div class="comment-meta">
                             <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
+                            <span (click)="deleteComment(comment.commentId,item.details.sys.id )">
+                              <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
+                            </span>
                           </div>
                           <div class="reply-section">
-        <input type="text" placeholder="Write a reply">
-        <button>Submit</button>
-      </div>
+                          <input type="text" placeholder="Write a reply">
+                          <button>Submit</button>
+                         </div>
                         </div>
                       </div>
                     </div>

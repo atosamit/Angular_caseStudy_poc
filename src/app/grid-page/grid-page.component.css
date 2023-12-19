@@ -657,5 +657,9 @@ input.toggle-round:not(:checked)~.right-side .label {
   margin-right: 10px;
 }
 
-
-
+.delete-icon{
+  width: 28px;
+    height: 30px;
+    margin-top: -56px;
+    margin-left: 126px;
+}
