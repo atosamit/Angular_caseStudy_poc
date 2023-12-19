@@ -646,11 +646,11 @@ input.toggle-round:not(:checked)~.right-side .label {
 }
 
 /* Comment metadata */
-.comment-meta {
+/* .comment-meta {
   font-size: 12px;
   color: #666;
   margin-top: 5px;
-}
+} */
 
 /* Comment date */
 .comment-meta .comment-date {
@@ -660,10 +660,40 @@ input.toggle-round:not(:checked)~.right-side .label {
 .delete-icon{
   width: 28px;
     height: 30px;
-    margin-top: -56px;
+    margin-top: -17px;
     margin-left: 126px;
 }
 
+.hidden-comment {
+  display: none; /* Hide additional comments */
+}
 
+.more-comment{
+  margin-left: 125px;
+  cursor: pointer;
+}
+.less-comment{
+  margin-left: 125px;
+  cursor: pointer;
+}
 
+.reply-section {
+  display: none; /* Initially hide the reply section */
+}
 
+.show-reply {
+  display: block; /* Show the reply section when the 'showAllReplies' flag is true */
+}
+.reply{
+  cursor: pointer;
+}
+
+.meta-details {
+  display: flex; /* Align items in the same row */
+  align-items: center; /* Center vertically */
+}
+
+.comment-date {
+  margin-right: 10px; 
+  align-self: flex-end; 
+}

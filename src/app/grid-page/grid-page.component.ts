@@ -542,21 +542,6 @@ submitLike(contentId: string) {
 
 
 //delete comment
-
-// deleteComment(commentId: string, contentId: string) {
-//   // Your delete logic using commentId and contentId
-//   this.commentService.deleteComment(commentId, contentId).subscribe(
-//     (response) => {
-//       console.log('Comment deleted successfully:', response);
-//       // Handle success response or update UI accordingly
-//     },
-//     (error) => {
-//       console.error('Error deleting comment:', error);
-//     }
-//   );
-// }
-
-
 deleteComment(commentId: string, contentId: string) {
   // Your delete logic using commentId and contentId
   this.commentService.deleteComment(commentId, contentId).subscribe(
@@ -571,7 +556,17 @@ deleteComment(commentId: string, contentId: string) {
   );
 }
 
-  
+showAll = false;
+
+showAllComments() {
+  this.showAll = true;
+}
+
+showLessComments() {
+  this.showAll = false;
+}
+
+showAllReplies = false;
 
 }
 
