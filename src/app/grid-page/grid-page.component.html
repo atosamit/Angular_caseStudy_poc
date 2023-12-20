@@ -135,22 +135,41 @@
                                     <span class="less-comment" (click)="showLessComments()">Less Comments...</span>
                                   </div>
                                </div>
+                               <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                                <div>
+                                    <!-- Button to toggle comment input area -->
+                                    <span (click)="toggleAddCommentBox(item.details.sys.id)" class="toggle-comment-button">
+                                      <strong class="post-comment">Post your comment here..</strong>
+                                  </span>
+                                  
+                                  <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                                      <ng-container *ngIf="showAddCommentBox[item.details.sys.id]">
+                                          <textarea class="textarea" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                                          <div>
+                                              <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit</button>
+                                              <button (click)="cancelComment(item.details.sys.id)" class="cancel-button">Cancel</button>
+                                          </div>
+                                      </ng-container>
+                                  </div>
+                                </div>
+                              </div>
+                                  
                         
                                <!-- Text area for adding new comments -->
-                              <div>
+                              <!-- <div>
                                   <textarea [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
-                              </div>
+                              </div> -->
                     
                                <!-- Button to fetch comments -->
-                              <div>
+                              <!-- <div>
                                  <button (click)="fetchComments(item.details.sys.id)" class="orange-button2"> Comments</button>
-                              </div>
+                              </div> -->
                     
                               <!-- Button to submit comments -->
-                              <div>
+                              <!-- <div>
                                  <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit </button>
                                  <button (click)="cancelComment(item.details.sys.id); postOrFetchComments(item.details.sys.id)" class="cancel-button">Cancel</button>   
-                              </div>
+                              </div> -->
                             </div>
                          </div>
                     </div>
@@ -177,6 +196,8 @@
                        <!-- {{ labelConstants[0].Comments }} -->
                           {{ item.details.commentCount }}
                 </button>
+
+                
               
                 <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
                 <!-- Display comments -->
@@ -209,22 +230,43 @@
                               <span class="less-comment" (click)="showLessComments()">Less Comments...</span>
                             </div>
                          </div>
+
+                         <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                          <div>
+                              <!-- Button to toggle comment input area -->
+                              <span (click)="toggleAddCommentBox(item.details.sys.id)" class="toggle-comment-button">
+                                <strong class="post-comment">Post your comment here..</strong>
+                            </span>
+                            
+                            <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                                <ng-container *ngIf="showAddCommentBox[item.details.sys.id]">
+                                    <textarea class="textarea" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                                    <div>
+                                        <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit</button>
+                                        <button (click)="cancelComment(item.details.sys.id)" class="cancel-button">Cancel</button>
+                                    </div>
+                                </ng-container>
+                            </div>
+                          </div>
+                        </div>
+                            
                   
-                         <!-- Text area for adding new comments -->
+                         <!-- Text area for adding new comments
                         <div>
                             <textarea [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
                         </div>
-              
-                         <!-- Button to fetch comments -->
-                        <div>
-                           <button (click)="fetchComments(item.details.sys.id)" class="orange-button2"> Comments</button>
-                        </div>
-              
-                        <!-- Button to submit comments -->
-                        <div>
+                         <div>
                            <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit </button>
                            <button (click)="cancelComment(item.details.sys.id); postOrFetchComments(item.details.sys.id)" class="cancel-button">Cancel</button>   
                         </div>
+               -->
+                         <!-- Button to fetch comments -->
+                        <!-- <div>
+                           <button (click)="fetchComments(item.details.sys.id)" class="orange-button2"> Comments</button>
+                        </div> -->
+              
+                        <!-- Button to submit comments -->
+                       
                       </div>
                    </div>
               </div>

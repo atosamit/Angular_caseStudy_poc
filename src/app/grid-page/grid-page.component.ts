@@ -390,6 +390,16 @@ this.errorService.setIsError(true);
       this.fetchComments(itemId);
     }
   }
+
+  showAddCommentBox: { [key: string]: boolean } = {};
+
+  toggleAddCommentBox(itemId: string) {
+    this.showAddCommentBox[itemId] = !this.showAddCommentBox[itemId];
+    if (!this.showAddCommentBox[itemId]) {
+        // Clear comment content when hiding the textarea
+        this.comment = '';
+    }
+}
   
   postOrFetchComments(itemId: string) {
     if (this.comment) {

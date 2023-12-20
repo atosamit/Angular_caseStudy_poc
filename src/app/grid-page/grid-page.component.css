@@ -579,7 +579,7 @@ input.toggle-round:not(:checked)~.right-side .label {
   /* padding: 5px 5px; */
   border: none;
   cursor: pointer;
-  margin-left: 12px;
+  margin-left: 63px;
 }
 .orange-button2 {
   background-color: #ff6D43;
@@ -704,4 +704,11 @@ input.toggle-round:not(:checked)~.right-side .label {
 .comment-date {
   margin-right: 10px; 
   align-self: flex-end; 
+}
+
+.post-comment{
+  margin-left: 43px;
+}
+.textarea{
+  margin-left: 50px;
 }
