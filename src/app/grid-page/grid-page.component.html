@@ -107,22 +107,32 @@
                     <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
                       <!-- Display comments -->
                          <div class="comment-container">
-                             <div class="comment-box">
+                             <div class="comment-box-grid">
                                 <div class="comment-scroll">
-                                  <div *ngFor="let comment of comments" class="comment">
+                                  <div *ngFor="let comment of comments;let i = index" [ngClass]="{'hidden-comment': !showAll && i > 2}" class="comment">
                                        <div class="comment-content">
                                           <p>{{ comment.comment }}</p>
-                                             <div class="comment-meta">
+                                          
+                                             <div>
+                                              <div class="meta-details">
                                                 <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
                                                 <span (click)="deleteComment(comment.commentId,item.details.sys.id )">
                                                    <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                                 </span>
                                              </div>
-                                             <div class="reply-section">
-                                                <input type="text" placeholder="Write a reply">
-                                                  <button>Submit</button>
+                                            </div>
+                                             <span class="reply"(click)="showAllReplies = !showAllReplies"> reply...</span>
+                                             <div class="reply-section" [class.show-reply]="showAllReplies">
+                                              <input type="text" placeholder="Write a reply">
+                                              <button>Submit</button>
                                             </div>
                                         </div>
+                                        <div *ngIf="i === 2 && comments.length > 3 && !showAll" class="more-comments">
+                                          <span class="more-comment" (click)="showAllComments()">More Comments...</span>
+                                        </div>
+                                  </div>
+                                  <div *ngIf="showAll">
+                                    <span class="less-comment" (click)="showLessComments()">Less Comments...</span>
                                   </div>
                                </div>
                         
@@ -162,7 +172,7 @@
                 <!--COMMENT SECTION--> 
                 <!-- Comment Button -->
               
-                <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id)">
+                <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id); fetchComments(item.details.sys.id)">
                     <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
                        <!-- {{ labelConstants[0].Comments }} -->
                           {{ item.details.commentCount }}
@@ -171,7 +181,7 @@
                 <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
                 <!-- Display comments -->
                    <div class="comment-container">
-                       <div class="comment-box">
+                       <div class="comment-box-list">
                           <div class="comment-scroll">
                             <div *ngFor="let comment of comments;let i = index" [ngClass]="{'hidden-comment': !showAll && i > 2}" class="comment">
                                  <div class="comment-content">

@@ -620,11 +620,19 @@ input.toggle-round:not(:checked)~.right-side .label {
 } */
 
 /* Comment box container */
-.comment-box {
+.comment-box-list {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 10px;
-  max-height: 300px; /* Adjust as needed */
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.comment-box-grid{
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 109px;
   overflow-y: auto;
 }
 
