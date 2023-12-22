@@ -579,7 +579,7 @@ input.toggle-round:not(:checked)~.right-side .label {
   /* padding: 5px 5px; */
   border: none;
   cursor: pointer;
-  margin-left: 63px;
+  margin-left: 56px;
 }
 .orange-button2 {
   background-color: #ff6D43;
@@ -708,7 +708,19 @@ input.toggle-round:not(:checked)~.right-side .label {
 
 .post-comment{
   margin-left: 43px;
+  cursor: pointer;
 }
 .textarea{
-  margin-left: 50px;
+  font-size: 13px;
+  margin-left: 48px;
 }
+/* .custom-comment-input {
+  border: 1px solid #ccc;
+  min-height: 50px;
+  padding: 8px;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  
+} */

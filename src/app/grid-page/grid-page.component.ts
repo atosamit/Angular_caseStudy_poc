@@ -412,7 +412,11 @@ this.errorService.setIsError(true);
   }
 
   
-  
+  onCommentInput(event: any) {
+    // Handle the comment input event if needed
+    this.comment = event.target.textContent;
+}
+
 
   //function for posting the comment
   submitComment(contentId: string) {
@@ -440,6 +444,8 @@ this.errorService.setIsError(true);
     } else {
       console.error('Comment is empty, cannot submit.');
     }
+
+   
   }
 
 
@@ -472,6 +478,12 @@ formatComments() {
               createdAt: comment.createdAt,
               commentId: comment._id
             }));
+
+            
+          // Sort comments by date in ascending order
+          this.comments.sort((a, b) => {
+            return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+          })
             console.log('Comments fetched successfully:', this.comments);
           } else {
             console.error('Invalid comments data received or content changed:', data);
@@ -547,6 +559,19 @@ submitLike(contentId: string) {
     );
   } else {
     console.error('UserEmail is null, cannot submit a like.');
+  }
+}
+
+
+confirmDelete(commentId: string, itemId: string) {
+  const result = window.confirm('Are you sure you want to delete this comment?');
+
+  if (result) {
+      // Call your deleteComment function if confirmed
+      this.deleteComment(commentId, itemId);
+  } else {
+      // Do nothing or handle cancellation
+      // For example, you can show an alert or handle the cancellation state
   }
 }
 

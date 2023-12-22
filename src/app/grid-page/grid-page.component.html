@@ -211,7 +211,8 @@
                                        <div>
                                         <div class="meta-details">
                                           <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
-                                          <span (click)="deleteComment(comment.commentId,item.details.sys.id )">
+                                          <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
+                                          <!-- <span (click)="deleteComment(comment.commentId,item.details.sys.id )"> -->
                                              <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                           </span>
                                        </div>
