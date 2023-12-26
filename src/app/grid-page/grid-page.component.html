@@ -1,5 +1,4 @@
 <!-- <app-slide-show (searchTextChanged)="onSearchTextEntered($event)"></app-slide-show> -->
-
 <div class="matTab_listgrid_div">
   <!-- navigation bar mat tap -->
   <mat-tab-group class="custom-tab-group" [(selectedIndex)]="selectedTabIndex"
@@ -7,7 +6,6 @@
     <mat-tab label="All ({{ getDomainCount('All') }})"></mat-tab>
     <mat-tab *ngFor="let domain of domains" [label]="getDomainLabel(domain)"></mat-tab>
   </mat-tab-group>
-
   <!-- list and grid buttons -->
   <div id="btnContainer">
     <div>
@@ -19,9 +17,7 @@
           " alt="List View" />
       </button>
     </div>
-
     <span class="separator"><img alt="shlash" src="assets/Line 1.png" /></span>
-
     <div>
       <button class="btn" (click)="toggleView('grid'); gridView()">
         <img alt="grid_button" class="grid-logo" [src]="
@@ -31,14 +27,11 @@
     </div>
   </div>
 </div>
-
 <!-- toggle -->
-
 <input id="cb_id" class="toggle-round" type="checkbox" />
 <label for="cb_id"></label>
 <label class="CXTowerlabel">{{ labelConstants[0].CXTower }}</label>
 <label class="CXTechlabel1">{{ labelConstants[0].CXTech }}</label>
-
 <!-- Cx Tech -->
 <div class="labels left-side" style="margin-top: -32px; margin-left: 10px">
   <ng-container *ngFor="let data of cxTech">
@@ -47,7 +40,6 @@
     </button>
   </ng-container>
 </div>
-
 <!-- Cx Tower -->
 <div class="labels right-side" style="margin-top: -1px">
   <ng-container *ngFor="let data of cxTower">
@@ -58,7 +50,6 @@
 </div>
 <div>
   <br />
-
   <div class="row" id="content" #content>
     <ng-container *ngFor="let item of paginatedData">
       <div class="column" [ngClass]="{ 'list-view': !isGridView }" *ngIf="
@@ -69,7 +60,6 @@
           <img alt="grid_images" width="440" height="260" class="img-fluid" [src]="item.details.itemIcon.url"
             [src]="item.details.itemIcon.url" [ngClass]="{ 'grid-image': isGridView, 'list-image': !isGridView }"
             [routerLink]="['/case_study', item.details.sys.id]" />
-
           <div [ngClass]="{ 'grid-div2': isGridView, 'list-div2': !isGridView }">
             <p [ngClass]="{ 'grid-text': isGridView, 'list-text': !isGridView }">
               {{ item.details.title }}
@@ -139,7 +129,7 @@
                                 <div>
                                     <!-- Button to toggle comment input area -->
                                     <span (click)="toggleAddCommentBox(item.details.sys.id)" class="toggle-comment-button">
-                                      <strong class="post-comment">Post your comment here..</strong>
+                                      <strong class="post-comment">your comment here..</strong>
                                   </span>
                                   
                                   <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
@@ -181,7 +171,6 @@
                       <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
                     </span>
                 </div>
-
           
           
             <!--LIST SECTION-->
@@ -196,7 +185,6 @@
                        <!-- {{ labelConstants[0].Comments }} -->
                           {{ item.details.commentCount }}
                 </button>
-
                 
               
                 <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
@@ -204,7 +192,9 @@
                    <div class="comment-container">
                        <div class="comment-box-list">
                           <div class="comment-scroll">
-                            <div *ngFor="let comment of comments;let i = index" [ngClass]="{'hidden-comment': !showAll && i > 2}" class="comment">
+                           
+                          <!-- less and more comment html-->
+                            <!-- <div *ngFor="let comment of comments;let i = index" [ngClass]="{'hidden-comment': !showAll && i > 2}" class="comment">
                                  <div class="comment-content">
                                     <p>{{ comment.comment }}</p>
                                     
@@ -212,8 +202,7 @@
                                         <div class="meta-details">
                                           <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
                                           <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
-                                          <!-- <span (click)="deleteComment(comment.commentId,item.details.sys.id )"> -->
-                                             <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
+                                               <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                           </span>
                                        </div>
                                       </div>
@@ -230,13 +219,62 @@
                             <div *ngIf="showAll">
                               <span class="less-comment" (click)="showLessComments()">Less Comments...</span>
                             </div>
-                         </div>
-
-                         <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                         </div> -->
+                         <!--Pagination html-->
+                         <div *ngFor="let comment of paginatedComments; let i = index" [ngClass]="{'hidden-comment': !showAll && i > 4}" class="comment">
+                          <div class="comment-content">
+                             <p>{{ comment.comment }}</p>
+                             
+                                <div>
+                                 <div class="meta-details">
+                                   <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
+                                   <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
+                                   <!-- <span (click)="deleteComment(comment.commentId,item.details.sys.id )"> -->
+                                      <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
+                                   </span>
+                                </div>
+                               </div>
+                                <span class="reply"(click)="showAllReplies = !showAllReplies"> reply...</span>
+                                <div class="reply-section" [class.show-reply]="showAllReplies">
+                                 <input type="text" placeholder="Write a reply">
+                                 <button>Submit</button>
+                               </div>
+                           </div>
+                          </div>
+                    
+                  </div>
+                   <!-- Pagination using numbers 
+                 <div class="pagination">
+                      <button *ngFor="let page of getPageNumbers()" (click)="goToPage(page)">
+                       {{ page }}
+                     </button>
+                 </div> -->
+                 <!-- Pagination using arrows
+                <div class="pagination">
+                     <button class="prev" (click)="goToPage(pageNumber - 1)" [disabled]="pageNumber === 1"> &lt; </button>
+                     <button *ngFor="let page of getPageNumbers()" (click)="goToPage(page)" [class.active]="page === pageNumber">
+                       &lt;&lt;
+                    </button>
+                    <button class="next" (click)="goToPage(pageNumber + 1)" [disabled]="pageNumber === totalPages"> &gt; </button>
+                </div>-->
+                
+                
+                <!-- Pagination using arrows and numbers -->
+                <div class="pagination">
+                    <button class="prev" (click)="goToPage(pageNumber - 1)" [disabled]="pageNumber === 1"> &lt; </button>
+                    <!-- Displaying numbers between two arrows -->
+                   <ng-container *ngFor="let page of getPageNumbers()">
+                   <button *ngIf="page !== 'prev' && page !== 'next'" (click)="goToPage(page)" [class.active]="page === pageNumber">
+                      {{ page }}
+                   </button>
+                  </ng-container>
+                  <button class="next" (click)="goToPage(pageNumber + 1)" [disabled]="pageNumber === totalPages"> &gt; </button>
+                </div>
+                <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
                           <div>
                               <!-- Button to toggle comment input area -->
                               <span (click)="toggleAddCommentBox(item.details.sys.id)" class="toggle-comment-button">
-                                <strong class="post-comment">Post your comment here..</strong>
+                                <strong class="post-comment">Add your comment here..</strong>
                             </span>
                             
                             <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
@@ -279,10 +317,7 @@
                 <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
               </span>
               
-           
-              
-          </div>    
-
+         </div>    
             <div class="grid-div5" *ngIf="isGridView">
                 <button (click)="openPopup()" style="border: none; background-color: white">
                   <img alt="Share_icon" class="icons" [src]="logoCollection[5].logo.url" />
@@ -306,13 +341,11 @@
                     <!-- Add "close-button" class -->
                   </div>
                 </div>
-
                 <!-- downlaod btn -->
                 <button (click)="makePDF()" style="border: none; background-color: white" class="download_btn">
                   <img alt="download_icon" [src]="logoCollection[6].logo.url" class="icons" />
                 </button>
               </div>
-
               <div *ngIf="!isGridView">
                 <!-- share icon list view -->
                 <img alt="Share_icon" [src]="logoCollection[5].logo.url" class="icons" />
@@ -325,7 +358,6 @@
       </div>
     </ng-container>
   </div>
-
   <!-- pagination -->
   <div class="pagination">
     <button [disabled]="currentPage === 1" class="pagination-button" (click)="changePage(-1)">
@@ -336,11 +368,9 @@
       {{ labelConstants[0].Nextbtn }}
     </button>
   </div>
-
   <div *ngIf="isGridView">
     <app-testimonial2></app-testimonial2>
   </div>
-
   <app-footer></app-footer>
   <ng-template #dataContent></ng-template>
 </div>

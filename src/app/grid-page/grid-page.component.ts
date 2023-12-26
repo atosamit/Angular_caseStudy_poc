@@ -591,7 +591,8 @@ deleteComment(commentId: string, contentId: string) {
   );
 }
 
-showAll = false;
+//More and less comment functionality
+public showAll = false;
 
 showAllComments() {
   this.showAll = true;
@@ -602,6 +603,41 @@ showLessComments() {
 }
 
 showAllReplies = false;
+
+
+//pagination
+
+
+// Define pagination properties
+commentsPerPage = 5; // Initial number of comments per page
+pageNumber = 1; // Current page number
+
+// Create a computed property to get the paginated comments for the current page
+get paginatedComments() {
+  const startIndex = (this.pageNumber - 1) * this.commentsPerPage;
+  const endIndex = startIndex + this.commentsPerPage;
+  return this.comments.slice(startIndex, endIndex);
+}
+
+updateCommentsPerPage() {
+  const totalComments = this.comments.length;
+  this.commentsPerPage = Math.ceil(totalComments / 10); // Change 10 to set a different factor
+}
+
+goToPage(pageNumber: number) {
+  this.pageNumber = pageNumber;
+}
+
+//for numebers only 
+// getPageNumbers() {
+//   const pageCount = Math.ceil(this.comments.length / this.commentsPerPage);
+//   return Array.from({ length: pageCount }, (_, i) => i + 1);
+// }
+
+  getPageNumbers(): (number | 'prev' | 'next')[] {
+  const pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  return ['prev', ...pages, 'next'];
+}
 
 }
 
