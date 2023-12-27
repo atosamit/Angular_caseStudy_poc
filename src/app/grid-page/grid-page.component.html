@@ -99,78 +99,72 @@
                          <div class="comment-container">
                              <div class="comment-box-grid">
                                 <div class="comment-scroll">
-                                  <div *ngFor="let comment of comments;let i = index" [ngClass]="{'hidden-comment': !showAll && i > 2}" class="comment">
-                                       <div class="comment-content">
-                                          <p>{{ comment.comment }}</p>
-                                          
-                                             <div>
-                                              <div class="meta-details">
-                                                <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
-                                                <span (click)="deleteComment(comment.commentId,item.details.sys.id )">
-                                                   <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
-                                                </span>
-                                             </div>
-                                            </div>
-                                             <span class="reply"(click)="showAllReplies = !showAllReplies"> reply...</span>
-                                             <div class="reply-section" [class.show-reply]="showAllReplies">
-                                              <input type="text" placeholder="Write a reply">
-                                              <button>Submit</button>
-                                            </div>
+                                  <!--Pagination html-->
+                                   <div *ngFor="let comment of paginatedComments; let i = index" class="comment">
+                                      <div class="comment-content">
+                                        <p>{{ comment.comment }}</p>
+                                        <div>
+                                          <div class="meta-details">
+                                            <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
+                                            <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
+                                                <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
+                                            </span>
+                                          </div>
                                         </div>
-                                        <div *ngIf="i === 2 && comments.length > 3 && !showAll" class="more-comments">
-                                          <span class="more-comment" (click)="showAllComments()">More Comments...</span>
-                                        </div>
+                                      </div>
+                                    </div>
+
+                                  <!-- Pagination controls -->
+                                  <div *ngIf="totalPageCount > 1">
+                                    <ul class="pagination">
+                                      <li>
+                                        <a (click)="onPageChange(1)" [class.disabled]="selectedPage === 1">&laquo;</a>
+                                      </li>
+                                      <li>
+                                        <a (click)="onPageChange(selectedPage - 1)" [class.disabled]="selectedPage === 1">&lt;</a>
+                                      </li>
+                                       <li *ngFor="let page of pageNumbers" [class.active]="selectedPage === page">
+                                         <a (click)="onPageChange(page)">{{ page }}</a>
+                                      </li>
+                                       <li>
+                                       <a (click)="onPageChange(selectedPage + 1)" [class.disabled]="selectedPage === totalPageCount">&gt;</a>
+                                      </li>
+                                      <li>
+                                        <a (click)="onPageChange(totalPageCount)" [class.disabled]="selectedPage === totalPageCount">&raquo;</a>
+                                      </li>
+                                    </ul>
                                   </div>
-                                  <div *ngIf="showAll">
-                                    <span class="less-comment" (click)="showLessComments()">Less Comments...</span>
-                                  </div>
-                               </div>
-                               <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
-                                <div>
-                                    <!-- Button to toggle comment input area -->
+                                </div><!--comment-scroll div-->
+                   
+                                <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                                  <div>
+                                  <!-- Button to toggle comment input area -->
                                     <span (click)="toggleAddCommentBox(item.details.sys.id)" class="toggle-comment-button">
-                                      <strong class="post-comment">your comment here..</strong>
-                                  </span>
-                                  
-                                  <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                                        <strong class="post-comment">Add your comment here..</strong>
+                                    </span>
+                      
+                                    <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
                                       <ng-container *ngIf="showAddCommentBox[item.details.sys.id]">
-                                          <textarea class="textarea" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                                          <textarea  class="textarea" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
                                           <div>
-                                              <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit</button>
-                                              <button (click)="cancelComment(item.details.sys.id)" class="cancel-button">Cancel</button>
+                                            <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit</button>
+                                            <button (click)="cancelComment(item.details.sys.id)" class="cancel-button">Cancel</button>
                                           </div>
                                       </ng-container>
-                                  </div>
-                                </div>
-                              </div>
+                                    </div>
+                                   </div>
+                               </div><!--*ngIf="itemCommentBoxStates[item.details.sys.id] div-->
+                             </div><!--comment-box-list div-->
+                         </div><!--comment-container div-->
+                     </div><!--Second div-->
                                   
-                        
-                               <!-- Text area for adding new comments -->
-                              <!-- <div>
-                                  <textarea [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
-                              </div> -->
-                    
-                               <!-- Button to fetch comments -->
-                              <!-- <div>
-                                 <button (click)="fetchComments(item.details.sys.id)" class="orange-button2"> Comments</button>
-                              </div> -->
-                    
-                              <!-- Button to submit comments -->
-                              <!-- <div>
-                                 <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit </button>
-                                 <button (click)="cancelComment(item.details.sys.id); postOrFetchComments(item.details.sys.id)" class="cancel-button">Cancel</button>   
-                              </div> -->
-                            </div>
-                         </div>
-                    </div>
-                        
                     <!-- Like button -->
                     <span *ngIf="    isGridView" class="like-container" (click)="submitLike(item.details.sys.id,userEmail||'')">
                       <img [src]="retrieveLikedStatus(item.details.sys.id,userEmail||'') ? likedIcon : notLikedIcon" alt="Likes" class="icons orange-icon" />
                       Like
                       <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
                     </span>
-                </div>
+          </div><!---->
           
           
             <!--LIST SECTION-->
@@ -206,11 +200,6 @@
                                           </span>
                                        </div>
                                       </div>
-                                       <span class="reply"(click)="showAllReplies = !showAllReplies"> reply...</span>
-                                       <div class="reply-section" [class.show-reply]="showAllReplies">
-                                        <input type="text" placeholder="Write a reply">
-                                        <button>Submit</button>
-                                      </div>
                                   </div>
                                   <div *ngIf="i === 2 && comments.length > 3 && !showAll" class="more-comments">
                                     <span class="more-comment" (click)="showAllComments()">More Comments...</span>
@@ -220,8 +209,10 @@
                               <span class="less-comment" (click)="showLessComments()">Less Comments...</span>
                             </div>
                          </div> -->
+                         
+                         
                          <!--Pagination html-->
-                         <div *ngFor="let comment of paginatedComments; let i = index" [ngClass]="{'hidden-comment': !showAll && i > 4}" class="comment">
+                         <div *ngFor="let comment of paginatedComments; let i = index" class="comment">
                           <div class="comment-content">
                              <p>{{ comment.comment }}</p>
                              
@@ -233,43 +224,34 @@
                                    </span>
                                 </div>
                                </div>
-                                <!-- <span class="reply"(click)="showAllReplies = !showAllReplies"> reply...</span>
-                                <div class="reply-section" [class.show-reply]="showAllReplies">
-                                 <input type="text" placeholder="Write a reply">
-                                 <button>Submit</button>
-                               </div> -->
-                           </div>
+                              </div>
                           </div>
+                          <!-- Pagination controls -->
+                         
+                        <div *ngIf="totalPageCount > 1">
+                         <ul class="pagination">
+                            <li>
+                               <a (click)="onPageChange(1)" [class.disabled]="selectedPage === 1">&laquo;</a>
+                             </li>
+                             <li>
+                               <a (click)="onPageChange(selectedPage - 1)" [class.disabled]="selectedPage === 1">&lt;</a>
+                            </li>
+                            <li *ngFor="let page of pageNumbers" [class.active]="selectedPage === page">
+                              <a (click)="onPageChange(page)">{{ page }}</a>
+                            </li>
+                            <li>
+                              <a (click)="onPageChange(selectedPage + 1)" [class.disabled]="selectedPage === totalPageCount">&gt;</a>
+                            </li>
+                            <li>
+                              <a (click)="onPageChange(totalPageCount)" [class.disabled]="selectedPage === totalPageCount">&raquo;</a>
+                            </li>
+                             </ul>
+                          </div>
+
                     
-                  </div>
-                   <!-- Pagination using numbers 
-                 <div class="pagination">
-                      <button *ngFor="let page of getPageNumbers()" (click)="goToPage(page)">
-                       {{ page }}
-                     </button>
-                 </div> -->
-                 <!-- Pagination using arrows
-                <div class="pagination">
-                     <button class="prev" (click)="goToPage(pageNumber - 1)" [disabled]="pageNumber === 1"> &lt; </button>
-                     <button *ngFor="let page of getPageNumbers()" (click)="goToPage(page)" [class.active]="page === pageNumber">
-                       &lt;&lt;
-                    </button>
-                    <button class="next" (click)="goToPage(pageNumber + 1)" [disabled]="pageNumber === totalPages"> &gt; </button>
-                </div>-->
-                
-                
-                <!-- Pagination using arrows and numbers -->
-                <div *ngIf="comments.length > 0" class="pagination">
-                  <button class="prev" (click)="goToPage(pageNumber - 1)" [disabled]="pageNumber === 1"> &lt; </button>
-                    <!-- Displaying numbers between two arrows -->
-                   <ng-container *ngFor="let page of getPageNumbers()">
-                   <button *ngIf="page !== 'prev' && page !== 'next'" (click)="goToPage(page)" [class.active]="page === pageNumber">
-                      {{ page  }}
-                   </button>
-                  </ng-container>
-                  <button class="next" (click)="goToPage(pageNumber + 1)" [disabled]="pageNumber === totalPages"> &gt; </button>
-                </div>
-                <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
+                  </div><!--comment-scroll div-->
+                  
+                 <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
                           <div>
                               <!-- Button to toggle comment input area -->
                               <span (click)="toggleAddCommentBox(item.details.sys.id)" class="toggle-comment-button">
@@ -287,28 +269,10 @@
                                 </ng-container>
                             </div>
                           </div>
-                        </div>
-                            
-                  
-                         <!-- Text area for adding new comments
-                        <div>
-                            <textarea [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
-                        </div>
-                         <div>
-                           <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit </button>
-                           <button (click)="cancelComment(item.details.sys.id); postOrFetchComments(item.details.sys.id)" class="cancel-button">Cancel</button>   
-                        </div>
-               -->
-                         <!-- Button to fetch comments -->
-                        <!-- <div>
-                           <button (click)="fetchComments(item.details.sys.id)" class="orange-button2"> Comments</button>
-                        </div> -->
-              
-                        <!-- Button to submit comments -->
-                       
-                      </div>
-                   </div>
-              </div>
+                    </div><!--*ngIf="itemCommentBoxStates[item.details.sys.id] div-->
+                       </div><!--comment-box-list div-->
+                   </div><!--comment-container div-->
+              </div><!--Second div-->
                   
               <!-- Like button -->
               <span *ngIf="!isGridView" class="like-container" (click)="submitLike(item.details.sys.id,userEmail||'')">
@@ -317,8 +281,10 @@
                 <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
               </span>
               
-         </div>    
-            <div class="grid-div5" *ngIf="isGridView">
+        </div>  <!--!GridView div-->  
+            
+        
+        <div class="grid-div5" *ngIf="isGridView">
                 <button (click)="openPopup()" style="border: none; background-color: white">
                   <img alt="Share_icon" class="icons" [src]="logoCollection[5].logo.url" />
                 </button>

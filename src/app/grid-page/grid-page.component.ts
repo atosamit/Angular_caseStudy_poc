@@ -640,53 +640,90 @@ showLessComments() {
 showAllReplies = false;
 
 
-//pagination
+// //pagination
 
 
-// Define pagination properties
-commentsPerPage = 5; // Initial number of comments per page
-pageNumber = 1; // Current page number
-totalNumberOfPages = 0;
+// // Define pagination properties
+// commentsPerPage = 5; // Initial number of comments per page
+// pageNumber = 1; // Current page number
+// totalNumberOfPages = 0;
 
-// Check if comments exist to determine pagination visibility
-get showPagination(): boolean {
-  return this.comments.length > this.commentsPerPage;
-}
-
-updateTotalNumberOfPages(): void {
-  this.totalNumberOfPages = Math.ceil(this.comments.length / this.commentsPerPage);
-}
-
-// Create a computed property to get the paginated comments for the current page
-get paginatedComments() {
-  const startIndex = (this.pageNumber - 1) * this.commentsPerPage;
-  const endIndex = startIndex + this.commentsPerPage;
-  return this.comments.slice(startIndex, endIndex);
-}
-
-updateCommentsPerPage() {
-  const totalComments = this.comments.length;
-  this.commentsPerPage = 5; // Set the desired number of comments per page
-  this.updateTotalNumberOfPages(); // Update the total number of pages based on the new comments per page
-}
-
-goToPage(pageNumber: number) {
-  this.pageNumber = pageNumber;
-}
-
-
-
-  getPageNumbers(): (number | 'prev' | 'next')[] {
-  const pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
-  return ['prev', ...pages, 'next'];
-}
-
-
-//for numebers only 
-// getPageNumbers() {
-//   const pageCount = Math.ceil(this.comments.length / this.commentsPerPage);
-//   return Array.from({ length: pageCount }, (_, i) => i + 1);
+// // Check if comments exist to determine pagination visibility
+// get showPagination(): boolean {
+//   return this.comments.length > this.commentsPerPage;
 // }
+
+// updateTotalNumberOfPages(): void {
+//   this.totalNumberOfPages = Math.ceil(this.comments.length / this.commentsPerPage);
+// }
+
+// // Create a computed property to get the paginated comments for the current page
+// get paginatedComments() {
+//   const startIndex = (this.pageNumber - 1) * this.commentsPerPage;
+//   const endIndex = startIndex + this.commentsPerPage;
+//   return this.comments.slice(startIndex, endIndex);
+// }
+
+// updateCommentsPerPage() {
+//   const totalComments = this.comments.length;
+//   this.commentsPerPage = 5; // Set the desired number of comments per page
+//   this.updateTotalNumberOfPages(); // Update the total number of pages based on the new comments per page
+// }
+
+// goToPage(pageNumber: number) {
+//   this.pageNumber = pageNumber;
+// }
+
+
+
+//   getPageNumbers(): (number | 'prev' | 'next')[] {
+//   const pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+//   return ['prev', ...pages, 'next'];
+// }
+
+
+// //for numebers only 
+// // getPageNumbers() {
+// //   const pageCount = Math.ceil(this.comments.length / this.commentsPerPage);
+// //   return Array.from({ length: pageCount }, (_, i) => i + 1);
+// // }
+
+selectedPage: number = 1;
+commentsPerPage: number = 5;
+
+get totalPageCount(): number {
+  return Math.ceil(this.comments.length / this.commentsPerPage);
+}
+
+
+// Generate an array representing page numbers
+get pageNumbers(): number[] {
+  return Array(this.totalPageCount).fill(0).map((_, idx) => idx + 1);
+}
+
+// Function to calculate the start and end indexes for pagination
+get startIndex(): number {
+  return (this.selectedPage  - 1) * this.commentsPerPage;
+}
+
+get endIndex(): number {
+  return Math.min(this.startIndex + this.commentsPerPage - 1, this.comments.length - 1);
+}
+
+// Update the getter for paginated comments
+get paginatedComments(): any[] {
+  const startIndex = (this.selectedPage - 1) * this.commentsPerPage;
+  const endIndex = Math.min(startIndex + this.commentsPerPage - 1, this.comments.length - 1);
+  return this.comments.slice(startIndex, endIndex + 1);
+}
+
+
+// Function to handle changing pages
+onPageChange(pageNumber: number): void {
+  if (pageNumber >= 1 && pageNumber <= this.totalPageCount) {
+    this.selectedPage = pageNumber;
+  }
+}
 
 
 }
