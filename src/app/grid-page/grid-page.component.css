@@ -610,15 +610,7 @@ input.toggle-round:not(:checked)~.right-side .label {
   filter: brightness(1.5) sepia(1) hue-rotate(180deg);
 }
 
-/* .comment-box {
-  height: 200px; 
-  overflow: auto; 
-  border: 1px solid #ccc; 
-}
 
-.comment-scroll {
-  padding: 10px; 
-} */
 
 /* Comment box container */
 .comment-box-list {
