@@ -9,9 +9,11 @@ import { Router } from '@angular/router'; // Import the Router module
 import { Store } from '@ngrx/store';
 import { ErrorService } from '../error.service';
 // import { decrement, increment, } from 'src/app/store/counter.actions';
-import { decrement,increment } from 'src/store/counter.actions';
+
 import { CommentService } from '../services/comment.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-grid-page',
   templateUrl: './grid-page.component.html',
@@ -22,11 +24,6 @@ export class GridPageComponent implements OnInit {
   
   @ViewChild('content', { static: false }) el!: ElementRef;
 
-  // contentId: string = '7a3t4QUm9Yq0GsjlSPqsuT';
-  
-  
-
-   
   fetchedComments: string[] = []; 
 
   isGridView: boolean = true;
@@ -60,7 +57,7 @@ export class GridPageComponent implements OnInit {
   likedCounts: Map<string, number> = new Map<string, number>();
   likedStatusMap: Map<string, boolean> = new Map<string, boolean>();
   likeCountMap: Map<string, number> = new Map<string, number>();
-
+  
  
   toggleView(view: 'list' | 'grid') {
     if (view === 'list') {
@@ -101,11 +98,11 @@ export class GridPageComponent implements OnInit {
   selectedDomain: string | null = null;
   selectedSubDomain: string | null = null;
   userEmail: string | null = sessionStorage.getItem('userEmail');
-  
+  showTextArea = true;
 
+ 
 
-
-  constructor(private cdr: ChangeDetectorRef,private commentService: CommentService, private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>) {
+  constructor(private cdr: ChangeDetectorRef,private commentService: CommentService, private errorService: ErrorService,private router: Router,private http: HttpClient, private likesService: LikesService,private store:Store<{counter:{counter:number}}>,private snackBar:MatSnackBar) {
     this.userEmail = sessionStorage.getItem('userEmail');
     // this.likesCount = this.likesService.getLikesCount(this.contentId);
 
@@ -372,12 +369,12 @@ this.errorService.setIsError(true);
 
   
   cancelComment(contentId: string) {
-    // Reset the comment variable or perform any necessary action when cancel is clicked
-    this.comment = ''; // Reset the comment input field
-    this.toggleCommentBox(contentId); // Toggle the comment box if needed
-
-    this.itemCommentBoxStates[contentId] = false;
-  }
+    this.comment = ''; // Reset the comment input field if needed
+  
+    // Hide the textarea by setting its visibility flag to false
+    this.showAddCommentBox[contentId] = false;
+}
+  
 
 
   // function to toggle between comment box
@@ -416,7 +413,7 @@ this.errorService.setIsError(true);
     // Handle the comment input event if needed
     this.comment = event.target.textContent;
 }
-
+  
 
   //function for posting the comment
   submitComment(contentId: string) {
@@ -426,14 +423,33 @@ this.errorService.setIsError(true);
   
     if (this.comment.trim() !== '') {
       if (this.userEmail !== null) {
+        const userId: string = this.userEmail;
         this.commentService.addComment(this.userEmail, this.comment, contentId).subscribe(
           (response) => {
             console.log('Comment posted successfully:', response);
             // Handle the success response here and log the entered comment
             console.log(`Comment "${this.comment}" posted successfully. ContentId: ${contentId}, UserId: ${this.userEmail}`);
+            
+            const newComment = {
+              userId: userId, // Assign the userId directly
+              comment: this.comment,
+              createdAt: new Date().toISOString(), // Assuming current time for createdAt
+              commentId: response.commentId // Use the actual ID returned from the server response
+              // Add other properties if needed
+            };
+  
+            // Add the new comment to the comments array
+            this.comments.unshift(newComment);
+            
             // Clear the comment input field after a successful submission
             this.comment = '';
-          },
+
+             // Toggle visibility of textarea after successful submission
+          this.showAddCommentBox[contentId] = false; // Assuming showAddCommentBox is used for toggling visibility
+          
+          this.showCommentAddedNotification();
+        
+        },
           (error) => {
             console.error('Error posting comment:', error);
           }
@@ -449,11 +465,18 @@ this.errorService.setIsError(true);
   }
 
 
+   // Method to display a notification/popup
+   showCommentAddedNotification() {
+    this.snackBar.open('Comment added successfully!', 'Close', {
+      duration: 3000, // Duration for which the notification will be displayed (in milliseconds)
+    });
+  }
+
   formattedComments: string = '';
   // Function to format comments for display in textarea
-formatComments() {
-  this.formattedComments = this.comments.map(comment => comment.comment).join('\n');
-}
+   formatComments() {
+      this.formattedComments = this.comments.map(comment => comment.comment).join('\n');
+    }
 
   showComments: boolean = false;
   currentContentId: string | null = null;
@@ -503,27 +526,30 @@ formatComments() {
 //function to post the like
 
 // Function to retrieve saved like status from localStorage
-retrieveLikedStatus(contentId: string): boolean {
-  const status = localStorage.getItem(contentId);
+retrieveLikedStatus(contentId: string, userId: string): boolean {
+  const status = localStorage.getItem(`${userId}_${contentId}`);
   return status === 'true'; // Return the stored status as a boolean
 }
 
 
-initializeLikedStatus(contentId: string) {
+initializeLikedStatus(contentId: string,) {
   // Assuming contentIds are unique identifiers for each item
   this.likedStatusMap.set(contentId, false); // Initialize all items as not liked initially
 }
 
-submitLike(contentId: string) {
-  const userId = this.userEmail;
+
+
+submitLike(contentId: string,userId: string) {
+  // const userId = this.userEmail;
   if (userId) {
     // Check if liked status for the content exists in the map, if not, initialize it to false
     if (!this.likedStatusMap.has(contentId)) {
       this.likedStatusMap.set(contentId, false);
     }
 
+    const likeStatusKey = `${userId}_${contentId}`;
     // Use the content's specific liked status from the map
-    const isContentLiked = this.likedStatusMap.get(contentId);
+    const isContentLiked = this.retrieveLikedStatus(contentId, userId);
 
     this.commentService.addLike(userId, contentId).subscribe(
       (response) => {
@@ -531,7 +557,7 @@ submitLike(contentId: string) {
           if (response.message === 'You have already liked this content') {
             console.log('Already Liked:', response.message);
             if (isContentLiked) {
-              this.likedStatusMap.set(contentId, false); // Update liked status to false
+              localStorage.setItem(likeStatusKey, 'false'); // Update liked status to false
               this.likeCountMap.set(contentId, (this.likeCountMap.get(contentId) || 0) - 1); // Decrease like count
               console.log('Like count after unlike:', this.likeCountMap.get(contentId)); // Log count after like // Log count after unlike
               localStorage.setItem(contentId, 'false'); // Save the status to localStorage
@@ -541,7 +567,7 @@ submitLike(contentId: string) {
             console.log(`Content liked successfully. ContentId: ${contentId}, UserId: ${this.userEmail}`);
             this.likedStatusMap.set(contentId, true); // Update liked status to true
             this.likeCountMap.set(contentId, (this.likeCountMap.get(contentId) || 0) + 1); // Increase like count
-            localStorage.setItem(contentId, 'true'); // Save the status to localStorage
+            localStorage.setItem(likeStatusKey, 'true');// Save the status to localStorage
             console.log('Like count after like:', this.likeCountMap.get(contentId)); // Log count after like // Log count after like
           } else {
             console.log('Unexpected Response:', response);
@@ -591,6 +617,15 @@ deleteComment(commentId: string, contentId: string) {
   );
 }
 
+
+showConfirmation = false;
+commentIdToDelete: string | null = null;
+itemIdToDelete: string | null = null;
+
+
+
+
+
 //More and less comment functionality
 public showAll = false;
 
@@ -611,6 +646,16 @@ showAllReplies = false;
 // Define pagination properties
 commentsPerPage = 5; // Initial number of comments per page
 pageNumber = 1; // Current page number
+totalNumberOfPages = 0;
+
+// Check if comments exist to determine pagination visibility
+get showPagination(): boolean {
+  return this.comments.length > this.commentsPerPage;
+}
+
+updateTotalNumberOfPages(): void {
+  this.totalNumberOfPages = Math.ceil(this.comments.length / this.commentsPerPage);
+}
 
 // Create a computed property to get the paginated comments for the current page
 get paginatedComments() {
@@ -621,12 +666,21 @@ get paginatedComments() {
 
 updateCommentsPerPage() {
   const totalComments = this.comments.length;
-  this.commentsPerPage = Math.ceil(totalComments / 10); // Change 10 to set a different factor
+  this.commentsPerPage = 5; // Set the desired number of comments per page
+  this.updateTotalNumberOfPages(); // Update the total number of pages based on the new comments per page
 }
 
 goToPage(pageNumber: number) {
   this.pageNumber = pageNumber;
 }
+
+
+
+  getPageNumbers(): (number | 'prev' | 'next')[] {
+  const pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  return ['prev', ...pages, 'next'];
+}
+
 
 //for numebers only 
 // getPageNumbers() {
@@ -634,10 +688,6 @@ goToPage(pageNumber: number) {
 //   return Array.from({ length: pageCount }, (_, i) => i + 1);
 // }
 
-  getPageNumbers(): (number | 'prev' | 'next')[] {
-  const pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
-  return ['prev', ...pages, 'next'];
-}
 
 }
 

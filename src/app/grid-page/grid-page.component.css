@@ -579,8 +579,9 @@ input.toggle-round:not(:checked)~.right-side .label {
   /* padding: 5px 5px; */
   border: none;
   cursor: pointer;
-  margin-left: 56px;
+  margin-left: 44px;
 }
+
 .orange-button2 {
   background-color: #ff6D43;
   color: white;
@@ -707,29 +708,34 @@ input.toggle-round:not(:checked)~.right-side .label {
 }
 
 .post-comment{
-  margin-left: 43px;
+  
+  margin-left: 30px;
   cursor: pointer;
 }
 .textarea{
   font-size: 13px;
-  margin-left: 48px;
+  margin-left: 34px;
 }
 
 /* Pagination styles */
 .pagination {
+  display: flex;
   margin-top: 20px;
 }
 
 .pagination button {
   padding: 3px 12px;
   margin-right: 5px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   background-color: #f5f5f5;
   color: #333;
   cursor: pointer;
+  border:none;
 }
 
 .pagination button:hover {
   background-color:dodgerblue; 
   color: #000;
 }
+
+

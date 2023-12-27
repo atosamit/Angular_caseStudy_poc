@@ -165,8 +165,8 @@
                     </div>
                         
                     <!-- Like button -->
-                    <span *ngIf="    isGridView" class="like-container" (click)="submitLike(item.details.sys.id)">
-                      <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons orange-icon" />
+                    <span *ngIf="    isGridView" class="like-container" (click)="submitLike(item.details.sys.id,userEmail||'')">
+                      <img [src]="retrieveLikedStatus(item.details.sys.id,userEmail||'') ? likedIcon : notLikedIcon" alt="Likes" class="icons orange-icon" />
                       Like
                       <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
                     </span>
@@ -229,16 +229,15 @@
                                  <div class="meta-details">
                                    <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
                                    <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
-                                   <!-- <span (click)="deleteComment(comment.commentId,item.details.sys.id )"> -->
-                                      <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
+                                        <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                    </span>
                                 </div>
                                </div>
-                                <span class="reply"(click)="showAllReplies = !showAllReplies"> reply...</span>
+                                <!-- <span class="reply"(click)="showAllReplies = !showAllReplies"> reply...</span>
                                 <div class="reply-section" [class.show-reply]="showAllReplies">
                                  <input type="text" placeholder="Write a reply">
                                  <button>Submit</button>
-                               </div>
+                               </div> -->
                            </div>
                           </div>
                     
@@ -260,12 +259,12 @@
                 
                 
                 <!-- Pagination using arrows and numbers -->
-                <div class="pagination">
-                    <button class="prev" (click)="goToPage(pageNumber - 1)" [disabled]="pageNumber === 1"> &lt; </button>
+                <div *ngIf="comments.length > 0" class="pagination">
+                  <button class="prev" (click)="goToPage(pageNumber - 1)" [disabled]="pageNumber === 1"> &lt; </button>
                     <!-- Displaying numbers between two arrows -->
                    <ng-container *ngFor="let page of getPageNumbers()">
                    <button *ngIf="page !== 'prev' && page !== 'next'" (click)="goToPage(page)" [class.active]="page === pageNumber">
-                      {{ page }}
+                      {{ page  }}
                    </button>
                   </ng-container>
                   <button class="next" (click)="goToPage(pageNumber + 1)" [disabled]="pageNumber === totalPages"> &gt; </button>
@@ -279,7 +278,8 @@
                             
                             <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
                                 <ng-container *ngIf="showAddCommentBox[item.details.sys.id]">
-                                    <textarea class="textarea" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                                    <textarea  class="textarea" [(ngModel)]="comment" placeholder="Write your comment..."></textarea>
+                                
                                     <div>
                                         <button (click)="submitComment(item.details.sys.id)" class="orange-button">Submit</button>
                                         <button (click)="cancelComment(item.details.sys.id)" class="cancel-button">Cancel</button>
@@ -311,8 +311,8 @@
               </div>
                   
               <!-- Like button -->
-              <span *ngIf="!isGridView" class="like-container" (click)="submitLike(item.details.sys.id)">
-                <img [src]="retrieveLikedStatus(item.details.sys.id) ? likedIcon : notLikedIcon" alt="Likes" class="icons orange-icon" />
+              <span *ngIf="!isGridView" class="like-container" (click)="submitLike(item.details.sys.id,userEmail||'')">
+                <img [src]="retrieveLikedStatus(item.details.sys.id,userEmail ||'') ? likedIcon : notLikedIcon" alt="Likes" class="icons orange-icon" />
                 Like
                 <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
               </span>
