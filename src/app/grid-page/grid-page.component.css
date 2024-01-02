@@ -751,3 +751,13 @@ input.toggle-round:not(:checked)~.right-side .label {
     /* Add any other styles you want for the user-email class */
 }
 
+.comment-content:hover {
+  background-color: rgb(209, 225, 243); /* Change to your desired hover color */
+}
+
+/* CSS for changing the delete icon on hover */
+.delete-icon:hover {
+  content: url('../../assets/delete.png'); /* Change to your different icon path */
+  cursor: pointer;
+}
+
