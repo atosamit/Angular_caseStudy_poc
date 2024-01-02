@@ -91,7 +91,7 @@
                       <!-- Comment Button -->
                     <button *ngIf="isGridView || !isGridView" class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id); fetchComments(item.details.sys.id)">
                          <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
-                             {{ labelConstants[0].Comments }}
+                             <!-- {{ labelConstants[0].Comments }} -->
                     </button>
                 
                     <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
@@ -105,7 +105,7 @@
                                         <p>{{ comment.comment }}</p>
                                         <div>
                                           <div class="meta-details">
-                                            <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
+                                            <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
                                             <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
                                                 <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                             </span>
@@ -157,13 +157,14 @@
                              </div><!--comment-box-list div-->
                          </div><!--comment-container div-->
                      </div><!--Second div-->
-                                  
+                             
                     <!-- Like button -->
                     <span *ngIf="    isGridView" class="like-container" (click)="submitLike(item.details.sys.id,userEmail||'')">
                       <img [src]="retrieveLikedStatus(item.details.sys.id,userEmail||'') ? likedIcon : notLikedIcon" alt="Likes" class="icons orange-icon" />
-                      Like
+                      <!-- Like -->
                       <!-- <span class="like-count">{{ likeCountMap.get(item.details.sys.id) || 0 }}</span> -->
                     </span>
+               
           </div><!---->
           
           
@@ -218,7 +219,7 @@
                              
                                 <div>
                                  <div class="meta-details">
-                                   <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd' }}</span>
+                                   <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
                                    <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
                                         <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                    </span>

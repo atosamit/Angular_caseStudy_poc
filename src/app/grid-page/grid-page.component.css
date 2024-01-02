@@ -615,23 +615,29 @@ input.toggle-round:not(:checked)~.right-side .label {
 /* Comment box container */
 .comment-box-list {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 10px;
   max-height: 300px;
   overflow-y: auto;
 }
 
 .comment-box-grid{
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  max-height: 109px;
-  overflow-y: auto;
+    margin-left: -8PX;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 109px;
+    overflow-y: auto;
+    max-width: 231px;
 }
 
 /* Individual comment */
 .comment {
-  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Comment content */
@@ -645,6 +651,7 @@ input.toggle-round:not(:checked)~.right-side .label {
 .comment-content p {
   margin: 0;
   font-size: 12px;
+  font-weight: bold;
 }
 
 
@@ -659,7 +666,8 @@ input.toggle-round:not(:checked)~.right-side .label {
   width: 28px;
     height: 30px;
     margin-top: -17px;
-    margin-left: 118px;
+    margin-left:91px;
+    cursor: pointer;
 }
 
 .hidden-comment {
@@ -732,3 +740,6 @@ input.toggle-round:not(:checked)~.right-side .label {
   border-color: #007bff;
 }
 
+/* .like{
+  margin-top: 37px;
+} */
