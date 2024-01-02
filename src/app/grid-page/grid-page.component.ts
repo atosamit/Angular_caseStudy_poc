@@ -475,12 +475,19 @@ export class GridPageComponent implements OnInit {
             Array.isArray(data.comments) &&
             this.currentContentId === contentId
           ) {
+
+
+            const userEmail: string | null = sessionStorage.getItem('userEmail');
+            if (userEmail !== null) {
             this.comments = data.comments.map((comment: any) => ({
-              userId: '', // Add logic to get user ID if available
+              userId: userEmail,  // Add logic to get user ID if available
               comment: comment.text,
               createdAt: comment.createdAt,
               commentId: comment._id,
-            }));
+            })); } else {
+              console.error('User email is null.');
+              // Handle the case where userEmail is null
+          }
 
             // Sort comments by date in ascending order
             this.comments.sort((a, b) => {

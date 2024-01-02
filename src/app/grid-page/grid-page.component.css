@@ -666,7 +666,7 @@ input.toggle-round:not(:checked)~.right-side .label {
   width: 28px;
     height: 30px;
     margin-top: -17px;
-    margin-left:91px;
+    margin-left: 77px;
     cursor: pointer;
 }
 
@@ -743,3 +743,11 @@ input.toggle-round:not(:checked)~.right-side .label {
 /* .like{
   margin-top: 37px;
 } */
+
+
+  .user-email {
+   /* Make the text bold */
+    color: #336699; /* Set the text color */
+    /* Add any other styles you want for the user-email class */
+}
+

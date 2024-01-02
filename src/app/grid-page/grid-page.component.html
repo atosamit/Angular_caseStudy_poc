@@ -105,7 +105,7 @@
                                         <p>{{ comment.comment }}</p>
                                         <div>
                                           <div class="meta-details">
-                                            <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+                                            <span class="comment-date">{{ comment.createdAt | date: 'yyyy/MM/dd HH:mm:ss' }}</span>
                                             <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
                                                 <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                             </span>
@@ -219,7 +219,8 @@
                              
                                 <div>
                                  <div class="meta-details">
-                                   <span class="comment-date">{{ comment.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+                                   <span class="comment-date">{{ comment.createdAt | date: 'yyyy/MM/dd HH:mm:ss' }}</span><br>
+                                   <!-- <span class="user-email">{{ comment.userId }}</span> -->
                                    <span (click)="confirmDelete(comment.commentId, item.details.sys.id)">
                                         <img src="../../assets/trash-bin.png" alt="Delete" class="delete-icon">
                                    </span>
