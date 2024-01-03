@@ -443,13 +443,15 @@ export class GridPageComponent implements OnInit {
     }
   }
 
-  // Method to display a notification/popup
+  // Method to display a notification/popup for successfully adding commnet
   showCommentAddedNotification() {
     this.snackBar.open('Comment added successfully!', 'Close', {
       duration: 3000, // Duration for which the notification will be displayed (in milliseconds)
     });
   }
 
+
+    // Function to fetch the comments
   formattedComments: string = '';
   // Function to format comments for display in textarea
   formatComments() {
@@ -461,7 +463,7 @@ export class GridPageComponent implements OnInit {
   showComments: boolean = false;
   currentContentId: string | null = null;
 
-  // Function to fetch the comments
+
   fetchComments(contentId: string) {
     this.showComments = !this.showComments; // Toggle the flag on button click
     this.currentContentId = contentId;
@@ -513,6 +515,7 @@ export class GridPageComponent implements OnInit {
     }
   }
 
+  
   //function to post the like
 
   // Function to retrieve saved like status from localStorage
@@ -590,18 +593,29 @@ export class GridPageComponent implements OnInit {
   }
 
   confirmDelete(commentId: string, itemId: string) {
-    const result = window.confirm(
-      'Are you sure you want to delete this comment?'
-    );
-
-    if (result) {
-      
-      this.deleteComment(commentId, itemId);
-    } else {
-      
+    const customAlert = document.getElementById('customAlert');
+  
+    if (customAlert) {
+      customAlert.style.display = 'block';
+  
+      const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+      const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+  
+      if (confirmDeleteBtn) {
+        confirmDeleteBtn.addEventListener('click', () => {
+          this.deleteComment(commentId, itemId);
+          customAlert.style.display = 'none';
+        });
+      }
+  
+      if (cancelDeleteBtn) {
+        cancelDeleteBtn.addEventListener('click', () => {
+          customAlert.style.display = 'none';
+        });
+      }
     }
   }
-
+  
   //delete comment
   deleteComment(commentId: string, contentId: string) {
     // Your delete logic using commentId and contentId

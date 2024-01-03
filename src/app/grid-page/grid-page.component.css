@@ -752,12 +752,28 @@ input.toggle-round:not(:checked)~.right-side .label {
 }
 
 .comment-content:hover {
-  background-color: rgb(209, 225, 243); /* Change to your desired hover color */
+  background-color: rgb(209, 225, 243); 
 }
 
 /* CSS for changing the delete icon on hover */
 .delete-icon:hover {
-  content: url('../../assets/delete.png'); /* Change to your different icon path */
+  content: url('../../assets/trash-can.png'); 
   cursor: pointer;
 }
+
+.custom-alert {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 5px solid #ccc;
+}
+
+.alert-content button {
+  margin-right: 10px;
+}
+
 
