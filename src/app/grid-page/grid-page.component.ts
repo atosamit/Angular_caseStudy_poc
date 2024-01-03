@@ -126,6 +126,9 @@ export class GridPageComponent implements OnInit {
       console.log(data.counter);
     });
     console.log(this.store);
+
+    const storedComments = localStorage.getItem('comments');
+    this.commentCounts = storedComments ? JSON.parse(storedComments) : {};
   }
   fetchData() {
     const endpoint =
@@ -431,6 +434,8 @@ export class GridPageComponent implements OnInit {
               this.showAddCommentBox[contentId] = false; // Assuming showAddCommentBox is used for toggling visibility
 
               this.showCommentAddedNotification();
+              this.updateCommentCount(contentId, true);
+              
             },
             (error) => {
               console.error('Error posting comment:', error);
@@ -443,6 +448,32 @@ export class GridPageComponent implements OnInit {
       console.error('Comment is empty, cannot submit.');
     }
   }
+
+
+
+  // Function to update comment count
+updateCommentCount(contentId: string, isAdding: boolean) {
+  const storedComments = localStorage.getItem('comments');
+  const storedData = storedComments ? JSON.parse(storedComments) : {};
+
+  if (storedData[contentId] !== undefined) {
+    if (isAdding) {
+      storedData[contentId]++; // Increment the count for this content ID
+    } else {
+      if (storedData[contentId] > 0) {
+        storedData[contentId]--; // Decrement the count for this content ID if it's greater than 0
+      }
+    }
+  } else {
+    storedData[contentId] = 1; // Initialize the count for this content ID
+  }
+
+  // Update the local storage with the updated count
+  localStorage.setItem('comments', JSON.stringify(storedData));
+
+  // Update the commentCounts object in the component to reflect this change
+  this.commentCounts[contentId] = storedData[contentId];
+}
 
   // Method to display a notification/popup for successfully adding commnet
   showCommentAddedNotification() {
@@ -634,6 +665,8 @@ export class GridPageComponent implements OnInit {
         this.comments = this.comments.filter(
           (comment) => comment.commentId !== commentId
         );
+         // Update comment count after successfully deleting the comment
+      this.updateCommentCount(contentId, false);
       },
       (error) => {
         console.error('Error deleting comment:', error);
