@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LikesService } from '../services/likes.service';
+import { LikesService } from '../service/likes.service';
 import { MatSnackBar, MatSnackBarDismiss } from '@angular/material/snack-bar';
 
 @Component({

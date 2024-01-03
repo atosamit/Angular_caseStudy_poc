@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
-import { LikesService } from '../services/likes.service';
+import { LikesService } from '../service/likes.service';
 // import { jsPDF } from "jspdf"
 import { labelConstants } from '../HardcodeTags';
 import { Router } from '@angular/router'; // Import the Router module
@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { ErrorService } from '../error.service';
 // import { decrement, increment, } from 'src/app/store/counter.actions';
 
-import { CommentService } from '../services/comment.service';
+import { CommentService } from '../service/comment.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -24,7 +24,7 @@ export class GridPageComponent implements OnInit {
   @ViewChild('content', { static: false }) el!: ElementRef;
 
   fetchedComments: string[] = [];
-
+ 
   isGridView: boolean = true;
   // all hard present here
   labelConstants = labelConstants;
@@ -61,6 +61,7 @@ export class GridPageComponent implements OnInit {
   likedCounts: Map<string, number> = new Map<string, number>();
   likedStatusMap: Map<string, boolean> = new Map<string, boolean>();
   likeCountMap: Map<string, number> = new Map<string, number>();
+  commentCounts: Record<string, number> = {};
 
   toggleView(view: 'list' | 'grid') {
     if (view === 'list') {
@@ -498,7 +499,14 @@ export class GridPageComponent implements OnInit {
                 new Date(a.createdAt).getTime()
               );
             });
+
+
+            this.commentCounts[contentId] = this.comments.length;
+
             console.log('Comments fetched successfully:', this.comments);
+            console.log('Comment count for contentId:', contentId, this.commentCounts[contentId]);
+              
+              console.log('Comments fetched successfully:', this.comments);
           } else {
             console.error(
               'Invalid comments data received or content changed:',

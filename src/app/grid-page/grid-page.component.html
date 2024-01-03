@@ -92,6 +92,9 @@
                     <button *ngIf="isGridView || !isGridView" class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id); fetchComments(item.details.sys.id)">
                          <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
                              <!-- {{ labelConstants[0].Comments }} -->
+                             <span *ngIf="commentCounts[item.details.sys.id] !== undefined && commentCounts[item.details.sys.id] > 0">
+                              {{ commentCounts[item.details.sys.id] }}
+                            </span>
                     </button>
                 
                     <div *ngIf="itemCommentBoxStates[item.details.sys.id]">
@@ -185,7 +188,9 @@
                 <button class="Comments_btn" (click)="toggleCommentBox(item.details.sys.id); fetchComments(item.details.sys.id)">
                     <img [src]="logoCollection[4].logo.url" class="icons" alt="Comments" />
                        <!-- {{ labelConstants[0].Comments }} -->
-                          {{ item.details.commentCount }}
+                       <span *ngIf="commentCounts[item.details.sys.id] !== undefined && commentCounts[item.details.sys.id] > 0">
+                        {{ commentCounts[item.details.sys.id] }}
+                      </span>
                 </button>
                 
               
