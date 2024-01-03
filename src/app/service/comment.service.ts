@@ -32,14 +32,9 @@ export class CommentService {
       
     };
 
-    const headers = new HttpHeaders({
-      'Authorization': 'Bearer YourAccessToken',
-      'Content-Type': 'application/json'
-    });
-
     const apiUrl = `${this.baseUrl}/${contentId}`;
 
-    return this.http.post(apiUrl, comment, { headers });
+    return this.http.post(apiUrl, comment);
   }
 
   getComments(contentId: string): Observable<Comment[]> {
