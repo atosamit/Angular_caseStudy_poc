@@ -5,7 +5,7 @@
 
  <ng-container *ngIf="!isScreenSizeSmallOrLarge">
     <app-header-footer></app-header-footer>
-    
+
     <!-- Other content for large screens -->
     <router-outlet></router-outlet>
 </ng-container>
@@ -18,12 +18,12 @@
 </div>
 
   </ng-template>
-  
+
   <div *ngIf="!errorService.getIsError(); then dataContent else errorContent"></div>
-  
+
   <ng-template #errorContent>
     <!-- Display the error component here -->
     <app-error></app-error>
   </ng-template>
-    
+
   <!-- <app-user-management></app-user-management> -->
